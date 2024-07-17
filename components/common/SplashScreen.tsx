@@ -1,16 +1,12 @@
 "use client";
-import useIsMobile from "@/hooks/useIsMobile";
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
 export default function SplashScreen() {
-  const isMobile = useIsMobile();
-  const [hydrated, setHydrated] = useState(false);
   const [shouldUnmount, setShouldUnmount] = useState(false);
 
   useEffect(() => {
-    setHydrated(true);
     document.body.style.position = "fixed";
     const timeoutId = setTimeout(() => {
       document.body.style.position = "";
@@ -20,19 +16,13 @@ export default function SplashScreen() {
     return () => clearTimeout(timeoutId);
   }, []);
 
-  if (!hydrated) {
-    return (
-      <div className="h-screen w-screen bg-white fixed overflow-hidden"></div>
-    );
-  }
-
   return shouldUnmount ? null : (
     <div className="h-screen w-screen select-none pointer-events-none fixed overflow-hidden z-[5000]">
-      <div className="fixed h-full w-full flex flex-col justify-center items-start z-20">
+      <div className="fixed h-full w-full flex flex-col justify-center items-start translate-x-[-50vw] lg:translate-x-[-20vw] z-20">
         {/* Hana 01 */}
         <motion.div
-          initial={{ x: isMobile ? "-50vw" : "-30vw", y: 0, rotate: 0 }}
-          animate={{ x: "100vw", y: "-300px", rotate: 180 }}
+          initial={{ x: 0, y: 0, rotate: 0 }}
+          animate={{ x: "150vw", y: "-300px", rotate: 180 }}
           transition={{ duration: 2.5, delay: 4.5, ease: "easeIn" }}
           className="fixed"
         >
@@ -45,9 +35,9 @@ export default function SplashScreen() {
           />
         </motion.div>
         <motion.div
-          initial={{ x: isMobile ? "-50vw" : "-30vw", y: "100px", rotate: 0 }}
-          animate={{ x: "100vw", y: "100px", rotate: 180 }}
-          transition={{ duration: 2.5, delay: 5.5, ease: "easeIn" }}
+          initial={{ x: 0, y: "100px", rotate: 0 }}
+          animate={{ x: "150vw", y: "100px", rotate: 180 }}
+          transition={{ duration: 2.5, delay: 5.6, ease: "easeIn" }}
           className="fixed"
         >
           <Image
@@ -61,8 +51,8 @@ export default function SplashScreen() {
 
         {/* Hana 02 */}
         <motion.div
-          initial={{ x: isMobile ? "-50vw" : "-30vw", y: "100px", rotate: 0 }}
-          animate={{ x: "100vw", y: "0", rotate: 180 }}
+          initial={{ x: 0, y: "100px", rotate: 0 }}
+          animate={{ x: "150vw", y: "0", rotate: 180 }}
           transition={{ duration: 2.5, delay: 5, ease: "easeIn" }}
           className="fixed"
         >
@@ -75,8 +65,8 @@ export default function SplashScreen() {
           />
         </motion.div>
         <motion.div
-          initial={{ x: isMobile ? "-50vw" : "-30vw", y: "400px", rotate: 0 }}
-          animate={{ x: "100vw", y: "100px", rotate: 180 }}
+          initial={{ x: 0, y: "400px", rotate: 0 }}
+          animate={{ x: "150vw", y: "100px", rotate: 180 }}
           transition={{ duration: 2.5, delay: 5, ease: "easeIn" }}
           className="fixed"
         >
@@ -89,8 +79,8 @@ export default function SplashScreen() {
           />
         </motion.div>
         <motion.div
-          initial={{ x: isMobile ? "-50vw" : "-30vw", y: 0, rotate: 0 }}
-          animate={{ x: "100vw", y: "-200px", rotate: 180 }}
+          initial={{ x: 0, y: 0, rotate: 0 }}
+          animate={{ x: "150vw", y: "-200px", rotate: 180 }}
           transition={{ duration: 2.5, delay: 5.2, ease: "easeIn" }}
           className="fixed"
         >
@@ -103,9 +93,23 @@ export default function SplashScreen() {
           />
         </motion.div>
         <motion.div
-          initial={{ x: isMobile ? "-50vw" : "-30vw", y: 0, rotate: 0 }}
-          animate={{ x: "100vw", y: "-200px", rotate: 180 }}
+          initial={{ x: 0, y: 0, rotate: 0 }}
+          animate={{ x: "150vw", y: "-200px", rotate: 180 }}
           transition={{ duration: 2.5, delay: 4.6, ease: "easeIn" }}
+          className="fixed"
+        >
+          <Image
+            src="/hana_02.png"
+            alt="sakura flower petal"
+            width={100}
+            height={100}
+            className="w-[50px] lg:w-[100px] h-auto"
+          />
+        </motion.div>
+        <motion.div
+          initial={{ x: 0, y: 0, rotate: 0 }}
+          animate={{ x: "150vw", y: "-200px", rotate: 180 }}
+          transition={{ duration: 2.5, delay: 5.9, ease: "easeIn" }}
           className="fixed"
         >
           <Image
@@ -119,8 +123,8 @@ export default function SplashScreen() {
 
         {/* Hana 03 */}
         <motion.div
-          initial={{ x: isMobile ? "-50vw" : "-30vw", y: 0, rotate: 30 }}
-          animate={{ x: "100vw", y: "-200px", rotate: 180 }}
+          initial={{ x: 0, y: 0, rotate: 30 }}
+          animate={{ x: "150vw", y: "-200px", rotate: 180 }}
           transition={{ duration: 2.5, delay: 4.8, ease: "easeIn" }}
           className="fixed"
         >
@@ -133,9 +137,9 @@ export default function SplashScreen() {
           />
         </motion.div>
         <motion.div
-          initial={{ x: isMobile ? "-50vw" : "-30vw", y: 0, rotate: 0 }}
-          animate={{ x: "100vw", y: "-200px", rotate: 180 }}
-          transition={{ duration: 2.5, delay: 5.4, ease: "easeIn" }}
+          initial={{ x: 0, y: 0, rotate: 0 }}
+          animate={{ x: "150vw", y: "-200px", rotate: 180 }}
+          transition={{ duration: 2.5, delay: 5.5, ease: "easeIn" }}
           className="fixed"
         >
           <Image
@@ -146,11 +150,25 @@ export default function SplashScreen() {
             className="w-[100px] lg:w-[220px] h-auto"
           />
         </motion.div>
+        <motion.div
+          initial={{ x: 0, y: "100px", rotate: 0 }}
+          animate={{ x: "150vw", y: "0", rotate: 180 }}
+          transition={{ duration: 2.5, delay: 6, ease: "easeIn" }}
+          className="fixed"
+        >
+          <Image
+            src="/hana_03.png"
+            alt="sakura flower petal"
+            width={120}
+            height={120}
+            className="w-[60px] lg:w-[120px] h-auto"
+          />
+        </motion.div>
 
         {/* Hana 04 */}
         <motion.div
-          initial={{ x: isMobile ? "-50vw" : "-30vw", y: "400px", rotate: 0 }}
-          animate={{ x: "100vw", y: "100px", rotate: 180 }}
+          initial={{ x: 0, y: "400px", rotate: 0 }}
+          animate={{ x: "150vw", y: "100px", rotate: 180 }}
           transition={{ duration: 2.5, delay: 4.7, ease: "easeIn" }}
           className="fixed"
         >
@@ -163,9 +181,10 @@ export default function SplashScreen() {
           />
         </motion.div>
         <motion.div
-          initial={{ x: isMobile ? "-50vw" : "-30vw", y: 0, rotate: 0 }}
-          animate={{ x: "100vw", y: "-100px", rotate: 180 }}
-          transition={{ duration: 2.5, delay: 5, ease: "easeIn" }}
+          initial={{ x: 0, y: 0, rotate: 0 }}
+          animate={{ x: "150vw", y: "-100px", rotate: 180 }}
+          transition={{ duration: 2.5, delay: 5.2, ease: "easeIn" }}
+          className="fixed"
         >
           <Image
             src="/hana_04.png"
