@@ -15,6 +15,7 @@ const config: Config = {
       },
       fontFamily: {
         playfair: ["var(--font-playfair-display)"],
+        poppins: ["var(--font-poppins)"],
       },
     },
   },
