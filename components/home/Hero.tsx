@@ -13,7 +13,7 @@ export default function Hero() {
         className={`w-full h-full absolute bg-[length:3vw_3vw] lg:bg-[length:1.5vw_1.5vw] -z-10 ${style.caro}`}
       />
       <div>
-        <div className="mt-20 mr-10 -rotate-12 text-[#e7b088b8]">
+        <div className="mt-12 mr-10 -rotate-12 text-[#e7b088b8]">
           <motion.h1
             initial={{ opacity: 0, y: "-100px" }}
             animate={{ opacity: 1, y: 0 }}
@@ -33,13 +33,13 @@ export default function Hero() {
         </div>
         <div className="w-full flex flex-col-reverse lg:flex-row lg:gap-[35vw]">
           <div className="w-1/2"></div>
-          <div className="w-full px-10 lg:w-1/2 lg:pr-[4vw] font-grotesque lg:rotate-6">
+          <div className="w-full px-10 lg:w-1/2 lg:pr-[4vw] font-grotesque lg:rotate-6 lg:-translate-y-[20px]">
             <motion.div
               initial={{ opacity: 0, y: "-50px" }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 6.7 }}
             >
-              <p className="lg:text-[1.3vw] text-justify leading-tight mt-16 md:mt-32 lg:mt-0 lg:-translate-y-[1vw]">
+              <p className="lg:text-[1.3vw] text-justify leading-tight mt-16 md:mt-32 lg:mt-0">
                 Có bao giờ bạn tự nghĩ những cuốn light novel ngoài kia có thể
                 ẩn chứa những bí mật kín đáo hơn những gì mắt thấy? Đã bao giờ
                 bạn tự hỏi liệu mình đã thật sự thấu hiểu hết những thông điệp

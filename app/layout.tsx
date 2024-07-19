@@ -28,6 +28,22 @@ const description =
 export const metadata: Metadata = {
   title: title,
   description: description,
+  creator: "Meoki",
+  publisher: "Meoki",
+  keywords: ["light novel", "ln", "ranobe", "blog", "tiểu thuyết"],
+  metadataBase: new URL("https://ranobe.vn"),
+  openGraph: {
+    title: title,
+    description: description,
+    url: "https://ranobe.vn",
+    siteName: title,
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: title,
+    description: description,
+  },
 };
 
 export default function RootLayout({
