@@ -13,11 +13,11 @@ export default function Hero() {
         className={`w-full h-full absolute bg-[length:3vw_3vw] lg:bg-[length:1.5vw_1.5vw] -z-10 ${style.caro}`}
       />
       <div>
-        <div className="mt-12 mr-10 -rotate-12 text-[#e7b088b8]">
+        <div className="mt-12 mr-10 -rotate-12 text-[#e7b088b8] dark:text-[#3b71ab]">
           <motion.h1
             initial={{ opacity: 0, y: "-100px" }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 6.7 }}
+            transition={{ duration: 1, delay: 7 }}
             className="font-poppins tracking-tight text-center my-0 text-[15vw] leading-none"
           >
             THEMEOKI
@@ -25,7 +25,7 @@ export default function Hero() {
           <motion.h1
             initial={{ opacity: 0, y: "100px" }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 6.5 }}
+            transition={{ duration: 1, delay: 7 }}
             className="font-poppins tracking-tight text-center my-0 text-[14.5vw] leading-none"
           >
             NAVIRANOBE
@@ -37,7 +37,7 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: "-50px" }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 6.7 }}
+              transition={{ duration: 1, delay: 7 }}
             >
               <p className="lg:text-[1.3vw] text-justify leading-tight mt-16 md:mt-32 lg:mt-0">
                 Có bao giờ bạn tự nghĩ những cuốn light novel ngoài kia có thể
@@ -72,7 +72,7 @@ export default function Hero() {
         <motion.div
           initial={{ scale: 1.2 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 1, delay: 6.7 }}
+          transition={{ duration: 1, delay: 7 }}
         >
           <Image
             src="/imouza.png"

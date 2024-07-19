@@ -1,19 +1,26 @@
 .caro {
-  background-color: #fff;
-  background-image: linear-gradient(#ff00001c 1.2px, transparent 1.2px),
-    linear-gradient(to right, #ff00001c 1.2px, #fff 1.2px);
+  background-color: hsl(var(--background));
+  background-image: linear-gradient(
+      hsl(var(--hero-grid)) 1.2px,
+      transparent 1.2px
+    ),
+    linear-gradient(
+      to right,
+      hsl(var(--hero-grid)) 1.2px,
+      hsl(var(--background)) 1.2px
+    );
   -webkit-mask-image: linear-gradient(
     90deg,
     transparent,
-    #fff 20%,
-    #fff 80%,
+    hsl(var(--background)) 20%,
+    hsl(var(--background)) 80%,
     transparent
   );
   mask-image: linear-gradient(
     90deg,
     transparent,
-    #fff 20%,
-    #fff 80%,
+    hsl(var(--background)) 20%,
+    hsl(var(--background)) 80%,
     transparent
   );
 }

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Poppins, Darker_Grotesque } from "next/font/google";
 import "./globals.scss";
+import { Providers } from "@/components/common/Provider";
 
 const playfair_display = Playfair_Display({
   subsets: ["vietnamese"],
@@ -56,7 +57,7 @@ export default function RootLayout({
       <body
         className={`${playfair_display.variable} ${poppins.variable} ${darker_grotesque.variable}`}
       >
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );
