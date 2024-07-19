@@ -25,7 +25,7 @@ export default function SplashScreen() {
         <motion.div
           initial={{ x: 0, y: 0, rotate: 0 }}
           animate={{ x: "150vw", y: "-300px", rotate: 180 }}
-          transition={{ duration: 2, delay: 4.5, ease: "easeIn" }}
+          transition={{ duration: 2, delay: 4.7, ease: "easeIn" }}
           className="fixed"
         >
           <Image
@@ -39,7 +39,7 @@ export default function SplashScreen() {
         <motion.div
           initial={{ x: 0, y: "100px", rotate: 0 }}
           animate={{ x: "150vw", y: "100px", rotate: 180 }}
-          transition={{ duration: 2, delay: 5.6, ease: "easeIn" }}
+          transition={{ duration: 2, delay: 5.8, ease: "easeIn" }}
           className="fixed"
         >
           <Image
@@ -55,7 +55,7 @@ export default function SplashScreen() {
         <motion.div
           initial={{ x: 0, y: "100px", rotate: 0 }}
           animate={{ x: "150vw", y: "0", rotate: 180 }}
-          transition={{ duration: 2, delay: 5, ease: "easeIn" }}
+          transition={{ duration: 2, delay: 5.2, ease: "easeIn" }}
           className="fixed"
         >
           <Image
@@ -69,7 +69,7 @@ export default function SplashScreen() {
         <motion.div
           initial={{ x: 0, y: "400px", rotate: 0 }}
           animate={{ x: "150vw", y: "100px", rotate: 180 }}
-          transition={{ duration: 2, delay: 5, ease: "easeIn" }}
+          transition={{ duration: 2, delay: 5.2, ease: "easeIn" }}
           className="fixed"
         >
           <Image
@@ -83,7 +83,7 @@ export default function SplashScreen() {
         <motion.div
           initial={{ x: 0, y: 0, rotate: 0 }}
           animate={{ x: "150vw", y: "-200px", rotate: 180 }}
-          transition={{ duration: 2, delay: 5.2, ease: "easeIn" }}
+          transition={{ duration: 2, delay: 5.4, ease: "easeIn" }}
           className="fixed"
         >
           <Image
@@ -97,7 +97,7 @@ export default function SplashScreen() {
         <motion.div
           initial={{ x: 0, y: 0, rotate: 0 }}
           animate={{ x: "150vw", y: "-200px", rotate: 180 }}
-          transition={{ duration: 2, delay: 4.6, ease: "easeIn" }}
+          transition={{ duration: 2, delay: 4.8, ease: "easeIn" }}
           className="fixed"
         >
           <Image
@@ -111,7 +111,7 @@ export default function SplashScreen() {
         <motion.div
           initial={{ x: 0, y: 0, rotate: 0 }}
           animate={{ x: "150vw", y: "-200px", rotate: 180 }}
-          transition={{ duration: 2, delay: 5.8, ease: "easeIn" }}
+          transition={{ duration: 2, delay: 6, ease: "easeIn" }}
           className="fixed"
         >
           <Image
@@ -127,7 +127,7 @@ export default function SplashScreen() {
         <motion.div
           initial={{ x: 0, y: 0, rotate: 30 }}
           animate={{ x: "150vw", y: "-200px", rotate: 180 }}
-          transition={{ duration: 2, delay: 4.8, ease: "easeIn" }}
+          transition={{ duration: 2, delay: 5, ease: "easeIn" }}
           className="fixed"
         >
           <Image
@@ -141,7 +141,7 @@ export default function SplashScreen() {
         <motion.div
           initial={{ x: 0, y: 0, rotate: 0 }}
           animate={{ x: "150vw", y: "-200px", rotate: 180 }}
-          transition={{ duration: 2, delay: 5.5, ease: "easeIn" }}
+          transition={{ duration: 2, delay: 5.7, ease: "easeIn" }}
           className="fixed"
         >
           <Image
@@ -155,7 +155,7 @@ export default function SplashScreen() {
         <motion.div
           initial={{ x: 0, y: "100px", rotate: 0 }}
           animate={{ x: "150vw", y: "0", rotate: 180 }}
-          transition={{ duration: 2, delay: 6, ease: "easeIn" }}
+          transition={{ duration: 2, delay: 6.2, ease: "easeIn" }}
           className="fixed"
         >
           <Image
@@ -171,7 +171,7 @@ export default function SplashScreen() {
         <motion.div
           initial={{ x: 0, y: "400px", rotate: 0 }}
           animate={{ x: "150vw", y: "100px", rotate: 180 }}
-          transition={{ duration: 2, delay: 4.7, ease: "easeIn" }}
+          transition={{ duration: 2, delay: 4.9, ease: "easeIn" }}
           className="fixed"
         >
           <Image
@@ -185,7 +185,7 @@ export default function SplashScreen() {
         <motion.div
           initial={{ x: 0, y: 0, rotate: 0 }}
           animate={{ x: "150vw", y: "-100px", rotate: 180 }}
-          transition={{ duration: 2, delay: 5.2, ease: "easeIn" }}
+          transition={{ duration: 2, delay: 5.4, ease: "easeIn" }}
           className="fixed"
         >
           <Image

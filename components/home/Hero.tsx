@@ -2,18 +2,21 @@
 import Image from "next/image";
 import { motion } from "framer-motion";
 import style from "./home.module.scss";
+import Link from "next/link";
+import { buttonVariants } from "@/components/ui/button";
+import { TwitterLogoIcon } from "@radix-ui/react-icons";
 
 export default function Hero() {
   return (
     <div className="w-full min-h-screen relative overflow-hidden">
       <div
-        className={`w-full min-h-screen absolute bg-[length:3vw_3vw] lg:bg-[length:1.5vw_1.5vw] -z-10 ${style.caro}`}
+        className={`w-full h-full absolute bg-[length:3vw_3vw] lg:bg-[length:1.5vw_1.5vw] -z-10 ${style.caro}`}
       />
       <div className="w-full absolute bottom-0 z-50 select-none pointer-events-none">
         <motion.div
           initial={{ scale: 1.2 }}
           animate={{ scale: 1 }}
-          transition={{ duration: 1, delay: 6.5 }}
+          transition={{ duration: 1, delay: 6.7 }}
         >
           <Image
             src="/imouza.png"
@@ -27,21 +30,60 @@ export default function Hero() {
       <div>
         <div className="mt-20 mr-10 -rotate-12 text-[#e7b088b8]">
           <motion.h1
-            initial={{ opacity: 0, y: "-50px" }}
+            initial={{ opacity: 0, y: "-100px" }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 6.5 }}
+            transition={{ duration: 1, delay: 6.7 }}
             className="font-poppins tracking-tight text-center my-0 text-[15vw] leading-none"
           >
             THEMEOKI
           </motion.h1>
           <motion.h1
-            initial={{ opacity: 0, y: "50px" }}
+            initial={{ opacity: 0, y: "100px" }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 6.5 }}
             className="font-poppins tracking-tight text-center my-0 text-[14.5vw] leading-none"
           >
             NAVIRANOBE
           </motion.h1>
+        </div>
+        <div className="w-full flex flex-col-reverse lg:flex-row lg:gap-[35vw]">
+          <div className="w-1/2"></div>
+          <div className="w-1/2 pr-[4vw] font-grotesque rotate-6">
+            <motion.div
+              initial={{ opacity: 0, y: "-50px" }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, delay: 6.7 }}
+            >
+              <p
+                className="lg:text-[1.3vw] text-justify leading-tight -translate-y-[1vw]"
+                style={{ direction: "rtl" }}
+              >
+                Có bao giờ bạn tự nghĩ những cuốn light novel ngoài kia có thể
+                ẩn chứa những bí mật kín đáo hơn những gì mắt thấy? Đã bao giờ
+                bạn tự hỏi liệu mình đã thật sự thấu hiểu hết những thông điệp
+                tinh tế mà tác giả khéo léo ẩn giấu giữa những dòng chữ? Có lẽ,
+                light novel không chỉ là những câu chuyện bình dị, mà còn là
+                những bí mật chờ đợi bạn khám phá. Và đây là một blog sẽ đi cùng
+                bạn trong hành trình đó
+              </p>
+              <div className="flex flex-row float-right gap-4">
+                <Link
+                  href="https://facebook.com/NaviRanobe"
+                  target="_blank"
+                  className={buttonVariants({ variant: "default" })}
+                >
+                  <TwitterLogoIcon className="mr-1" /> HtL
+                </Link>
+                <Link
+                  href="https://facebook.com/TheMeoki"
+                  target="_blank"
+                  className={buttonVariants({ variant: "default" })}
+                >
+                  <TwitterLogoIcon className="mr-1" /> Meoki
+                </Link>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </div>
     </div>

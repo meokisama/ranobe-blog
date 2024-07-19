@@ -8,7 +8,7 @@ export default function Home() {
     <main className="w-full overflow-x-hidden">
       <SplashScreen />
       <Hero />
-      <div className="bg-[#fcebe5]">
+      <div>
         <NewPosts />
         <Footer />
       </div>

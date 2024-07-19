@@ -1,3 +1,3 @@
 export default function NewPosts() {
-  return <div>nh</div>;
+  return <div className="h-[30vw]">nh</div>;
 }
