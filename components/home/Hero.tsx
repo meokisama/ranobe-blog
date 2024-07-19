@@ -13,7 +13,7 @@ export default function Hero() {
         className={`w-full h-full absolute bg-[length:3vw_3vw] lg:bg-[length:1.5vw_1.5vw] -z-10 ${style.caro}`}
       />
       <div>
-        <div className="mt-12 mr-10 -rotate-12 text-[#e7b088b8] dark:text-[#3b71ab]">
+        <div className="mt-12 mr-10 -rotate-12 text-[#e7b088b8] dark:text-[#3b71ab] select-none pointer-events-none">
           <motion.h1
             initial={{ opacity: 0, y: "-100px" }}
             animate={{ opacity: 1, y: 0 }}
