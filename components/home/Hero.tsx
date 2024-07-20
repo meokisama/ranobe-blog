@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import style from "./home.module.scss";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
-import { TwitterLogoIcon } from "@radix-ui/react-icons";
 
 export default function Hero() {
   return (
@@ -13,12 +12,12 @@ export default function Hero() {
         className={`w-full h-full absolute bg-[length:3vw_3vw] lg:bg-[length:1.5vw_1.5vw] -z-10 ${style.caro}`}
       />
       <div>
-        <div className="mt-12 mr-10 -rotate-12 text-[#e7b088b8] dark:text-[#3b71ab] select-none pointer-events-none">
+        <div className="mr-10 -rotate-12 text-[#e7b088b8] dark:text-[#3b71ab] select-none pointer-events-none">
           <motion.h1
             initial={{ opacity: 0, y: "-100px" }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 7 }}
-            className="font-poppins tracking-tight text-center my-0 text-[15vw] leading-none"
+            className="font-jaro font-normal tracking-tight text-center my-0 text-[20vw] leading-none -mb-4 md:-mb-12 lg:-mb-12 xl:-mb-20 animate-text bg-gradient-to-r from-[#e7b088b8] to-[#fea6a8b8] dark:from-[#7085B6b8] dark:via-[#87A7D9b8] dark:to-[#DEF3F8b8] bg-clip-text text-transparent"
           >
             THEMEOKI
           </motion.h1>
@@ -26,20 +25,29 @@ export default function Hero() {
             initial={{ opacity: 0, y: "100px" }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 7 }}
-            className="font-poppins tracking-tight text-center my-0 text-[14.5vw] leading-none"
+            className="font-jaro font-normal tracking-tight text-center my-0 text-[19.5vw] leading-none animate-text bg-gradient-to-r from-[#e7b088b8] to-[#fea6a7b8] dark:from-[#7085B6b8] dark:via-[#87A7D9b8] dark:to-[#DEF3F8b8] bg-clip-text text-transparent"
           >
             NAVIRANOBE
           </motion.h1>
         </div>
-        <div className="w-full flex flex-col-reverse lg:flex-row lg:gap-[35vw]">
+        <div className="w-full flex flex-col-reverse lg:flex-row lg:gap-[35vw] -mt-16 lg:mt-0">
           <div className="w-1/2"></div>
           <div className="w-full px-10 lg:w-1/2 lg:pr-[4vw] font-grotesque lg:rotate-6 lg:-translate-y-[20px]">
+            <div className="scale-x-[-1] lg:hidden">
+              <Image
+                src="/makeine.png"
+                alt="makeine chibi"
+                width={150}
+                height={150}
+                className="h-auto w-[100px] sm:w-[150px]"
+              />
+            </div>
             <motion.div
               initial={{ opacity: 0, y: "-50px" }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 7 }}
             >
-              <p className="lg:text-[1.3vw] text-justify leading-tight mt-16 md:mt-32 lg:mt-0">
+              <p className="lg:text-[1.3vw] text-justify leading-tight">
                 Có bao giờ bạn tự nghĩ những cuốn light novel ngoài kia có thể
                 ẩn chứa những bí mật kín đáo hơn những gì mắt thấy? Đã bao giờ
                 bạn tự hỏi liệu mình đã thật sự thấu hiểu hết những thông điệp
@@ -54,14 +62,38 @@ export default function Hero() {
                   target="_blank"
                   className={buttonVariants({ variant: "default" })}
                 >
-                  <TwitterLogoIcon className="mr-1" /> HtL
+                  <svg
+                    className="w-4 h-4 mr-1"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  HtL
                 </Link>
                 <Link
                   href="https://facebook.com/TheMeoki"
                   target="_blank"
                   className={buttonVariants({ variant: "default" })}
                 >
-                  <TwitterLogoIcon className="mr-1" /> Meoki
+                  <svg
+                    className="w-4 h-4 mr-1"
+                    fill="currentColor"
+                    viewBox="0 0 24 24"
+                    aria-hidden="true"
+                  >
+                    <path
+                      fill-rule="evenodd"
+                      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                      clip-rule="evenodd"
+                    ></path>
+                  </svg>
+                  Meoki
                 </Link>
               </div>
             </motion.div>
@@ -83,6 +115,26 @@ export default function Hero() {
           />
         </motion.div>
       </div>
+      <motion.div
+        initial={{ opacity: 0, y: "-100px" }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{
+          type: "spring",
+          damping: 10,
+          mass: 0.75,
+          stiffness: 300,
+          delay: 8,
+        }}
+        className="absolute hidden lg:block top-[10%] left-5 select-none pointer-events-none"
+      >
+        <Image
+          src="/makeine.png"
+          alt="makeine chibi"
+          width={180}
+          height={180}
+          className="h-auto"
+        />
+      </motion.div>
     </div>
   );
 }

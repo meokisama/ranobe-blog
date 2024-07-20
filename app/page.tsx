@@ -1,4 +1,3 @@
-import Footer from "@/components/common/Footer";
 import SplashScreen from "@/components/common/SplashScreen";
 import { ModeToggle } from "@/components/common/Toggle";
 import Hero from "@/components/home/Hero";
@@ -11,7 +10,6 @@ export default function Home() {
       <ModeToggle />
       <Hero />
       <NewPosts />
-      <Footer />
     </main>
   );
 }

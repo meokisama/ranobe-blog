@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
-import { Playfair_Display, Poppins, Darker_Grotesque } from "next/font/google";
+import localFont from "next/font/local";
+import { Playfair_Display, Darker_Grotesque } from "next/font/google";
 import "./globals.scss";
 import { Providers } from "@/components/common/Provider";
+import Footer from "@/components/common/Footer";
 
 const playfair_display = Playfair_Display({
   subsets: ["vietnamese"],
@@ -15,10 +17,9 @@ const darker_grotesque = Darker_Grotesque({
   display: "swap",
 });
 
-const poppins = Poppins({
-  weight: "900",
-  subsets: ["latin"],
-  variable: "--font-poppins",
+const jaro = localFont({
+  src: "./Jaro.ttf",
+  variable: "--font-jaro",
   display: "swap",
 });
 
@@ -55,9 +56,10 @@ export default function RootLayout({
   return (
     <html lang="vi">
       <body
-        className={`${playfair_display.variable} ${poppins.variable} ${darker_grotesque.variable}`}
+        className={`${playfair_display.variable} ${darker_grotesque.variable} ${jaro.variable}`}
       >
         <Providers>{children}</Providers>
+        <Footer />
       </body>
     </html>
   );

@@ -14,7 +14,7 @@ export function ModeToggle() {
   const { setTheme } = useTheme();
 
   return (
-    <div className="fixed z-[9999] bottom-2 left-4">
+    <div className="fixed z-[4000] bottom-2 left-4">
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
           <Button
