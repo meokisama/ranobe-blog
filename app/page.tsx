@@ -1,7 +1,7 @@
-import SplashScreen from "@/components/common/SplashScreen";
-import { ModeToggle } from "@/components/common/Toggle";
-import Hero from "@/components/home/Hero";
-import NewPosts from "@/components/home/NewPosts";
+import SplashScreen from "@/components/common/splash-screen";
+import { ModeToggle } from "@/components/common/toggle";
+import Hero from "@/components/home/hero";
+import NewPosts from "@/components/home/new-posts";
 
 export default function Home() {
   return (

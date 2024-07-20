@@ -1,17 +1,15 @@
-import Footer from "@/components/common/Footer";
-import SplashScreen from "@/components/common/SplashScreen";
-import Hero from "@/components/home/Hero";
-import NewPosts from "@/components/home/NewPosts";
+import SplashScreen from "@/components/common/splash-screen";
+import { ModeToggle } from "@/components/common/toggle";
+import Hero from "@/components/home/hero";
+import NewPosts from "@/components/home/new-posts";
 
 export default function Home() {
   return (
     <main className="w-full overflow-x-hidden">
       <SplashScreen />
+      <ModeToggle />
       <Hero />
-      <div>
-        <NewPosts />
-        <Footer />
-      </div>
+      <NewPosts />
     </main>
   );
 }

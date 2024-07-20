@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Playfair_Display, Darker_Grotesque } from "next/font/google";
 import "./globals.scss";
-import { Providers } from "@/components/common/Provider";
-import Footer from "@/components/common/Footer";
+import { Providers } from "@/components/common/provider";
+import Footer from "@/components/common/footer";
+import { GoogleAnalytics } from "@next/third-parties/google";
 
 const playfair_display = Playfair_Display({
   subsets: ["vietnamese"],
@@ -54,13 +55,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi">
+    <html lang="vi" suppressHydrationWarning>
       <body
         className={`${playfair_display.variable} ${darker_grotesque.variable} ${jaro.variable}`}
       >
         <Providers>{children}</Providers>
         <Footer />
       </body>
+      <GoogleAnalytics gaId={process.env.GA4 as string} />
     </html>
   );
 }
