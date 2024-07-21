@@ -73,17 +73,17 @@ const PostList: React.FC<PostListProps> = ({ posts, title }) => (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {posts.map((post) => (
         <Link key={post.slug} href={`/blog/${post.slug}`}>
-          <div className="p-4 flex flex-col h-full justify-start rounded-xl shadow-lg dark:bg-[#212121] dark:shadow-[0_0_10px_rgba(0,0,0,0.6)]">
-            <div className="w-full max-h-[50%] rounded-xl shadow-lg overflow-hidden">
+          <div className="p-4 flex flex-col sm:h-full justify-start rounded-xl bg-[#fbfbfb] dark:bg-[#212121] shadow-[0_3px_8px_rgba(0,0,0,0.14)] dark:shadow-[0_0_10px_rgba(0,0,0,0.6)] group hover:-translate-y-2 transition ease-linear">
+            <div className="w-full h-[50%] rounded-xl shadow-lg overflow-hidden">
               <Image
                 src={`/posts/${post.metadata.thumbnail}`}
                 alt="post thumbnail"
                 width={400}
                 height={400}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-cover group-hover:scale-105 transition ease-linear"
               />
             </div>
-            <h2 className="text-xl leading lg:leading-6 lg:text-2xl font-bold mt-6 mb-4 line-clamp-2">
+            <h2 className="text-xl leading-5 lg:leading-6 lg:text-2xl font-bold mt-6 mb-4 pb-2 line-clamp-2">
               {post.metadata.title}
             </h2>
             <div className="flex flex-row gap-2 justify-start items-center mb-2">
@@ -112,7 +112,7 @@ const PostList: React.FC<PostListProps> = ({ posts, title }) => (
                 </p>
               </div>
             </div>
-            <p className="text-lg leading-5 lg:text-xl lg:leading-6 line-clamp-3">
+            <p className="text-lg leading-5 lg:text-xl lg:leading-6 line-clamp-3 mt-2">
               {post.metadata.description}
             </p>
           </div>

@@ -10,6 +10,8 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
+import Image from "next/image";
+import { ArrowLeftIcon } from "@radix-ui/react-icons";
 
 type Props = {
   params: { slug: string };
@@ -70,23 +72,34 @@ export default async function Page({ params }: { params: { slug: string } }) {
     <div>
       <ModeToggle />
       <div className="max-w-5xl block mx-auto mt-10 lg:mt-20">
-        <Link href="/blog">
-          <Button className="text-lg mb-4">Tất cả bài viết</Button>
-        </Link>
-        <div className="p-4 lg:py-12 lg:px-24 shadow-md bg-[#fbfbfb] dark:bg-[#212121] rounded-2xl dark:shadow-[0_0_10px_rgba(0,0,0,0.6)]">
+        <Image
+          src="/saki.webp"
+          alt="blog post saki"
+          width={400}
+          height={400}
+          className="w-[300px] lg:w-[400px] h-auto relative z-10 translate-y-[5.2rem] lg:translate-y-[7rem] block mx-auto mt-[-5rem] lg:mt-[-10rem]"
+        />
+        <div className="p-4 lg:py-12 lg:px-24 bg-[#fbfbfb] dark:bg-[#212121] rounded-2xl shadow-[0_3px_8px_rgba(0,0,0,0.24)] dark:shadow-[0_0_10px_rgba(0,0,0,0.6)]">
+          <Link href="/blog">
+            <Button className="text-lg mb-8 flex flex-row items-center gap-1">
+              <ArrowLeftIcon className="mt-1" />
+              <p>Tất cả bài viết</p>
+            </Button>
+          </Link>
+          <Separator className="mb-4" />
           <article className="mx-auto min-w-full">
-            <div className="pb-8">
+            <div className="pb-5">
+              <h1 className="text-5xl sm:text-6xl font-black capitalize leading-12">
+                {post.metadata.title}
+              </h1>
+            </div>
+            <div className="pb-8 italic">
               <p className="font-semibold text-lg">
                 Đăng tải{" "}
                 <span className="text-red-500 pr-1">{formattedDate}</span>
                 {" | "}
                 {post.metadata.category}
               </p>
-            </div>
-            <div className="pb-10">
-              <h1 className="text-5xl sm:text-6xl font-black capitalize leading-12">
-                {post.metadata.title}
-              </h1>
             </div>
             <Separator className="mb-8" />
             <div className="flex flex-row gap-2 justify-start items-center mb-8">
