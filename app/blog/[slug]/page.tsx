@@ -4,9 +4,12 @@ import React from "react";
 import dynamic from "next/dynamic";
 import type { Metadata, ResolvingMetadata } from "next";
 import { format } from "date-fns";
+import { vi } from "date-fns/locale";
 import { ModeToggle } from "@/components/common/toggle";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Separator } from "@/components/ui/separator";
 
 type Props = {
   params: { slug: string };
@@ -59,7 +62,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   const formattedDate = format(
     new Date(post.metadata.publishDate),
-    "MMMM dd, yyyy"
+    "dd MMMM, yyyy",
+    { locale: vi }
   );
 
   return (
@@ -73,9 +77,9 @@ export default async function Page({ params }: { params: { slug: string } }) {
           <article className="mx-auto min-w-full">
             <div className="pb-8">
               <p className="font-semibold text-lg">
-                <span className="text-red-600 pr-1">
-                  {post.metadata.publishDate}
-                </span>{" "}
+                Đăng tải{" "}
+                <span className="text-red-500 pr-1">{formattedDate}</span>
+                {" | "}
                 {post.metadata.category}
               </p>
             </div>
@@ -84,6 +88,34 @@ export default async function Page({ params }: { params: { slug: string } }) {
                 {post.metadata.title}
               </h1>
             </div>
+            <Separator className="mb-8" />
+            <div className="flex flex-row gap-2 justify-start items-center mb-8">
+              <Avatar>
+                <AvatarImage
+                  src={
+                    post.metadata.author === "NaviRanobe"
+                      ? "/naviranobe.jpg"
+                      : "/themeoki.jpg"
+                  }
+                />
+                <AvatarFallback>
+                  <span className="font-bold">CN</span>
+                </AvatarFallback>
+              </Avatar>
+              <div>
+                <p className="text-lg leading-5 lg:text-xl lg:leading-6 font-bold">
+                  {post.metadata.author === "NaviRanobe"
+                    ? "Đứa biết nhiều nhất về Light Novel ở Việt Nam"
+                    : "Đứa biết nhiều thứ 2 về Light Novel chuyên reply comment xin name"}
+                </p>
+                <p>
+                  {post.metadata.author === "NaviRanobe"
+                    ? "@NaviRanobe"
+                    : "@TheMeoki"}
+                </p>
+              </div>
+            </div>
+            <Separator className="mb-12" />
             <MDXContent />
           </article>
         </div>

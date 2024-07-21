@@ -5,7 +5,7 @@ import NewPosts from "@/components/home/new-posts";
 
 export default function Home() {
   return (
-    <main className="w-full overflow-x-hidden">
+    <main>
       <SplashScreen />
       <ModeToggle />
       <Hero />
