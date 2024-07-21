@@ -66,7 +66,7 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-grotesque;
   }
 }
 
@@ -95,3 +95,14 @@
   border-radius: 10px;
 }
 /* End scrollbar------------------------------------------ */
+
+.code-block pre {
+  max-width: 100%;
+  overflow-x: auto;
+  word-break: break-word;
+}
+
+.code-block code {
+  white-space: pre-wrap;
+  word-break: break-word;
+}

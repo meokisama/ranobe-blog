@@ -33,7 +33,14 @@ export const metadata: Metadata = {
   description: description,
   creator: "Meoki",
   publisher: "Meoki",
-  keywords: ["light novel", "ln", "ranobe", "blog", "tiểu thuyết"],
+  keywords: [
+    "light novel",
+    "ln",
+    "ranobe",
+    "blog",
+    "tiểu thuyết",
+    "light novel blog",
+  ],
   metadataBase: new URL("https://ranobe.vn"),
   openGraph: {
     title: title,
@@ -62,7 +69,7 @@ export default function RootLayout({
         <Providers>{children}</Providers>
         <Footer />
       </body>
-      <GoogleAnalytics gaId={process.env.GA4 as string} />
+      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA4 as string} />
     </html>
   );
 }

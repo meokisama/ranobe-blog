@@ -1,7 +1,14 @@
 import fs from "node:fs";
 import path from "node:path";
 import Link from "next/link";
-import { Button } from "@/components/ui/button";
+import type { Metadata } from "next";
+import { ModeToggle } from "@/components/common/toggle";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Tất cả bài viết - Ranobe",
+  };
+}
 
 type Post = {
   slug: string;
@@ -51,12 +58,13 @@ async function getAllPosts(): Promise<Post[]> {
   return posts;
 }
 
-export default async function NewPost() {
+export default async function Home() {
   const posts = await getAllPosts();
 
   return (
-    <div className="flex flex-col w-full items-center justify-between py-10">
-      <h2 className="text-5xl sm:text-6xl font-black">Bài viết mới nhất</h2>
+    <div className="flex flex-col w-full items-center justify-between">
+      <ModeToggle />
+      <h2 className="text-5xl sm:text-6xl font-black">Tất cả bài viết</h2>
       <p className="text-lg">
         Welcome to the blog! Here you will find a collection of articles and
         posts.
@@ -82,9 +90,6 @@ export default async function NewPost() {
           ))}
         </div>
       </div>
-      <Link href="/blog" target="_blank">
-        <Button className="text-lg mt-10">Tất cả bài viết</Button>
-      </Link>
     </div>
   );
 }
