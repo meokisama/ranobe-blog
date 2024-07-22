@@ -46,7 +46,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         alt={props.alt as string}
         width={900}
         height={900}
-        className="rounded-lg lg:rounded-2xl shadow-postimg h-auto w-[400px] sm:w-[900px]"
+        className="rounded-lg lg:rounded-2xl shadow-postimg h-auto w-[400px] sm:w-[900px] block mx-auto"
       />
     ),
   };

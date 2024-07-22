@@ -73,14 +73,17 @@ export default async function Page({ params }: { params: { slug: string } }) {
       <ModeToggle />
       <div className="max-w-5xl block mx-auto mt-10 lg:mt-20">
         <Image
-          src="/saki.webp"
-          alt="blog post saki"
-          width={400}
-          height={400}
-          className="w-[300px] lg:w-[400px] h-auto relative z-10 translate-y-[5.2rem] lg:translate-y-[7rem] block mx-auto mt-[-5rem] lg:mt-[-10rem]"
+          src="/mamasuki.png"
+          alt="blog post mamasuki"
+          width={500}
+          height={500}
+          className="w-[300px] md:w-[400px] lg:w-[500px] h-auto relative z-10 translate-y-[2.6rem] md:translate-y-[3.5rem] lg:translate-y-[4.4rem] block mx-auto md:mr-0 mt-[-5rem] lg:mt-[-10rem]"
         />
         <div className="p-4 lg:py-12 lg:px-24 bg-[#fbfbfb] dark:bg-[#212121] rounded-2xl shadow-[0_3px_8px_rgba(0,0,0,0.24)] dark:shadow-[0_0_10px_rgba(0,0,0,0.6)]">
-          <Link href="/blog">
+          <Link
+            href="/blog"
+            className="flex flex-row justify-end md:justify-start"
+          >
             <Button className="text-lg mb-8 flex flex-row items-center gap-1">
               <ArrowLeftIcon className="mt-1" />
               <p>Tất cả bài viết</p>
