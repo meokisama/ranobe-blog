@@ -3,6 +3,7 @@ import YouTube from "@/components/mdx/youtube";
 import Code from "@/components/mdx/code";
 import InlineCode from "@/components/mdx/inline-code";
 import Pre from "@/components/mdx/pre";
+import Image from "next/image";
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -34,10 +35,19 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     hr: (props) => <hr className="my-4" {...props} />,
     blockquote: (props) => (
       <blockquote
-        className="p-4 my-4 border-s-4 border-gray-300 bg-gray-50 dark:border-gray-500 dark:bg-gray-800 text-xl italic font-semibold leading-relaxed text-gray-900 dark:text-white"
+        className="p-4 my-4 border-s-4 border-gray-300 bg-gray-100 dark:border-gray-500 dark:bg-gray-800 text-xl italic font-semibold leading-relaxed text-gray-900 dark:text-white"
         {...props}
       />
     ),
     a: (props) => <a className="hover:underline font-semibold" {...props} />,
+    img: (props) => (
+      <Image
+        src={props.src as string}
+        alt={props.alt as string}
+        width={900}
+        height={900}
+        className="rounded-lg lg:rounded-2xl shadow-postimg h-auto w-[400px] sm:w-[900px]"
+      />
+    ),
   };
 }

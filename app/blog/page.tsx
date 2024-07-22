@@ -26,7 +26,7 @@ interface PostMetadata {
 }
 
 async function getAllPosts(): Promise<Post[]> {
-  const dir = path.join(process.cwd(), "content", "blogs");
+  const dir = path.join(process.cwd(), "posts");
   const files = fs.readdirSync(dir);
 
   const posts = files
@@ -35,7 +35,7 @@ async function getAllPosts(): Promise<Post[]> {
     )
     .map((filename) => {
       try {
-        const { metadata } = require(`@/content/blogs/${filename}`);
+        const { metadata } = require(`@/posts/${filename}`);
         return {
           slug: filename.replace(".mdx", ""),
           metadata: metadata || {
