@@ -64,7 +64,7 @@ const PostList: React.FC<PostListProps> = ({ posts, title }) => (
   <div className="w-full space-y-4 max-w-7xl px-4 lg:px-12 mt-20">
     <h1>{title}</h1>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-      {posts.map((post) => (
+      {posts.slice(0, 6).map((post) => (
         <Link key={post.slug} href={`/blog/${post.slug}`}>
           <div className="p-4 flex flex-col sm:h-full justify-start rounded-xl bg-[#fbfbfb] dark:bg-[#212121] shadow-[0_3px_8px_rgba(0,0,0,0.14)] dark:shadow-[0_0_10px_rgba(0,0,0,0.6)] group hover:-translate-y-2 transition ease-linear">
             <div className="w-full h-[50%] rounded-xl shadow-lg overflow-hidden">
@@ -132,9 +132,14 @@ export default async function NewPost() {
         posts.
       </p>
       <PostList posts={meokiPosts} title="Xã Hội Trên Giấy" />
+      <Link href="/blog">
+        <Button size="lg" className="text-lg lg:text-xl py-6 mt-14">
+          Tất cả bài viết
+        </Button>
+      </Link>
       <PostList posts={htlPosts} title="12 Ngày Giáng Sinh" />
       <Link href="/blog">
-        <Button size="lg" className="text-lg py-6 mt-14">
+        <Button size="lg" className="text-lg lg:text-xl py-6 mt-14">
           Tất cả bài viết
         </Button>
       </Link>

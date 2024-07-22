@@ -83,7 +83,7 @@ const PostList: React.FC<PostListProps> = ({ posts, title }) => (
                 className="w-full h-full object-cover group-hover:scale-105 transition ease-linear"
               />
             </div>
-            <h2 className="text-xl leading-5 lg:leading-6 lg:text-2xl font-bold mt-6 mb-4 pb-2 line-clamp-2">
+            <h2 className="text-xl leading-5 lg:leading-6 lg:text-2xl font-bold mt-6 mb-4 pb-[2px] line-clamp-2">
               {post.metadata.title}
             </h2>
             <div className="flex flex-row gap-2 justify-start items-center mb-2">

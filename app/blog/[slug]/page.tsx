@@ -25,6 +25,21 @@ export async function generateMetadata(
   return {
     title: post.metadata.title,
     description: post.metadata.description,
+    authors: post.metadata.author,
+    metadataBase: new URL("https://ranobe.vn"),
+    openGraph: {
+      title: post.metadata.title,
+      description: post.metadata.description,
+      type: "article",
+      url: "https://ranobe.vn/blog",
+      images: `/posts/${post.metadata.thumbnail}`,
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: post.metadata.title,
+      description: post.metadata.description,
+      images: `/posts/${post.metadata.thumbnail}`,
+    },
   };
 }
 
