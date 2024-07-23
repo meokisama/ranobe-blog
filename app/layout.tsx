@@ -26,7 +26,7 @@ const jaro = localFont({
 
 const title = "Ranobe - Light Novel cất giấu nhiều điều hơn bạn nghĩ / Ranobe";
 const description =
-  "Tìm nơi đâu những giây phút thư giãn, đến nơi nào để đắm chìm vào những câu chuyện phiêu lưu ly kỳ, lãng mạn và hài hước? Đây là một blog sẽ đưa bạn vào những cung bậc cảm xúc như vậy.";
+  "Có bao giờ bạn tự nghĩ những cuốn light novel ngoài kia có thể ẩn chứa những bí mật kín đáo hơn những gì mắt thấy? Đã bao giờ bạn tự hỏi liệu mình đã thật sự thấu hiểu hết những thông điệp tinh tế mà tác giả khéo léo ẩn giấu giữa những dòng chữ? Có lẽ, light novel không chỉ là những câu chuyện bình dị, mà còn là những bí mật chờ đợi bạn khám phá.";
 
 export const metadata: Metadata = {
   title: title,
