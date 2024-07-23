@@ -68,12 +68,14 @@ type PostListProps = {
 };
 
 const PostList: React.FC<PostListProps> = ({ posts, title }) => (
-  <div className="w-full space-y-4 max-w-7xl px-4 lg:px-12 mt-20">
-    <h1>{title}</h1>
+  <div className="w-full space-y-4 max-w-7xl px-4 lg:px-12 mt-10 lg:mt-20">
+    <h1 className="p-4 my-10 border-s-4 border-red-400 bg-gradient-to-r from-gray-100 to-transparent dark:from-gray-800 text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-gray-700 dark:text-white">
+      {title}
+    </h1>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {posts.map((post) => (
         <Link key={post.slug} href={`/blog/${post.slug}`}>
-          <div className="p-4 flex flex-col sm:h-full justify-start rounded-xl bg-[#fbfbfb] dark:bg-[#212121] shadow-[0_3px_8px_rgba(0,0,0,0.14)] dark:shadow-[0_0_10px_rgba(0,0,0,0.6)] group hover:-translate-y-2 transition ease-linear">
+          <div className="p-4 flex flex-col sm:h-full justify-start rounded-xl bg-[#fbfbfb] dark:bg-[#212121] shadow-[0_3px_8px_rgba(0,0,0,0.16)] dark:shadow-[0_0_10px_rgba(0,0,0,0.6)] group hover:-translate-y-2 transition ease-linear">
             <div className="w-full h-[50%] rounded-xl shadow-lg overflow-hidden">
               <Image
                 src={`/posts/${post.metadata.thumbnail}`}
@@ -135,12 +137,14 @@ export default async function Home() {
     <div className="flex flex-col w-full items-center justify-between my-4">
       <ModeToggle />
       <h2 className="text-4xl md:text-6xl font-black">Tất cả bài viết</h2>
-      <p className="text-lg text-center px-4 leading-5">
-        Welcome to the blog! Here you will find a collection of articles and
-        posts.
+      <p className="text-lg lg:text-xl text-center px-4 leading-5 mt-2">
+        Tìm đọc tất cả bài viết của chúng tôi ngay bên dưới.
       </p>
-      <PostList posts={meokiPosts} title="Xã Hội Trên Giấy" />
-      <PostList posts={htlPosts} title="12 Ngày Giáng Sinh" />
+      <PostList
+        posts={meokiPosts}
+        title="Xã Hội Vận Hành Trên Giấy Như Thế Nào?"
+      />
+      <PostList posts={htlPosts} title="12 Ngày Light Novel Giáng Sinh" />
     </div>
   );
 }

@@ -106,3 +106,8 @@
   white-space: pre-wrap;
   word-break: break-word;
 }
+
+.custom-stroke {
+  -webkit-text-stroke: 1px hsl(var(--foreground));
+  opacity: 0.2;
+}

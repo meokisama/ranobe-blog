@@ -86,6 +86,14 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <div>
       <ModeToggle />
+      <div className="absolute mt-10 lg:mt-20 -z-10 font-jaro w-full text-center overflow-hidden">
+        <h1 className="text-[50vw] leading-[40vw] sm:text-[21vw] sm:leading-[17vw] text-[hsl(var(--background))] custom-stroke">
+          NAVIRANOBE
+        </h1>
+        <h1 className="text-[50vw] leading-[40vw] sm:text-[26.3vw] sm:leading-[20vw] sm:mt-[-2vw] text-[hsl(var(--background))] custom-stroke">
+          THEMEOKI
+        </h1>
+      </div>
       <div className="max-w-5xl block mx-auto mt-10 lg:mt-20">
         <Image
           src="/mamasuki.png"
@@ -97,7 +105,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
         <div className="p-4 lg:py-12 lg:px-24 bg-[#fbfbfb] dark:bg-[#212121] rounded-2xl shadow-[0_3px_8px_rgba(0,0,0,0.24)] dark:shadow-[0_0_10px_rgba(0,0,0,0.6)]">
           <Link
             href="/blog"
-            className="flex flex-row justify-end md:justify-start"
+            className="flex flex-row justify-end md:justify-start relative z-50"
           >
             <Button className="text-lg mb-8 flex flex-row items-center gap-1">
               <ArrowLeftIcon className="mt-1" />
