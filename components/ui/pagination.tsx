@@ -34,7 +34,7 @@ const PaginationItem = React.forwardRef<
   HTMLLIElement,
   React.ComponentProps<"li">
 >(({ className, ...props }, ref) => (
-  <li ref={ref} className={cn("", className)} {...props} />
+  <li ref={ref} className={cn("cursor-pointer", className)} {...props} />
 ));
 PaginationItem.displayName = "PaginationItem";
 
@@ -56,6 +56,7 @@ const PaginationLink = ({
         variant: isActive ? "outline" : "ghost",
         size,
       }),
+      "font-semibold",
       className
     )}
     {...props}
@@ -70,11 +71,11 @@ const PaginationPrevious = ({
   <PaginationLink
     aria-label="Go to previous page"
     size="default"
-    className={cn("gap-1 pl-2.5", className)}
+    className={cn("gap-1 pl-2.5 text-lg", className)}
     {...props}
   >
-    <ChevronLeftIcon className="h-4 w-4" />
-    <span>Previous</span>
+    <ChevronLeftIcon className="h-4 w-4 mt-1" />
+    <span>Trước</span>
   </PaginationLink>
 );
 PaginationPrevious.displayName = "PaginationPrevious";
@@ -86,11 +87,11 @@ const PaginationNext = ({
   <PaginationLink
     aria-label="Go to next page"
     size="default"
-    className={cn("gap-1 pr-2.5", className)}
+    className={cn("gap-1 pr-2.5 text-lg", className)}
     {...props}
   >
-    <span>Next</span>
-    <ChevronRightIcon className="h-4 w-4" />
+    <span>Sau</span>
+    <ChevronRightIcon className="h-4 w-4 mt-1" />
   </PaginationLink>
 );
 PaginationNext.displayName = "PaginationNext";
@@ -104,7 +105,7 @@ const PaginationEllipsis = ({
     className={cn("flex h-9 w-9 items-center justify-center", className)}
     {...props}
   >
-    <DotsHorizontalIcon className="h-4 w-4" />
+    <DotsHorizontalIcon className="h-4 w-4 mt-1" />
     <span className="sr-only">More pages</span>
   </span>
 );

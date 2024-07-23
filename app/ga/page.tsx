@@ -1,15 +1,38 @@
-import SplashScreen from "@/components/common/splash-screen";
-import { ModeToggle } from "@/components/common/toggle";
-import Hero from "@/components/home/hero";
-import NewPosts from "@/components/home/new-posts";
+import {
+  Pagination,
+  PaginationContent,
+  PaginationEllipsis,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious,
+} from "@/components/ui/pagination";
 
-export default function Home() {
+export default function GiveAway() {
   return (
-    <main className="w-full overflow-x-hidden">
-      <SplashScreen />
-      <ModeToggle />
-      <Hero />
-      <NewPosts />
-    </main>
+    <Pagination>
+      <PaginationContent>
+        <PaginationItem>
+          <PaginationPrevious href="#" />
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#">1</PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#" isActive>
+            2
+          </PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationLink href="#">3</PaginationLink>
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationEllipsis />
+        </PaginationItem>
+        <PaginationItem>
+          <PaginationNext href="#" />
+        </PaginationItem>
+      </PaginationContent>
+    </Pagination>
   );
 }
