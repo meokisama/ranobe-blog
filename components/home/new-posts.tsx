@@ -127,7 +127,7 @@ export default async function NewPost() {
 
   return (
     <div className="flex flex-col w-full items-center justify-between my-4 mt-16">
-      <div className="bg-[hsl(var(--background))] w-full text-center flex flex-col items-center justify-center">
+      <div className="bg-[hsl(var(--background))] w-full text-center flex flex-col items-center justify-center mt-32">
         <Separator className="mb-8 max-w-[80%] lg:max-w-4xl" />
         <h2 className="text-4xl md:text-6xl font-black">Bài viết mới nhất</h2>
         <p className="text-lg lg:text-xl text-center px-4 leading-5 mt-2">
