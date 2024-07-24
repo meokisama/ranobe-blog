@@ -111,6 +111,7 @@ export default function Hero() {
             alt="imouza banner"
             width={1500}
             height={1500}
+            priority
             className="w-[70vw] sm:w-[500px] lg:w-[40vw] h-auto block my-0 mx-auto"
           />
         </motion.div>

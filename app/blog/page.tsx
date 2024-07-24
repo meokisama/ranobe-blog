@@ -33,7 +33,8 @@ export default async function Home() {
         alt="imouza image"
         width={500}
         height={500}
-        className="h-auto w-[50vw] translate-y-[7.8vw] sm:w-[30vw] sm:translate-y-[4.6vw]"
+        priority
+        className="h-auto w-[50vw] translate-y-[7.8vw] sm:w-[30vw] sm:translate-y-[4.6vw] select-none pointer-events-none"
       />
       <div className="bg-[hsl(var(--background))] w-full text-center flex flex-col items-center justify-center">
         <Separator className="mb-8 max-w-[80%] lg:max-w-4xl" />

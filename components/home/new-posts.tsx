@@ -120,11 +120,9 @@ const PostList: React.FC<PostListProps> = ({ posts, title }) => (
 
 export default async function NewPost() {
   const posts = await getAllPosts();
-  const meokiPosts = posts.filter(
-    (post) => post.metadata.category === "Xã Hội Trên Giấy"
-  );
+  const meokiPosts = posts.filter((post) => post.metadata.author === "Meoki");
   const htlPosts = posts.filter(
-    (post) => post.metadata.category !== "Xã Hội Trên Giấy"
+    (post) => post.metadata.author === "NaviRanobe"
   );
 
   return (
