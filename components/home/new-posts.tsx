@@ -5,7 +5,8 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
 import Image from "next/image";
-import { Button } from "../ui/button";
+import { Button } from "@/components/ui/button";
+import { Separator } from "@/components/ui/separator";
 
 type Post = {
   slug: string;
@@ -128,11 +129,15 @@ export default async function NewPost() {
 
   return (
     <div className="flex flex-col w-full items-center justify-between my-4 mt-16">
-      <h2 className="text-4xl md:text-6xl font-black">Bài viết mới nhất</h2>
-      <p className="text-lg lg:text-xl text-center px-4 leading-5 mt-2">
-        Những nội dung được đăng tải gần đây nhất, ấn vào nút Xem tất cả bên
-        dưới để đọc nhiều hơn.
-      </p>
+      <div className="bg-[hsl(var(--background))] w-full text-center flex flex-col items-center justify-center">
+        <Separator className="mb-8 max-w-[80%] lg:max-w-4xl" />
+        <h2 className="text-4xl md:text-6xl font-black">Bài viết mới nhất</h2>
+        <p className="text-lg lg:text-xl text-center px-4 leading-5 mt-2">
+          Những nội dung được đăng tải gần đây nhất, ấn vào nút Xem tất cả bên
+          dưới để đọc nhiều hơn.
+        </p>
+        <Separator className="mt-8 max-w-[80%] lg:max-w-4xl" />
+      </div>
       <PostList
         posts={meokiPosts}
         title="Xã Hội Vận Hành Trên Giấy Như Thế Nào?"
