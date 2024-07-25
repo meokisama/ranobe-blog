@@ -5,6 +5,7 @@ import "./globals.scss";
 import { Providers } from "@/components/common/provider";
 import Footer from "@/components/common/footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
+import ScrollToTop from "@/components/common/scroll-to-top";
 
 const playfair_display = Playfair_Display({
   subsets: ["vietnamese"],
@@ -66,6 +67,7 @@ export default function RootLayout({
       <body
         className={`${playfair_display.variable} ${darker_grotesque.variable} ${jaro.variable}`}
       >
+        <ScrollToTop />
         <Providers>{children}</Providers>
         <Footer />
       </body>
