@@ -12,7 +12,7 @@ interface PostMetadata {
   [key: string]: any;
 }
 
-export default async function getAllPosts(): Promise<Post[]> {
+export default function getAllPosts(): Post[] {
   const dir = path.join(process.cwd(), "posts");
   const files = fs.readdirSync(dir);
 
