@@ -86,7 +86,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <div>
       <ModeToggle />
-      <div className="absolute mt-10 lg:mt-20 -z-10 font-jaro w-full text-center overflow-hidden">
+      <div className="absolute mt-10 lg:mt-20 -z-10 font-jaro font-normal w-full text-center overflow-hidden">
         <h1 className="text-[50vw] leading-[40vw] sm:text-[21vw] sm:leading-[17vw] text-[hsl(var(--background))] custom-stroke">
           NAVIRANOBE
         </h1>
