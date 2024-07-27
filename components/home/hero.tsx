@@ -14,7 +14,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: "-100px" }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 7 }}
-            className="font-jaro font-normal tracking-tight text-center my-0 text-[20vw] leading-none -mb-4 md:-mb-12 lg:-mb-12 xl:-mb-20 animate-text bg-gradient-to-r from-[#e7b088b8] to-[#fea6a8b8] dark:from-[#7085B6b8] dark:via-[#87A7D9b8] dark:to-[#DEF3F8b8] bg-clip-text text-transparent"
+            className="font-jaro font-normal tracking-tight text-center my-0 text-[19vw] lg:text-[20vw] leading-none -mb-4 md:-mb-12 lg:-mb-12 xl:-mb-20 animate-text bg-gradient-to-r from-[#e7b088b8] to-[#fea6a8b8] dark:from-[#7085B6b8] dark:via-[#87A7D9b8] dark:to-[#DEF3F8b8] bg-clip-text text-transparent"
           >
             THEMEOKI
           </motion.h1>
@@ -22,7 +22,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: "100px" }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 7 }}
-            className="font-jaro font-normal tracking-tight text-center my-0 text-[19.5vw] leading-none animate-text bg-gradient-to-r from-[#e7b088b8] to-[#fea6a7b8] dark:from-[#7085B6b8] dark:via-[#87A7D9b8] dark:to-[#DEF3F8b8] bg-clip-text text-transparent"
+            className="font-jaro font-normal tracking-tight text-center my-0 text-[19vw] lg:text-[19.5vw] leading-none animate-text bg-gradient-to-r from-[#e7b088b8] to-[#fea6a7b8] dark:from-[#7085B6b8] dark:via-[#87A7D9b8] dark:to-[#DEF3F8b8] bg-clip-text text-transparent"
           >
             NAVIRANOBE
           </motion.h1>

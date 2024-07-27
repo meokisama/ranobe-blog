@@ -6,6 +6,8 @@ import { Providers } from "@/components/common/provider";
 import Footer from "@/components/common/footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import ScrollToTop from "@/components/common/scroll-to-top";
+import { FloatingNav } from "@/components/ui/floating-navbar";
+import { BookmarkIcon, HomeIcon, MixIcon } from "@radix-ui/react-icons";
 
 const playfair_display = Playfair_Display({
   subsets: ["vietnamese"],
@@ -20,6 +22,7 @@ const darker_grotesque = Darker_Grotesque({
 });
 
 const jaro = localFont({
+  weight: "400",
   src: "./Jaro.ttf",
   variable: "--font-jaro",
   display: "swap",
@@ -57,6 +60,24 @@ export const metadata: Metadata = {
   },
 };
 
+const navItems = [
+  {
+    name: "Trang chủ",
+    link: "/",
+    icon: <HomeIcon className="h-4 w-4 text-neutral-800 dark:text-white" />,
+  },
+  {
+    name: "Bài viết",
+    link: "/blog",
+    icon: <BookmarkIcon className="h-4 w-4 text-neutral-800 dark:text-white" />,
+  },
+  {
+    name: "Giveaway Booster",
+    link: "",
+    icon: <MixIcon className="h-4 w-4 text-neutral-800 dark:text-white" />,
+  },
+];
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -68,6 +89,7 @@ export default function RootLayout({
         className={`${playfair_display.variable} ${darker_grotesque.variable} ${jaro.variable}`}
       >
         <ScrollToTop />
+        <FloatingNav navItems={navItems} />
         <Providers>{children}</Providers>
         <Footer />
       </body>

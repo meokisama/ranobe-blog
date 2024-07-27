@@ -39,7 +39,7 @@ const RenderPostList: React.FC<RenderPostListProps> = ({ posts, title }) => (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {posts.map((post) => (
         <Link key={post.slug} href={`/blog/${post.slug}`}>
-          <div className="p-4 flex flex-col sm:h-full justify-start rounded-xl bg-[#fbfbfb] dark:bg-[#212121] shadow-lg dark:shadow-[0_0_10px_rgba(0,0,0,0.6)] group hover:-translate-y-2 transition ease-linear hover:shadow-xl border">
+          <div className="p-4 flex flex-col sm:h-full justify-start rounded-xl bg-[#fbfbfb] dark:bg-[#212121] shadow-lg dark:shadow-[0_0_10px_rgba(0,0,0,0.6)] group hover:-translate-y-2 transition ease-linear hover:shadow-xl border dark:border-none">
             <div className="w-full h-[50%] rounded-xl shadow-lg overflow-hidden">
               <Image
                 src={`/posts/${post.metadata.thumbnail}`}

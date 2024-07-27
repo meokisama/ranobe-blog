@@ -4,8 +4,8 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 export default function BoosterAds() {
   return (
-    <div className="mt-40 flex w-full flex-row justify-center items-center">
-      <div className="max-w-6xl flex flex-col-reverse w-full overflow-hidden border pt-8">
+    <div className="mt-40 flex w-full flex-row justify-center items-center px-4">
+      <div className="max-w-6xl flex flex-col-reverse w-full overflow-hidden border pt-8 rounded-3xl dark:border-white/[0.2]">
         <div className="w-full">
           <Image
             src="/mignon.png"
