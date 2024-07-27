@@ -5,14 +5,14 @@ import getAllPosts from "@/components/blog/get-all-posts";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 
-export function generateMetadata(): Metadata {
+export async function generateMetadata(): Promise<Metadata> {
   return {
     title: "Tất cả bài viết - Ranobe",
   };
 }
 
-export default function Home() {
-  const posts = getAllPosts();
+export default async function Home() {
+  const posts = await getAllPosts();
   const meokiPosts = posts.filter((post) => post.metadata.author === "Meoki");
   const htlPosts = posts.filter(
     (post) => post.metadata.author === "NaviRanobe"
