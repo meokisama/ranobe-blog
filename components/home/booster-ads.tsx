@@ -4,8 +4,16 @@ import { ArrowRightIcon } from "@radix-ui/react-icons";
 
 export default function BoosterAds() {
   return (
-    <div className="mt-40 flex w-full flex-row justify-center items-center px-4">
-      <div className="max-w-6xl flex flex-col-reverse w-full overflow-hidden border pt-8 rounded-3xl dark:border-white/[0.2]">
+    <div className="mt-40 flex w-full flex-row justify-center items-center px-4 relative">
+      <div className="max-w-6xl flex flex-col-reverse w-full overflow-hidden border pt-8 rounded-3xl dark:border-white/[0.2] relative">
+        <Image
+          src="/beams.jpg"
+          alt="background image"
+          width={1308}
+          height={1000}
+          className="absolute w-full h-full -z-10 opacity-70 dark:invert dark:opacity-50"
+        />
+        <div className="absolute -z-10 inset-0 bg-[url(/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] dark:invert"></div>
         <div className="w-full">
           <Image
             src="/mignon.png"
@@ -17,7 +25,6 @@ export default function BoosterAds() {
           />
         </div>
         <div className="w-full flex flex-col justify-center items-center gap-8">
-          {/* <div className="w-full h-full custom-caro absolute z-[-1] bg-[length:3vw_3vw] lg:bg-[length:1.2vw_1.2vw]"></div> */}
           <Image
             src="/booster-logo.webp"
             alt="giveaway booster logo"
@@ -26,7 +33,7 @@ export default function BoosterAds() {
             className="h-auto w-[55vw] lg:w-[20vw]"
           />
           <div className="w-[90%] xl:w-3/5 text-center">
-            <h1 className="font-black text-2xl lg:text-3xl leading-6 text-cyan-700">
+            <h1 className="font-black text-2xl lg:text-3xl leading-6 text-[#8150c6]">
               Light Novel Giveaway Booster
             </h1>
             <p className="font-semibold text-lg text-gray-500 mt-1 leading-6">

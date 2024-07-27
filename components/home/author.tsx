@@ -29,7 +29,7 @@ export default function AuthorSection() {
         <Separator className="mb-8 max-w-[80%] lg:max-w-4xl" />
         <h2 className="text-4xl md:text-6xl font-black">Tác giả</h2>
         <p className="text-lg lg:text-xl text-center px-4 leading-5 mt-2">
-          Những người chấp bút cho những bài viết trên trang blog này.
+          Chấp bút cho những bài viết trên trang blog này.
         </p>
         <Separator className="mt-8 max-w-[80%] lg:max-w-4xl" />
       </div>
@@ -59,7 +59,7 @@ export default function AuthorSection() {
             <div className="text-center text-lg flex flex-col justify-between items-center h-[50%] px-6">
               <div>
                 <p className="text-gray-500">@{author.username}</p>
-                <h2 className="font-extrabold text-2xl leading-5 lg:leading-6">
+                <h2 className="font-extrabold text-2xl leading-6">
                   {author.name}
                 </h2>
               </div>
