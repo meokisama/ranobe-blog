@@ -7,7 +7,7 @@ import { buttonVariants } from "@/components/ui/button";
 export default function Hero() {
   return (
     <div className="w-full min-h-screen relative overflow-hidden">
-      <div className="w-full h-full absolute bg-[length:3vw_3vw] lg:bg-[length:1.5vw_1.5vw] -z-10 custom-caro dark:opacity-50" />
+      <div className="w-full h-full absolute bg-[length:4vw_4vw] lg:bg-[length:1.5vw_1.5vw] -z-10 custom-caro opacity-40 lg:opacity-80 dark:opacity-50" />
       <div>
         <div className="mr-10 -rotate-12 text-[#e7b088b8] dark:text-[#3b71ab] select-none pointer-events-none">
           <motion.h1
@@ -30,15 +30,25 @@ export default function Hero() {
         <div className="w-full flex flex-col-reverse lg:flex-row lg:gap-[35vw] -mt-16 lg:mt-0">
           <div className="w-1/2"></div>
           <div className="w-full px-10 lg:w-1/2 lg:pr-[4vw] font-grotesque lg:rotate-6 lg:-translate-y-[20px]">
-            <div className="scale-x-[-1] lg:hidden">
+            <motion.div
+              initial={{ opacity: 0, y: "-100px" }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                damping: 10,
+                mass: 0.75,
+                stiffness: 300,
+                delay: 8,
+              }}
+            >
               <Image
                 src="/makeine.png"
                 alt="makeine chibi"
                 width={150}
                 height={150}
-                className="h-auto w-[100px] sm:w-[150px]"
+                className="h-auto w-[100px] sm:w-[150px] scale-x-[-1] lg:hidden block ml-auto"
               />
-            </div>
+            </motion.div>
             <motion.div
               initial={{ opacity: 0, y: "-50px" }}
               animate={{ opacity: 1, y: 0 }}
