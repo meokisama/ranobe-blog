@@ -10,10 +10,19 @@ export default function Bento() {
             alt="sora ginko"
             width={800}
             height={800}
-            className="w-full h-full object-cover object-top"
+            quality={100}
+            className="w-full h-full object-cover object-top select-none pointer-events-none"
           />
         </div>
-        <div className="col-span-5 sm:col-span-3 bento-item p-4">
+        <div className="col-span-5 sm:col-span-3 bento-item p-4 relative">
+          <Image
+            src="/beams.jpg"
+            alt="background image"
+            width={1308}
+            height={1000}
+            className="absolute w-full h-full -z-10 opacity-50 dark:hidden dark:opacity-50"
+          />
+          <div className="absolute -z-[9] inset-0 bg-[url(/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] translate-y-[-2px] dark:hidden"></div>
           <p>
             Thành thật mà nói thì bạn cần phải có IQ rất cao để hiểu được công
             dụng thật sự của tiểu thuyết ánh sáng. Tuy bề ngoài chỉ là một cuốn
@@ -46,7 +55,7 @@ export default function Bento() {
             alt="yue"
             width={400}
             height={400}
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center select-none pointer-events-none"
           />
         </div>
         <div className="row-span-2 col-span-3 sm:row-span-1 sm:col-span-1 bento-item border-none">
@@ -55,7 +64,7 @@ export default function Bento() {
             alt="aobuta"
             width={800}
             height={800}
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center select-none pointer-events-none"
           />
         </div>
         <div className="col-span-2 row-span-1 sm:col-span-1 sm:row-span-2 bento-item border-none">
@@ -64,11 +73,19 @@ export default function Bento() {
             alt="tanmoshi"
             width={800}
             height={800}
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center select-none pointer-events-none"
           />
         </div>
-        <div className="col-span-5 sm:col-span-3 row-span-2 bento-item p-6 xl:p-12">
-          <h1 className="text-2xl xl:text-5xl font-black mb-1 sm:mb-4 text-left">
+        <div className="col-span-5 sm:col-span-3 row-span-2 bento-item p-6 xl:p-12 relative">
+          <Image
+            src="/beams.jpg"
+            alt="background image"
+            width={1308}
+            height={1000}
+            className="absolute w-full h-full -z-10 opacity-50 dark:hidden dark:opacity-50"
+          />
+          <div className="absolute -z-[9] inset-0 bg-[url(/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] translate-y-[-2px] dark:hidden"></div>
+          <h1 className="text-2xl xl:text-5xl font-black mb-2 lg:mb-6 text-left text-gray-600 dark:text-white">
             LIGHT NOVEL LÀ CÁI CHẾT TỪ TỪ CỦA HÀNH TINH!
           </h1>
           <p>
@@ -98,7 +115,7 @@ export default function Bento() {
           </p>
           <p>Đáng để suy ngẫm.</p>
           <p>
-            Web novel còn kinh khủng hơn, độc giả web novel thậm chí còn không
+            Web novel còn kinh khủng hơn, độc giả web novel thậm chí còn chẳng
             mua Light Novel.
           </p>
         </div>
@@ -108,7 +125,7 @@ export default function Bento() {
             alt="spyroom"
             width={400}
             height={400}
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center select-none pointer-events-none"
           />
         </div>
         <div className="col-span-2 bento-item border-none">
@@ -117,7 +134,7 @@ export default function Bento() {
             alt="tanmoshi"
             width={800}
             height={800}
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center select-none pointer-events-none"
           />
         </div>
         <div className="col-span-2 sm:col-span-1 bento-item border-none">
@@ -126,7 +143,7 @@ export default function Bento() {
             alt="mobuseka"
             width={300}
             height={400}
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center select-none pointer-events-none"
           />
         </div>
         <div className="hidden sm:block shadow-sm hover:shadow-lg rounded-xl lg:rounded-2xl overflow-hidden border dark:border-white/[0.2] dark:bg-[#212121]">
@@ -135,10 +152,18 @@ export default function Bento() {
             alt="konosuba"
             width={400}
             height={400}
-            className="w-full h-full object-cover object-center"
+            className="w-full h-full object-cover object-center select-none pointer-events-none"
           />
         </div>
-        <div className="col-span-5 sm:col-span-3 bento-item p-6">
+        <div className="col-span-5 sm:col-span-3 bento-item p-6 relative">
+          <Image
+            src="/beams.jpg"
+            alt="background image"
+            width={1308}
+            height={1000}
+            className="absolute w-full h-full -z-10 opacity-50 dark:hidden dark:opacity-50"
+          />
+          <div className="absolute -z-[9] inset-0 bg-[url(/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] translate-y-[-2px] dark:hidden"></div>
           <p>
             Nói nhỏ cho nghe nhé. Thống kê khoa học đã cho thấy 100% những người
             đọc Light Novel không phải là tỷ phú được chịch dạo với những cô
