@@ -31,7 +31,6 @@ export async function generateMetadata(
       title: post.metadata.title,
       description: post.metadata.description,
       type: "article",
-      url: "https://ranobe.vn/blog",
       images: `/posts/${post.metadata.thumbnail}`,
     },
     twitter: {
