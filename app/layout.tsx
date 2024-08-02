@@ -49,7 +49,6 @@ export const metadata: Metadata = {
   openGraph: {
     title: title,
     description: description,
-    url: "https://ranobe.vn",
     siteName: title,
     type: "website",
   },
