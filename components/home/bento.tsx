@@ -4,7 +4,7 @@ export default function Bento() {
   return (
     <div className="flex justify-center items-center mt-20">
       <div className="grid min-h-screen w-[95%] xl:w-[80%] grid-cols-5 gap-2 xl:gap-4">
-        <div className="hidden sm:block col-span-2 row-span-2 shadow-sm hover:shadow-lg rounded-xl lg:rounded-2xl overflow-hidden border dark:border-white/[0.2] dark:bg-[#212121]">
+        <div className="hidden relative sm:block col-span-2 row-span-2 shadow-sm hover:shadow-lg rounded-xl lg:rounded-2xl overflow-hidden border dark:border-white/[0.2] dark:bg-[#212121]">
           <Image
             src="/bento/ginko.png"
             alt="sora ginko"
@@ -13,6 +13,7 @@ export default function Bento() {
             quality={100}
             className="w-full h-full object-cover object-top select-none pointer-events-none"
           />
+          <div className="absolute -z-[9] inset-0 bg-[url(/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] translate-y-[-2px] dark:invert"></div>
         </div>
         <div className="col-span-5 sm:col-span-3 bento-item p-4 relative">
           <Image
@@ -146,7 +147,7 @@ export default function Bento() {
             className="w-full h-full object-cover object-center select-none pointer-events-none"
           />
         </div>
-        <div className="hidden sm:block shadow-sm hover:shadow-lg rounded-xl lg:rounded-2xl overflow-hidden border dark:border-white/[0.2] dark:bg-[#212121]">
+        <div className="hidden relative sm:block shadow-sm hover:shadow-lg rounded-xl lg:rounded-2xl overflow-hidden border dark:border-white/[0.2] dark:bg-[#212121]">
           <Image
             src="/bento/konosuba.png"
             alt="konosuba"
@@ -154,6 +155,7 @@ export default function Bento() {
             height={400}
             className="w-full h-full object-cover object-center select-none pointer-events-none"
           />
+          <div className="absolute -z-[9] inset-0 bg-[url(/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] translate-y-[-2px] dark:invert"></div>
         </div>
         <div className="col-span-5 sm:col-span-3 bento-item p-6 relative">
           <Image

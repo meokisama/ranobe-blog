@@ -13,10 +13,16 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function Home() {
   const posts = await getAllPosts();
-  const meokiPosts = posts.filter((post) => post.metadata.author === "Meoki");
-  const htlPosts = posts.filter(
-    (post) => post.metadata.author === "NaviRanobe"
-  );
+  const renderList = [
+    {
+      title: "Xã Hội Vận Hành Trên Giấy Như Thế Nào?",
+      data: posts.filter((post) => post.metadata.author === "Meoki"),
+    },
+    {
+      title: "12 Ngày Light Novel Giáng Sinh",
+      data: posts.filter((post) => post.metadata.author === "NaviRanobe"),
+    },
+  ];
   return (
     <div className="flex flex-col w-full items-center justify-between my-4">
       <ModeToggle />
@@ -44,11 +50,9 @@ export default async function Home() {
         </p>
         <Separator className="mt-8 max-w-[80%] lg:max-w-4xl" />
       </div>
-      <PostList
-        data={meokiPosts}
-        title="Xã Hội Vận Hành Trên Giấy Như Thế Nào?"
-      />
-      <PostList data={htlPosts} title="12 Ngày Light Novel Giáng Sinh" />
+      {renderList.map((category, index) => (
+        <PostList key={index} data={category.data} title={category.title} />
+      ))}
     </div>
   );
 }

@@ -37,7 +37,7 @@ export default function SeriesDetail({
       label: "Tựa tiếng Nhật",
       value: (
         <p>
-          <span className="font-mincho text-lg leading-6">{jp}</span> ({vn})
+          <span className="font-mincho text-base leading-6">{jp}</span> ({vn})
         </p>
       ),
     },
@@ -96,7 +96,7 @@ export default function SeriesDetail({
         <TableBody>
           {details.map((detail) => (
             <TableRow key={detail.label}>
-              <TableCell className="font-bold w-[28%] lg:w-[200px] text-gray-600 dark:text-white">
+              <TableCell className="font-bold w-[28%] lg:w-[200px] text-gray-700 dark:text-white">
                 {detail.label}
               </TableCell>
               <TableCell className="leading-5 lg:leading-6">
@@ -106,9 +106,9 @@ export default function SeriesDetail({
           ))}
         </TableBody>
       </Table>
-      <p className="text-center text-lg lg:text-xl italic font-semibold text-gray-600 dark:text-white">
+      {/* <p className="text-center text-lg lg:text-xl italic font-semibold text-gray-600 dark:text-white">
         Bảng thông tin chi tiết
-      </p>
+      </p> */}
     </div>
   );
 }

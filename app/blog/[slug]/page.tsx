@@ -84,7 +84,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   );
 
   return (
-    <div>
+    <div className="relative">
       <ModeToggle />
       <div className="absolute mt-10 lg:mt-20 -z-10 font-jaro font-normal w-full text-center overflow-hidden">
         <h1 className="text-[50vw] leading-[40vw] sm:text-[21vw] sm:leading-[17vw] text-[hsl(var(--background))] custom-stroke">
@@ -94,6 +94,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
           THEMEOKI
         </h1>
       </div>
+      <Image
+        src="/beams.jpg"
+        alt="background image"
+        width={1308}
+        height={1000}
+        className="fixed w-full h-full -z-[100] opacity-50 dark:invert dark:hidden"
+      />
       <div className="max-w-5xl block mx-auto mt-10 lg:mt-20">
         <Image
           src="/mamasuki.png"
