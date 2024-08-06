@@ -189,7 +189,7 @@ type PostListProps = {
 };
 
 export default function PostList({ data, title }: PostListProps) {
-  const postsPerPage = 9;
+  const postsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;

@@ -20,12 +20,25 @@ export default async function Home() {
     },
     {
       title: "12 Ngày Light Novel Giáng Sinh",
-      data: posts.filter((post) => post.metadata.author === "NaviRanobe"),
+      data: posts.filter(
+        (post) => post.metadata.category === "12 Ngày Giáng Sinh"
+      ),
+    },
+    {
+      title: "Phỏng Vấn",
+      data: posts.filter((post) => post.metadata.category === "Phỏng Vấn"),
     },
   ];
   return (
-    <div className="flex flex-col w-full items-center justify-between my-4">
+    <div className="flex flex-col w-full items-center justify-between my-4 relative">
       <ModeToggle />
+      <Image
+        src="/beams.jpg"
+        alt="background image"
+        width={1308}
+        height={1000}
+        className="fixed w-full h-full -z-[100] opacity-50 dark:invert dark:hidden"
+      />
       <div className="absolute -z-10 font-jaro font-normal w-full text-center overflow-hidden">
         <h1 className="text-[40vw] leading-[30vw] sm:text-[21vw] sm:leading-[17vw] text-[hsl(var(--background))] custom-stroke">
           NAVIRANOBE
@@ -42,7 +55,7 @@ export default async function Home() {
         priority
         className="h-auto w-[50vw] translate-y-[7.8vw] sm:w-[30vw] sm:translate-y-[4.6vw] select-none pointer-events-none"
       />
-      <div className="bg-[hsl(var(--background))] w-full text-center flex flex-col items-center justify-center">
+      <div className="w-full text-center flex flex-col items-center justify-center">
         <Separator className="mb-8 max-w-[80%] lg:max-w-4xl" />
         <h2 className="text-4xl md:text-6xl font-black">Tất cả bài viết</h2>
         <p className="text-lg lg:text-xl text-center px-4 leading-5 mt-2">

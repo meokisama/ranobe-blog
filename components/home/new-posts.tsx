@@ -13,7 +13,13 @@ export default async function NewPost() {
     },
     {
       title: "12 Ngày Light Novel Giáng Sinh",
-      data: posts.filter((post) => post.metadata.author === "NaviRanobe"),
+      data: posts.filter(
+        (post) => post.metadata.category === "12 Ngày Giáng Sinh"
+      ),
+    },
+    {
+      title: "Phỏng Vấn",
+      data: posts.filter((post) => post.metadata.category === "Phỏng Vấn"),
     },
   ];
 
@@ -30,7 +36,7 @@ export default async function NewPost() {
       </div>
       {renderList.map((category, index) => (
         <div key={index} className="flex flex-col items-center justify-between">
-          <PostList data={category.data.slice(0, 6)} title={category.title} />
+          <PostList data={category.data.slice(0, 3)} title={category.title} />
           <Link href="/blog">
             <Button size="lg" className="text-lg lg:text-xl py-6 mt-14">
               Tất cả bài viết

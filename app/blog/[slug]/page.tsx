@@ -23,7 +23,7 @@ export async function generateMetadata(
 ): Promise<Metadata> {
   const post = await getPost(params);
   return {
-    title: post.metadata.title,
+    title: post.metadata.title + " - Ranobe",
     description: post.metadata.description,
     authors: post.metadata.author,
     metadataBase: new URL("https://ranobe.vn"),
