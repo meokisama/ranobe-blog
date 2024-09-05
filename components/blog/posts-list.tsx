@@ -29,13 +29,20 @@ interface PostMetadata {
 type RenderPostListProps = {
   posts: Post[];
   title: string;
+  category: string;
 };
 
-const RenderPostList: React.FC<RenderPostListProps> = ({ posts, title }) => (
+const RenderPostList: React.FC<RenderPostListProps> = ({
+  posts,
+  title,
+  category,
+}) => (
   <div className="w-full space-y-4 max-w-7xl px-4 lg:px-12 mt-10 lg:mt-20">
-    <h1 className="p-4 my-10 border-s-4 border-red-400 bg-gradient-to-r from-gray-100 to-transparent dark:from-gray-800 text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-gray-700 dark:text-white">
-      {title}
-    </h1>
+    <Link href={`/blog/category/${category}`}>
+      <h1 className="p-4 my-10 border-s-4 border-red-400 bg-gradient-to-r from-gray-100 to-transparent dark:from-gray-800 text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-gray-700 dark:text-white">
+        {title}
+      </h1>
+    </Link>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {posts.map((post) => (
         <Link key={post.slug} href={`/blog/${post.slug}`}>
@@ -186,9 +193,10 @@ function PaginationSection({
 type PostListProps = {
   data: any;
   title: string;
+  category: string;
 };
 
-export default function PostList({ data, title }: PostListProps) {
+export default function PostList({ data, title, category }: PostListProps) {
   const postsPerPage = 6;
   const [currentPage, setCurrentPage] = useState(1);
   const lastPostIndex = currentPage * postsPerPage;
@@ -200,7 +208,7 @@ export default function PostList({ data, title }: PostListProps) {
 
   return (
     <div>
-      <RenderPostList posts={currentPosts} title={title} />
+      <RenderPostList posts={currentPosts} title={title} category={category} />
       {data.length > postsPerPage && (
         <PaginationSection
           totalPosts={data.length}

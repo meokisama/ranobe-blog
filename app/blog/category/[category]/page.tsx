@@ -5,13 +5,54 @@ import getAllPosts from "@/components/blog/get-all-posts";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 
-export async function generateMetadata(): Promise<Metadata> {
+export async function generateMetadata({
+  params,
+}: {
+  params: { category: string };
+}): Promise<Metadata> {
+  const { category } = params;
+  const renderList = [
+    {
+      title: "Xã Hội Vận Hành Trên Giấy Như Thế Nào?",
+      category: "xa-hoi-tren-giay",
+      description:
+        "Khám phá cách xã hội vận hành qua những câu chuyện, bối cảnh, chi tiết, nội dung được gửi gắm qua những trang giấy.",
+    },
+    {
+      title: "12 Ngày Light Novel Giáng Sinh",
+      category: "12-ngay-giang-sinh",
+      description:
+        "Loạt bài viết review light novel đặc biệt đếm ngược 12 ngày tới Giáng Sinh.",
+    },
+    {
+      title: "Phỏng Vấn",
+      category: "phong-van",
+      description: "Phỏng vấn các nhà xuất bản light novel Việt Nam.",
+    },
+  ];
+
+  const matchedCategory = renderList.find((item) => item.category === category);
+
+  if (matchedCategory) {
+    return {
+      title: matchedCategory.title + " - Ranobe",
+      description: matchedCategory.description,
+    };
+  }
+
   return {
-    title: "Tất cả bài viết - Ranobe",
+    title: "Chuyên mục không tồn tại - Ranobe",
+    description: "Không tìm thấy chuyên mục tương ứng.",
   };
 }
 
-export default async function Home() {
+export default async function Home({
+  params,
+}: {
+  params: { category: string };
+}) {
+  const { category } = params;
+
   const posts = await getAllPosts();
   const renderList = [
     {
@@ -32,6 +73,16 @@ export default async function Home() {
       data: posts.filter((post) => post.metadata.category === "Phỏng Vấn"),
     },
   ];
+
+  const matchedCategory = renderList.find((item) => item.category === category);
+  if (!matchedCategory) {
+    return (
+      <div className="flex flex-col justify-center items-center min-h-screen w-full px-4 text-xl lg:text-2xl font-bold bg-[#111827] text-white absolute z-30">
+        <p>Không tìm thấy bài viết cho chuyên mục: {category}</p>
+      </div>
+    );
+  }
+
   return (
     <div className="flex flex-col w-full items-center justify-between my-4 relative">
       <ModeToggle />
@@ -66,14 +117,11 @@ export default async function Home() {
         </p>
         <Separator className="mt-8 max-w-[80%] lg:max-w-4xl" />
       </div>
-      {renderList.map((category, index) => (
-        <PostList
-          key={index}
-          data={category.data}
-          title={category.title}
-          category={category.category}
-        />
-      ))}
+      <PostList
+        data={matchedCategory.data}
+        title={matchedCategory.title}
+        category={matchedCategory.category}
+      />
     </div>
   );
 }

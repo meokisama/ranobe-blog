@@ -9,16 +9,19 @@ export default async function NewPost() {
   const renderList = [
     {
       title: "Xã Hội Vận Hành Trên Giấy Như Thế Nào?",
+      category: "xa-hoi-tren-giay",
       data: posts.filter((post) => post.metadata.author === "Meoki"),
     },
     {
       title: "12 Ngày Light Novel Giáng Sinh",
+      category: "12-ngay-giang-sinh",
       data: posts.filter(
         (post) => post.metadata.category === "12 Ngày Giáng Sinh"
       ),
     },
     {
       title: "Phỏng Vấn",
+      category: "phong-van",
       data: posts.filter((post) => post.metadata.category === "Phỏng Vấn"),
     },
   ];
@@ -36,7 +39,11 @@ export default async function NewPost() {
       </div>
       {renderList.map((category, index) => (
         <div key={index} className="flex flex-col items-center justify-between">
-          <PostList data={category.data.slice(0, 3)} title={category.title} />
+          <PostList
+            data={category.data.slice(0, 3)}
+            title={category.title}
+            category={category.category}
+          />
           <Link href="/blog">
             <Button size="lg" className="text-lg lg:text-xl py-6 mt-14">
               Tất cả bài viết

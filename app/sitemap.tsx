@@ -1,6 +1,8 @@
 import getAllPosts from "@/components/blog/get-all-posts";
 import { MetadataRoute } from "next";
 
+const categoryList = ["xa-hoi-tren-giay", "12-ngay-giang-sinh", "phong-van"];
+
 const generateBlogPostsSitemapObjects = async () => {
   const posts = await getAllPosts();
 
@@ -26,6 +28,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       changeFrequency: "monthly",
       priority: 1,
     },
+    ...categoryList.map((category) => ({
+      url: `https://ranobe.vn/category/${category}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })),
     ...(await generateBlogPostsSitemapObjects()).map((o) => ({
       url: `https://ranobe.vn/blog/${o.slug}`,
       lastModified: o.updatedAt,
