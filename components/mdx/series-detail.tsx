@@ -4,6 +4,7 @@ import Link from "next/link";
 type DetailProps = {
   jp: string;
   vn: string;
+  romaji: string;
   publisher: string;
   author: string;
   illustrator: string;
@@ -20,6 +21,7 @@ type DetailProps = {
 export default function SeriesDetail({
   jp,
   vn,
+  romaji,
   publisher,
   author,
   illustrator,
@@ -40,6 +42,10 @@ export default function SeriesDetail({
           <span className="font-mincho text-base leading-6">{jp}</span> ({vn})
         </p>
       ),
+    },
+    {
+      label: "Romaji",
+      value: romaji,
     },
     {
       label: "NXB",

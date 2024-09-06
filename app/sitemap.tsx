@@ -1,7 +1,12 @@
 import getAllPosts from "@/components/blog/get-all-posts";
 import { MetadataRoute } from "next";
 
-const categoryList = ["xa-hoi-tren-giay", "12-ngay-giang-sinh", "phong-van"];
+const categoryList = [
+  "xa-hoi-tren-giay",
+  "12-ngay-giang-sinh",
+  "ki-su-gia",
+  "phong-van",
+];
 
 const generateBlogPostsSitemapObjects = async () => {
   const posts = await getAllPosts();

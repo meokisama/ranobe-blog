@@ -27,6 +27,11 @@ export default async function Home() {
       ),
     },
     {
+      title: "Kí Sự Giả",
+      category: "ki-su-gia",
+      data: posts.filter((post) => post.metadata.category === "Kí Sự Giả"),
+    },
+    {
       title: "Phỏng Vấn",
       category: "phong-van",
       data: posts.filter((post) => post.metadata.category === "Phỏng Vấn"),

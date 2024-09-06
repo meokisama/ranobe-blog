@@ -194,10 +194,15 @@ type PostListProps = {
   data: any;
   title: string;
   category: string;
+  postsPerPage?: number;
 };
 
-export default function PostList({ data, title, category }: PostListProps) {
-  const postsPerPage = 6;
+export default function PostList({
+  data,
+  title,
+  category,
+  postsPerPage = 6,
+}: PostListProps) {
   const [currentPage, setCurrentPage] = useState(1);
   const lastPostIndex = currentPage * postsPerPage;
   const firstPostIndex = lastPostIndex - postsPerPage;

@@ -25,6 +25,11 @@ export async function generateMetadata({
         "Loạt bài viết review light novel đặc biệt đếm ngược 12 ngày tới Giáng Sinh.",
     },
     {
+      title: "Kí Sự Giả",
+      category: "ki-su-gia",
+      description: "Những câu chuyện chưa kể vì chưa kịp kể.",
+    },
+    {
       title: "Phỏng Vấn",
       category: "phong-van",
       description: "Phỏng vấn các nhà xuất bản light novel Việt Nam.",
@@ -66,6 +71,11 @@ export default async function Home({
       data: posts.filter(
         (post) => post.metadata.category === "12 Ngày Giáng Sinh"
       ),
+    },
+    {
+      title: "Kí Sự Giả",
+      category: "ki-su-gia",
+      data: posts.filter((post) => post.metadata.category === "Kí Sự Giả"),
     },
     {
       title: "Phỏng Vấn",
@@ -111,9 +121,9 @@ export default async function Home({
       />
       <div className="w-full text-center flex flex-col items-center justify-center">
         <Separator className="mb-8 max-w-[80%] lg:max-w-4xl" />
-        <h2 className="text-4xl md:text-6xl font-black">Tất cả bài viết</h2>
+        <h2 className="text-4xl md:text-6xl font-black">Chuyên Mục</h2>
         <p className="text-lg lg:text-xl text-center px-4 leading-5 mt-2">
-          Tìm đọc tất cả bài viết của chúng tôi ngay bên dưới.
+          Tất cả bài viết cho <strong>{matchedCategory.title}</strong>.
         </p>
         <Separator className="mt-8 max-w-[80%] lg:max-w-4xl" />
       </div>
@@ -121,6 +131,7 @@ export default async function Home({
         data={matchedCategory.data}
         title={matchedCategory.title}
         category={matchedCategory.category}
+        postsPerPage={12}
       />
     </div>
   );
