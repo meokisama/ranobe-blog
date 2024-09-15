@@ -14,6 +14,8 @@ import Link from "next/link";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
+import { ArrowRightIcon } from "@radix-ui/react-icons";
+import { Button } from "../ui/button";
 
 type Post = {
   slug: string;
@@ -39,9 +41,18 @@ const RenderPostList: React.FC<RenderPostListProps> = ({
 }) => (
   <div className="w-full space-y-4 max-w-7xl px-4 lg:px-12 mt-10 lg:mt-20">
     <Link href={`/blog/category/${category}`}>
-      <h1 className="p-4 my-10 border-s-4 border-red-400 bg-gradient-to-r from-gray-100 to-transparent dark:from-gray-800 text-lg sm:text-xl md:text-2xl lg:text-3xl font-black text-gray-700 dark:text-white">
-        {title}
-      </h1>
+      <div className="flex flex-row w-full justify-between items-center mt-14 mb-10">
+        <h1 className="p-4 border-s-4 border-red-400 bg-gradient-to-r from-[#fcf4f9] to-transparent dark:from-gray-800 text-xl md:text-2xl lg:text-3xl font-black text-gray-700 dark:text-white">
+          {title}
+        </h1>
+        <Button
+          variant="outline"
+          className="text-base lg:text-lg flex flex-row justify-center items-center gap-1"
+        >
+          <p className="hidden lg:block mb-1">Xem hạng mục</p>
+          <ArrowRightIcon />
+        </Button>
+      </div>
     </Link>
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {posts.map((post) => (
