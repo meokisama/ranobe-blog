@@ -132,6 +132,7 @@ export default async function Home({
         title={matchedCategory.title}
         category={matchedCategory.category}
         postsPerPage={12}
+        categoryButton={false}
       />
     </div>
   );

@@ -11,7 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import { ArrowLeftIcon } from "@radix-ui/react-icons";
+import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons";
 
 type Props = {
   params: { slug: string };
@@ -70,6 +70,13 @@ export async function generateStaticParams() {
   return params;
 }
 
+const categoriesMap: { [key: string]: string } = {
+  "Xã Hội Trên Giấy": "xa-hoi-tren-giay",
+  "12 Ngày Giáng Sinh": "12-ngay-giang-sinh",
+  "Kí Sự Giả": "ki-su-gia",
+  "Phỏng Vấn": "phong-van",
+};
+
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
 
@@ -109,7 +116,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           priority
           className="w-[300px] md:w-[400px] lg:w-[500px] h-auto relative z-10 translate-y-[2.6rem] md:translate-y-[3.5rem] lg:translate-y-[4.4rem] block mx-auto md:mr-0 mt-[-5rem] lg:mt-[-10rem] select-none pointer-events-none"
         />
-        <div className="p-4 lg:py-12 lg:px-24 bg-[#fbfbfb] dark:bg-[#212121] rounded-2xl shadow-[0_3px_8px_rgba(0,0,0,0.24)] dark:shadow-[0_0_10px_rgba(0,0,0,0.6)]">
+        <div className="p-6 lg:py-12 lg:px-24 bg-[#fbfbfb] dark:bg-[#212121] rounded-2xl shadow-[0_3px_8px_rgba(0,0,0,0.24)] dark:shadow-[0_0_10px_rgba(0,0,0,0.6)]">
           <Link
             href="/blog"
             className="flex flex-row justify-end md:justify-start relative z-50"
@@ -164,6 +171,24 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <Separator className="mb-12" />
             <MDXContent />
           </article>
+        </div>
+        <div className="flex flex-row justify-between mt-8 mx-2 lg:mx-0">
+          <Link
+            href={`/blog/category/${
+              categoriesMap[post.metadata.category] || ""
+            }`}
+          >
+            <Button className="text-base md:text-lg py-5">
+              <ArrowLeftIcon className="mr-1" />
+              <p className="mb-1">Bài viết chuyên mục</p>
+            </Button>
+          </Link>
+          <Link href="/blog">
+            <Button className="text-base md:text-lg py-5">
+              <p className="mb-1">Tất cả bài viết</p>
+              <ArrowRightIcon className="ml-1" />
+            </Button>
+          </Link>
         </div>
       </div>
     </div>

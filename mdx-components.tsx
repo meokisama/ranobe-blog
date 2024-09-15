@@ -25,7 +25,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h6: (props) => <h6 className="text-base font-light pb-4" {...props} />,
     p: (props) => (
       <p
-        className="text-lg lg:text-xl 2xl:text-[22px] mb-4 leading-6"
+        className="text-lg lg:text-xl 2xl:text-[22px] mb-4 leading-6 text-justify"
         {...props}
       />
     ),
@@ -51,7 +51,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         alt={props.alt as string}
         width={900}
         height={900}
-        className="rounded-lg lg:rounded-2xl shadow-postimg h-auto w-[400px] sm:w-[900px] block mx-auto"
+        className="rounded-lg lg:rounded-2xl shadow-postimg h-auto w-[400px] sm:w-[900px] block mx-auto my-10"
       />
     ),
   };

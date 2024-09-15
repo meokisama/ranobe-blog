@@ -49,7 +49,7 @@ export default async function NewPost() {
             title={category.title}
             category={category.category}
           />
-          <Link href="/blog">
+          <Link href="/blog" target="_blank">
             <Button size="lg" className="text-lg lg:text-xl py-6 mt-14">
               Tất cả bài viết
             </Button>
