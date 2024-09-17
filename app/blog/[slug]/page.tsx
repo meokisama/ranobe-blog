@@ -12,6 +12,7 @@ import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons";
+import GiscusComments from "@/components/blog/giscus";
 
 type Props = {
   params: { slug: string };
@@ -190,6 +191,17 @@ export default async function Page({ params }: { params: { slug: string } }) {
             </Button>
           </Link>
         </div>
+        <div className="mt-8 mx-4 lg:mx-0">
+          <Separator className="mt-10 mb-5 lg:mt-20 lg:mb-10" />
+          <GiscusComments />
+        </div>
+        <Image
+          src="/post_chibi.png"
+          alt="chibi image for detail post"
+          width={400}
+          height={400}
+          className="block mx-auto mt-28 -mb-40 lg:mt-40 lg:-mb-28 select-none pointer-events-none w-[250px] sm:w-[300px] md:w-[400px]"
+        />
       </div>
     </div>
   );
