@@ -88,9 +88,13 @@ export default function RootLayout({
         className={`${playfair_display.variable} ${darker_grotesque.variable} ${jaro.variable}`}
       >
         <ScrollToTop />
-        <FloatingNav navItems={navItems} />
-        <Providers>{children}</Providers>
-        <Footer />
+        <Providers>
+          <div vaul-drawer-wrapper="" className="bg-background">
+            <FloatingNav navItems={navItems} />
+            {children}
+            <Footer />
+          </div>
+        </Providers>
       </body>
       <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA4 as string} />
     </html>

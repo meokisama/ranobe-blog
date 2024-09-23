@@ -5,7 +5,6 @@ import dynamic from "next/dynamic";
 import type { Metadata, ResolvingMetadata } from "next";
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
-import { ModeToggle } from "@/components/common/toggle";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
@@ -13,6 +12,7 @@ import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons";
 import GiscusComments from "@/components/blog/giscus";
+import IconBar from "@/components/common/icon-bar";
 
 type Props = {
   params: { slug: string };
@@ -92,8 +92,8 @@ export default async function Page({ params }: { params: { slug: string } }) {
 
   return (
     <div className="relative">
-      <ModeToggle />
-      <div className="absolute mt-10 lg:mt-20 -z-10 font-jaro font-normal w-full text-center overflow-hidden">
+      <IconBar />
+      <div className="absolute z-[2] select-none pointer-events-none font-jaro w-full text-center overflow-hidden">
         <h1 className="text-[50vw] leading-[40vw] sm:text-[21vw] sm:leading-[17vw] text-[hsl(var(--background))] custom-stroke">
           NAVIRANOBE
         </h1>
@@ -106,16 +106,16 @@ export default async function Page({ params }: { params: { slug: string } }) {
         alt="background image"
         width={1308}
         height={1000}
-        className="fixed w-full h-full -z-[100] opacity-50 dark:invert dark:hidden"
+        className="fixed w-full h-full select-none pointer-events-none z-1 opacity-50 dark:invert dark:hidden"
       />
-      <div className="max-w-5xl block mx-auto mt-10 lg:mt-20">
+      <div className="max-w-5xl block mx-auto relative z-10">
         <Image
           src="/mamasuki.png"
           alt="blog post mamasuki"
           width={500}
           height={500}
           priority
-          className="w-[300px] md:w-[400px] lg:w-[500px] h-auto relative z-10 translate-y-[2.6rem] md:translate-y-[3.5rem] lg:translate-y-[4.4rem] block mx-auto md:mr-0 mt-[-5rem] lg:mt-[-10rem] select-none pointer-events-none"
+          className="w-[300px] md:w-[400px] lg:w-[500px] h-auto relative z-10 translate-y-[2.6rem] md:translate-y-[3.5rem] lg:translate-y-[4.4rem] block mx-auto md:mr-0 select-none pointer-events-none"
         />
         <div className="p-6 lg:py-12 lg:px-24 bg-[#fbfbfb] dark:bg-[#212121] rounded-2xl shadow-[0_3px_8px_rgba(0,0,0,0.24)] dark:shadow-[0_0_10px_rgba(0,0,0,0.6)]">
           <Link

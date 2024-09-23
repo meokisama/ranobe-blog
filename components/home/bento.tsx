@@ -21,7 +21,7 @@ export default function Bento() {
             alt="background image"
             width={1308}
             height={1000}
-            className="absolute w-full h-full -z-10 opacity-50 dark:hidden dark:opacity-50"
+            className="absolute w-full h-full -z-10 opacity-50 dark:hidden dark:opacity-50 select-none pointer-events-none"
           />
           <div className="absolute -z-[9] inset-0 bg-[url(/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] translate-y-[-2px] dark:hidden"></div>
           <p>
@@ -83,7 +83,7 @@ export default function Bento() {
             alt="background image"
             width={1308}
             height={1000}
-            className="absolute w-full h-full -z-10 opacity-50 dark:hidden dark:opacity-50"
+            className="absolute w-full h-full -z-10 opacity-50 dark:hidden dark:opacity-50 select-none pointer-events-none"
           />
           <div className="absolute -z-[9] inset-0 bg-[url(/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] translate-y-[-2px] dark:hidden"></div>
           <h1 className="text-2xl xl:text-5xl font-black mb-2 lg:mb-6 text-left text-gray-600 dark:text-white">
@@ -163,7 +163,7 @@ export default function Bento() {
             alt="background image"
             width={1308}
             height={1000}
-            className="absolute w-full h-full -z-10 opacity-50 dark:hidden dark:opacity-50"
+            className="absolute w-full h-full -z-10 opacity-50 dark:hidden dark:opacity-50 select-none pointer-events-none"
           />
           <div className="absolute -z-[9] inset-0 bg-[url(/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] translate-y-[-2px] dark:hidden"></div>
           <p>

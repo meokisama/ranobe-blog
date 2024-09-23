@@ -27,7 +27,7 @@ function ScrollToTop() {
       style={{
         display: isVisible ? "block" : "none",
       }}
-      className="fixed w-10 h-9 z-[4000] bottom-2 right-4 p-0 shadow-lg"
+      className="fixed w-10 h-9 z-[49] bottom-2 right-4 p-0 shadow-lg"
       variant="outline"
     >
       <ChevronUpIcon className="w-5 h-5 block mx-auto" />

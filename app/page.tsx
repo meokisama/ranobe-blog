@@ -1,5 +1,5 @@
+import IconBar from "@/components/common/icon-bar";
 import SplashScreen from "@/components/common/splash-screen";
-import { ModeToggle } from "@/components/common/toggle";
 import AuthorSection from "@/components/home/author";
 import Bento from "@/components/home/bento";
 import BoosterAds from "@/components/home/booster-ads";
@@ -11,20 +11,22 @@ export default function Home() {
   return (
     <main>
       <SplashScreen />
-      <ModeToggle />
+      <IconBar />
       <div className="relative">
         <Image
           src="/beams.jpg"
           alt="background image"
           width={1308}
           height={1000}
-          className="fixed w-full h-full -z-[100] opacity-40 dark:invert dark:hidden"
+          className="fixed w-full h-full z-[1] opacity-40 dark:invert dark:hidden select-none pointer-events-none"
         />
-        <Hero />
-        <Bento />
-        <AuthorSection />
-        <BoosterAds />
-        <NewPosts />
+        <div className="relative z-[2]">
+          <Hero />
+          <Bento />
+          <AuthorSection />
+          <BoosterAds />
+          <NewPosts />
+        </div>
       </div>
     </main>
   );

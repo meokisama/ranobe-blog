@@ -76,18 +76,28 @@ export default function SeriesDetail({
       value:
         en_trans !== "" ? (
           <div>
-            <Link href={en_trans_url} target="_blank">
+            {en_trans_url ? (
+              <Link href={en_trans_url} target="_blank">
+                <span className="font-bold text-blue-500">{en_trans}</span>
+              </Link>
+            ) : (
               <span className="font-bold text-red-500">{en_trans}</span>
-            </Link>
+            )}
             {" | "}
-            <Link href={vi_trans_url} target="_blank">
+            {vi_trans_url ? (
+              <Link href={vi_trans_url} target="_blank">
+                <span className="font-bold text-blue-500">{vi_trans}</span>
+              </Link>
+            ) : (
               <span className="font-bold text-red-500">{vi_trans}</span>
-            </Link>
+            )}
           </div>
-        ) : (
+        ) : vi_trans_url ? (
           <Link href={vi_trans_url} target="_blank">
-            <span className="font-bold text-red-500">{vi_trans}</span>
+            <span className="font-bold text-blue-500">{vi_trans}</span>
           </Link>
+        ) : (
+          <span className="font-bold text-red-500">{vi_trans}</span>
         ),
     },
     {
