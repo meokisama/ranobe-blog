@@ -1,4 +1,4 @@
-import SearchDrawer from "./search";
+import SearchDrawer from "./search-drawer";
 import { ModeToggle } from "./toggle";
 
 export default function IconBar() {

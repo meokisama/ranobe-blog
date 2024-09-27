@@ -1,7 +1,7 @@
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import Link from "next/link";
 
-type DetailProps = {
+interface Detail {
   jp: string;
   vn: string;
   romaji: string;
@@ -11,104 +11,94 @@ type DetailProps = {
   release: string;
   category: string;
   volume: string;
-  vi_trans: string;
-  vi_trans_url: string;
   en_trans: string;
   en_trans_url: string;
+  vi_trans: string;
+  vi_trans_url: string;
   safety: string;
-};
+}
 
-export default function SeriesDetail({
-  jp,
-  vn,
-  romaji,
-  publisher,
-  author,
-  illustrator,
-  release,
-  category,
-  volume,
-  vi_trans,
-  vi_trans_url,
-  en_trans,
-  en_trans_url,
-  safety,
-}: DetailProps) {
+export default function SeriesDetail({ detail }: { detail: Detail }) {
   const details = [
     {
       label: "Tựa tiếng Nhật",
       value: (
         <p>
-          <span className="font-mincho text-base leading-6">{jp}</span> ({vn})
+          <span className="font-mincho text-base leading-6">{detail.jp}</span> (
+          {detail.vn})
         </p>
       ),
     },
     {
       label: "Romaji",
-      value: romaji,
+      value: detail.romaji,
     },
     {
       label: "NXB",
-      value: publisher,
+      value: detail.publisher,
     },
     {
       label: "Tác giả",
-      value: author,
+      value: detail.author,
     },
     {
       label: "Minh họa",
-      value: illustrator,
+      value: detail.illustrator,
     },
     {
       label: "Ngày phát hành",
-      value: release,
+      value: detail.release,
     },
     {
       label: "Thể loại",
-      value: category,
+      value: detail.category,
     },
     {
       label: "Số tập",
-      value: volume,
+      value: detail.volume,
     },
     {
       label: "Bản dịch",
       value:
-        en_trans !== "" ? (
+        detail.en_trans !== "" ? (
           <div>
-            {en_trans_url ? (
-              <Link href={en_trans_url} target="_blank">
-                <span className="font-bold text-blue-500">{en_trans}</span>
+            {detail.en_trans_url ? (
+              <Link href={detail.en_trans_url} target="_blank">
+                <span className="font-bold text-blue-500">
+                  {detail.en_trans}
+                </span>
               </Link>
             ) : (
-              <span className="font-bold text-red-500">{en_trans}</span>
+              <span className="font-bold text-red-500">{detail.en_trans}</span>
             )}
             {" | "}
-            {vi_trans_url ? (
-              <Link href={vi_trans_url} target="_blank">
-                <span className="font-bold text-blue-500">{vi_trans}</span>
+            {detail.vi_trans_url ? (
+              <Link href={detail.vi_trans_url} target="_blank">
+                <span className="font-bold text-blue-500">
+                  {detail.vi_trans}
+                </span>
               </Link>
             ) : (
-              <span className="font-bold text-red-500">{vi_trans}</span>
+              <span className="font-bold text-red-500">{detail.vi_trans}</span>
             )}
           </div>
-        ) : vi_trans_url ? (
-          <Link href={vi_trans_url} target="_blank">
-            <span className="font-bold text-blue-500">{vi_trans}</span>
+        ) : detail.vi_trans_url ? (
+          <Link href={detail.vi_trans_url} target="_blank">
+            <span className="font-bold text-blue-500">{detail.vi_trans}</span>
           </Link>
         ) : (
-          <span className="font-bold text-red-500">{vi_trans}</span>
+          <span className="font-bold text-red-500">{detail.vi_trans}</span>
         ),
     },
     {
       label: "Độ an toàn",
-      value: safety,
+      value: detail.safety,
     },
   ];
 
   return (
     <div className="my-6 lg:my-12">
-      <Table className="text-lg lg:text-xl my-4 shadow-[0_3px_8px_rgba(0,0,0,0.16)] dark:shadow-[0_0_10px_rgba(0,0,0,0.6)] rounded-lg lg:rounded-xl px-2 py-1 max-w-[98%] block mx-auto">
+      <Table className="text-lg lg:text-xl my-4 shadow-[0_3px_8px_rgba(0,0,0,0.16)] dark:shadow-[0_0_10px_rgba(0,0,0,0.6)] rounded-lg lg:rounded-xl px-4 py-2 max-w-[98%] block mx-auto">
         <TableBody>
           {details.map((detail) => (
             <TableRow key={detail.label}>
@@ -122,9 +112,6 @@ export default function SeriesDetail({
           ))}
         </TableBody>
       </Table>
-      {/* <p className="text-center text-lg lg:text-xl italic font-semibold text-gray-600 dark:text-white">
-        Bảng thông tin chi tiết
-      </p> */}
     </div>
   );
 }
