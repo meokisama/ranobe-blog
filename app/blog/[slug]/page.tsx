@@ -113,7 +113,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           src="/mamasuki.png"
           alt="blog post mamasuki"
           width={500}
-          height={500}
+          height={591}
           priority
           className="w-[300px] md:w-[400px] lg:w-[500px] h-auto relative z-10 translate-y-[2.6rem] md:translate-y-[3.5rem] lg:translate-y-[4.4rem] block mx-auto md:mr-0 select-none pointer-events-none"
         />

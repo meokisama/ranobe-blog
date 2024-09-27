@@ -135,8 +135,8 @@ export default function SearchFunction() {
 
   return (
     <div className="mx-auto w-full px-2 sm:px-4 lg:px-10 h-[70vh] lg:h-[60vh] flex flex-col lg:flex-row gap-5 xl:gap-10">
-      <div className="lg:w-2/5">
-        <div className="text-center mb-5 2xl:mb-8">
+      <div className="lg:w-2/5 flex flex-col gap-5">
+        <div className="text-center">
           <h2 className="font-black text-3xl lg:text-4xl opacity-75">
             Tìm kiếm bài viết
           </h2>
@@ -159,15 +159,15 @@ export default function SearchFunction() {
           />
           <MagnifyingGlassIcon className="absolute left-2.5 top-0 bottom-0 my-auto w-4 h-4 lg:w-5 lg:h-5 text-gray-400 dark:text-gray-600" />
         </div>
-        <div className="hidden lg:block">
-          <div className="w-full h-[150px] 2xl:h-[220px] rounded-xl overflow-hidden flex justify-center items-center mt-3 xl:mt-6 2xl:mt-9">
+        <div className="hidden lg:block flex-grow">
+          <div className="w-full h-[92%] rounded-xl overflow-hidden flex justify-center items-center">
             <Image
               src="https://res.cloudinary.com/dcdleqix0/image/upload/v1727412870/yuki_d9xcse.gif"
               height={175}
               width={175}
               alt={`A gif of Yuki!`}
               unoptimized={true}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover scale-105"
             />
           </div>
         </div>

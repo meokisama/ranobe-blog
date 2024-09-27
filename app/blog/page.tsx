@@ -58,8 +58,8 @@ export default async function Home() {
       <Image
         src="/imouza_all.png"
         alt="imouza image"
-        width={500}
-        height={500}
+        width={548}
+        height={792}
         priority
         className="h-auto w-[50vw] relative z-10 translate-y-[7.8vw] sm:w-[30vw] sm:translate-y-[4.6vw] select-none pointer-events-none"
       />
