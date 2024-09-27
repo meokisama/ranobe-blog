@@ -1,4 +1,4 @@
-import fs from "node:fs/promises";
+import fs from "node:fs";
 import path from "node:path";
 
 type Post = {
@@ -14,33 +14,30 @@ interface PostMetadata {
 
 export default async function getAllPosts(): Promise<Post[]> {
   const dir = path.join(process.cwd(), "posts");
-  const files = await fs.readdir(dir);
+  const files = fs.readdirSync(dir);
 
-  const posts = await Promise.all(
-    files
-      .filter(
-        (filename) => filename.endsWith(".mdx") && !filename.startsWith(".")
-      )
-      .map(async (filename) => {
-        try {
-          const { metadata, detail } = await import(`@/posts/${filename}`);
-          return {
-            slug: filename.replace(".mdx", ""),
-            metadata: metadata || {
-              title: "Untitled",
-              publishDate: "1970-01-01",
-            },
-            // detail: detail,
-          };
-        } catch (error) {
-          console.error(`Error loading metadata for file ${filename}:`, error);
-          return {
-            slug: filename.replace(".mdx", ""),
-            metadata: { title: "Untitled", publishDate: "1970-01-01" },
-          };
-        }
-      })
-  );
+  const posts = files
+    .filter(
+      (filename) => filename.endsWith(".mdx") && !filename.startsWith(".")
+    )
+    .map((filename) => {
+      try {
+        const { metadata } = require(`@/posts/${filename}`);
+        return {
+          slug: filename.replace(".mdx", ""),
+          metadata: metadata || {
+            title: "Untitled",
+            publishDate: "1970-01-01",
+          },
+        };
+      } catch (error) {
+        console.error(`Error loading metadata for file ${filename}:`, error);
+        return {
+          slug: filename.replace(".mdx", ""),
+          metadata: { title: "Untitled", publishDate: "1970-01-01" },
+        };
+      }
+    });
 
   posts.sort(
     (a, b) =>

@@ -134,9 +134,9 @@ export default function SearchFunction() {
   };
 
   return (
-    <div className="mx-auto w-full p-2 pb-0 sm:p-4 sm:pb-0 lg:p-10 lg:pb-0 h-[70vh] lg:h-[60vh] flex flex-col lg:flex-row gap-5 xl:gap-10">
+    <div className="mx-auto w-full px-2 sm:px-4 lg:px-10 h-[70vh] lg:h-[60vh] flex flex-col lg:flex-row gap-5 xl:gap-10">
       <div className="lg:w-2/5">
-        <div className="text-center mb-5 xl:mb-8">
+        <div className="text-center mb-5 2xl:mb-8">
           <h2 className="font-black text-3xl lg:text-4xl opacity-75">
             Tìm kiếm bài viết
           </h2>
@@ -155,12 +155,12 @@ export default function SearchFunction() {
             type="text"
             placeholder="Tìm kiếm bài viết..."
             onChange={(e) => handleSearch(e.target.value)}
-            className="rounded-lg pl-8 lg:pl-9 py-4 lg:py-6 lg:text-lg dark:shadow-[0_3px_10px_rgba(0,0,0,0.6)] focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0"
+            className="rounded-lg pl-8 lg:pl-9 py-4 xl:py-6 lg:text-lg dark:shadow-[0_3px_10px_rgba(0,0,0,0.6)] focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0"
           />
           <MagnifyingGlassIcon className="absolute left-2.5 top-0 bottom-0 my-auto w-4 h-4 lg:w-5 lg:h-5 text-gray-400 dark:text-gray-600" />
         </div>
         <div className="hidden lg:block">
-          <div className="w-full h-[130px] xl:h-[200px] 2xl:h-[250px] rounded-xl overflow-hidden flex justify-center items-center mt-5 xl:mt-9">
+          <div className="w-full h-[150px] 2xl:h-[220px] rounded-xl overflow-hidden flex justify-center items-center mt-3 xl:mt-6 2xl:mt-9">
             <Image
               src="https://res.cloudinary.com/dcdleqix0/image/upload/v1727412870/yuki_d9xcse.gif"
               height={175}
