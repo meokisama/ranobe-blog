@@ -1,6 +1,13 @@
+import type { Metadata } from "next";
 import IconBar from "@/components/common/icon-bar";
 import Hero from "@/components/ga/hero";
 import WelcomeScreen from "@/components/ga/welcome-screen";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Light Novel Giveaway Booster - Ranobe",
+  };
+}
 
 export default function GiveAway() {
   return (
