@@ -45,7 +45,11 @@ export default async function NewPost() {
       {renderList.map((category, index) => (
         <div key={index} className="flex flex-col items-center justify-between">
           <PostList
-            data={category.data.slice(0, 3)}
+            data={
+              category.category === "12-ngay-giang-sinh"
+                ? category.data.slice(0, 6)
+                : category.data.slice(0, 3)
+            }
             title={category.title}
             category={category.category}
           />

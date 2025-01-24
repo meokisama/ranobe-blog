@@ -22,13 +22,14 @@ export default async function getAllPosts(): Promise<Post[]> {
     )
     .map((filename) => {
       try {
-        const { metadata } = require(`@/posts/${filename}`);
+        const { metadata, detail } = require(`@/posts/${filename}`);
         return {
           slug: filename.replace(".mdx", ""),
           metadata: metadata || {
             title: "Untitled",
             publishDate: "1970-01-01",
           },
+          ...(detail && { detail }),
         };
       } catch (error) {
         console.error(`Error loading metadata for file ${filename}:`, error);
@@ -45,7 +46,8 @@ export default async function getAllPosts(): Promise<Post[]> {
       new Date(a.metadata.publishDate).getTime()
   );
 
-  // await fs.writeFile(
+  //Write to JSON for searching function
+  // await fs.promises.writeFile(
   //   path.join(process.cwd(), "data", "posts.json"),
   //   JSON.stringify(posts, null, 2)
   // );

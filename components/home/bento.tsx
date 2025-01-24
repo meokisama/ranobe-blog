@@ -4,14 +4,14 @@ export default function Bento() {
   return (
     <div className="flex justify-center items-center mt-20">
       <div className="grid min-h-screen w-[95%] xl:w-[80%] grid-cols-5 gap-2 xl:gap-4">
-        <div className="hidden relative sm:block col-span-2 row-span-2 shadow-sm hover:shadow-lg rounded-xl lg:rounded-2xl overflow-hidden border dark:border-white/[0.2] dark:bg-[#212121]">
+        <div className="hidden group relative sm:block col-span-2 row-span-2 shadow-sm hover:shadow-lg rounded-xl lg:rounded-2xl overflow-hidden border dark:border-white/[0.2] dark:bg-[#212121]">
           <Image
             src="/bento/ginko.png"
             alt="sora ginko"
             width={800}
             height={800}
             quality={100}
-            className="w-full h-full object-cover object-top select-none pointer-events-none"
+            className="w-full h-full object-cover object-top select-none pointer-events-none group-hover:scale-105 transition ease-linear origin-top"
           />
           <div className="absolute -z-[9] inset-0 bg-[url(/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] translate-y-[-2px] dark:invert"></div>
         </div>
@@ -50,31 +50,31 @@ export default function Bento() {
             cười mỏi mồm.
           </p>
         </div>
-        <div className="col-span-2 sm:col-span-1 bento-item border-none">
+        <div className="col-span-2 sm:col-span-1 bento-item border-none group">
           <Image
             src="/bento/yue.jpg"
             alt="yue"
             width={400}
             height={400}
-            className="w-full h-full object-cover object-center select-none pointer-events-none"
+            className="w-full h-full object-cover object-center select-none pointer-events-none group-hover:scale-105 transition ease-linear origin-top"
           />
         </div>
-        <div className="row-span-2 col-span-3 sm:row-span-1 sm:col-span-1 bento-item border-none">
+        <div className="row-span-2 col-span-3 sm:row-span-1 sm:col-span-1 bento-item border-none group">
           <Image
             src="/bento/aobuta.jpg"
             alt="aobuta"
             width={800}
             height={800}
-            className="w-full h-full object-cover object-center select-none pointer-events-none"
+            className="w-full h-full object-cover object-center select-none pointer-events-none group-hover:scale-105 transition ease-linear origin-top"
           />
         </div>
-        <div className="col-span-2 row-span-1 sm:col-span-1 sm:row-span-2 bento-item border-none">
+        <div className="col-span-2 row-span-1 sm:col-span-1 sm:row-span-2 bento-item border-none group">
           <Image
             src="/bento/tanmoshi.jpg"
             alt="tanmoshi"
             width={800}
             height={800}
-            className="w-full h-full object-cover object-center select-none pointer-events-none"
+            className="w-full h-full object-cover object-center select-none pointer-events-none group-hover:scale-105 transition ease-linear origin-top"
           />
         </div>
         <div className="col-span-5 sm:col-span-3 row-span-2 bento-item p-6 xl:p-12 relative">
@@ -120,40 +120,40 @@ export default function Bento() {
             mua Light Novel.
           </p>
         </div>
-        <div className="bento-item border-none col-span-3 sm:col-span-1 row-span-2 sm:row-span-1">
+        <div className="bento-item border-none col-span-3 sm:col-span-1 row-span-2 sm:row-span-1 group">
           <Image
             src="/bento/spyroom.jpg"
             alt="spyroom"
             width={400}
             height={400}
-            className="w-full h-full object-cover object-center select-none pointer-events-none"
+            className="w-full h-full object-cover object-center select-none pointer-events-none group-hover:scale-105 transition ease-linear origin-top"
           />
         </div>
-        <div className="col-span-2 bento-item border-none">
+        <div className="col-span-2 bento-item border-none group">
           <Image
             src="/bento/elaina.jpg"
             alt="tanmoshi"
             width={800}
             height={800}
-            className="w-full h-full object-cover object-center select-none pointer-events-none"
+            className="w-full h-full object-cover object-center select-none pointer-events-none group-hover:scale-105 transition ease-linear origin-top"
           />
         </div>
-        <div className="col-span-2 sm:col-span-1 bento-item border-none">
+        <div className="col-span-2 sm:col-span-1 bento-item border-none group">
           <Image
             src="/bento/mobuseka.jpg"
             alt="mobuseka"
             width={300}
             height={400}
-            className="w-full h-full object-cover object-center select-none pointer-events-none"
+            className="w-full h-full object-cover object-center select-none pointer-events-none group-hover:scale-105 transition ease-linear origin-top"
           />
         </div>
-        <div className="hidden relative sm:block shadow-sm hover:shadow-lg rounded-xl lg:rounded-2xl overflow-hidden border dark:border-white/[0.2] dark:bg-[#212121]">
+        <div className="hidden group relative sm:block shadow-sm hover:shadow-lg rounded-xl lg:rounded-2xl overflow-hidden border dark:border-white/[0.2] dark:bg-[#212121]">
           <Image
             src="/bento/konosuba.png"
             alt="konosuba"
             width={400}
             height={400}
-            className="w-full h-full object-cover object-center select-none pointer-events-none"
+            className="w-full h-full object-cover object-center select-none pointer-events-none group-hover:scale-105 transition ease-linear origin-top"
           />
           <div className="absolute -z-[9] inset-0 bg-[url(/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] translate-y-[-2px] dark:invert"></div>
         </div>
