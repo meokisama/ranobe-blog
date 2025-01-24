@@ -3,33 +3,17 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import getAllPosts from "@/components/blog/get-all-posts";
 import PostList from "@/components/blog/posts-list";
+import { CATEGORIES } from "@/constants";
 
 export default async function NewPost() {
   const posts = await getAllPosts();
-  const renderList = [
-    {
-      title: "Xã Hội Vận Hành Trên Giấy Như Thế Nào?",
-      category: "xa-hoi-tren-giay",
-      data: posts.filter((post) => post.metadata.author === "Meoki"),
-    },
-    {
-      title: "12 Ngày Light Novel Giáng Sinh",
-      category: "12-ngay-giang-sinh",
-      data: posts.filter(
-        (post) => post.metadata.category === "12 Ngày Giáng Sinh"
-      ),
-    },
-    {
-      title: "Kí Sự Giả",
-      category: "ki-su-gia",
-      data: posts.filter((post) => post.metadata.category === "Kí Sự Giả"),
-    },
-    {
-      title: "Phỏng Vấn",
-      category: "phong-van",
-      data: posts.filter((post) => post.metadata.category === "Phỏng Vấn"),
-    },
-  ];
+  const renderList = CATEGORIES.map((item) => ({
+    title: item.title,
+    category: item.category,
+    data: posts.filter(
+      (post) => post.metadata.category === item.metadataCategory
+    ),
+  }));
 
   return (
     <div className="flex flex-col w-full items-center justify-between my-4 mt-16">

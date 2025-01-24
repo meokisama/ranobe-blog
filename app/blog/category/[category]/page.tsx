@@ -4,6 +4,7 @@ import getAllPosts from "@/components/blog/get-all-posts";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import IconBar from "@/components/common/icon-bar";
+import { CATEGORIES } from "@/constants";
 
 export async function generateMetadata({
   params,
@@ -11,30 +12,7 @@ export async function generateMetadata({
   params: { category: string };
 }): Promise<Metadata> {
   const { category } = params;
-  const renderList = [
-    {
-      title: "Xã Hội Vận Hành Trên Giấy Như Thế Nào?",
-      category: "xa-hoi-tren-giay",
-      description:
-        "Khám phá cách xã hội vận hành qua những câu chuyện, bối cảnh, chi tiết, nội dung được gửi gắm qua những trang giấy.",
-    },
-    {
-      title: "12 Ngày Light Novel Giáng Sinh",
-      category: "12-ngay-giang-sinh",
-      description:
-        "Loạt bài viết review light novel đặc biệt đếm ngược 12 ngày tới Giáng Sinh.",
-    },
-    {
-      title: "Kí Sự Giả",
-      category: "ki-su-gia",
-      description: "Những câu chuyện chưa kể vì chưa kịp kể.",
-    },
-    {
-      title: "Phỏng Vấn",
-      category: "phong-van",
-      description: "Phỏng vấn các nhà xuất bản light novel Việt Nam.",
-    },
-  ];
+  const renderList = CATEGORIES;
 
   const matchedCategory = renderList.find((item) => item.category === category);
 
@@ -59,30 +37,13 @@ export default async function Home({
   const { category } = params;
 
   const posts = await getAllPosts();
-  const renderList = [
-    {
-      title: "Xã Hội Vận Hành Trên Giấy Như Thế Nào?",
-      category: "xa-hoi-tren-giay",
-      data: posts.filter((post) => post.metadata.author === "Meoki"),
-    },
-    {
-      title: "12 Ngày Light Novel Giáng Sinh",
-      category: "12-ngay-giang-sinh",
-      data: posts.filter(
-        (post) => post.metadata.category === "12 Ngày Giáng Sinh"
-      ),
-    },
-    {
-      title: "Kí Sự Giả",
-      category: "ki-su-gia",
-      data: posts.filter((post) => post.metadata.category === "Kí Sự Giả"),
-    },
-    {
-      title: "Phỏng Vấn",
-      category: "phong-van",
-      data: posts.filter((post) => post.metadata.category === "Phỏng Vấn"),
-    },
-  ];
+  const renderList = CATEGORIES.map((item) => ({
+    title: item.title,
+    category: item.category,
+    data: posts.filter(
+      (post) => post.metadata.category === item.metadataCategory
+    ),
+  }));
 
   const matchedCategory = renderList.find((item) => item.category === category);
   if (!matchedCategory) {

@@ -3,26 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
+import { AUTHORS as authors } from "@/constants";
 
 export default function AuthorSection() {
-  const authors = [
-    {
-      name: "Đứa biết nhiều nhất về Light Novel ở Việt Nam",
-      username: "NaviRanobe",
-      avatar: "naviranobe.jpg",
-      cover: "naviranobe_cover.jpg",
-      role: "Cây viết chủ lực, chuyên phân tích review đánh giá khen chê châm biếm Light Novel.",
-      facebook: "https://facebook.com/NaviRanobe",
-    },
-    {
-      name: "Đứa biết nhiều thứ 2 về Light Novel chuyên reply comment xin name",
-      username: "TheMeoki",
-      avatar: "themeoki.jpg",
-      cover: "themeoki_cover.jpg",
-      role: "Thích khai thác những yếu tố khía cạnh sự kiện góc nhìn bên lề ít hoặc chưa ai chú ý",
-      facebook: "https://facebook.com/TheMeoki",
-    },
-  ];
   return (
     <>
       <div className="w-full text-center flex flex-col items-center justify-center mt-32">

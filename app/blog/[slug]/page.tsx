@@ -13,6 +13,7 @@ import Image from "next/image";
 import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons";
 import GiscusComments from "@/components/blog/giscus";
 import IconBar from "@/components/common/icon-bar";
+import { CATEGORIES, AUTHORS } from "@/constants";
 
 type Props = {
   params: { slug: string };
@@ -71,12 +72,13 @@ export async function generateStaticParams() {
   return params;
 }
 
-const categoriesMap: { [key: string]: string } = {
-  "Xã Hội Trên Giấy": "xa-hoi-tren-giay",
-  "12 Ngày Giáng Sinh": "12-ngay-giang-sinh",
-  "Kí Sự Giả": "ki-su-gia",
-  "Phỏng Vấn": "phong-van",
-};
+const categoriesMap: { [key: string]: string } = CATEGORIES.reduce(
+  (map, item) => {
+    map[item.metadataCategory] = item.category;
+    return map;
+  },
+  {} as { [key: string]: string }
+);
 
 export default async function Page({ params }: { params: { slug: string } }) {
   const { slug } = params;
@@ -146,11 +148,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
             <div className="flex flex-row gap-2 justify-start items-center mb-8">
               <Avatar>
                 <AvatarImage
-                  src={
-                    post.metadata.author === "NaviRanobe"
-                      ? "/naviranobe.jpg"
-                      : "/themeoki.jpg"
-                  }
+                  src={`/${
+                    AUTHORS.find(({ username, nickname }) =>
+                      [username, nickname].includes(post.metadata.author)
+                    )?.avatar
+                  }`}
                 />
                 <AvatarFallback>
                   <span className="font-bold">CN</span>
@@ -158,14 +160,15 @@ export default async function Page({ params }: { params: { slug: string } }) {
               </Avatar>
               <div>
                 <p className="text-lg leading-5 lg:text-xl lg:leading-6 font-bold">
-                  {post.metadata.author === "NaviRanobe"
-                    ? "Đứa biết nhiều nhất về Light Novel ở Việt Nam"
-                    : "Đứa biết nhiều thứ 2 về Light Novel chuyên reply comment xin name"}
+                  {AUTHORS.find(({ username, nickname }) =>
+                    [username, nickname].includes(post.metadata.author)
+                  )?.name || "Tác giả không xác định"}
                 </p>
                 <p>
-                  {post.metadata.author === "NaviRanobe"
-                    ? "@NaviRanobe"
-                    : "@TheMeoki"}
+                  @
+                  {AUTHORS.find(({ username, nickname }) =>
+                    [username, nickname].includes(post.metadata.author)
+                  )?.username || "Unknown"}
                 </p>
               </div>
             </div>

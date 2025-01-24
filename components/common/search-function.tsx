@@ -12,6 +12,7 @@ import Link from "next/link";
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
 import { Separator } from "@/components/ui/separator";
+import { AUTHORS } from "@/constants";
 
 interface Metadata {
   title: string;
@@ -218,11 +219,13 @@ export default function SearchFunction() {
                   <div className="flex flex-row gap-2 justify-start items-center mb-1 sm:mb-2">
                     <Avatar className="w-[30px] lg:w-[40px] h-auto">
                       <AvatarImage
-                        src={
-                          result.metadata.author === "NaviRanobe"
-                            ? "/naviranobe.jpg"
-                            : "/themeoki.jpg"
-                        }
+                        src={`/${
+                          AUTHORS.find(({ username, nickname }) =>
+                            [username, nickname].includes(
+                              result.metadata.author
+                            )
+                          )?.avatar
+                        }`}
                       />
                       <AvatarFallback>
                         <span className="font-bold">CN</span>

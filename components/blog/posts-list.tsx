@@ -16,6 +16,7 @@ import { format } from "date-fns";
 import { vi } from "date-fns/locale";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
+import { AUTHORS } from "@/constants";
 
 type Post = {
   slug: string;
@@ -77,11 +78,11 @@ const RenderPostList: React.FC<RenderPostListProps> = ({
             <div className="flex flex-row gap-2 justify-start items-center mb-2">
               <Avatar>
                 <AvatarImage
-                  src={
-                    post.metadata.author === "NaviRanobe"
-                      ? "/naviranobe.jpg"
-                      : "/themeoki.jpg"
-                  }
+                  src={`/${
+                    AUTHORS.find(({ username, nickname }) =>
+                      [username, nickname].includes(post.metadata.author)
+                    )?.avatar
+                  }`}
                 />
                 <AvatarFallback>
                   <span className="font-bold">CN</span>
