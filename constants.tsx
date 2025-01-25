@@ -31,7 +31,7 @@ const AUTHORS = [
   {
     name: "Đứa biết nhiều nhất về Light Novel ở Việt Nam",
     username: "NaviRanobe",
-    nickname: "HTL",
+    nickname: "HtL",
     avatar: "naviranobe.jpg",
     cover: "naviranobe_cover.jpg",
     role: "Cây viết chủ lực, chuyên phân tích review đánh giá khen chê châm biếm Light Novel.",

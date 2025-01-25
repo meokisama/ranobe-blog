@@ -46,11 +46,5 @@ export default async function getAllPosts(): Promise<Post[]> {
       new Date(a.metadata.publishDate).getTime()
   );
 
-  //Write to JSON for searching function
-  // await fs.promises.writeFile(
-  //   path.join(process.cwd(), "data", "posts.json"),
-  //   JSON.stringify(posts, null, 2)
-  // );
-
   return posts;
 }

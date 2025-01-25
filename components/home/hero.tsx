@@ -3,6 +3,7 @@ import Image from "next/image";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
+import { AUTHORS } from "@/constants";
 
 export default function Hero() {
   return (
@@ -27,7 +28,7 @@ export default function Hero() {
             NAVIRANOBE
           </motion.h1>
         </div>
-        <div className="w-full flex flex-col-reverse lg:flex-row lg:gap-[35vw] -mt-16 lg:mt-0">
+        <div className="w-full flex flex-col-reverse lg:flex-row lg:gap-[35vw] -mt-16 lg:-mt-4">
           <div className="w-1/2"></div>
           <div className="w-full px-10 lg:w-1/2 lg:pr-[4vw] font-grotesque lg:rotate-6 lg:-translate-y-[20px]">
             <motion.div
@@ -52,7 +53,13 @@ export default function Hero() {
             <motion.div
               initial={{ opacity: 0, y: "-50px" }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 1, delay: 7 }}
+              transition={{
+                type: "spring",
+                damping: 10,
+                mass: 0.75,
+                stiffness: 300,
+                delay: 8,
+              }}
             >
               <p className="lg:text-[1.3vw] text-justify leading-tight">
                 Có bao giờ bạn tự nghĩ những cuốn light novel ngoài kia có thể
@@ -64,44 +71,28 @@ export default function Hero() {
                 bạn trong hành trình đó
               </p>
               <div className="flex flex-row justify-center lg:float-right gap-1 lg:gap-4 mt-4">
-                <Link
-                  href="https://facebook.com/NaviRanobe"
-                  target="_blank"
-                  className={buttonVariants({ variant: "default" })}
-                >
-                  <svg
-                    className="w-4 h-4 mr-1"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
+                {AUTHORS.map(({ facebook, nickname }) => (
+                  <Link
+                    href={facebook}
+                    target="_blank"
+                    className={buttonVariants({ variant: "default" })}
+                    key={facebook}
                   >
-                    <path
-                      fillRule="evenodd"
-                      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  HtL
-                </Link>
-                <Link
-                  href="https://facebook.com/TheMeoki"
-                  target="_blank"
-                  className={buttonVariants({ variant: "default" })}
-                >
-                  <svg
-                    className="w-4 h-4 mr-1"
-                    fill="currentColor"
-                    viewBox="0 0 24 24"
-                    aria-hidden="true"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                      clipRule="evenodd"
-                    ></path>
-                  </svg>
-                  Meoki
-                </Link>
+                    <svg
+                      className="w-4 h-4 mr-1"
+                      fill="currentColor"
+                      viewBox="0 0 24 24"
+                      aria-hidden="true"
+                    >
+                      <path
+                        fillRule="evenodd"
+                        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
+                        clipRule="evenodd"
+                      ></path>
+                    </svg>
+                    {nickname}
+                  </Link>
+                ))}
               </div>
             </motion.div>
           </div>
@@ -131,7 +122,7 @@ export default function Hero() {
           damping: 10,
           mass: 0.75,
           stiffness: 300,
-          delay: 8,
+          delay: 8.2,
         }}
         className="absolute hidden lg:block top-[10%] left-5 select-none pointer-events-none"
       >
