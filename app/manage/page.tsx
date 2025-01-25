@@ -1,5 +1,5 @@
 import PostExportButton from "@/components/blog/export-button";
-import { AppSidebar } from "@/components/app-sidebar";
+import { AppSidebar } from "@/components/manage/app-sidebar";
 import {
   Breadcrumb,
   BreadcrumbItem,
