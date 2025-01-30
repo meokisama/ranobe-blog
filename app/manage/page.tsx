@@ -1,3 +1,4 @@
+import type { Metadata } from "next";
 import PostExportButton from "@/components/blog/export-button";
 import { AppSidebar } from "@/components/manage/app-sidebar";
 import {
@@ -14,9 +15,16 @@ import {
   SidebarProvider,
   SidebarTrigger,
 } from "@/components/ui/sidebar";
+import Custom404 from "../not-found";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Quản Trị - Ranobe",
+  };
+}
 
 export default function ManagePage() {
-  return (
+  return process.env.NODE_ENV === "development" ? (
     <div>
       <SidebarProvider>
         <AppSidebar />
@@ -52,5 +60,7 @@ export default function ManagePage() {
         </SidebarInset>
       </SidebarProvider>
     </div>
+  ) : (
+    <Custom404 />
   );
 }
