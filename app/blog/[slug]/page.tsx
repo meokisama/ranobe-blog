@@ -95,7 +95,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <div className="relative">
       <IconBar />
-      <div className="absolute z-[2] select-none pointer-events-none font-jaro w-full text-center overflow-hidden">
+      <div className="absolute z-[2] select-none pointer-events-none font-jaro w-full text-center overflow-hidden backdrop-blur">
         <h1 className="text-[50vw] leading-[40vw] sm:text-[21vw] sm:leading-[17vw] text-[hsl(var(--background))] custom-stroke">
           NAVIRANOBE
         </h1>
@@ -103,6 +103,13 @@ export default async function Page({ params }: { params: { slug: string } }) {
           THEMEOKI
         </h1>
       </div>
+      <Image
+        src="/sneaker.webp"
+        alt="background image"
+        width={1308}
+        height={1000}
+        className="fixed w-full h-auto select-none pointer-events-none z-1 dark:invert dark:hidden"
+      />
       <Image
         src="/beams.jpg"
         alt="background image"

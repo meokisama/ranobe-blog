@@ -26,13 +26,20 @@ export default async function Home() {
     <div className="flex flex-col w-full items-center justify-between relative">
       <IconBar />
       <Image
+        src="/sneaker.webp"
+        alt="background image"
+        width={1308}
+        height={1000}
+        className="fixed w-full h-auto z-1 dark:invert dark:hidden select-none pointer-events-none"
+      />
+      <Image
         src="/beams.jpg"
         alt="background image"
         width={1308}
         height={1000}
         className="fixed w-full h-full z-1 opacity-50 dark:invert dark:hidden select-none pointer-events-none"
       />
-      <div className="absolute z-[2] select-none pointer-events-none font-jaro w-full text-center overflow-hidden">
+      <div className="absolute z-[2] select-none pointer-events-none font-jaro w-full text-center overflow-hidden backdrop-blur">
         <h1 className="text-[40vw] leading-[30vw] sm:text-[21vw] sm:leading-[17vw] text-[hsl(var(--background))] custom-stroke">
           NAVIRANOBE
         </h1>

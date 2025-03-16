@@ -17,7 +17,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 7 }}
             className="-mb-4 md:-mb-12 lg:-mb-12 xl:-mb-20"
           >
-            <h1 className="font-jaro font-normal tracking-tight text-center my-0 text-[19vw] lg:text-[20vw] leading-none dark:bg-[linear-gradient(45deg,_#a875ec_20%,_#ff6b7c_100%)] dark:[filter:drop-shadow(0px_3px_8px_rgba(0,0,0,_0.5))] dark:[text-outline:1px_solid_black] dark:bg-clip-text dark:text-transparent text-white [filter:drop-shadow(0px_3px_8px_rgba(255,139,39,0.2))]">
+            <h1 className="font-jaro font-normal tracking-tight text-center my-0 text-[19vw] lg:text-[20vw] leading-none dark:bg-[linear-gradient(45deg,_#a875ec_20%,_#ff6b7c_100%)] dark:[filter:drop-shadow(0px_3px_8px_rgba(0,0,0,_0.5))] dark:[text-outline:1px_solid_black] dark:bg-clip-text dark:text-transparent text-white [filter:drop-shadow(0px_3px_8px_rgba(255,139,39,0.3))]">
               THEMEOKI
             </h1>
           </motion.div>
@@ -27,7 +27,7 @@ export default function Hero() {
             transition={{ duration: 1, delay: 7 }}
             className="-mb-4 md:-mb-12 lg:-mb-12 xl:-mb-20"
           >
-            <h1 className="font-jaro font-normal tracking-tight text-center my-0 text-[19vw] lg:text-[20vw] leading-none dark:bg-[linear-gradient(45deg,_#a875ec_20%,_#ff6b7c_100%)] dark:[filter:drop-shadow(0px_3px_8px_rgba(0,0,0,_0.5))] dark:[text-outline:1px_solid_black] dark:bg-clip-text dark:text-transparent text-white [filter:drop-shadow(0px_3px_8px_rgba(255,139,39,0.2))]">
+            <h1 className="font-jaro font-normal tracking-tight text-center my-0 text-[19vw] lg:text-[20vw] leading-none dark:bg-[linear-gradient(45deg,_#a875ec_20%,_#ff6b7c_100%)] dark:[filter:drop-shadow(0px_3px_8px_rgba(0,0,0,_0.5))] dark:[text-outline:1px_solid_black] dark:bg-clip-text dark:text-transparent text-white [filter:drop-shadow(0px_3px_8px_rgba(255,139,39,0.3))]">
               NAVIRANOBE
             </h1>
           </motion.div>
