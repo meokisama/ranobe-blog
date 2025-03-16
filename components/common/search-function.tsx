@@ -156,7 +156,7 @@ export default function SearchFunction() {
             type="text"
             placeholder="Tìm kiếm bài viết..."
             onChange={(e) => handleSearch(e.target.value)}
-            className="rounded-lg pl-8 lg:pl-9 py-4 xl:py-6 lg:text-lg dark:shadow-[0_3px_10px_rgba(0,0,0,0.6)] focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0"
+            className="rounded-lg pl-8 lg:pl-9 py-4 xl:py-6 lg:text-lg dark:shadow-[0_3px_10px_rgba(0,0,0,0.3)] focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0"
           />
           <MagnifyingGlassIcon className="absolute left-2.5 top-0 bottom-0 my-auto w-4 h-4 lg:w-5 lg:h-5 text-gray-400 dark:text-gray-600" />
         </div>
@@ -200,7 +200,7 @@ export default function SearchFunction() {
         ) : (
           results.map((result, index) => (
             <Link key={index} href={`/blog/${result.slug}`} target="_blank">
-              <div className="flex flex-row gap-4 items-center justify-center shadow-md mr-2 sm:mr-4 p-4 rounded-xl border dark:border-none">
+              <div className="flex flex-row gap-4 items-center justify-center shadow-md dark:shadow-[0_3px_10px_rgba(0,0,0,0.3)] dark:bg-[hsl(var(--accent))] ml-2 mr-2 sm:mr-4 p-4 rounded-xl border dark:border-none">
                 <div>
                   <div className="w-[110px] h-[110px] sm:w-[150px] sm:h-[150px] lg:w-[250px] lg:h-[170px] rounded-lg overflow-hidden">
                     <Image

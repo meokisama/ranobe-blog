@@ -7,26 +7,30 @@ import { AUTHORS } from "@/constants";
 
 export default function Hero() {
   return (
-    <div className="w-full min-h-screen relative overflow-hidden">
-      <div className="w-full h-full absolute bg-[length:4vw_4vw] lg:bg-[length:1.5vw_1.5vw] -z-10 custom-caro opacity-40 lg:opacity-80 dark:opacity-50" />
+    <div className="w-full min-h-screen relative overflow-hidden backdrop-blur-lg">
+      <div className="w-full h-full absolute bg-[length:4vw_4vw] lg:bg-[length:1.5vw_1.5vw] -z-10 custom-caro opacity-40 lg:opacity-80 dark:opacity-10" />
       <div>
-        <div className="mr-10 -rotate-12 text-[#e7b088b8] dark:text-[#3b71ab] select-none pointer-events-none">
-          <motion.h1
+        <div className="mr-10 -rotate-12 select-none pointer-events-none">
+          <motion.div
             initial={{ opacity: 0, y: "-100px" }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 7 }}
-            className="font-jaro font-normal tracking-tight text-center my-0 text-[19vw] lg:text-[20vw] leading-none -mb-4 md:-mb-12 lg:-mb-12 xl:-mb-20 animate-text bg-gradient-to-r from-[#e7b088b8] to-[#fea6a8b8] dark:from-[#7085B6b8] dark:via-[#87A7D9b8] dark:to-[#DEF3F8b8] bg-clip-text text-transparent"
+            className="-mb-4 md:-mb-12 lg:-mb-12 xl:-mb-20"
           >
-            THEMEOKI
-          </motion.h1>
-          <motion.h1
+            <h1 className="font-jaro font-normal tracking-tight text-center my-0 text-[19vw] lg:text-[20vw] leading-none dark:bg-[linear-gradient(45deg,_#a875ec_20%,_#ff6b7c_100%)] dark:[filter:drop-shadow(0px_3px_8px_rgba(0,0,0,_0.5))] dark:[text-outline:1px_solid_black] dark:bg-clip-text dark:text-transparent text-white [filter:drop-shadow(0px_3px_8px_rgba(255,139,39,0.2))]">
+              THEMEOKI
+            </h1>
+          </motion.div>
+          <motion.div
             initial={{ opacity: 0, y: "100px" }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, delay: 7 }}
-            className="font-jaro font-normal tracking-tight text-center my-0 text-[19vw] lg:text-[19.5vw] leading-none animate-text bg-gradient-to-r from-[#e7b088b8] to-[#fea6a7b8] dark:from-[#7085B6b8] dark:via-[#87A7D9b8] dark:to-[#DEF3F8b8] bg-clip-text text-transparent"
+            className="-mb-4 md:-mb-12 lg:-mb-12 xl:-mb-20"
           >
-            NAVIRANOBE
-          </motion.h1>
+            <h1 className="font-jaro font-normal tracking-tight text-center my-0 text-[19vw] lg:text-[20vw] leading-none dark:bg-[linear-gradient(45deg,_#a875ec_20%,_#ff6b7c_100%)] dark:[filter:drop-shadow(0px_3px_8px_rgba(0,0,0,_0.5))] dark:[text-outline:1px_solid_black] dark:bg-clip-text dark:text-transparent text-white [filter:drop-shadow(0px_3px_8px_rgba(255,139,39,0.2))]">
+              NAVIRANOBE
+            </h1>
+          </motion.div>
         </div>
         <div className="w-full flex flex-col-reverse lg:flex-row lg:gap-[35vw] -mt-16 lg:-mt-4">
           <div className="w-1/2"></div>
@@ -60,6 +64,7 @@ export default function Hero() {
                 stiffness: 300,
                 delay: 8,
               }}
+              className="mt-10"
             >
               <p className="lg:text-[1.3vw] text-justify leading-tight">
                 Có bao giờ bạn tự nghĩ những cuốn light novel ngoài kia có thể

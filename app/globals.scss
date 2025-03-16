@@ -41,8 +41,8 @@
   }
 
   .dark {
-    --background: 210 4% 10%;
-    --foreground: 210 40% 98%;
+    --background: 244 20% 14.7%;
+    --foreground: 212.4 60.7% 88%;
     --card: 222.2 84% 4.9%;
     --card-foreground: 210 40% 98%;
     --popover: 222.2 84% 4.9%;
@@ -53,7 +53,7 @@
     --secondary-foreground: 210 40% 98%;
     --muted: 210 2% 19%;
     --muted-foreground: 215 20.2% 65.1%;
-    --accent: 210 2% 19%;
+    --accent: 244 17.8% 17.7%;
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
@@ -65,7 +65,7 @@
     --chart-3: 30 80% 55%;
     --chart-4: 280 65% 60%;
     --chart-5: 340 75% 55%;
-    --hero-grid: 225 71% 23%;
+    --hero-grid: 353 100% 71%;
     --sidebar-background: 240 5.9% 10%;
     --sidebar-foreground: 240 4.8% 95.9%;
     --sidebar-primary: 224.3 76.3% 48%;
@@ -145,7 +145,7 @@
 }
 
 .bento-item {
-  @apply flex flex-col justify-center gap-4 shadow-sm hover:shadow-lg rounded-xl lg:rounded-2xl overflow-hidden border dark:border-white/[0.2] dark:bg-[#212121] lg:text-xl font-medium text-gray-800 dark:text-white text-justify leading-5 lg:leading-6;
+  @apply flex flex-col justify-center gap-4 shadow-sm hover:shadow-lg rounded-xl lg:rounded-2xl overflow-hidden border dark:border-none backdrop-blur dark:bg-[hsl(var(--accent))] lg:text-xl font-medium text-gray-800 dark:text-[hsl(var(--foreground))] dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] text-justify leading-5 lg:leading-6;
 }
 
 @layer base {
@@ -153,6 +153,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground cursor-[url('/cursors/Normal.cur'),auto];
   }
 }

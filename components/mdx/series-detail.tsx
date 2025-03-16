@@ -98,7 +98,7 @@ export default function SeriesDetail({ detail }: { detail: Detail }) {
 
   return (
     <div className="my-6 lg:my-12">
-      <Table className="text-lg lg:text-xl my-4 shadow-[0_3px_8px_rgba(0,0,0,0.16)] dark:shadow-[0_0_10px_rgba(0,0,0,0.6)] rounded-lg lg:rounded-xl px-4 py-2 max-w-[98%] block mx-auto">
+      <Table className="text-lg lg:text-xl my-4 shadow-[0_3px_8px_rgba(0,0,0,0.16)] dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] rounded-lg lg:rounded-xl px-4 py-2 max-w-[98%] block mx-auto">
         <TableBody>
           {details.map((detail) => (
             <TableRow key={detail.label}>

@@ -4,7 +4,7 @@ export default function Bento() {
   return (
     <div className="flex justify-center items-center mt-20">
       <div className="grid min-h-screen w-[95%] xl:w-[80%] grid-cols-5 gap-2 xl:gap-4">
-        <div className="hidden group relative sm:block col-span-2 row-span-2 shadow-sm hover:shadow-lg rounded-xl lg:rounded-2xl overflow-hidden border dark:border-white/[0.2] dark:bg-[#212121]">
+        <div className="hidden group relative sm:block col-span-2 row-span-2 shadow-sm backdrop-blur border dark:border-none hover:shadow-lg rounded-xl lg:rounded-2xl overflow-hidden dark:none dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] dark:bg-[hsl(var(--accent))]">
           <Image
             src="/bento/ginko.png"
             alt="sora ginko"
@@ -86,7 +86,7 @@ export default function Bento() {
             className="absolute w-full h-full -z-10 opacity-50 dark:hidden dark:opacity-50 select-none pointer-events-none"
           />
           <div className="absolute -z-[9] inset-0 bg-[url(/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] translate-y-[-2px] dark:hidden"></div>
-          <h1 className="text-2xl xl:text-5xl font-black mb-2 lg:mb-6 text-left text-gray-600 dark:text-white">
+          <h1 className="text-2xl xl:text-5xl font-black mb-2 lg:mb-6 text-left text-gray-600 dark:text-[hsl(var(--foreground))]">
             LIGHT NOVEL LÀ CÁI CHẾT TỪ TỪ CỦA HÀNH TINH!
           </h1>
           <p>
@@ -147,7 +147,7 @@ export default function Bento() {
             className="w-full h-full object-cover object-center select-none pointer-events-none group-hover:scale-105 transition ease-linear origin-top"
           />
         </div>
-        <div className="hidden group relative sm:block shadow-sm hover:shadow-lg rounded-xl lg:rounded-2xl overflow-hidden border dark:border-white/[0.2] dark:bg-[#212121]">
+        <div className="hidden group relative sm:block shadow-sm backdrop-blur border dark:border-none hover:shadow-lg rounded-xl lg:rounded-2xl overflow-hidden dark:none dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] dark:bg-[hsl(var(--accent))]">
           <Image
             src="/bento/konosuba.png"
             alt="konosuba"

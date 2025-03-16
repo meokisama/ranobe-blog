@@ -14,6 +14,13 @@ export default function Home() {
       <IconBar />
       <div className="relative">
         <Image
+          src="/sneaker.webp"
+          alt="background image"
+          width={1308}
+          height={1000}
+          className="fixed w-full h-auto z-[1] dark:invert dark:hidden select-none pointer-events-none"
+        />
+        <Image
           src="/beams.jpg"
           alt="background image"
           width={1308}
