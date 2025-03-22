@@ -6,7 +6,7 @@ import BoosterAds from "@/components/home/booster-ads";
 import Hero from "@/components/home/hero";
 import NewPosts from "@/components/home/new-posts";
 import Image from "next/image";
-
+import { Promo } from "@/components/home/promo";
 export default function Home() {
   return (
     <main>
@@ -32,6 +32,7 @@ export default function Home() {
           <Bento />
           <AuthorSection />
           <BoosterAds />
+          <Promo />
           <NewPosts />
         </div>
       </div>

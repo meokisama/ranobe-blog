@@ -20,7 +20,7 @@ export default function AuthorSection() {
         {authors.map((author, index) => (
           <div
             key={index}
-            className="max-w-sm rounded-2xl overflow-hidden bg-[#fbfbfb] dark:bg-[hsl(var(--accent))] dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] shadow-xl hover:-translate-y-2 transition ease-linear"
+            className="max-w-sm rounded-2xl overflow-hidden backdrop-blur dark:bg-[hsl(var(--accent))] dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] shadow-xl hover:-translate-y-2 transition ease-linear"
           >
             <div className="h-40">
               <Image

@@ -4,7 +4,7 @@ export default function Bento() {
   return (
     <div className="flex justify-center items-center mt-20">
       <div className="grid min-h-screen w-[95%] xl:w-[80%] grid-cols-5 gap-2 xl:gap-4">
-        <div className="hidden group relative sm:block col-span-2 row-span-2 shadow-sm backdrop-blur border dark:border-none hover:shadow-lg rounded-xl lg:rounded-2xl overflow-hidden dark:none dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] dark:bg-[hsl(var(--accent))]">
+        <div className="hidden group relative sm:block col-span-2 row-span-2 shadow-sm backdrop-blur border dark:border-none rounded-xl lg:rounded-2xl overflow-hidden dark:none dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] dark:bg-[hsl(var(--accent))]">
           <Image
             src="/bento/ginko.png"
             alt="sora ginko"
@@ -147,7 +147,7 @@ export default function Bento() {
             className="w-full h-full object-cover object-center select-none pointer-events-none group-hover:scale-105 transition ease-linear origin-top"
           />
         </div>
-        <div className="hidden group relative sm:block shadow-sm backdrop-blur border dark:border-none hover:shadow-lg rounded-xl lg:rounded-2xl overflow-hidden dark:none dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] dark:bg-[hsl(var(--accent))]">
+        <div className="hidden group relative sm:block shadow-sm backdrop-blur border dark:border-none rounded-xl lg:rounded-2xl overflow-hidden dark:none dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] dark:bg-[hsl(var(--accent))]">
           <Image
             src="/bento/konosuba.png"
             alt="konosuba"
