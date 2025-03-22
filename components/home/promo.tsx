@@ -17,13 +17,13 @@ export const Promo = () => {
           Có thể nhắn tin để yêu cầu truyện bạn muốn ~
         </p>
         <div className="flex gap-2 z-10 mt-8 justify-center md:justify-start">
-          <Link href="https://hub.ranobe.vn">
+          <Link href="https://hub.ranobe.vn" target="_blank">
             <Button className="cursor-pointer lg:text-lg">
               <HomeIcon className="w-4 h-4 mt-[2px] mr-1" />
               Trình Đọc Raw
             </Button>
           </Link>
-          <Link href="https://facebook.com/TheMeoki">
+          <Link href="https://facebook.com/TheMeoki" target="_blank">
             <Button variant="outline" className="cursor-pointer lg:text-lg">
               <MessageCircleIcon className="w-4 h-4 mt-[2px] mr-1" />
               Nhắn Tin
