@@ -14,7 +14,7 @@ export default function BoosterAds() {
           height={1000}
           className="absolute w-full h-full -z-10 opacity-70 dark:invert dark:opacity-50 select-none pointer-events-none"
         />
-        <div className="absolute -z-[9] inset-0 bg-[url(/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] translate-y-[-2px] dark:invert"></div>
+        <div className="absolute -z-9 inset-0 bg-[url(/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] translate-y-[-2px] dark:invert"></div>
         <div className="w-full">
           <Image
             src="/mignon.png"

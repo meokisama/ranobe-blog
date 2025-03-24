@@ -71,11 +71,11 @@ export default async function Home({
         height={1000}
         className="fixed w-full h-full z-1 opacity-50 dark:invert dark:hidden select-none pointer-events-none"
       />
-      <div className="absolute z-[2] font-jaro select-none pointer-events-none w-full text-center overflow-hidden backdrop-blur">
-        <h1 className="text-[40vw] leading-[30vw] sm:text-[21vw] sm:leading-[17vw] text-[hsl(var(--background))] custom-stroke">
+      <div className="absolute z-2 font-jaro select-none pointer-events-none w-full text-center overflow-hidden backdrop-blur-sm">
+        <h1 className="text-[40vw] leading-[30vw] sm:text-[21vw] sm:leading-[17vw] text-[var(--background)] custom-stroke">
           NAVIRANOBE
         </h1>
-        <h1 className="text-[40vw] leading-[33vw] sm:text-[26.3vw] sm:leading-[20vw] sm:mt-[-2vw] text-[hsl(var(--background))] custom-stroke">
+        <h1 className="text-[40vw] leading-[33vw] sm:text-[26.3vw] sm:leading-[20vw] sm:mt-[-2vw] text-[var(--background)] custom-stroke">
           THEMEOKI
         </h1>
       </div>
@@ -87,7 +87,7 @@ export default async function Home({
         priority
         className="h-auto w-[50vw] relative z-10 translate-y-[7.8vw] sm:w-[30vw] sm:translate-y-[4.6vw] select-none pointer-events-none"
       />
-      <div className="relative z-[3]">
+      <div className="relative z-3">
         <div className="w-full text-center flex flex-col items-center justify-center">
           <Separator className="mb-8 max-w-[80%] lg:max-w-4xl" />
           <h2 className="text-4xl md:text-6xl font-black">Chuyên Mục</h2>

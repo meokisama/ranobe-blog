@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Playfair_Display, Darker_Grotesque } from "next/font/google";
-import "./globals.scss";
+import "./globals.css";
 import { Providers } from "@/components/common/provider";
 import Footer from "@/components/common/footer";
 import { GoogleAnalytics } from "@next/third-parties/google";

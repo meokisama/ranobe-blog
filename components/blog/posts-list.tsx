@@ -45,7 +45,7 @@ const RenderPostList: React.FC<RenderPostListProps> = ({
   <div className="w-full space-y-4 max-w-7xl px-4 lg:px-12 mt-10 lg:mt-20">
     <Link href={`/blog/category/${category}`}>
       <div className="flex flex-row w-full justify-between items-center mt-14 mb-10">
-        <h1 className="p-4 border-s-4 border-red-400 bg-gradient-to-r from-[#fcf4f9] to-transparent dark:from-gray-800 text-xl md:text-2xl lg:text-3xl font-black text-gray-700 dark:text-white">
+        <h1 className="p-4 border-s-4 border-red-400 bg-linear-to-r from-[#fcf4f9] to-transparent dark:from-gray-800 text-xl md:text-2xl lg:text-3xl font-black text-gray-700 dark:text-white">
           {title}
         </h1>
         {categoryButton && (
@@ -62,7 +62,7 @@ const RenderPostList: React.FC<RenderPostListProps> = ({
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
       {posts.map((post) => (
         <Link key={post.slug} href={`/blog/${post.slug}`}>
-          <div className="p-4 flex flex-col sm:h-full justify-start rounded-xl bg-[#fbfbfb] dark:bg-[hsl(var(--accent))] shadow-lg dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] group hover:-translate-y-2 transition ease-linear hover:shadow-xl border dark:border-none">
+          <div className="p-4 flex flex-col sm:h-full justify-start rounded-xl bg-[#fbfbfb] dark:bg-[var(--accent)] shadow-lg dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] group hover:-translate-y-2 transition ease-linear hover:shadow-xl border dark:border-none">
             <div className="w-full h-[50%] rounded-xl shadow-lg overflow-hidden">
               <Image
                 src={`/posts/${post.metadata.thumbnail}`}

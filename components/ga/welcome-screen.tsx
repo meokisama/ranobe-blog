@@ -19,7 +19,7 @@ export default function WelcomeScreen() {
   }, []);
 
   return shouldUnmount ? null : (
-    <div className="h-screen w-screen select-none pointer-events-none fixed overflow-hidden z-[5000]">
+    <div className="h-screen w-screen select-none pointer-events-none fixed overflow-hidden z-5000">
       <motion.div
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}

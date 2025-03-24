@@ -95,11 +95,11 @@ export default async function Page({ params }: { params: { slug: string } }) {
   return (
     <div className="relative">
       <IconBar />
-      <div className="absolute z-[2] select-none pointer-events-none font-jaro w-full text-center overflow-hidden backdrop-blur">
-        <h1 className="text-[50vw] leading-[40vw] sm:text-[21vw] sm:leading-[17vw] text-[hsl(var(--background))] custom-stroke">
+      <div className="absolute z-2 select-none pointer-events-none font-jaro w-full text-center overflow-hidden backdrop-blur-sm">
+        <h1 className="text-[50vw] leading-[40vw] sm:text-[21vw] sm:leading-[17vw] text-[var(--background)] custom-stroke">
           NAVIRANOBE
         </h1>
-        <h1 className="text-[50vw] leading-[40vw] sm:text-[26.3vw] sm:leading-[20vw] sm:mt-[-2vw] text-[hsl(var(--background))] custom-stroke">
+        <h1 className="text-[50vw] leading-[40vw] sm:text-[26.3vw] sm:leading-[20vw] sm:mt-[-2vw] text-[var(--background)] custom-stroke">
           THEMEOKI
         </h1>
       </div>
@@ -126,7 +126,7 @@ export default async function Page({ params }: { params: { slug: string } }) {
           priority
           className="w-[300px] md:w-[400px] lg:w-[500px] h-auto relative z-10 translate-y-[2.6rem] md:translate-y-[3.5rem] lg:translate-y-[4.4rem] block mx-auto md:mr-0 select-none pointer-events-none"
         />
-        <div className="p-6 lg:py-12 lg:px-24 bg-[#fbfbfb] dark:bg-[hsl(var(--accent))] rounded-2xl shadow-[0_3px_8px_rgba(0,0,0,0.24)] dark:shadow-[0_0_10px_rgba(0,0,0,0.6)]">
+        <div className="p-6 lg:py-12 lg:px-24 bg-[#fbfbfb] dark:bg-[var(--accent)] rounded-2xl shadow-[0_3px_8px_rgba(0,0,0,0.24)] dark:shadow-[0_0_10px_rgba(0,0,0,0.6)]">
           <Link
             href="/blog"
             className="flex flex-row justify-end md:justify-start relative z-50"

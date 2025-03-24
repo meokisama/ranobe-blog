@@ -25,7 +25,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h6: (props) => <h6 className="text-base font-light pb-4" {...props} />,
     p: (props) => (
       <p
-        className="text-lg lg:text-xl 2xl:text-[22px] mb-4 leading-6 text-justify "
+        className="text-lg lg:text-xl 2xl:text-[22px] mb-4 leading-6 lg:leading-[1.75rem] text-justify "
         {...props}
       />
     ),
@@ -40,7 +40,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     hr: (props) => <hr className="my-4" {...props} />,
     blockquote: (props) => (
       <blockquote
-        className="p-4 my-4 border-s-4 border-gray-300 bg-gray-100 dark:border-gray-500 dark:bg-[hsl(var(--background))] text-xl italic font-semibold leading-relaxed text-gray-900 dark:text-[hsl(var(--foreground))]"
+        className="p-4 my-4 border-s-4 border-gray-300 bg-gray-100 dark:border-gray-500 dark:bg-[var(--background)] text-xl italic font-semibold leading-relaxed text-gray-900 dark:text-[var(--foreground)]"
         {...props}
       />
     ),
