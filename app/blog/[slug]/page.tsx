@@ -80,10 +80,14 @@ const categoriesMap: { [key: string]: string } = CATEGORIES.reduce(
   {} as { [key: string]: string }
 );
 
-export default async function Page({ params }: { params: { slug: string } }) {
-  const { slug } = params;
+export default async function Page({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
 
-  const post = await getPost(params);
+  const post = await getPost({ slug });
   const MDXContent = dynamic(() => import(`@/posts/${slug}.mdx`));
 
   const formattedDate = format(
