@@ -1,5 +1,5 @@
 "use client";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
@@ -200,12 +200,15 @@ export default function SplashScreen() {
       <motion.div
         animate={{ opacity: 0 }}
         transition={{ duration: 2, delay: 5 }}
-        className="font-playfair fixed flex flex-col justify-center items-center h-full w-full lg:text-xl xl:text-3xl gap-2 xl:gap-4 text-center px-4 text-slate-800 z-5001"
+        className="font-playfair fixed flex flex-col justify-center items-center h-screen w-screen lg:text-xl xl:text-3xl gap-2 xl:gap-4 text-center px-4 text-slate-800 z-5001"
       >
         <motion.p
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 5, delay: 1 }}
+          style={{
+            willChange: "transform",
+          }}
         >
           Light Novel cất giấu nhiều điều{" "}
           <strong className="text-red-500">hơn</strong> bạn nghĩ...
@@ -214,6 +217,9 @@ export default function SplashScreen() {
           initial={{ opacity: 0, scale: 1.1 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 5, delay: 2.5 }}
+          style={{
+            willChange: "transform",
+          }}
         >
           Bạn thực sự đã <strong className="text-blue-500">hiểu hết</strong>{" "}
           những gì tác giả muốn truyền tải qua những trang sách?

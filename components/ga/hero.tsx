@@ -1,6 +1,6 @@
 "use client";
 import Image from "next/image";
-import { motion } from "framer-motion";
+import { motion } from "motion/react";
 import { Signature, Arrow } from "./signature";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
