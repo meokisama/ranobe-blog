@@ -6,12 +6,13 @@ import { Separator } from "@/components/ui/separator";
 import IconBar from "@/components/common/icon-bar";
 import { CATEGORIES } from "@/constants";
 
-export async function generateMetadata({
-  params,
-}: {
-  params: { category: string };
-}): Promise<Metadata> {
-  const { category } = params;
+type Props = {
+  params: Promise<{ category: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
+};
+
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { category } = await params;
   const renderList = CATEGORIES;
 
   const matchedCategory = renderList.find((item) => item.category === category);
@@ -29,12 +30,8 @@ export async function generateMetadata({
   };
 }
 
-export default async function Home({
-  params,
-}: {
-  params: { category: string };
-}) {
-  const { category } = params;
+export default async function Home({ params }: Props) {
+  const { category } = await params;
 
   const posts = await getAllPosts();
   const renderList = CATEGORIES.map((item) => ({

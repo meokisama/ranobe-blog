@@ -16,14 +16,16 @@ import IconBar from "@/components/common/icon-bar";
 import { CATEGORIES, AUTHORS } from "@/constants";
 
 type Props = {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
+  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 export async function generateMetadata(
   { params }: Props,
   parent: ResolvingMetadata
 ): Promise<Metadata> {
-  const post = await getPost(params);
+  const { slug } = await params;
+  const post = await getPost({ slug });
   return {
     title: post.metadata.title + " - Ranobe",
     description: post.metadata.description,
@@ -80,11 +82,7 @@ const categoriesMap: { [key: string]: string } = CATEGORIES.reduce(
   {} as { [key: string]: string }
 );
 
-export default async function Page({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export default async function Page({ params }: Props) {
   const { slug } = await params;
 
   const post = await getPost({ slug });
