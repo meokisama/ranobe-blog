@@ -32,7 +32,9 @@ export default function Home() {
           <Bento />
           <AuthorSection />
           <BoosterAds />
-          <Promo />
+          <div className="mt-8 mx-4 lg:mx-0">
+            <Promo />
+          </div>
           <NewPosts />
         </div>
       </div>

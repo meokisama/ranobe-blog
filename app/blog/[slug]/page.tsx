@@ -14,6 +14,7 @@ import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons";
 import GiscusComments from "@/components/blog/giscus";
 import IconBar from "@/components/common/icon-bar";
 import { CATEGORIES, AUTHORS } from "@/constants";
+import { Promo } from "@/components/home/promo";
 
 type Props = {
   params: Promise<{ slug: string }>;
@@ -133,7 +134,7 @@ export default async function Page({ params }: Props) {
             href="/blog"
             className="flex flex-row justify-end md:justify-start relative z-50"
           >
-            <Button className="text-lg mb-8 flex flex-row items-center gap-1">
+            <Button className="text-lg mb-8 flex flex-row items-center gap-1 cursor-pointer">
               <ArrowLeftIcon className="mt-1" />
               <p>Tất cả bài viết</p>
             </Button>
@@ -191,13 +192,13 @@ export default async function Page({ params }: Props) {
               categoriesMap[post.metadata.category] || ""
             }`}
           >
-            <Button className="text-base md:text-lg py-5">
+            <Button className="text-base md:text-lg py-5 cursor-pointer">
               <ArrowLeftIcon className="mr-1" />
               <p className="mb-1">Bài viết chuyên mục</p>
             </Button>
           </Link>
           <Link href="/blog">
-            <Button className="text-base md:text-lg py-5">
+            <Button className="text-base md:text-lg py-5 cursor-pointer">
               <p className="mb-1">Tất cả bài viết</p>
               <ArrowRightIcon className="ml-1" />
             </Button>
@@ -206,6 +207,9 @@ export default async function Page({ params }: Props) {
         <div className="mt-8 mx-4 lg:mx-0">
           <Separator className="mt-10 mb-5 lg:mt-20 lg:mb-10" />
           <GiscusComments />
+        </div>
+        <div className="mt-8 mx-4 lg:mx-0">
+          <Promo />
         </div>
         <Image
           src="/post_chibi.png"

@@ -7,7 +7,12 @@ import Footer from "@/components/common/footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import ScrollToTop from "@/components/common/scroll-to-top";
 import { FloatingNav } from "@/components/ui/floating-navbar";
-import { BookmarkIcon, HomeIcon, MixIcon } from "@radix-ui/react-icons";
+import {
+  BookmarkIcon,
+  HomeIcon,
+  MixIcon,
+  ReaderIcon,
+} from "@radix-ui/react-icons";
 
 const playfair_display = Playfair_Display({
   subsets: ["vietnamese"],
@@ -64,6 +69,11 @@ const navItems = [
     name: "Trang chủ",
     link: "/",
     icon: <HomeIcon className="h-4 w-4 text-neutral-800 dark:text-white" />,
+  },
+  {
+    name: "Đọc Raw",
+    link: "https://hub.ranobe.vn",
+    icon: <ReaderIcon className="h-4 w-4 text-neutral-800 dark:text-white" />,
   },
   {
     name: "Bài viết",

@@ -38,7 +38,10 @@ export default async function NewPost() {
             category={category.category}
           />
           <Link href="/blog" target="_blank">
-            <Button size="lg" className="text-lg lg:text-xl py-6 mt-14">
+            <Button
+              size="lg"
+              className="text-lg lg:text-xl py-6 mt-14 cursor-pointer"
+            >
               Tất cả bài viết
             </Button>
           </Link>

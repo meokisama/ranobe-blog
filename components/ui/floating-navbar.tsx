@@ -69,8 +69,15 @@ export const FloatingNav = ({
             )}
           >
             <span className="sm:mt-1">{navItem.icon}</span>
-            <span className="sm:text-lg font-semibold ml-1">
+            <span className="sm:text-lg font-semibold ml-1 hidden sm:block">
               {navItem.name}
+            </span>
+            <span className="sm:text-lg font-semibold ml-1 block sm:hidden">
+              {navItem.name === "Giveaway Booster"
+                ? "GA"
+                : navItem.name === "Trang chủ"
+                ? ""
+                : navItem.name}
             </span>
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-linear-to-r from-transparent via-blue-500 to-transparent  h-px" />
           </Link>

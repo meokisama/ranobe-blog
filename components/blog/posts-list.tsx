@@ -51,7 +51,7 @@ const RenderPostList: React.FC<RenderPostListProps> = ({
         {categoryButton && (
           <Button
             variant="outline"
-            className="text-base lg:text-lg flex flex-row justify-center items-center gap-1 py-5"
+            className="text-base lg:text-lg flex flex-row justify-center items-center gap-1 py-5 cursor-pointer"
           >
             <p className="hidden sm:block mb-1">Xem chuyên mục</p>
             <ArrowRightIcon />
