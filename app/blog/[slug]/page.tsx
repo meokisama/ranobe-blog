@@ -10,8 +10,7 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
-import { ArrowLeftIcon, ArrowRightIcon } from "@radix-ui/react-icons";
-import GiscusComments from "@/components/blog/giscus";
+import { ArrowLeftIcon, ArrowRightIcon, HomeIcon } from "@radix-ui/react-icons";
 import IconBar from "@/components/common/icon-bar";
 import { CATEGORIES, AUTHORS } from "@/constants";
 import { Promo } from "@/components/home/promo";
@@ -127,18 +126,23 @@ export default async function Page({ params }: Props) {
           width={500}
           height={591}
           priority
-          className="w-[300px] md:w-[400px] lg:w-[500px] h-auto relative z-10 translate-y-[2.6rem] md:translate-y-[3.5rem] lg:translate-y-[4.4rem] block mx-auto md:mr-0 select-none pointer-events-none"
+          className="w-[300px] md:w-[400px] lg:w-[500px] h-auto relative z-100 translate-y-[2.6rem] md:translate-y-[3.5rem] lg:translate-y-[4.4rem] block mx-auto md:mr-0 translate-x-8 md:translate-x-0 select-none pointer-events-none"
         />
         <div className="p-6 lg:py-12 lg:px-24 bg-[#fbfbfb] dark:bg-[var(--accent)] rounded-2xl shadow-[0_3px_8px_rgba(0,0,0,0.24)] dark:shadow-[0_0_10px_rgba(0,0,0,0.6)]">
-          <Link
-            href="/blog"
-            className="flex flex-row justify-end md:justify-start relative z-50"
-          >
-            <Button className="text-lg mb-8 flex flex-row items-center gap-1 cursor-pointer">
-              <ArrowLeftIcon className="mt-1" />
-              <p>Tất cả bài viết</p>
-            </Button>
-          </Link>
+          <div className="flex flex-row justify-between gap-2 mb-8">
+            <Link href="/blog" className="flex flex-row relative z-50">
+              <Button className="text-lg flex flex-row items-center gap-1 cursor-pointer">
+                <ArrowLeftIcon className="mt-1" />
+                <p>Tất cả bài viết</p>
+              </Button>
+            </Link>
+            <Link href="/" className="flex flex-row relative z-50">
+              <Button className="text-lg flex flex-row items-center gap-1 cursor-pointer">
+                <HomeIcon className="mt-1" />
+                <p>Trang Chủ</p>
+              </Button>
+            </Link>
+          </div>
           <Separator className="mb-4" />
           <article className="mx-auto min-w-full">
             <div className="pb-5">
@@ -205,19 +209,17 @@ export default async function Page({ params }: Props) {
           </Link>
         </div>
         <div className="mt-8 mx-4 lg:mx-0">
-          <Separator className="mt-10 mb-5 lg:mt-20 lg:mb-10" />
-          <GiscusComments />
-        </div>
-        <div className="mt-8 mx-4 lg:mx-0">
           <Promo />
         </div>
-        <Image
-          src="/post_chibi.png"
-          alt="chibi image for detail post"
-          width={400}
-          height={400}
-          className="block mx-auto mt-28 -mb-40 lg:mt-40 lg:-mb-28 select-none pointer-events-none w-[250px] sm:w-[300px] md:w-[400px]"
-        />
+        <Link href="/">
+          <Image
+            src="/post_chibi.png"
+            alt="chibi image for detail post"
+            width={400}
+            height={400}
+            className="block mx-auto mt-28 -mb-40 lg:mt-40 lg:-mb-28 select-none pointer-events-none w-[250px] sm:w-[300px] md:w-[400px]"
+          />
+        </Link>
       </div>
     </div>
   );
