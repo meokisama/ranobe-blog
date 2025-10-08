@@ -33,8 +33,7 @@ const jaro = localFont({
   display: "swap",
 });
 
-const title =
-  "Ranobe - Light Novel cất giấu nhiều điều hơn bạn nghĩ / Light Novel Blog";
+const title = "Ranobe - Review Light Novel. Phân tích Light Novel.";
 const description =
   "Review Light Novel. Phân tích Light Novel. Chia sẻ tài nguyên Light Novel. Blog cho những người đam mê văn học Nhật Bản hiện đại.";
 
@@ -45,6 +44,9 @@ export const metadata: Metadata = {
   publisher: "Meoki",
   keywords: [
     "light novel",
+    "đọc light novel",
+    "phân tích light novel",
+    "review light novel",
     "ln",
     "ranobe",
     "blog",
@@ -73,7 +75,7 @@ const navItems = [
   },
   {
     name: "Đọc Raw",
-    link: "https://hub.ranobe.vn",
+    link: "https://lightnovel.vn",
     icon: <ReaderIcon className="h-4 w-4 text-neutral-800 dark:text-white" />,
   },
   {
