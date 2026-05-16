@@ -26,36 +26,20 @@ export default function BoosterAds() {
           />
         </div>
         <div className="w-full flex flex-col justify-center items-center gap-8">
-          <Image
-            src="/booster-logo.webp"
-            alt="giveaway booster logo"
-            width={400}
-            height={400}
-            className="h-auto w-[55vw] lg:w-[20vw]"
-          />
+          <Image src="/booster-logo.webp" alt="giveaway booster logo" width={400} height={400} className="h-auto w-[55vw] lg:w-[20vw]" />
           <div className="w-[90%] xl:w-3/5 text-center">
-            <h1 className="font-black text-2xl lg:text-3xl leading-6 text-[#8150c6]">
-              Light Novel Giveaway Booster
-            </h1>
-            <p className="font-semibold text-lg text-gray-500 mt-1 leading-6">
-              Lễ hội trắc nghiệm có thưởng hằng năm sắp quay trở lại!
-            </p>
+            <h1 className="font-black text-2xl lg:text-3xl leading-6 text-[#8150c6]">Light Novel Giveaway Booster</h1>
+            <p className="font-semibold text-lg text-gray-500 mt-1 leading-6">Lễ hội trắc nghiệm có thưởng hằng năm sắp quay trở lại!</p>
           </div>
           <p className="text-lg lg:text-xl leading-5 lg:leading-6 w-[90%] xl:w-3/5 text-justify lg:font-medium">
-            Sự kiện được mong chờ nhất năm (của chúng tôi) đã đến, với tổng giá
-            trị giải thưởng{" "}
-            <strong className="font-black text-red-500">
-              ít nhất 2.000.000đ mỗi kỳ
-            </strong>
-            ! Hãy chuẩn bị kiến thức đầy đủ để sẵn sàng tỏa sáng và chinh phục
-            thử thách, giành lấy những phần thưởng xứng đáng nhất cho sự nỗ lực
-            của bạn.
+            Sự kiện được mong chờ nhất năm (của chúng tôi) đã đến, với tổng giá trị giải thưởng{" "}
+            <strong className="font-black text-red-500">ít nhất 2.000.000đ mỗi kỳ</strong>! Hãy chuẩn bị kiến thức đầy đủ để sẵn sàng tỏa sáng và
+            chinh phục thử thách, giành lấy những phần thưởng xứng đáng nhất cho sự nỗ lực của bạn.
           </p>
           <div>
             <Link href="/ga" target="_blank">
               <Button className="lg:text-lg py-5">
-                <span className="mb-1">Thông tin chi tiết</span>{" "}
-                <ArrowRightIcon className="ml-1" />
+                <span className="mb-1">Thông tin chi tiết</span> <ArrowRightIcon className="ml-1" />
               </Button>
             </Link>
           </div>

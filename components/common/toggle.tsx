@@ -1,12 +1,7 @@
 "use client";
 
 import { useTheme } from "next-themes";
-import {
-  DropdownMenu,
-  DropdownMenuContent,
-  DropdownMenuItem,
-  DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
 import { MoonIcon, SunIcon } from "@radix-ui/react-icons";
 
@@ -26,15 +21,9 @@ export function ModeToggle() {
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent align="start">
-        <DropdownMenuItem onClick={() => setTheme("light")}>
-          Sáng
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("dark")}>
-          Tối
-        </DropdownMenuItem>
-        <DropdownMenuItem onClick={() => setTheme("system")}>
-          Hệ thống
-        </DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("light")}>Sáng</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("dark")}>Tối</DropdownMenuItem>
+        <DropdownMenuItem onClick={() => setTheme("system")}>Hệ thống</DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>
   );

@@ -15,9 +15,7 @@ export default function GiveAway() {
       <WelcomeScreen />
       <IconBar />
       <Hero />
-      <p className="mt-8 text-lg text-center">
-        This page is in building process...
-      </p>
+      <p className="mt-8 text-lg text-center">This page is in building process...</p>
     </div>
   );
 }

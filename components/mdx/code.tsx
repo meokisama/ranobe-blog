@@ -26,20 +26,12 @@ const Code = (props: any) => {
     <div className="code-block gap-0 rounded-lg text-white pb-6">
       <div className="flex justify-between items-center bg-gray-900 py-2 px-4 rounded-t-lg">
         <span className="text-gray-300">{language}</span>
-        <button
-          type="button"
-          className="text-gray-300 hover:text-white"
-          onClick={handleCopy}
-        >
+        <button type="button" className="text-gray-300 hover:text-white" onClick={handleCopy}>
           {copied ? "Copied!" : "Copy"}
         </button>
       </div>
       <pre className="bg-gray-800 p-4 rounded-b-lg overflow-auto">
-        <code
-          ref={codeRef}
-          className={`${className} bg-gray-800`}
-          style={{ whiteSpace: "pre-wrap" }}
-        >
+        <code ref={codeRef} className={`${className} bg-gray-800`} style={{ whiteSpace: "pre-wrap" }}>
           {props.children}
         </code>
       </pre>

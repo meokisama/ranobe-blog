@@ -23,24 +23,15 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h4: (props) => <h4 className="text-2xl font-medium pb-4" {...props} />,
     h5: (props) => <h5 className="text-lg font-normal pb-4" {...props} />,
     h6: (props) => <h6 className="text-base font-light pb-4" {...props} />,
-    p: (props) => (
-      <p
-        className="text-lg lg:text-xl 2xl:text-[22px] mb-4 leading-6 lg:leading-[1.75rem] text-justify "
-        {...props}
-      />
-    ),
+    p: (props) => <p className="text-lg lg:text-xl 2xl:text-[22px] mb-4 leading-6 lg:leading-7 text-justify font-medium" {...props} />,
     strong: (props) => <strong className="text-red-500" {...props} />,
     li: (props) => <li className="pb-1 text-xl lg:text-2xl" {...props} />,
-    ul: (props) => (
-      <ul className="list-disc text-xl lg:text-2xl pl-6 pb-4" {...props} />
-    ),
-    ol: (props) => (
-      <ol className="list-decimal text-xl lg:text-2xl pl-6 pb-4" {...props} />
-    ),
+    ul: (props) => <ul className="list-disc text-xl lg:text-2xl pl-6 pb-4" {...props} />,
+    ol: (props) => <ol className="list-decimal text-xl lg:text-2xl pl-6 pb-4" {...props} />,
     hr: (props) => <hr className="my-4" {...props} />,
     blockquote: (props) => (
       <blockquote
-        className="p-4 my-4 border-s-4 border-gray-300 bg-gray-100 dark:border-gray-500 dark:bg-[var(--background)] text-xl italic font-semibold leading-relaxed text-gray-900 dark:text-[var(--foreground)]"
+        className="p-4 my-4 border-s-4 border-gray-300 bg-gray-100 dark:border-gray-500 dark:bg-background text-xl italic font-semibold leading-relaxed text-gray-900 dark:text-foreground"
         {...props}
       />
     ),
@@ -51,7 +42,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
         alt={props.alt as string}
         width={900}
         height={900}
-        className="rounded-lg lg:rounded-2xl shadow-postimg h-auto w-[400px] sm:w-[900px] block mx-auto my-10"
+        className="rounded-lg lg:rounded-2xl shadow-postimg h-auto w-100 sm:w-225 block mx-auto my-10"
       />
     ),
   };

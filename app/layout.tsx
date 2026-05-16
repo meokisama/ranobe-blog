@@ -7,12 +7,7 @@ import Footer from "@/components/common/footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import ScrollToTop from "@/components/common/scroll-to-top";
 import { FloatingNav } from "@/components/ui/floating-navbar";
-import {
-  BookmarkIcon,
-  HomeIcon,
-  MixIcon,
-  ReaderIcon,
-} from "@radix-ui/react-icons";
+import { BookmarkIcon, HomeIcon, MixIcon, ReaderIcon } from "@radix-ui/react-icons";
 
 const playfair_display = Playfair_Display({
   subsets: ["vietnamese"],
@@ -97,9 +92,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="vi" suppressHydrationWarning>
-      <body
-        className={`${playfair_display.variable} ${darker_grotesque.variable} ${jaro.variable}`}
-      >
+      <body className={`${playfair_display.variable} ${darker_grotesque.variable} ${jaro.variable}`}>
         <ScrollToTop />
         <Providers>
           <div vaul-drawer-wrapper="" className="bg-background">

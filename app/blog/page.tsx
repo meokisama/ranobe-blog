@@ -17,9 +17,7 @@ export default async function Home() {
   const renderList = CATEGORIES.map((item) => ({
     title: item.title,
     category: item.category,
-    data: posts.filter(
-      (post) => post.metadata.category === item.metadataCategory
-    ),
+    data: posts.filter((post) => post.metadata.category === item.metadataCategory),
   }));
 
   return (
@@ -40,12 +38,8 @@ export default async function Home() {
         className="fixed w-full h-full z-1 opacity-50 dark:invert dark:hidden select-none pointer-events-none"
       />
       <div className="absolute z-2 select-none pointer-events-none font-jaro w-full text-center overflow-hidden backdrop-blur-sm">
-        <h1 className="text-[40vw] leading-[30vw] sm:text-[21vw] sm:leading-[17vw] text-[var(--background)] custom-stroke">
-          NAVIRANOBE
-        </h1>
-        <h1 className="text-[40vw] leading-[33vw] sm:text-[26.3vw] sm:leading-[20vw] sm:mt-[-2vw] text-[var(--background)] custom-stroke">
-          THEMEOKI
-        </h1>
+        <h1 className="text-[40vw] leading-[30vw] sm:text-[21vw] sm:leading-[17vw] text-background custom-stroke">NAVIRANOBE</h1>
+        <h1 className="text-[40vw] leading-[33vw] sm:text-[26.3vw] sm:leading-[20vw] sm:mt-[-2vw] text-background custom-stroke">THEMEOKI</h1>
       </div>
       <Image
         src="/imouza_all.png"
@@ -59,18 +53,11 @@ export default async function Home() {
         <div className="w-full text-center flex flex-col items-center justify-center">
           <Separator className="mb-8 max-w-[80%] lg:max-w-4xl" />
           <h2 className="text-4xl md:text-6xl font-black">Tất cả bài viết</h2>
-          <p className="text-lg lg:text-xl text-center px-4 leading-5 mt-2">
-            Tìm đọc tất cả bài viết của chúng tôi ngay bên dưới.
-          </p>
+          <p className="text-lg lg:text-xl text-center px-4 leading-5 mt-2">Tìm đọc tất cả bài viết của chúng tôi ngay bên dưới.</p>
           <Separator className="mt-8 max-w-[80%] lg:max-w-4xl" />
         </div>
         {renderList.map((category, index) => (
-          <PostList
-            key={index}
-            data={category.data}
-            title={category.title}
-            category={category.category}
-          />
+          <PostList key={index} data={category.data} title={category.title} category={category.category} />
         ))}
       </div>
     </div>

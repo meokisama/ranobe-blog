@@ -3,10 +3,17 @@ import { motion } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 
+const SPLASH_SEEN_KEY = "splash_seen";
+
 export default function SplashScreen() {
   const [shouldUnmount, setShouldUnmount] = useState(false);
 
   useEffect(() => {
+    if (sessionStorage.getItem(SPLASH_SEEN_KEY) === "1") {
+      setShouldUnmount(true);
+      return;
+    }
+    sessionStorage.setItem(SPLASH_SEEN_KEY, "1");
     document.body.style.position = "fixed";
     document.body.style.width = "100vw";
     const timeoutId = setTimeout(() => {
@@ -28,13 +35,7 @@ export default function SplashScreen() {
           transition={{ duration: 2, delay: 5, ease: "easeIn" }}
           className="fixed"
         >
-          <Image
-            src="/hana_01.png"
-            alt="sakura flower petal"
-            width={300}
-            height={300}
-            className="w-[150px] lg:w-[220px] xl:w-[300px] h-auto"
-          />
+          <Image src="/hana_01.png" alt="sakura flower petal" width={300} height={300} className="w-[150px] lg:w-[220px] xl:w-[300px] h-auto" />
         </motion.div>
         <motion.div
           initial={{ x: 0, y: "100px", rotate: 0 }}
@@ -42,13 +43,7 @@ export default function SplashScreen() {
           transition={{ duration: 2, delay: 6.1, ease: "easeIn" }}
           className="fixed"
         >
-          <Image
-            src="/hana_01.png"
-            alt="sakura flower petal"
-            width={150}
-            height={150}
-            className="w-[75px] lg:w-[110px] xl:w-[150px] h-auto"
-          />
+          <Image src="/hana_01.png" alt="sakura flower petal" width={150} height={150} className="w-18.75 lg:w-27.5 xl:w-37.5 h-auto" />
         </motion.div>
 
         {/* Hana 02 */}
@@ -58,13 +53,7 @@ export default function SplashScreen() {
           transition={{ duration: 2, delay: 5.5, ease: "easeIn" }}
           className="fixed"
         >
-          <Image
-            src="/hana_02.png"
-            alt="sakura flower petal"
-            width={100}
-            height={100}
-            className="w-[50px] lg:w-[75px] xl:w-[100px] h-auto"
-          />
+          <Image src="/hana_02.png" alt="sakura flower petal" width={100} height={100} className="w-12.5 lg:w-18.75 xl:w-25 h-auto" />
         </motion.div>
         <motion.div
           initial={{ x: 0, y: "400px", rotate: 0 }}
@@ -72,13 +61,7 @@ export default function SplashScreen() {
           transition={{ duration: 2, delay: 5.5, ease: "easeIn" }}
           className="fixed"
         >
-          <Image
-            src="/hana_02.png"
-            alt="sakura flower petal"
-            width={180}
-            height={180}
-            className="w-[90px] lg:w-[135px] xl:w-[180px] h-auto"
-          />
+          <Image src="/hana_02.png" alt="sakura flower petal" width={180} height={180} className="w-22.5 lg:w-33.75 xl:w-45 h-auto" />
         </motion.div>
         <motion.div
           initial={{ x: 0, y: 0, rotate: 0 }}
@@ -86,13 +69,7 @@ export default function SplashScreen() {
           transition={{ duration: 2, delay: 5.7, ease: "easeIn" }}
           className="fixed"
         >
-          <Image
-            src="/hana_02.png"
-            alt="sakura flower petal"
-            width={200}
-            height={200}
-            className="w-[100px] lg:w-[150px] xl:w-[200px] h-auto"
-          />
+          <Image src="/hana_02.png" alt="sakura flower petal" width={200} height={200} className="w-25 lg:w-37.5 xl:w-50 h-auto" />
         </motion.div>
         <motion.div
           initial={{ x: 0, y: 0, rotate: 0 }}
@@ -100,13 +77,7 @@ export default function SplashScreen() {
           transition={{ duration: 2, delay: 5.1, ease: "easeIn" }}
           className="fixed"
         >
-          <Image
-            src="/hana_02.png"
-            alt="sakura flower petal"
-            width={100}
-            height={100}
-            className="w-[50px] lg:w-[75px] xl:w-[100px] h-auto"
-          />
+          <Image src="/hana_02.png" alt="sakura flower petal" width={100} height={100} className="w-12.5 lg:w-18.75 xl:w-25 h-auto" />
         </motion.div>
         <motion.div
           initial={{ x: 0, y: 0, rotate: 0 }}
@@ -114,13 +85,7 @@ export default function SplashScreen() {
           transition={{ duration: 2, delay: 6.3, ease: "easeIn" }}
           className="fixed"
         >
-          <Image
-            src="/hana_02.png"
-            alt="sakura flower petal"
-            width={100}
-            height={100}
-            className="w-[50px] lg:w-[75px] xl:w-[100px] h-auto"
-          />
+          <Image src="/hana_02.png" alt="sakura flower petal" width={100} height={100} className="w-12.5 lg:w-18.75 xl:w-25 h-auto" />
         </motion.div>
 
         {/* Hana 03 */}
@@ -130,13 +95,7 @@ export default function SplashScreen() {
           transition={{ duration: 2, delay: 5.3, ease: "easeIn" }}
           className="fixed"
         >
-          <Image
-            src="/hana_03.png"
-            alt="sakura flower petal"
-            width={230}
-            height={230}
-            className="w-[110px] lg:w-[180px] xl:w-[230px] h-auto"
-          />
+          <Image src="/hana_03.png" alt="sakura flower petal" width={230} height={230} className="w-27.5 lg:w-45 xl:w-57.5 h-auto" />
         </motion.div>
         <motion.div
           initial={{ x: 0, y: 0, rotate: 0 }}
@@ -144,13 +103,7 @@ export default function SplashScreen() {
           transition={{ duration: 2, delay: 6, ease: "easeIn" }}
           className="fixed"
         >
-          <Image
-            src="/hana_03.png"
-            alt="sakura flower petal"
-            width={220}
-            height={220}
-            className="w-[100px] lg:w-[160px] xl:w-[220px] h-auto"
-          />
+          <Image src="/hana_03.png" alt="sakura flower petal" width={220} height={220} className="w-25 lg:w-40 xl:w-55 h-auto" />
         </motion.div>
         <motion.div
           initial={{ x: 0, y: "100px", rotate: 0 }}
@@ -158,13 +111,7 @@ export default function SplashScreen() {
           transition={{ duration: 2, delay: 6.5, ease: "easeIn" }}
           className="fixed"
         >
-          <Image
-            src="/hana_03.png"
-            alt="sakura flower petal"
-            width={120}
-            height={120}
-            className="w-[60px] lg:w-[90px] xl:w-[120px] h-auto"
-          />
+          <Image src="/hana_03.png" alt="sakura flower petal" width={120} height={120} className="w-15 lg:w-22.5 xl:w-30 h-auto" />
         </motion.div>
 
         {/* Hana 04 */}
@@ -174,13 +121,7 @@ export default function SplashScreen() {
           transition={{ duration: 2, delay: 5.2, ease: "easeIn" }}
           className="fixed"
         >
-          <Image
-            src="/hana_04.png"
-            alt="sakura flower petal"
-            width={180}
-            height={180}
-            className="w-[90px] lg:w-[135px] xl:w-[180px] h-auto"
-          />
+          <Image src="/hana_04.png" alt="sakura flower petal" width={180} height={180} className="w-22.5 lg:w-33.75 xl:w-45 h-auto" />
         </motion.div>
         <motion.div
           initial={{ x: 0, y: 0, rotate: 0 }}
@@ -188,13 +129,7 @@ export default function SplashScreen() {
           transition={{ duration: 2, delay: 5.7, ease: "easeIn" }}
           className="fixed"
         >
-          <Image
-            src="/hana_04.png"
-            alt="sakura flower petal"
-            width={200}
-            height={200}
-            className="w-[100px] lg:w-[150px] xl:w-[200px] h-auto"
-          />
+          <Image src="/hana_04.png" alt="sakura flower petal" width={200} height={200} className="w-25 lg:w-37.5 xl:w-50 h-auto" />
         </motion.div>
       </div>
       <motion.div
@@ -210,8 +145,7 @@ export default function SplashScreen() {
             willChange: "transform",
           }}
         >
-          Light Novel cất giấu nhiều điều{" "}
-          <strong className="text-red-500">hơn</strong> bạn nghĩ...
+          Light Novel cất giấu nhiều điều <strong className="text-red-500">hơn</strong> bạn nghĩ...
         </motion.p>
         <motion.p
           initial={{ opacity: 0, scale: 1.1 }}
@@ -221,8 +155,7 @@ export default function SplashScreen() {
             willChange: "transform",
           }}
         >
-          Bạn thực sự đã <strong className="text-blue-500">hiểu hết</strong>{" "}
-          những gì tác giả muốn truyền tải qua những trang sách?
+          Bạn thực sự đã <strong className="text-blue-500">hiểu hết</strong> những gì tác giả muốn truyền tải qua những trang sách?
         </motion.p>
       </motion.div>
       <motion.div

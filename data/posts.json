@@ -1,5 +1,22 @@
 [
   {
+    "slug": "hai-lang-man-va-nhung-ke-khong-duoc-chon",
+    "metadata": {
+      "title": "Hài lãng mạn và những kẻ không được chọn",
+      "author": "Meoki",
+      "thumbnail": "058-thumb.jpg",
+      "publishDate": "2025-07-11",
+      "description": "Nếu là tín đồ của những “nữ chính thua cuộc” thì bạn hẳn sẽ thuộc một trong hai trường phái sau. Trường phái đầu tiên là \"nữ chính bạn thích thường sẽ thua\". Nôm na là hễ bạn thích gái nào thì y như rằng em nó sẽ không đến được với nam chính...",
+      "category": "Xã Hội Trên Giấy"
+    },
+    "normalizedMetadata": {
+      "title": "Hai lang man va nhung ke khong duoc chon",
+      "author": "Meoki",
+      "description": "Neu la tin do cua nhung “nu chinh thua cuoc” thi ban han se thuoc mot trong hai truong phai sau. Truong phai dau tien la \"nu chinh ban thich thuong se thua\". Nom na la he ban thich gai nao thi y nhu rang em no se khong den duoc voi nam chinh...",
+      "category": "Xa Hoi Tren Giay"
+    }
+  },
+  {
     "slug": "giang-sinh-2024-day-la-uy-ban-tri-te-tan-the",
     "metadata": {
       "title": "[Giáng sinh 2024] Đây là Ủy ban Trì trệ Tận thế",
@@ -24,6 +41,28 @@
       "vi_trans": "Chưa có",
       "vi_trans_url": "",
       "safety": "Như Index"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2024] Day la Uy ban Tri tre Tan the",
+      "author": "NaviRanobe",
+      "description": "Nao ai con nho hai nam truoc, bo Ban Doi Dinh Menh la Em Gai Vo cua tac gia Aiencien nhay thang vao top 10 Tan Binh cua KonoRano 2023 mac du luc do van chua co tieng tam trong gioi Light Novel...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "こちら、終末停滞委員会",
+      "vn": "Tam dich: Day la Uy ban Tri tre Tan the",
+      "romaji": "Kochira, Shuumatsu Teitai Iinkai",
+      "publisher": "Dengeki Bunko",
+      "author": "Aiencien",
+      "illustrator": "Ogipote",
+      "release": "10/07/2024",
+      "category": "Khoa Hoc Vien Tuong, Nam Sinh Trung Hoc Binh Thuong",
+      "volume": "2 (Còn tiếp diễn)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Chưa có",
+      "vi_trans_url": "",
+      "safety": "Nhu Index"
     }
   },
   {
@@ -51,6 +90,28 @@
       "vi_trans": "Việt (WN)",
       "vi_trans_url": "https://docln.net/truyen/17094",
       "safety": "Thầy tốt chưa chơi trò, anh rể tốt chưa lạm dụng em vợ"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2024] Sau khi bi cuop dau, toi chi muon song binh yen",
+      "author": "NaviRanobe",
+      "description": "Cau chuyen mo dau vao ngay hon le cua nam chinh Ichinose Arata, nhung co dau Fujisaki Himeno lai bo chay theo mot ten la mat chi moi quen nhau thoi dai hoc...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "花嫁を略奪された俺は、ただ平穏に暮らしたい",
+      "vn": "Tam dich: Sau khi bi cuop dau, toi chi muon song binh yen",
+      "romaji": "Hanayome wo Ryakudatsu Sareta Ore wa, Tada Heion ni Kurashitai",
+      "publisher": "Sneaker Bunko",
+      "author": "Hamabe Batoru",
+      "illustrator": "Kurota",
+      "release": "01/03/2024",
+      "category": "NTR Kep, Cuop Dau, Nhay Cau",
+      "volume": "2 (Còn tiếp diễn)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Việt (WN)",
+      "vi_trans_url": "https://docln.net/truyen/17094",
+      "safety": "Thay tot chua choi tro, anh re tot chua lam dung em vo"
     }
   },
   {
@@ -78,6 +139,28 @@
       "vi_trans": "Chưa có",
       "vi_trans_url": "",
       "safety": "Nhảy tàu điện không thành"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2024] Dau cho ngoi sao lui tan, tieng hat em van vang vong",
+      "author": "NaviRanobe",
+      "description": "Con hang Tan Binh hang 5 cua KonoRano nam nay, vua du diem de vao top 10 tong the, va van la mot tac pham bi kich nua, tiep tuc xoay quanh manh doi cua nhung dua da mat het dong luc song...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "星が果てても君は鳴れ",
+      "vn": "Tam dich: Dau cho ngoi sao lui tan, tieng hat em van vang vong",
+      "romaji": "Hoshi ga Hatete mo Kimi wa Nare",
+      "publisher": "Dengeki Bunko",
+      "author": "Nagayama Kuryu",
+      "illustrator": "Sakinoji",
+      "release": "09/08/2024",
+      "category": "Sieu Nhien, Bi Kich, lai nhay cau nua",
+      "volume": "1 (Đã hoàn thành)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Chưa có",
+      "vi_trans_url": "",
+      "safety": "Nhay tau dien khong thanh"
     }
   },
   {
@@ -105,6 +188,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/19095",
       "safety": "Cô giáo đã có chồng đi ngoại tình với nữ sinh cấp Ba"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2024] Cau chuyen ve giao vien da ket hon len con cuong si vi nu sinh cap Ba",
+      "author": "NaviRanobe",
+      "description": "Con neu muon mot bo truyen gei chac chan 100%, hoan toan khong di theo khuon kho nao truoc day thi co the tim den tac pham moi cua Iruma Hitoma, van lay boi canh trong the gioi cua AdaShima vi van chua chiu tha cho bon no nua...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "人妻教師が教え子の女子高生にドはまりする話",
+      "vn": "Tam dich: Cau chuyen ve giao vien da ket hon len con cuong si vi nu sinh cap Ba",
+      "romaji": "Hitozuma Kyoushi ga Oshiego no Joshikousei ni Do Hamari Suru Hanashi",
+      "publisher": "Dengeki Bunko",
+      "author": "Iruma Hitoma",
+      "illustrator": "Nekoyashiki Pushio",
+      "release": "10/09/2024",
+      "category": "Uiry, NTR",
+      "volume": "1 (Còn tiếp diễn)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/19095",
+      "safety": "Co giao da co chong di ngoai tinh voi nu sinh cap Ba"
     }
   },
   {
@@ -132,6 +237,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/19311",
       "safety": "Tình yêu trong sáng của những người chỉ có thể giao tiếp qua bạn tình"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2024] Moi tinh ngay ngo cua Mizayawa",
+      "author": "NaviRanobe",
+      "description": "Them mot bo khac xuat ban vao thang 8, nhung nhay vao thang hang 13 cua muc Tan Binh nam nay, nhung vi la tac gia Nakanishi Kanae nen khong ngac nhien lam...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "宮澤くんのとびっきり愚かな恋",
+      "vn": "Tam dich: Moi tinh ngay ngo cua Mizayawa",
+      "romaji": "Miyazawa-kun no Tobikkiri Orokana Koi",
+      "publisher": "Dengeki Bunko",
+      "author": "Nakanishi Kanae",
+      "illustrator": "Poligon",
+      "release": "10/08/2024",
+      "category": "NTR, NTR",
+      "volume": "1 (Còn tiếp diễn)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/19311",
+      "safety": "Tinh yeu trong sang cua nhung nguoi chi co the giao tiep qua ban tinh"
     }
   },
   {
@@ -159,6 +286,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/18009",
       "safety": "Cùng lắm là bọn muốn nhảy cầu nhảy lên đường ray"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2024] Danh tang cau chuyen nay cho em",
+      "author": "NaviRanobe",
+      "description": "Tat nhien KonoRano nam nao cung khong the thieu it nhat mot bo truyen ngan mot tap sen sua chui vao top 10 hang muc tan binh, va lan nay lai con dung hang thu 8 trong tong the...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "この物語を君に捧ぐ",
+      "vn": "Tam dich: Danh tang cau chuyen nay cho em",
+      "romaji": "Kono Monogatari wo Kimi ni Sasagu",
+      "publisher": "Kodansha Ranobe Bunko",
+      "author": "Mori Hinata",
+      "illustrator": "Yukimaru Nun",
+      "release": "30/04/2024",
+      "category": "Bi Kich, Sang Tac, Haikou",
+      "volume": "1 (Đã hoàn thành)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://hiraethtranslation.com/novel/kono-monogatari-o-kimi-ni-sasagu/",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/18009",
+      "safety": "Cung lam la bon muon nhay cau nhay len duong ray"
     }
   },
   {
@@ -186,6 +335,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/convert/20060",
       "safety": "Toàn đùa tục và tìm cách làm tình liên tục"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2024] Hon nhan ngot ngao voi ke thu truyen kiep",
+      "author": "NaviRanobe",
+      "description": "May la ngoai NTR va tinh yeu cam ky ra thi nha Dengeki van con ra tiep moi tinh trong sang. Tuy khong co thu hang dac biet trong KonoRano nam qua, nhung truyen da song duoc toi tan tap 3 va co ban manga chuyen the vua ra...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "組織の宿敵と結婚したらめちゃ甘い",
+      "vn": "Tam dich: Hon nhan ngot ngao voi ke thu truyen kiep",
+      "romaji": "Soshiki no Shukuteki to Kekkon Shitara Mecha Amai",
+      "publisher": "Dengeki Bunko",
+      "author": "Uzo Toshimichi",
+      "illustrator": "Hayashi Kewi",
+      "release": "06/10/2023",
+      "category": "Hon Nhan, Dich Thu, Sieu Nhien",
+      "volume": "3 (Còn tiếp diễn)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/convert/20060",
+      "safety": "Toan dua tuc va tim cach lam tinh lien tuc"
     }
   },
   {
@@ -213,6 +384,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/20163",
       "safety": "Chắc là con hàng nhẹ nhất trong danh sách này"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2024] Ly do co be thien tai nhay lop khong than thiet bat ky ai chi lam nung voi minh toi",
+      "author": "NaviRanobe",
+      "description": "Va trong truong hop can mot cau chuyen tinh khong dau thuong, khong ngoai tinh, hon nhien trong sang voi mot co be chi moi tam tuoi thi da co bo moi cua tac gia Yagami Kagami vua ra ngay trong thang, duoc mot nam ke tu khi Shimotsuki ket thuc...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "誰にも懐かない飛び級天才幼女が、俺にだけ甘えてくる理由",
+      "vn": "Tam dich: Ly do co be thien tai nhay lop khong than thiet bat ky ai chi lam nung voi minh toi",
+      "romaji": "Darenimo Natsukanai Tobikyu Tensai Youjo ga, Ore ni dake Amaetekuru Riyuu",
+      "publisher": "GA Bunko",
+      "author": "Yagami Kagami",
+      "illustrator": "Aroa",
+      "release": "15/12/2024",
+      "category": "Than Dong, Loli",
+      "volume": "1 (Còn tiếp diễn)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/20163",
+      "safety": "Chac la con hang nhe nhat trong danh sach nay"
     }
   },
   {
@@ -240,6 +433,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/19972",
       "safety": "Nhà bán chuyện tình không quăng được minh họa lót đen"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2024] Co gai toi nhat duoc sau ngo hem hoa ra la nu chinh cua otome game voi cai ket bat hanh",
+      "author": "NaviRanobe",
+      "description": "Ash Leben la nhan vat tai sinh trong the gioi cua mot loai otome game dac biet voi cai ket cuc ky the tham neu nu chinh Fine Stout khong the xay dung moi quan he voi bat cu doi tuong muc tieu nao...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "路地裏で拾った女の子がバッドエンド後の乙女ゲームのヒロインだった件",
+      "vn": "Tam dich: Co gai toi nhat duoc sau ngo hem hoa ra la nu chinh cua otome game voi cai ket bat hanh",
+      "romaji": "Rojiura de Hirotta Onnanoko ga Bad End-go no Otome Game no Heroine Datta Ken",
+      "publisher": "Sneaker Bunko",
+      "author": "Kabocha Mask",
+      "illustrator": "Heiro",
+      "release": "01/12/2024",
+      "category": "Isekai, Otome Game, Bad End gia",
+      "volume": "1 (Còn tiếp diễn)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://jptranslation5.wordpress.com/the-girl-i-picked-up-in-the-back-alley-turned-out-to-be-the-heroine-of-a-bad-ending-otome-game/",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/19972",
+      "safety": "Nha ban chuyen tinh khong quang duoc minh hoa lot den"
     }
   },
   {
@@ -267,6 +482,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/convert/19987",
       "safety": "Chỉ có duy nhất một đứa yan muốn đè cũng không được"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2024] Lieu mang nham tranh cai ket diet vong, nhung to doi lai bi chan thuong tam ly",
+      "author": "NaviRanobe",
+      "description": "Nam chinh Wolka la mot mao hiem gia kha co tieng tam, so huu kiem thuat dac biet chua tung ton tai o doi nay. Trong luc tham hiem ham nguc, cau da lieu mang chien dau voi Tu Than nham bao ve...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "全滅エンドを死に物狂いで回避した。パーティが病んだ。",
+      "vn": "Tam dich: Lieu mang nham tranh cai ket diet vong, nhung to doi lai bi chan thuong tam ly",
+      "romaji": "Zenmetsu End wo Shinimonogurui de Kaihishita",
+      "publisher": "Kadokawa",
+      "author": "Ameria",
+      "illustrator": "kodamazon",
+      "release": "30/08/2024",
+      "category": "Isekai, Bi Kich, Hai Kich",
+      "volume": "1 (Còn tiếp diễn)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://headcanontl.wordpress.com/after-a-desperate-struggle-to-avoid-annihilation-my-party-became-unwell/",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/convert/19987",
+      "safety": "Chi co duy nhat mot dua yan muon de cung khong duoc"
     }
   },
   {
@@ -294,6 +531,28 @@
       "vi_trans": "Việt (Chưa có)",
       "vi_trans_url": "",
       "safety": "Hai con gei chỉ mới kết hôn, chưa ăn nhau"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2024] Trong dem vay trang va trang do hoa quyen",
+      "author": "NaviRanobe",
+      "description": "Nhan vat chinh cua cau chuyen la mot nu kiem si lung danh ten Rin truoc kia tung dong hanh cung vi anh hung. Co duoc moi toi vung lanh tho cua ma toc de tham gia vao biet doi tinh nhue chuyen giai quyet mau thuan giua hai chung toc...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "白いドレスと紅い月がとけあう夜に",
+      "vn": "Tam dich: Trong dem vay trang va trang do hoa quyen",
+      "romaji": "Shiroi Dress to Akai Tsuki ga Tokeau Yoru ni",
+      "publisher": "Sneaker Bunko",
+      "author": "Mikazuki Hijiri",
+      "illustrator": "Komizuki",
+      "release": "01/12/2024",
+      "category": "Uiry, Trinh Tham",
+      "volume": "1 (Đã hoàn thành?)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://kitsunetranslation.fantls.com/series/on-the-night-when-the-white-dress-and-the-red-moon-melt-together/",
+      "vi_trans": "Việt (Chưa có)",
+      "vi_trans_url": "",
+      "safety": "Hai con gei chi moi ket hon, chua an nhau"
     }
   },
   {
@@ -321,6 +580,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/19959-dare-ga-yuusha-wo-koroshita-ka",
       "safety": "Truyện nhắm đến đối tưởng độc giả bình thường, nên kết có hậu cho người yếu tim."
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2024] Ai da sat hai anh hung?",
+      "author": "NaviRanobe",
+      "description": "Dareyuu lay boi canh o thoi ky binh yen sau khi Ma Vuong de doa xam chiem the gioi da bi danh bai. Bon nam truoc khi cau chuyen bat dau, vi anh hung Ares duoc nhac den trong loi tien tri da roi khoi ngoi lang nho be...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "誰が勇者を殺したか",
+      "vn": "Tam dich: Ai da sat hai anh hung?",
+      "romaji": "Dare Ga Yuusha Wo Koroshita Ka",
+      "publisher": "Sneaker Bunko",
+      "author": "Daken",
+      "illustrator": "toi8",
+      "release": "01/10/2023",
+      "category": "Bi An, Gia Tuong",
+      "volume": "2 (Còn tiếp diễn)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://gadgetizedpanda.com/2023/11/08/who-killed-the-hero-ln/",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/19959-dare-ga-yuusha-wo-koroshita-ka",
+      "safety": "Truyen nham den doi tuong doc gia binh thuong, nen ket co hau cho nguoi yeu tim."
     }
   },
   {
@@ -332,6 +613,12 @@
       "publishDate": "2024-01-11",
       "description": "Light Novel là loại tiểu thuyết nhấn mạnh vào nhân vật. Khi nói về các nhân vật trong light novel, người ta không chỉ biết tên mà còn biết cả những thông tin khác như ngoại hình, tính cách hay các đặc điểm thể chất khác.",
       "category": "Xã Hội Trên Giấy"
+    },
+    "normalizedMetadata": {
+      "title": "Vi tri thuc su cua hinh minh hoa trong Light Novel la gi?",
+      "author": "Meoki",
+      "description": "Light Novel la loai tieu thuyet nhan manh vao nhan vat. Khi noi ve cac nhan vat trong light novel, nguoi ta khong chi biet ten ma con biet ca nhung thong tin khac nhu ngoai hinh, tinh cach hay cac dac diem the chat khac.",
+      "category": "Xa Hoi Tren Giay"
     }
   },
   {
@@ -359,6 +646,28 @@
       "vi_trans": "Việt (Bản quyền)",
       "vi_trans_url": "https://tiki.vn/co-nang-shimotsuki-trot-phai-long-nhan-vat-nen-p272122642.html",
       "safety": "Mẹ chưa có bầu đã cho cha bú sữa"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2023] Co nang Shimotsuki trot phai long nhan vat nen",
+      "author": "NaviRanobe",
+      "description": "Trong the gioi nay, Koutarou la mot nhan vat nen, vai tro duy nhat la lam ban dap cho nhan vat chinh Ryuuzaki Ryoma phat trien hon. Em ke Nakayama Azusa cua cau chi nhong nheo voi mot minh Ryoma. Ban thuo nho Hojo Yuzuki ton tai de quyen ru Ryoma...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "霜月さんはモブが好き",
+      "vn": "Co nang Shimotsuki trot phai long nhan vat nen",
+      "romaji": "Shimotsuki-san wa Mob ga Suki",
+      "publisher": "GCN Bunko",
+      "author": "Yagami Kagami",
+      "illustrator": "Roha",
+      "release": "20/10/2021",
+      "category": "Nu tac gia nguc bu",
+      "volume": "5 (Đã hoàn thành)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Việt (Bản quyền)",
+      "vi_trans_url": "https://tiki.vn/co-nang-shimotsuki-trot-phai-long-nhan-vat-nen-p272122642.html",
+      "safety": "Me chua co bau da cho cha bu sua"
     }
   },
   {
@@ -386,6 +695,28 @@
       "vi_trans": "Việt: Chưa có",
       "vi_trans_url": "",
       "safety": "minh họa sạch, nội dung kém sạch hơn"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2023] Kiem an qua tro choi sinh tu",
+      "author": "NaviRanobe",
+      "description": "Con nguoi tu thuo xua da thich duoc chung kien canh nguoi khac bi hanh ha. May chem tung duoc dung nhu mot hinh thuc giai tri. No le bi nhot chung voi thu giu va buoc phai chien dau tay khong de giu mang...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "死亡遊戯で飯を食う。",
+      "vn": "Tam dich: Kiem an qua tro choi sinh tu",
+      "romaji": "Shibou Yuugi de Meshi wo Kuu",
+      "publisher": "MF Bunko J",
+      "author": "Ukai Yushi",
+      "illustrator": "Necometaru",
+      "release": "25/11/2022",
+      "category": "Tro choi sinh tu, Hanh Dong",
+      "volume": "4 (Còn tiếp diễn)",
+      "en_trans": "Anh: Có bản quyền",
+      "en_trans_url": "",
+      "vi_trans": "Việt: Chưa có",
+      "vi_trans_url": "",
+      "safety": "minh hoa sach, noi dung kem sach hon"
     }
   },
   {
@@ -397,6 +728,12 @@
       "publishDate": "2023-12-23",
       "description": "Đó là kẻ ngự trị tối cao, là nữ hoàng đứng trên đỉnh giai cấp xã hội. Là nữ chính của muôn vàn tiểu thuyết. Là động lực cho vô vàn độc giả. Đó là nữ sinh Nhật Bản.",
       "category": "Xã Hội Trên Giấy"
+    },
+    "normalizedMetadata": {
+      "title": "Nu sinh Nhat Ban thong tri chung ta nhu the nao?",
+      "author": "Meoki",
+      "description": "Do la ke ngu tri toi cao, la nu hoang dung tren dinh giai cap xa hoi. La nu chinh cua muon van tieu thuyet. La dong luc cho vo van doc gia. Do la nu sinh Nhat Ban.",
+      "category": "Xa Hoi Tren Giay"
     }
   },
   {
@@ -424,6 +761,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/16534",
       "safety": "Hiện tại vẫn chưa đút ngón tay vào"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2023] Cau chuyen bat dau sau khi thua keo va bi co ban thuo nho thien tai doc dia cuop het lan dau",
+      "author": "NaviRanobe",
+      "description": "Ubaware, la mot cau chuyen tinh cam giua hai co ban thuo nho thoat nhin cam ghet nhau nhung lai khong the ngung nghi ngoi ve doi phuong. Nu chinh cua bo truyen Yoshizawa Wakaba vi muon danh bai nguoi ban...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "性悪天才幼馴染との勝負に負けて初体験を全部奪われる話",
+      "vn": "Tam dich: Cau chuyen bat dau sau khi thua keo va bi co ban thuo nho thien tai doc dia cuop het lan dau",
+      "romaji": "Shouwaru Tensai Osananajimi to no Shoubu ni Makete Shotaiken o Zenbu Ubawareru Hanashi",
+      "publisher": "Kadokawa Sneaker Bunko",
+      "author": "Inukai Anzu",
+      "illustrator": "Neibi",
+      "release": "01/12/2023",
+      "category": "Uiry, Tra Thu",
+      "volume": "1 (Còn tiếp diễn)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://amawashigroup.wordpress.com/",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/16534",
+      "safety": "Hien tai van chua dut ngon tay vao"
     }
   },
   {
@@ -451,6 +810,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/9850",
       "safety": "Nhẹ nhàng nhất trong nguyên danh sách này"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2023] Trong vong lap thu 7, tieu thu phan dien tan huong cuoc song vo uu lam dau o nuoc dich",
+      "author": "NaviRanobe",
+      "description": "Nu chinh Rishe Irmgard Weitzner chi ton tai de tro thanh vo cua hoang tu Dietrich. Ca doi co duoc day la phai song sao cho xung dang o ben vi vua tuong lai cua que huong minh...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "ループ7回目の悪役令嬢は、元敵国で自由気ままな花嫁生活を満喫する",
+      "vn": "Tam dich: Trong vong lap thu 7, tieu thu phan dien tan huong cuoc song vo uu lam dau o nuoc dich",
+      "romaji": "Loop 7-kaime no Akuyaku Reijou wa, Moto Tekikoku de Jiyuu Kimama na Hanayome Seikatsu wo Mankitsu suru",
+      "publisher": "Overlap Novels F",
+      "author": "Amekawa Touko",
+      "illustrator": "Hachipisu☆Wan",
+      "release": "25/10/2020",
+      "category": "Nu phan dien thuan hoa vua doc tai",
+      "volume": "5 (Còn tiếp diễn)",
+      "en_trans": "Anh (bản quyền)",
+      "en_trans_url": "https://www.amazon.com/dp/1638583935",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/9850",
+      "safety": "Nhe nhang nhat trong nguyen danh sach nay"
     }
   },
   {
@@ -478,6 +859,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/8831-hige-wo-soru-soshite-joshikousei-wo-hirou",
       "safety": "Ít nhất không hẹn hò với gái mình nuôi"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2023] Cao rau xong nhat nu sinh ve nha",
+      "author": "NaviRanobe",
+      "description": "Chac khong can phai dai dong viet gioi thieu cho bo truyen nay lam gi nua vi trong trang nay tap nao cung co nhan xet doi loi roi. Co noi Higehiro la mot trong nhung bo dang chu y nhat cua nam 2018 cung khong ngoa...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "ひげを剃る。そして女子高生を拾う",
+      "vn": "Tam dich: Cao rau xong nhat nu sinh ve nha",
+      "romaji": "Hige Wo Soru. Soshite Joshikosei Wo Hirou",
+      "publisher": "Kadokawa Sneaker Bunko",
+      "author": "Shimesaba",
+      "illustrator": "booota",
+      "release": "01/02/2018",
+      "category": "Lam cong an luong, luon chung thuy voi sep",
+      "volume": "9 (Đã hoàn thành)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/8831-hige-wo-soru-soshite-joshikousei-wo-hirou",
+      "safety": "It nhat khong hen ho voi gai minh nuoi"
     }
   },
   {
@@ -505,6 +908,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/15149",
       "safety": "Có thai thì phải không bao"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2023] Di lam ve duoc chi sep xinh dep nho giup sinh con",
+      "author": "NaviRanobe",
+      "description": "Neu phai tom lai dien bien nguyen tap dau tien duoi goc nhin cua nam chinh Sanezawa Haruhiko thi se duoc nhung dong nhu tren. Tinh tiet noi dung tap dau chang phai dang dac biet, neu ai da quen voi nhung tac pham truoc...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "仕事帰り、独身の美人上司に頼まれて",
+      "vn": "Tam dich: Di lam ve duoc chi sep xinh dep nho giup sinh con",
+      "romaji": "Shigoto Kaeri, Dokushin no Bijin Joushi ni Tanomarete",
+      "publisher": "Kadokawa Sneaker Bunko",
+      "author": "Nozomi Kouta",
+      "illustrator": "Shino",
+      "release": "01/06/2023",
+      "category": "Sep muon co thai",
+      "volume": "2 (Còn tiếp diễn)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/15149",
+      "safety": "Co thai thi phai khong bao"
     }
   },
   {
@@ -532,6 +957,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/16603",
       "safety": "Không được nhìn dưới váy của gái mù"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2023] Moi tinh vo hinh voi nguoi bang qua man dem mo ao",
+      "author": "NaviRanobe",
+      "description": "It nhat thi no la suy nghi cua mot dua cay doc nhu minh. Tu lau da noi la minh chan ngay may the loai truyen “light bungei”. Danh cho nhung ai chua bao gio nghe qua cai ten ay, “light bungei” co the duoc hieu...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "透明な夜に駆ける君と、目に見えない恋をした。",
+      "vn": "Tam dich: Moi tinh vo hinh voi nguoi bang qua man dem mo ao",
+      "romaji": "Toumei na Yoru ni Kakeru Kimi to, Me ni Mienai Koi wo Shita",
+      "publisher": "GA Bunko",
+      "author": "Shima Nanigashi",
+      "illustrator": "raemz",
+      "release": "09/08/2023",
+      "category": "Bi Kich, Khuyet Tat, Ung Thu",
+      "volume": "1 (Còn tiếp diễn)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://www.vanhalentranslation.my.id/2023/08/ln-tomeina-yoru-ni-kakeru-kun-to_31.html",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/16603",
+      "safety": "Khong duoc nhin duoi vay cua gai mu"
     }
   },
   {
@@ -559,6 +1006,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/6202",
       "safety": "Lên đại học lột đồ ngay trong phòng là bình thường"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2023] Sau khi bi ban gai cam sung, toi duoc nho dan em quy quyet yeu thuong",
+      "author": "NaviRanobe",
+      "description": "Nam chinh Hasegawa Yuta la mot sinh vien dai hoc lac long giua dong doi. Cau khong han la co don, nhung so ban be than thiet chi dem duoc tren dau ngon tay. Noi la song noi tam cung khong dung, it nhat...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "カノジョに浮気されていた俺が、小悪魔な後輩に懐かれています",
+      "vn": "Tam dich: Sau khi bi ban gai cam sung, toi duoc nho dan em quy quyet yeu thuong",
+      "romaji": "Kanojo ni Uwaki Sareteita Ore ga, Koakuma na Kouhai ni Idakarete Imasu",
+      "publisher": "Kadokawa Sneaker Bunko",
+      "author": "Omiya Yuu",
+      "illustrator": "Eru",
+      "release": "01/12/2019",
+      "category": "Giang Sinh, Cam Sung, Kouhai",
+      "volume": "8 (Đã hoàn thành)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/6202",
+      "safety": "Len dai hoc lot do ngay trong phong la binh thuong"
     }
   },
   {
@@ -586,6 +1055,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/9193",
       "safety": "Mừng vì ln chưa cho đút vào"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2023] Ket ban voi gai xinh nhi lop",
+      "author": "NaviRanobe",
+      "description": "Class de Nibanme ni Kawaii Onna no Ko to Tomodachi ni Natta, tam goi tat Gai Xinh Nhi Lop, la mot cau chuyen tinh yeu tuoi hoc tro cua Maehara Maki va Asanagi Umi. Nam chinh Maki la dang nam sinh mien cuong co don...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "クラスで２番目に可愛い女の子と友だちになった",
+      "vn": "Tam dich: Ket ban voi gai xinh nhi lop",
+      "romaji": "Class de Nibanme ni Kawaii Onna no Ko to Tomodachi ni Natta",
+      "publisher": "Kadokawa Sneaker Bunko",
+      "author": "Takata",
+      "illustrator": "Osabe Tom (cu), Hyuuga Azuri (moi)",
+      "release": "24/12/2021",
+      "category": "Bat Nat, Co Lap, Gai Xinh Nhat Lop giat khong duoc",
+      "volume": "5 (Còn tiếp diễn)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://www.neosekaitranslations.com/novel/i-became-friends-with-the-second-cutest-girl-in-my-class/",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/9193",
+      "safety": "Mung vi ln chua cho dut vao"
     }
   },
   {
@@ -613,6 +1104,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/12615",
       "safety": "Bình yên cho đến khi con bạn thuở nhỏ muốn vứt mạng"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2023] Tro choi thanh xuan moi day nhiet huyet cua Haibara",
+      "author": "NaviRanobe",
+      "description": "Haibara-kun no Tsuyokute Seishun New Game la mot tac pham lay cam hung tu rat nhieu bo truyen chu de thanh xuan bi hai da ra truoc no. Nhung tinh tiet ben trong truyen kha la gian di, dan nhan vat chinh cung khong thay doi...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "灰原くんの強くて青春ニューゲーム",
+      "vn": "Tam dich: Tro choi thanh xuan moi day nhiet huyet cua Haibara",
+      "romaji": "Haibara-kun no Tsuyokute Seishun New Game",
+      "publisher": "HJ Bunko",
+      "author": "Amamiya Kazuki",
+      "illustrator": "Gin",
+      "release": "1/12/2021",
+      "category": "Thanh Xuan, Bi Hai",
+      "volume": "6 (Còn tiếp diễn)",
+      "en_trans": "Anh (Bản quyền)",
+      "en_trans_url": "https://www.amazon.com/dp/B0BQ7RGLN2",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/12615",
+      "safety": "Binh yen cho den khi con ban thuo nho muon vut mang"
     }
   },
   {
@@ -640,6 +1153,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/14296",
       "safety": "Bán thân, hút máu, may là chưa cắn rốn"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2023] Mua ban hoc voi gia re 1 trieu dong moi tuan mot lan",
+      "author": "NaviRanobe",
+      "description": "Noi dung bo truyen Shuukura xoay quanh cuoc song doi thuong cua hai nu chinh, luan phien thay doi goc nhin giua Miyagi Shiori va Sendai Hazuki. Vao mot ngay dep troi no, Shiori tinh co bat gap co ban hoc cung lop Hazuki quen...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "週に一度クラスメイトを買う話",
+      "vn": "Tam dich: Mua ban hoc voi gia re 1 trieu dong moi tuan mot lan",
+      "romaji": "Shuu ni Ichido Classmate wo Kau Hanashi",
+      "publisher": "Fantasia Bunko",
+      "author": "Haneda Usa",
+      "illustrator": "U35",
+      "release": "18/02/2023",
+      "category": "Uiry, roi mau truoc khi cuoi",
+      "volume": "3 (Còn tiếp diễn)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://amawashigroup.wordpress.com/",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/14296",
+      "safety": "Ban than, hut mau, may la chua can ron"
     }
   },
   {
@@ -667,6 +1202,28 @@
       "vi_trans": "Việt (Bản quyền)",
       "vi_trans_url": "https://thaihabooks.com/san-pham/ai-dam-bao-rom-com-khong-co-ngoai-doi-thuc-1/",
       "safety": "Chưa có đứa nào trong đây nghĩ đến chuyện vứt mạng sống"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2023] Ai dam bao rom-com khong co ngoai doi thuc?",
+      "author": "NaviRanobe",
+      "description": "Ke hoach ban dau la viet ve 12 bo truyen muoi tam cong noi bat nhat boi vi vua kiem duoc mot bai doc thu vi ve lich su xuat ban cua cac an ban dac biet danh cho nguoi lon, nhung cang nghien cuu sau them thi cang...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "現実でラブコメできないとだれが決めた？",
+      "vn": "Ai dam bao rom-com khong co ngoai doi thuc?",
+      "romaji": "Genjitsu de Rabukome Dekinai to Dare ga Kimeta?",
+      "publisher": "GAGAGA Bunko",
+      "author": "Hajikano So",
+      "illustrator": "Shina Kuro",
+      "release": "18/07/2020",
+      "category": "Hoc Duong, Happi Endo",
+      "volume": "6 (Đã hoàn thành)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Việt (Bản quyền)",
+      "vi_trans_url": "https://thaihabooks.com/san-pham/ai-dam-bao-rom-com-khong-co-ngoai-doi-thuc-1/",
+      "safety": "Chua co dua nao trong day nghi den chuyen vut mang song"
     }
   },
   {
@@ -678,6 +1235,12 @@
       "publishDate": "2023-10-20",
       "description": "Để vẽ ngực, không đơn giản chỉ là một nghệ sĩ theo đuổi hình dáng của cơ thể. Thay vào đó, nó đòi hỏi phải nhìn vào những gì đàn ông đang tìm kiếm khi nói đến phụ nữ.",
       "category": "Xã Hội Trên Giấy"
+    },
+    "normalizedMetadata": {
+      "title": "Tai sao Alisa nguc khung? Luoc su manga ve nguc qua cac thoi dai",
+      "author": "Meoki",
+      "description": "De ve nguc, khong don gian chi la mot nghe si theo duoi hinh dang cua co the. Thay vao do, no doi hoi phai nhin vao nhung gi dan ong dang tim kiem khi noi den phu nu.",
+      "category": "Xa Hoi Tren Giay"
     }
   },
   {
@@ -689,6 +1252,12 @@
       "publishDate": "2023-09-20",
       "description": "Y tá, đồ bơi, đồng phục, sườn xám, hầu gái, không có gì ngạc nhiên khi những trang phục này xuất hiện trong những ảo tưởng ướt át của mọi người. Bên cạnh số đó, không thể không kể đến bộ trang phục quyến rũ bậc nhất...",
       "category": "Xã Hội Trên Giấy"
+    },
+    "normalizedMetadata": {
+      "title": "Tai sao do tho quyen ru?",
+      "author": "Meoki",
+      "description": "Y ta, do boi, dong phuc, suon xam, hau gai, khong co gi ngac nhien khi nhung trang phuc nay xuat hien trong nhung ao tuong uot at cua moi nguoi. Ben canh so do, khong the khong ke den bo trang phuc quyen ru bac nhat...",
+      "category": "Xa Hoi Tren Giay"
     }
   },
   {
@@ -716,6 +1285,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/11188",
       "safety": "Số cảnh an toàn đếm được trên đầu ngón tay"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2022] Em Chap Nhan Lam Ban Gai Thu Hai",
+      "author": "NaviRanobe",
+      "description": "Ryuugoroshi no Brunhild la mot bo truyen huyen ao ke ve con duong tra thu cua mot nguoi con gai da bi cuop doat het tat ca, va dang huong mat nhin thang xuong dia nguc. Sau bao nhieu bo tinh thanh xuan duoc xuat ban...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "わたし、二番目の彼女でいいから",
+      "vn": "Tam dich: Em Chap Nhan Lam Ban Gai Thu Hai",
+      "romaji": "Watashi, Nibanme no Kanojo de Ii kara",
+      "publisher": "Dengeki Bunko",
+      "author": "Joyo Nishi",
+      "illustrator": "ReTake",
+      "release": "10/09/2021",
+      "category": "NTR",
+      "volume": "5 (Còn tiếp diễn)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://gashadokai.xyz/im-fine-with-being-the-second-girlfriend",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/11188",
+      "safety": "So canh an toan dem duoc tren dau ngon tay"
     }
   },
   {
@@ -743,6 +1334,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/13719",
       "safety": "Một đống trẻ hư sa đọa"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2022] Bon Tre Hu Chung Em Thay Doi Duoc la Nho Co Anh Monaka",
+      "author": "NaviRanobe",
+      "description": "Chung Em Thay Doi Duoc la Nho Co Anh Monaka, hay viet tat Monaka-sempai, la mot bo truyen vua ra nam nay, duoc viet va minh hoa boi bo doi Sakurame Zent va Hario Ai sau gan ba nam xa cach voi tac pham dau tay...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "問題児の私たちを変えたのは、同じクラスの茂中先輩",
+      "vn": "Tam dich: Bon Tre Hu Chung Em Thay Doi Duoc la Nho Co Anh Monaka",
+      "romaji": "Mondaiji no Watashitachi wo Kaeta no wa, Onaji Class no Monaka-senpai",
+      "publisher": "Sneaker Bunko",
+      "author": "Sakurame Zento",
+      "illustrator": "Hario Ai",
+      "release": "01/06/2022",
+      "category": "Tre hu",
+      "volume": "2 (Đã hoàn thành)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/13719",
+      "safety": "Mot dong tre hu sa doa"
     }
   },
   {
@@ -770,6 +1383,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/12209",
       "safety": "Gia sư đi dụ gái nhà lành"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2022] Gia Su cho Con Gai Cong Tuoc",
+      "author": "NaviRanobe",
+      "description": "Gia Su cho Con Gai Cong Tuoc, viet tat Koujo Denka, cung lai la mot cau chuyen khac xoay quanh nhan vat chinh bi xem la lac loai nhung van muon phat trien ban than de bao ve nhung nguoi minh yeu thuong va giup cai thien...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "公女殿下の家庭教師",
+      "vn": "Tam dich: Gia Su cho Con Gai Cong Tuoc",
+      "romaji": "Koujo Denka no Kateikyoushi",
+      "publisher": "Fantasia Bunko",
+      "author": "Nanano Riku",
+      "illustrator": "cura",
+      "release": "20/12/2018",
+      "category": "Gia su",
+      "volume": "13 (Còn tiếp diễn)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://www.amazon.com/dp/B09H7M1FSJ",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/12209",
+      "safety": "Gia su di du gai nha lanh"
     }
   },
   {
@@ -797,6 +1432,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/7715",
       "safety": "Công chúa bị nữ hoàng tương lai đè ra gãy lưng"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2022] Cach Mang Ma Thuat cua Cong Chua Dau Thai va Tieu Thu Thien Tai",
+      "author": "NaviRanobe",
+      "description": "Cach Mang Ma Thuat cua Cong Chua Dau Thai va Tieu Thu Thien Tai, ten tat la TenTen Kakumei, lay boi canh trong mot the gioi ton tai ma thuat. Co cong chua duoc nhac den trong ten truyen la Anisphia Wynn Palletia...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "転生王女と天才令嬢の魔法革命",
+      "vn": "Tam dich: Cach Mang Ma Thuat cua Cong Chua Dau Thai va Tieu Thu Thien Tai",
+      "romaji": "Tensei Oujo to Tensai Reijou no Mahou Kakumei",
+      "publisher": "Fantasia Bunko",
+      "author": "Karasu Piero",
+      "illustrator": "Kisaragi Yuri",
+      "release": "20/01/2020",
+      "category": "Uiry",
+      "volume": "5 (Còn tiếp diễn)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://www.amazon.com/dp/1975337808",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/7715",
+      "safety": "Cong chua bi nu hoang tuong lai de ra gay lung"
     }
   },
   {
@@ -824,6 +1481,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/12756",
       "safety": "Cấp 2 học chậm nghịch bao cao su, nhân bản vô tính nút lưỡi nhau trước tận cùng thế giới"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2022] Ban Doi Dinh Menh la Em Gai Vo",
+      "author": "NaviRanobe",
+      "description": "Gia su nhu moi thu trong the gioi nay deu da duoc dinh san boi cai thu goi la “so phan” thi sao? Tuc la kiep truoc da bi NTR thi kiep nay cung se bi NTR. Mot vong lap NTR vo han. Co co gang den may thi...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "運命の人は、嫁の妹でした",
+      "vn": "Tam dich: Ban Doi Dinh Menh la Em Gai Vo",
+      "romaji": "Unmei no Hito wa, Yome no Imouto Deshita",
+      "publisher": "Dengeki Bunko",
+      "author": "Aien Cien",
+      "illustrator": "Chihiro Ayaka",
+      "release": "10/07/2022",
+      "category": "Dinh Menh",
+      "volume": "2 (Đã hoàn thành)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://shan86tls.wordpress.com/my-fated-partner-was-my-wifes-sister/",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/12756",
+      "safety": "Cap 2 hoc cham nghich bao cao su, nhan ban vo tinh nut luoi nhau truoc tan cung the gioi"
     }
   },
   {
@@ -845,6 +1524,28 @@
       "illustrator": "Musshu",
       "release": "20/01/2022",
       "category": "Lãng mạn, Học đường, Thiên tài",
+      "volume": "1 (Đã hoàn thành)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://travistranslations.com/novel/53820/blue-outline/",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/12186",
+      "safety": ""
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2022] Net phac thao xanh ~Cau chuyen ve ke tam thuong to lai the gioi cua thien tai~",
+      "author": "NaviRanobe",
+      "description": "Nhin lai moi thay Blue Outline dung hang 45 tong the cho KonoRano nam nay, co them co dang them bo nay mot lan nua. Blue Outline la mot bo truyen hay, ban dau do thien vi may bo chu de tai nang bam sinh...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "青のアウトライン 天才の描く世界を凡人が塗りかえる方法",
+      "vn": "Tam dich: Net phac thao xanh ~Cau chuyen ve ke tam thuong to lai the gioi cua thien tai~",
+      "romaji": "Ao no Outline: Tensai no Egaku Sekai wo Bonjin ga Nuri Kaeru Houhou",
+      "publisher": "Fantasia Bunko",
+      "author": "Hibi Tsuzuro",
+      "illustrator": "Musshu",
+      "release": "20/01/2022",
+      "category": "Lang man, Hoc duong, Thien tai",
       "volume": "1 (Đã hoàn thành)",
       "en_trans": "Anh",
       "en_trans_url": "https://travistranslations.com/novel/53820/blue-outline/",
@@ -878,6 +1579,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/13615",
       "safety": "Trẻ chưa dậy thì có gì để mà khoe"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2022] Chuyen Tinh Thanh Xuan Bi Hai cua Ga Con nuoi Con",
+      "author": "NaviRanobe",
+      "description": "Thieu cha, thieu me, gia dinh ai khong day du thi chac cung tung trai qua mot thoi khon kho, thieu thon ve mat vat chat lan tinh than. Dieu nay cang dung cho nhung gia dinh co con em nho, bac dan anh dan chi phai phu giup cham lo...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "ママ友と育てるラブコメ",
+      "vn": "Tam dich: Chuyen Tinh Thanh Xuan Bi Hai cua Ga Con nuoi Con",
+      "romaji": "Mamatomo to Sodateru Love Comedy",
+      "publisher": "GAGAGA Bunko",
+      "author": "Oniba",
+      "illustrator": "Ichikawa Haru",
+      "release": "18/06/2022",
+      "category": "Gia dinh",
+      "volume": "2 (Còn tiếp diễn)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://hitominovel.blogspot.com/2022/10/ln-mamatomo-ke-sodateru-rabukome.html",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/13615",
+      "safety": "Tre chua day thi co gi de ma khoe"
     }
   },
   {
@@ -905,6 +1628,28 @@
       "vi_trans": "Không tồn tại",
       "vi_trans_url": "",
       "safety": "Nút lưỡi, bán thuốc"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2022] Chi cua Ban Gai Toi… la Moi Tinh Dau da Doi Thay",
+      "author": "NaviRanobe",
+      "description": "Chi cua Ban Gai Toi, hoac ten viet tat la AneKoi, la mot tac pham moi vua ra trong thang cua tac gia Kimura Kaito, cung dua tren nhung cam xuc hon nhien cua moi tinh dau doi trong sach nhu bo...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "カノジョの姉は……変わってしまった初恋の人",
+      "vn": "Tam dich: Chi cua Ban Gai Toi… la Moi Tinh Dau da Doi Thay",
+      "romaji": "Kanojo no Ane wa… Kawatte shimatta Hatsukoi no Hito",
+      "publisher": "GA Bunko",
+      "author": "Kimura Kaito",
+      "illustrator": "Hamu",
+      "release": "14/12/2022",
+      "category": "Hon chi gai ban gai",
+      "volume": "1 (Còn tiếp diễn)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Không tồn tại",
+      "vi_trans_url": "",
+      "safety": "Nut luoi, ban thuoc"
     }
   },
   {
@@ -932,6 +1677,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/13304",
       "safety": "Bị đá"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2022] Tinh Yeu Den Toi",
+      "author": "NaviRanobe",
+      "description": "Takarai Sousei muon tro thanh mot nam sinh trung hoc binh thuong co the duoc tim thay o bat cu noi dau. Nhung cau lai vo tinh tro thanh nguoi ban dac biet cua Hitsujimoto Kuchina vi ca hai deu la sat nhan song trong bong toi...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "恋は暗黒",
+      "vn": "Tam dich: Tinh Yeu Den Toi",
+      "romaji": "Koi wa Ankoku",
+      "publisher": "MF Bunko J",
+      "author": "Jyumonji Ao",
+      "illustrator": "BUNBUN",
+      "release": "25/08/2022",
+      "category": "Sat thu",
+      "volume": "2 (Còn tiếp diễn)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://teasertranslations.home.blog/love-is-dark/",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/13304",
+      "safety": "Bi da"
     }
   },
   {
@@ -959,6 +1726,28 @@
       "vi_trans": "Việt (WN & LN)",
       "vi_trans_url": "https://docln.net/truyen/11925",
       "safety": "Trẻ con làm tình, uống rượu bia, nhảy lầu"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2022] “Ch*ch nhau de!” Loi toi noi voi co ban hoc dang chuan bi nhay lau",
+      "author": "NaviRanobe",
+      "description": "Neu ai nhin vao cai ten goc cua ban WN va thay nguyen dong “chich nhau di!” khong che tren tieu de thi chac han deu nghi hai phien ban WN va LN cua no cung vo va vo van nhu nhau ca thoi...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "飛び降りる直前の同級生に『×××しよう！』と提案してみた。",
+      "vn": "Tam dich: “Ch*ch nhau de!” Loi toi noi voi co ban hoc dang chuan bi nhay lau",
+      "romaji": "Tobioriru Chokuzen no Doukyuusei ni “XXX Shiyou!” to Teian Shite Mita",
+      "publisher": "Sneaker Bunko",
+      "author": "Akatsuki Yamori",
+      "illustrator": "Kuroki",
+      "release": "10/04/2022",
+      "category": "Nhay lau",
+      "volume": "2 (Đã hoàn thành)",
+      "en_trans": "Anh (WN)",
+      "en_trans_url": "https://www.shmtranslations.com/lets-have-sex/",
+      "vi_trans": "Việt (WN & LN)",
+      "vi_trans_url": "https://docln.net/truyen/11925",
+      "safety": "Tre con lam tinh, uong ruou bia, nhay lau"
     }
   },
   {
@@ -986,6 +1775,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/13285-ashita-hadashi-de-koi",
       "safety": "Không che ngón chân"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2022] Ngay mai, di chan tran den ben nhau",
+      "author": "NaviRanobe",
+      "description": "Tap 1 nay dong vai tro gioi thieu boi canh va nhan vat, bat dau voi ngay tot nghiep cap Ba khi nam chinh Sakamoto Meguri va dan em khoi duoi Akutagawa Makoto biet tin ve la thu tuyet menh cua nu nhac si...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "あした、裸足でこい。",
+      "vn": "Tam dich: Ngay mai, di chan tran den ben nhau",
+      "romaji": "Ashita, Hadashi de Koi",
+      "publisher": "Dengeki Bunko",
+      "author": "Misaki Saginomiya",
+      "illustrator": "Hiten",
+      "release": "10/09/2022",
+      "category": "Du hanh thoi gian",
+      "volume": "2 (Còn tiếp diễn)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://aftersleepclub.wordpress.com/ashita-hadashi-de-koi/",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/13285-ashita-hadashi-de-koi",
+      "safety": "Khong che ngon chan"
     }
   },
   {
@@ -1013,6 +1824,28 @@
       "vi_trans": "Không tồn tại",
       "vi_trans_url": "",
       "safety": "Cùng lắm chỉ có gái rọc da để sống"
+    },
+    "normalizedMetadata": {
+      "title": "[Giang sinh 2022] Gai tam than khoac tap de nhu vo hien",
+      "author": "NaviRanobe",
+      "description": "Nam nay qua nhieu bo de chon, qua nhieu thu de noi, va rot cuoc thi dong bai viet nhap ve truyen dau nam da bi bay sach cung voi du lieu may nen bay gio chi co the ngoi lua ra nhung bo gan day nhat...",
+      "category": "12 Ngay Giang Sinh"
+    },
+    "normalizedDetail": {
+      "jp": "メンヘラが愛妻エプロンに着替えたら",
+      "vn": "Tam dich: Gai tam than khoac tap de nhu vo hien",
+      "romaji": "Menhera ga Aisai Apron ni Kigaetara",
+      "publisher": "Sneaker Bunko",
+      "author": "Hanamiya Takuya",
+      "illustrator": "Nardack",
+      "release": "1/12/2022",
+      "category": "Gai tam than",
+      "volume": "1 (Còn tiếp diễn)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Không tồn tại",
+      "vi_trans_url": "",
+      "safety": "Cung lam chi co gai roc da de song"
     }
   },
   {
@@ -1040,6 +1873,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://ln.hako.vn/truyen/10192-watashi-ga-koibito-ni-nareru-wakenaijan-muri-muri-muri-janakatta",
       "safety": "Vượt qua tình bạn"
+    },
+    "normalizedMetadata": {
+      "title": "[Ki Su Gia 052022] Chac chan khong the la nguoi yeu cua nhau ma! - Tap 4",
+      "author": "NaviRanobe",
+      "description": "Cau chuyen bat dau voi dien bien ngay tu cuoi tap truoc, khi Ajisai bat chap moi thu va to tinh voi Renako. Tat nhien, nhu ai cung doan truoc duoc, cau tra loi “co” cua Renako chi la lo loi buot mieng noi...",
+      "category": "Ki Su Gia"
+    },
+    "normalizedDetail": {
+      "jp": "わたしが恋人になれるわけないじゃん、ムリムリ！（※ムリじゃなかった！？）",
+      "vn": "Tam dich: Chac chan khong the la nguoi yeu cua nhau ma!",
+      "romaji": "Watashi ga Koibito ni Nareru Wakenaijan, Muri Muri! (*Muri Janakatta!?)",
+      "publisher": "Dash X Bunko",
+      "author": "Mikami Teren",
+      "illustrator": "Takeshima Eku",
+      "release": "21/2/2020",
+      "category": "Yuri",
+      "volume": "4 (Còn tiếp diễn)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://meatbuntranslation.blogspot.com/",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://ln.hako.vn/truyen/10192-watashi-ga-koibito-ni-nareru-wakenaijan-muri-muri-muri-janakatta",
+      "safety": "Vuot qua tinh ban"
     }
   },
   {
@@ -1067,6 +1922,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://ln.hako.re/truyen/11897-the-perfect-sako-san-wants-to-become-like-a-mob-character-me",
       "safety": "Bình thường"
+    },
+    "normalizedMetadata": {
+      "title": "[Ki Su Gia 052022] Ban Sako hoan hao muon tro thanh nhan vat nen nhu toi",
+      "author": "NaviRanobe",
+      "description": "Sako-san doc hay day. Cau chuyen ke ve mot nu sinh bi tu choi boi chang trai vo danh tieu tot vi ly do co qua hoan hao, va ngay sau do co da nay y tuong pha hoai danh tieng cua minh de co the ha minh xuong ngang hang voi cau...",
+      "category": "Ki Su Gia"
+    },
+    "normalizedDetail": {
+      "jp": "完璧な佐古さんは僕みたいになりたい",
+      "vn": "Tam dich: Ban Sako hoan hao muon tro thanh nhan vat nen nhu toi",
+      "romaji": "Kanpeki na Sako-san wa Mobu Mitai ni Naritai",
+      "publisher": "Fantasia Bunko",
+      "author": "Yamaga Shiotarou",
+      "illustrator": "Yurin",
+      "release": "20/1/2021",
+      "category": "Mobu, Lang Man, Hoc Duong",
+      "volume": "1 (Đã hoàn thành)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://cclawtranslations.home.blog/2022/03/07/kanpeki-na-sako-san-wa-mobu-boku-mitai-ni-naritai-chapter-1/",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://ln.hako.re/truyen/11897-the-perfect-sako-san-wants-to-become-like-a-mob-character-me",
+      "safety": "Binh thuong"
     }
   },
   {
@@ -1094,6 +1971,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/12020-da-co-hon-the-de-thuong-nhuong-nay-roi-ma-sao-cau-lai-di-thich-nguoi-khac-co-chu",
       "safety": "Chỉ có duy nhất một cảnh rớt vải"
+    },
+    "normalizedMetadata": {
+      "title": "[Ki Su Gia 052022] Anh da co Hon The De Thuong nhu the nay roi Ma van Ham Nho Khac Sao?",
+      "author": "NaviRanobe",
+      "description": "Truyen duoc dung tren tien de nam sinh trung hoc Gouzanji Kouta dot nhien gap phai nguoi mau noi tieng toan cau Christina Westwood va bi ep phai ket hon voi co ay chi vi thoa thuan lam an nam nao cua hai ong cha...",
+      "category": "Ki Su Gia"
+    },
+    "normalizedDetail": {
+      "jp": "こんな可愛い許嫁がいるのに、他の子が好きなの？",
+      "vn": "Tam dich: Anh da co Hon The De Thuong nhu the nay roi Ma van Ham Nho Khac Sao?",
+      "romaji": "Konna Kawaii Iinazuke ga Iru no ni, Hoka no Ko ga Suki nano?",
+      "publisher": "Dengeki Bunko",
+      "author": "Misaki Nagi",
+      "illustrator": "Kuruto Yuu",
+      "release": "10/11/2021",
+      "category": "Hon The",
+      "volume": "2 (Còn tiếp diễn)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://www.neosekaitranslations.com/novel/cute-fiancee/volume-1/v1-chapter-1/",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/12020-da-co-hon-the-de-thuong-nhuong-nay-roi-ma-sao-cau-lai-di-thich-nguoi-khac-co-chu",
+      "safety": "Chi co duy nhat mot canh rot vai"
     }
   },
   {
@@ -1121,6 +2020,28 @@
       "vi_trans": "Bản quyền Anh có, Việt thì vẫn chờ trong vô vọng",
       "vi_trans_url": "",
       "safety": "Nội dung từ đầu đã có vấn đề"
+    },
+    "normalizedMetadata": {
+      "title": "[Ki Su Gia 052022] Cao rau cuom JK. Side Story – Mishima Yuzuha & Gotou Airi",
+      "author": "NaviRanobe",
+      "description": "Con bo nao hop hon de khep lai Ky Su Gia lan nay va dam minh trong noi kho cua nguoi tuong chung nhu truong thanh nhung thuc ra van con mac ket trong qua khu...",
+      "category": "Ki Su Gia"
+    },
+    "normalizedDetail": {
+      "jp": "ひげを剃る。そして女子高生を拾う。",
+      "vn": "Tam dich: Cao rau cuom JK",
+      "romaji": "Hige Wo Soru. Soshite Joshikosei Wo Hirou",
+      "publisher": "Kadokawa Sneaker Bunko",
+      "author": "Shimesaba",
+      "illustrator": "Booota",
+      "release": "1/2/2018",
+      "category": "Lam cong an luong",
+      "volume": "7 (Còn tiếp diễn)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Bản quyền Anh có, Việt thì vẫn chờ trong vô vọng",
+      "vi_trans_url": "",
+      "safety": "Noi dung tu dau da co van de"
     }
   },
   {
@@ -1132,6 +2053,12 @@
       "publishDate": "2022-05-12",
       "description": "Sau gần bảy năm ròng rã kể từ khi tập 1 được xuất bản thì Ai cuối cùng cũng có cơ hội để thực hiện lời hứa với ba mẹ. Trận đấu quyết định chức danh giữa cô bé và Shakando đã bắt đầu và kết thúc trong tập này...",
       "category": "Kí Sự Giả"
+    },
+    "normalizedMetadata": {
+      "title": "[Ki Su Gia 052022] Cong Viec cua Long Vuong - Tap 16",
+      "author": "NaviRanobe",
+      "description": "Sau gan bay nam rong ra ke tu khi tap 1 duoc xuat ban thi Ai cuoi cung cung co co hoi de thuc hien loi hua voi ba me. Tran dau quyet dinh chuc danh giua co be va Shakando da bat dau va ket thuc trong tap nay...",
+      "category": "Ki Su Gia"
     }
   },
   {
@@ -1153,6 +2080,28 @@
       "illustrator": "Shina Kuro",
       "release": "18/07/2020",
       "category": "Lãng Mạn, Học Đường",
+      "volume": "5 (Còn tiếp diễn)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Truyện đã được mua bản quyền ở Việt Nam",
+      "vi_trans_url": "",
+      "safety": ""
+    },
+    "normalizedMetadata": {
+      "title": "[Ki Su Gia 052022] Ai dam bao rom-com khong co ngoai doi thuc? - Tap 4 & 5",
+      "author": "NaviRanobe",
+      "description": "Doi voi Mei, dinh nghia cua binh thuong ton tai trong nhung quyen tieu thuyet moi lon va nhung loi day do cua gia dinh co. Co duoc sinh ra trong mot mai am thuoc tang lop trung luu, va tai nang cua co cung chi o muc du de kiem mot so giai thuong thi dua khi con nho...",
+      "category": "Ki Su Gia"
+    },
+    "normalizedDetail": {
+      "jp": "現実でラブコメできないとだれが決めた？",
+      "vn": "Tam dich: Ai dam bao rom-com khong co ngoai doi thuc?",
+      "romaji": "Genjitsu de Rabukome Dekinai to Dare ga Kimeta?",
+      "publisher": "GAGAGA Bunko",
+      "author": "Hajikano So",
+      "illustrator": "Shina Kuro",
+      "release": "18/07/2020",
+      "category": "Lang Man, Hoc Duong",
       "volume": "5 (Còn tiếp diễn)",
       "en_trans": "",
       "en_trans_url": "",
@@ -1186,6 +2135,28 @@
       "vi_trans": "",
       "vi_trans_url": "",
       "safety": "Cũng lại tiếp tục áo tắm, hoặc chuyện tình cậu cháu cùng huyết thống"
+    },
+    "normalizedMetadata": {
+      "title": "[Ki Su Gia 052022] Chau Gai cua Toi Se Cuoi Ai Trong Tuong Lai?",
+      "author": "NaviRanobe",
+      "description": "Bo nay thi kha chac chua nhac den tren day bao gio, nen loi noi dung tu FB o cuoi tap 2 sang thi chac kho hieu duoc. Nhung khong nhac thi khong duoc, vi day la mot trong so nhung bo LN hiem hoi chuyen the tu manga tren YT voi noi dung dang hoang...",
+      "category": "Ki Su Gia"
+    },
+    "normalizedDetail": {
+      "jp": "俺の姪は将来、どんな相手と結婚するんだろう？",
+      "vn": "Tam dich: Chau Gai cua Toi Se Cuoi Ai Trong Tuong Lai?",
+      "romaji": "Ore no Mei wa Shourai, Donna Aite to Kekkon Surun darou?",
+      "publisher": "GA Bunko",
+      "author": "Ochiai Yuusuke",
+      "illustrator": "Kentauloss",
+      "release": "\t12/8/2021",
+      "category": "Cau chau, Gia dinh, Youtube Manga",
+      "volume": "2 (Đã hoàn thành)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "",
+      "vi_trans_url": "",
+      "safety": "Cung lai tiep tuc ao tam, hoac chuyen tinh cau chau cung huyet thong"
     }
   },
   {
@@ -1213,6 +2184,28 @@
       "vi_trans": "Không có",
       "vi_trans_url": "",
       "safety": "Tốt"
+    },
+    "normalizedMetadata": {
+      "title": "[Ki Su Gia 052022] Het bi con ban gai choi deu, gio lai bi nho kouhai ca khia - Tap 6",
+      "author": "NaviRanobe",
+      "description": "Phu nu khi tim thay nguoi dan ong tot hon ban trai thi tat nhien se doi nguoi yeu lien. Neu chi nhieu do ma da khung hoang tam ly thi bi da cung dang lam. Su that la vay...",
+      "category": "Ki Su Gia"
+    },
+    "normalizedDetail": {
+      "jp": "カノジョに浮気されていた俺が、小悪魔な後輩に懐かれています",
+      "vn": "Tam dich: Het bi con ban gai choi deu, gio lai bi nho kouhai ca khia",
+      "romaji": "Kanojo ni Uwaki Sareteita Ore ga, Koakuma na Kouhai ni Idakarete Imasu",
+      "publisher": "Sneaker Bunko",
+      "author": "Omiya Yuu",
+      "illustrator": "Eeru",
+      "release": "1/12/2019",
+      "category": "Giang Sinh",
+      "volume": "6 (Còn tiếp diễn)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Không có",
+      "vi_trans_url": "",
+      "safety": "Tot"
     }
   },
   {
@@ -1240,6 +2233,28 @@
       "vi_trans": "Không tồn tại",
       "vi_trans_url": "",
       "safety": "Chỉ có áo tắm"
+    },
+    "normalizedMetadata": {
+      "title": "[Ki Su Gia 052022] Idolru cua moi nguoi le nao lai di yeu mot minh toi",
+      "author": "NaviRanobe",
+      "description": "Cu tuong Blue Outline da hay lam roi nhung bo nay gio da soan ngoi tac pham yeu thich nhat trong hai thang qua. Mac du hai thang qua chi moi doc 23 bo do qua ban san shinies va diet idolru ao…",
+      "category": "Ki Su Gia"
+    },
+    "normalizedDetail": {
+      "jp": "みんなのアイドルが俺にガチ恋するわけがない",
+      "vn": "Tam dich: Idolru cua moi nguoi le nao lai di yeu mot minh toi",
+      "romaji": "Minna no Idol ga Ore ni Gachi Koi Suru Wake ga Nai",
+      "publisher": "GA Bunko",
+      "author": "Haba Rakuto",
+      "illustrator": "Rangu",
+      "release": "11/2/2022",
+      "category": "Idolru",
+      "volume": "1 (Còn tiếp diễn)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Không tồn tại",
+      "vi_trans_url": "",
+      "safety": "Chi co ao tam"
     }
   },
   {
@@ -1267,6 +2282,28 @@
       "vi_trans": "Việt",
       "vi_trans_url": "https://docln.net/truyen/9193-kurasu-de-nibanme-ni-kawaii-onna-no-ko-to-tomodachi-ni-natta",
       "safety": "Bạn bè tốt thật, chứ không có tình gì"
+    },
+    "normalizedMetadata": {
+      "title": "[Ki Su Gia 052022] Ket ban voi gai xinh nhi lop",
+      "author": "NaviRanobe",
+      "description": "Cai nu cuoi ay. Cai nu cuoi da du do biet bao nhieu nguoi doc mot bo gai dung nhi nhung thuc ra chang khac gi gai dung nhat.",
+      "category": "Ki Su Gia"
+    },
+    "normalizedDetail": {
+      "jp": "クラスで２番目に可愛い女の子と友だちになった",
+      "vn": "Tam dich: Ket ban voi gai xinh nhi lop",
+      "romaji": "Kurasu de Nibanme ni Kawaii Onna no Ko to Tomodachi ni Natta",
+      "publisher": "Sneaker Bunko",
+      "author": "Takata",
+      "illustrator": "Osabe Tom",
+      "release": "24/12/2021",
+      "category": "Ban tinh",
+      "volume": "1 (Còn tiếp diễn)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://www.neosekaitranslations.com/novel/i-became-friends-with-the-second-cutest-girl-in-my-class/chapter-1/",
+      "vi_trans": "Việt",
+      "vi_trans_url": "https://docln.net/truyen/9193-kurasu-de-nibanme-ni-kawaii-onna-no-ko-to-tomodachi-ni-natta",
+      "safety": "Ban be tot that, chu khong co tinh gi"
     }
   },
   {
@@ -1294,6 +2331,28 @@
       "vi_trans": "",
       "vi_trans_url": "",
       "safety": "Có làm tình rất nhiều"
+    },
+    "normalizedMetadata": {
+      "title": "[Ki Su Gia 052022] Khong ai trong lop biet chung ta la ban tinh",
+      "author": "NaviRanobe",
+      "description": "Cau chuyen xoay quanh hai co cau Takai Yumi va Toyama Yuki hoc chung lop voi nhau. Do co chung so thich doc sach va thuong hay gap nhau trong thu vien, nen Yuki va Yumi da co dip lam quen...",
+      "category": "Ki Su Gia"
+    },
+    "normalizedDetail": {
+      "jp": "冴えない僕が君の部屋でシている事をクラスメイトは誰も知らない",
+      "vn": "Tam dich: Khong ai trong lop biet chung ta la ban tinh",
+      "romaji": "Saenai Boku ga Kimi no Heiya de Shiteiru Koto wo Classmate dare mo Shiranai",
+      "publisher": "Sneaker Bunko",
+      "author": "Yamamoto Takeshi",
+      "illustrator": "Asahina Hikage",
+      "release": "1/4/2022",
+      "category": "Ban tinh",
+      "volume": "1 (Còn tiếp diễn)",
+      "en_trans": "“Anh”",
+      "en_trans_url": "https://kaiesv.wordpress.com/2022/03/02/chapter-1/",
+      "vi_trans": "",
+      "vi_trans_url": "",
+      "safety": "Co lam tinh rat nhieu"
     }
   },
   {
@@ -1315,6 +2374,28 @@
       "illustrator": "Musshu",
       "release": "20/01/2022",
       "category": "Lãng mạn, Học đường, Thiên tài",
+      "volume": "1 (Đã hoàn thành)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Không tồn tại",
+      "vi_trans_url": "",
+      "safety": ""
+    },
+    "normalizedMetadata": {
+      "title": "[Ki Su Gia 052022] Net phac thao xanh ~Cau chuyen ve ke tam thuong to lai the gioi cua thien tai~",
+      "author": "NaviRanobe",
+      "description": "Blue Outline tai sao hay vay nay. Ban dau do thien vi may bo chu de tai nang bam sinh va thay loi khen nuc no tu tac gia cua Date A Live nen moi loi ra doc, nhung doc xong lien cau mong co tap 2 de xem tiep cuoc doi cua ke thua cuoc khong bao gio thang noi thien tai...",
+      "category": "Ki Su Gia"
+    },
+    "normalizedDetail": {
+      "jp": "青のアウトライン 天才の描く世界を凡人が塗りかえる方法",
+      "vn": "Tam dich: Net phac thao xanh ~Cau chuyen ve ke tam thuong to lai the gioi cua thien tai~",
+      "romaji": "Ao no Outline: Tensai no Egaku Sekai wo Bonjin ga Nuri Kaeru Houhou",
+      "publisher": "Fantasia Bunko",
+      "author": "Hibi Tsuzuro",
+      "illustrator": "Musshu",
+      "release": "20/01/2022",
+      "category": "Lang man, Hoc duong, Thien tai",
       "volume": "1 (Đã hoàn thành)",
       "en_trans": "",
       "en_trans_url": "",
@@ -1348,6 +2429,28 @@
       "vi_trans": "",
       "vi_trans_url": "",
       "safety": "Chỉ có em kế tối chui vào giường trong bộ đồ lót, đòi bán thân thôi"
+    },
+    "normalizedMetadata": {
+      "title": "[Ki Su Gia 052022] Song cung Em Ke - Tap 5",
+      "author": "NaviRanobe",
+      "description": "Than thiet hon cap anh em binh thuong, nhung khong vuot qua ranh gioi yeu duong. Mac du van chua the xac dinh duoc moi quan he map mo nay la gi, nhung tinh cam cua Yuuta va Saki van tiep tuc nay no...",
+      "category": "Ki Su Gia"
+    },
+    "normalizedDetail": {
+      "jp": "義妹生活",
+      "vn": "Tam dich: Song cung Em Ke",
+      "romaji": "Gimai Seikatsu",
+      "publisher": "MF Bunko J",
+      "author": "Mikawa Ghost",
+      "illustrator": "Hiten",
+      "release": "25/1/2021",
+      "category": "Em ke",
+      "volume": "5 (Còn tiếp diễn)",
+      "en_trans": "Anh",
+      "en_trans_url": "https://cclawtranslations.home.blog/gimai-seikatsu-toc/",
+      "vi_trans": "",
+      "vi_trans_url": "",
+      "safety": "Chi co em ke toi chui vao giuong trong bo do lot, doi ban than thoi"
     }
   },
   {
@@ -1375,6 +2478,28 @@
       "vi_trans": "Không tồn tại",
       "vi_trans_url": "",
       "safety": "Bình thường"
+    },
+    "normalizedMetadata": {
+      "title": "[Ki Su Gia 052022] Than tuong toi yeu thich co khi lai thich toi - Tap 2",
+      "author": "NaviRanobe",
+      "description": "Cai tap nay bat dau voi mot man to tinh thi ket thuc cung voi mot man to tinh luon. Bo truyen nay cung da duoc nhac den trong giang sinh nam ngoai, ban dau khong ngo duoc no song den tan tap 2, va gio chi con mong no se song lau dai them nua...",
+      "category": "Ki Su Gia"
+    },
+    "normalizedDetail": {
+      "jp": "推しが俺を好きかもしれない",
+      "vn": "Tam dich: Than tuong toi yeu thich co khi lai thich toi",
+      "romaji": "Oshi ga Ore wo Suki Kamo Shirenai",
+      "publisher": "Fantasia Bunko",
+      "author": "Kawata Gikyoku",
+      "illustrator": "Kanda Done",
+      "release": "16/7/2021",
+      "category": "Idolru",
+      "volume": "2 (Còn tiếp diễn, mong là vậy)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Không tồn tại",
+      "vi_trans_url": "",
+      "safety": "Binh thuong"
     }
   },
   {
@@ -1402,6 +2527,28 @@
       "vi_trans": "Không có",
       "vi_trans_url": "",
       "safety": "Mẹ đường"
+    },
+    "normalizedMetadata": {
+      "title": "[Ki Su Gia 052022] Tinh dau cua toi dang hon nguoi phu nu khac",
+      "author": "NaviRanobe",
+      "description": "Bo truyen duoc dung tren tien de chuyen den song chung nha van con dang noi sau hon mot nam, nhung no cung co dao sau them vao chu de ban dam hon. Tren mang thi day ray nhung cau chuyen ve nu sinh trung hoc hen ho voi phu nu lon tuoi hon roi...",
+      "category": "Ki Su Gia"
+    },
+    "normalizedDetail": {
+      "jp": "私の初恋相手がキスしてた",
+      "vn": "Tam dich: Tinh dau cua toi dang hon nguoi phu nu khac",
+      "romaji": "Watashi no Hatsukoi Aite ga Kiss Shiteta",
+      "publisher": "Dengeki Bunko",
+      "author": "Iruma Hitoma",
+      "illustrator": "Fly",
+      "release": "8/1/2022",
+      "category": "Yuri",
+      "volume": "2 (Còn tiếp diễn)",
+      "en_trans": "",
+      "en_trans_url": "",
+      "vi_trans": "Không có",
+      "vi_trans_url": "",
+      "safety": "Me duong"
     }
   },
   {
@@ -1413,6 +2560,12 @@
       "publishDate": "2018-08-26",
       "description": "Với số lượng tác phẩm được phát hành gia tăng liên tục theo từng năm, thị trường Light Novel tại Việt Nam hứa hẹn sẽ còn phát triển và mở rộng với nhiều đầu sách đa dạng. Và khi nhắc đến sự thành công rực rỡ của Light Novel tại Việt Nam, chúng ta không thể nào quên được Thái Hà, nhà phát hành mà đã đồng hành cùng cộng đồng chúng ta trong suốt những năm qua.",
       "category": "Phỏng Vấn"
+    },
+    "normalizedMetadata": {
+      "title": "Giam doc tu sach cua Hikari Light Novel",
+      "author": "NaviRanobe",
+      "description": "Voi so luong tac pham duoc phat hanh gia tang lien tuc theo tung nam, thi truong Light Novel tai Viet Nam hua hen se con phat trien va mo rong voi nhieu dau sach da dang. Va khi nhac den su thanh cong ruc ro cua Light Novel tai Viet Nam, chung ta khong the nao quen duoc Thai Ha, nha phat hanh ma da dong hanh cung cong dong chung ta trong suot nhung nam qua.",
+      "category": "Phong Van"
     }
   },
   {
@@ -1424,6 +2577,12 @@
       "publishDate": "2018-08-25",
       "description": "Nếu là một trong những người có đam mê đọc sách và viết lách, chắc hẳn bạn cũng từng nghe qua danh tiếng của đại gia đình Skybooks. Mặc dù đã tham gia vào thị trường Light Novel từ năm 2016 cùng tác phẩm Dịch vụ giao hàng của phù thủy Kiki, nhưng mãi đến tận cuối năm 2017 vừa qua, Skybooks mới chính thức xâm nhập thị trường, tạo ra một nhãn hiệu dành riêng Light Novel mang tên Sky Light Novel và trở thành đơn vị phát hành Light Novel trẻ tuổi nhất ở Việt Nam.",
       "category": "Phỏng Vấn"
+    },
+    "normalizedMetadata": {
+      "title": "Cung huong ve Sky Light Novel",
+      "author": "NaviRanobe",
+      "description": "Neu la mot trong nhung nguoi co dam me doc sach va viet lach, chac han ban cung tung nghe qua danh tieng cua dai gia dinh Skybooks. Mac du da tham gia vao thi truong Light Novel tu nam 2016 cung tac pham Dich vu giao hang cua phu thuy Kiki, nhung mai den tan cuoi nam 2017 vua qua, Skybooks moi chinh thuc xam nhap thi truong, tao ra mot nhan hieu danh rieng Light Novel mang ten Sky Light Novel va tro thanh don vi phat hanh Light Novel tre tuoi nhat o Viet Nam.",
+      "category": "Phong Van"
     }
   },
   {
@@ -1435,6 +2594,12 @@
       "publishDate": "2018-08-24",
       "description": "Hôm nay, mình được phép cùng nói chuyện với Sakurabooks, một thương hiệu chuyên xuất bản sách Nhật Bản tại Việt Nam với một tủ sách đa dạng, bao gồm cả Light Novel chính thống và Light Novel chuyển thể từ Vocaloid và RPG Maker Game nói trên.",
       "category": "Phỏng Vấn"
+    },
+    "normalizedMetadata": {
+      "title": "Doi ngu cua Sakurabooks",
+      "author": "NaviRanobe",
+      "description": "Hom nay, minh duoc phep cung noi chuyen voi Sakurabooks, mot thuong hieu chuyen xuat ban sach Nhat Ban tai Viet Nam voi mot tu sach da dang, bao gom ca Light Novel chinh thong va Light Novel chuyen the tu Vocaloid va RPG Maker Game noi tren.",
+      "category": "Phong Van"
     }
   }
 ]

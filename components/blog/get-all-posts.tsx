@@ -17,9 +17,7 @@ export default async function getAllPosts(): Promise<Post[]> {
   const files = fs.readdirSync(dir);
 
   const posts = files
-    .filter(
-      (filename) => filename.endsWith(".mdx") && !filename.startsWith(".")
-    )
+    .filter((filename) => filename.endsWith(".mdx") && !filename.startsWith("."))
     .map((filename) => {
       try {
         const { metadata, detail } = require(`@/posts/${filename}`);
@@ -40,11 +38,7 @@ export default async function getAllPosts(): Promise<Post[]> {
       }
     });
 
-  posts.sort(
-    (a, b) =>
-      new Date(b.metadata.publishDate).getTime() -
-      new Date(a.metadata.publishDate).getTime()
-  );
+  posts.sort((a, b) => new Date(b.metadata.publishDate).getTime() - new Date(a.metadata.publishDate).getTime());
 
   return posts;
 }

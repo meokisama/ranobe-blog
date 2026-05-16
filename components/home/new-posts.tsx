@@ -10,9 +10,7 @@ export default async function NewPost() {
   const renderList = CATEGORIES.map((item) => ({
     title: item.title,
     category: item.category,
-    data: posts.filter(
-      (post) => post.metadata.category === item.metadataCategory
-    ),
+    data: posts.filter((post) => post.metadata.category === item.metadataCategory),
   }));
 
   return (
@@ -21,27 +19,19 @@ export default async function NewPost() {
         <Separator className="mb-8 max-w-[80%] lg:max-w-4xl" />
         <h2 className="text-4xl md:text-6xl font-black">Bài viết mới nhất</h2>
         <p className="text-lg lg:text-xl text-center px-4 leading-5 mt-2">
-          Những nội dung được đăng tải gần đây nhất, ấn vào nút Xem tất cả bên
-          dưới để đọc nhiều hơn.
+          Những nội dung được đăng tải gần đây nhất, ấn vào nút Xem tất cả bên dưới để đọc nhiều hơn.
         </p>
         <Separator className="mt-8 max-w-[80%] lg:max-w-4xl" />
       </div>
       {renderList.map((category, index) => (
         <div key={index} className="flex flex-col items-center justify-between">
           <PostList
-            data={
-              category.category === "12-ngay-giang-sinh"
-                ? category.data.slice(0, 6)
-                : category.data.slice(0, 3)
-            }
+            data={category.category === "12-ngay-giang-sinh" ? category.data.slice(0, 6) : category.data.slice(0, 3)}
             title={category.title}
             category={category.category}
           />
           <Link href="/blog" target="_blank">
-            <Button
-              size="lg"
-              className="text-lg lg:text-xl py-6 mt-14 cursor-pointer"
-            >
+            <Button size="lg" className="text-lg lg:text-xl py-6 mt-14 cursor-pointer">
               Tất cả bài viết
             </Button>
           </Link>

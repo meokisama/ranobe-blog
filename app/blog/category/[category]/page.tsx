@@ -37,9 +37,7 @@ export default async function Home({ params }: Props) {
   const renderList = CATEGORIES.map((item) => ({
     title: item.title,
     category: item.category,
-    data: posts.filter(
-      (post) => post.metadata.category === item.metadataCategory
-    ),
+    data: posts.filter((post) => post.metadata.category === item.metadataCategory),
   }));
 
   const matchedCategory = renderList.find((item) => item.category === category);
@@ -69,12 +67,8 @@ export default async function Home({ params }: Props) {
         className="fixed w-full h-full z-1 opacity-50 dark:invert dark:hidden select-none pointer-events-none"
       />
       <div className="absolute z-2 font-jaro select-none pointer-events-none w-full text-center overflow-hidden backdrop-blur-sm">
-        <h1 className="text-[40vw] leading-[30vw] sm:text-[21vw] sm:leading-[17vw] text-[var(--background)] custom-stroke">
-          NAVIRANOBE
-        </h1>
-        <h1 className="text-[40vw] leading-[33vw] sm:text-[26.3vw] sm:leading-[20vw] sm:mt-[-2vw] text-[var(--background)] custom-stroke">
-          THEMEOKI
-        </h1>
+        <h1 className="text-[40vw] leading-[30vw] sm:text-[21vw] sm:leading-[17vw] text-background custom-stroke">NAVIRANOBE</h1>
+        <h1 className="text-[40vw] leading-[33vw] sm:text-[26.3vw] sm:leading-[20vw] sm:mt-[-2vw] text-background custom-stroke">THEMEOKI</h1>
       </div>
       <Image
         src="/imouza_all.png"

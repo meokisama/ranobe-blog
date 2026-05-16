@@ -65,31 +65,6 @@ const removeAccents = (str: string) => {
     .replace(/Đ/g, "D");
 };
 
-const normalizedData = data.map((item) => {
-  return {
-    ...item,
-    normalizedMetadata: {
-      title: removeAccents(item.metadata.title),
-      author: removeAccents(item.metadata.author),
-      description: removeAccents(item.metadata.description),
-      category: removeAccents(item.metadata.category),
-    },
-    normalizedDetail: item.detail
-      ? {
-          ...item.detail,
-          jp: removeAccents(item.detail.jp),
-          vn: removeAccents(item.detail.vn),
-          romaji: removeAccents(item.detail.romaji),
-          publisher: removeAccents(item.detail.publisher),
-          author: removeAccents(item.detail.author),
-          illustrator: removeAccents(item.detail.illustrator),
-          category: removeAccents(item.detail.category),
-          safety: removeAccents(item.detail.safety),
-        }
-      : null,
-  };
-});
-
 const options = {
   keys: [
     { name: "normalizedMetadata.title", weight: 1.0 },
@@ -109,7 +84,7 @@ const options = {
   threshold: 0.4,
 };
 
-const fuse = new Fuse(normalizedData, options);
+const fuse = new Fuse(data, options);
 
 export default function SearchFunction() {
   const [query, setQuery] = useState<string>("");
@@ -121,12 +96,10 @@ export default function SearchFunction() {
         setResults([]);
       } else {
         const normalizedQuery = removeAccents(query);
-        const searchResult = fuse
-          .search(normalizedQuery)
-          .map((result) => result.item);
+        const searchResult = fuse.search(normalizedQuery).map((result) => result.item);
         setResults(searchResult);
       }
-    }, 500)
+    }, 500),
   );
 
   const handleSearch = (query: string) => {
@@ -138,17 +111,13 @@ export default function SearchFunction() {
     <div className="mx-auto w-full px-2 sm:px-4 lg:px-10 h-[70vh] lg:h-[60vh] flex flex-col lg:flex-row gap-5 xl:gap-10">
       <div className="lg:w-2/5 flex flex-col gap-5">
         <div className="text-center">
-          <h2 className="font-black text-3xl lg:text-4xl opacity-75">
-            Tìm kiếm bài viết
-          </h2>
-          <p className="text-base leading-5 sm:text-lg sm:leading-5 mt-2 max-w-[90%] md:max-w-[80%] lg:max-w-[32rem] mx-auto text-gray-500 dark:text-gray-400 hidden sm:block">
-            Có thể tìm theo tiêu đề bài viết, tên tác phẩm (tiếng Nhật gốc,
-            tiếng Việt chúng tôi tạm dịch hoặc theo romaji), tên tác giả, họa sĩ
-            minh họa, nhà xuất bản gốc...
+          <h2 className="font-black text-3xl lg:text-4xl opacity-75">Tìm kiếm bài viết</h2>
+          <p className="text-base leading-5 sm:text-lg sm:leading-5 mt-2 max-w-[90%] md:max-w-[80%] lg:max-w-lg mx-auto text-gray-500 dark:text-gray-400 hidden sm:block">
+            Có thể tìm theo tiêu đề bài viết, tên tác phẩm (tiếng Nhật gốc, tiếng Việt chúng tôi tạm dịch hoặc theo romaji), tên tác giả, họa sĩ minh
+            họa, nhà xuất bản gốc...
           </p>
-          <p className="text-base leading-5 sm:text-lg sm:leading-5 mt-2 max-w-[90%] md:max-w-[80%] lg:max-w-[32rem] mx-auto text-gray-500 dark:text-gray-400 sm:hidden">
-            Có thể tìm theo tiêu đề bài viết, tên tác phẩm (Nhật, Việt, romaji),
-            tên tác giả, họa sĩ, nhà xuất bản gốc...
+          <p className="text-base leading-5 sm:text-lg sm:leading-5 mt-2 max-w-[90%] md:max-w-[80%] lg:max-w-lg mx-auto text-gray-500 dark:text-gray-400 sm:hidden">
+            Có thể tìm theo tiêu đề bài viết, tên tác phẩm (Nhật, Việt, romaji), tên tác giả, họa sĩ, nhà xuất bản gốc...
           </p>
         </div>
         <div className="relative">
@@ -177,32 +146,20 @@ export default function SearchFunction() {
       <div className="lg:w-3/5 h-full flex flex-col gap-3 sm:gap-4 overflow-scroll pb-4">
         {query === "" ? (
           <div className="text-center text-lg lg:text-xl h-full flex flex-col gap-3 items-center justify-center text-gray-500 dark:text-gray-400">
-            <Image
-              src="/200_chibi.png"
-              alt="404 image"
-              width={80}
-              height={80}
-              className="opacity-90 h-auto"
-            />
+            <Image src="/200_chibi.png" alt="404 image" width={80} height={80} className="opacity-90 h-auto" />
             <p>Kết quả tìm kiếm tại đây...</p>
           </div>
         ) : results.length === 0 ? (
           <div className="text-center text-lg lg:text-xl h-full flex flex-col gap-3 items-center justify-center text-gray-500 dark:text-gray-400">
-            <Image
-              src="/404_chibi.webp"
-              alt="404 image"
-              width={100}
-              height={100}
-              className="opacity-90 h-auto"
-            />
+            <Image src="/404_chibi.webp" alt="404 image" width={100} height={100} className="opacity-90 h-auto" />
             <p>Không tìm thấy bài viết phù hợp...</p>
           </div>
         ) : (
           results.map((result, index) => (
             <Link key={index} href={`/blog/${result.slug}`} target="_blank">
-              <div className="flex flex-row gap-4 items-center justify-center shadow-md dark:shadow-[0_3px_10px_rgba(0,0,0,0.3)] dark:bg-[var(--accent)] ml-2 mr-2 sm:mr-4 p-4 rounded-xl border dark:border-none">
+              <div className="flex flex-row gap-4 items-center justify-center shadow-md dark:shadow-[0_3px_10px_rgba(0,0,0,0.3)] dark:bg-accent ml-2 mr-2 sm:mr-4 p-4 rounded-xl border dark:border-none">
                 <div>
-                  <div className="w-[110px] h-[110px] sm:w-[150px] sm:h-[150px] lg:w-[250px] lg:h-[170px] rounded-lg overflow-hidden">
+                  <div className="w-27.5 h-27.5 sm:w-37.5 sm:h-37.5 lg:w-62.5 lg:h-42.5 rounded-lg overflow-hidden">
                     <Image
                       src={`/posts/${result.metadata.thumbnail}`}
                       alt="search result thumbnail"
@@ -213,35 +170,21 @@ export default function SearchFunction() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-lg sm:text-xl leading-5 lg:leading-6 lg:text-2xl font-bold mb-1 sm:mb-2 lg:mb-4 pb-[2px] line-clamp-2">
+                  <h3 className="text-lg sm:text-xl leading-5 lg:leading-6 lg:text-2xl font-bold mb-1 sm:mb-2 lg:mb-4 pb-0.5 line-clamp-2">
                     {result.metadata.title}
                   </h3>
                   <div className="flex flex-row gap-2 justify-start items-center mb-1 sm:mb-2">
-                    <Avatar className="w-[30px] lg:w-[40px] h-auto">
+                    <Avatar className="w-7.5 lg:w-10 h-auto">
                       <AvatarImage
-                        src={`/${
-                          AUTHORS.find(({ username, nickname }) =>
-                            [username, nickname].includes(
-                              result.metadata.author
-                            )
-                          )?.avatar
-                        }`}
+                        src={`/${AUTHORS.find(({ username, nickname }) => [username, nickname].includes(result.metadata.author))?.avatar}`}
                       />
                       <AvatarFallback>
                         <span className="font-bold">CN</span>
                       </AvatarFallback>
                     </Avatar>
                     <div>
-                      <p className="text-base sm:text-lg leading-5 lg:text-xl lg:leading-6 font-semibold">
-                        {result.metadata.author}
-                      </p>
-                      <p className="-mt-1">
-                        {format(
-                          new Date(result.metadata.publishDate),
-                          "dd MMMM, yyyy",
-                          { locale: vi }
-                        )}
-                      </p>
+                      <p className="text-base sm:text-lg leading-5 lg:text-xl lg:leading-6 font-semibold">{result.metadata.author}</p>
+                      <p className="-mt-1">{format(new Date(result.metadata.publishDate), "dd MMMM, yyyy", { locale: vi })}</p>
                     </div>
                   </div>
                   <p className="text-base sm:text-lg leading-5 lg:text-xl lg:leading-6 line-clamp-1 sm:line-clamp-2 mt-1 sm:mt-2">
