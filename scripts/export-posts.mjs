@@ -8,7 +8,7 @@ import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.resolve(path.dirname(__filename), "..");
 const POSTS_DIR = path.join(ROOT, "posts");
-const OUT_FILE = path.join(ROOT, "data", "posts.json");
+const OUT_FILE = path.join(ROOT, "public", "posts.json");
 
 function removeAccents(str) {
   if (typeof str !== "string") return str;
@@ -69,6 +69,27 @@ function parseObject(literal) {
   return new Function(`return (${literal});`)();
 }
 
+// Strip MDX scaffolding to leave just searchable prose.
+function extractContent(src) {
+  let body = src;
+  body = body.replace(/^import\s+[\s\S]*?from\s+['"][^'"]+['"];?\s*$/gm, "");
+  body = body.replace(/^export\s+const\s+\w+\s*=\s*\{[\s\S]*?\n\};?\s*$/gm, "");
+  body = body.replace(/<!--[\s\S]*?-->/g, "");
+  body = body.replace(/```[\s\S]*?```/g, "");
+  body = body.replace(/`[^`\n]+`/g, "");
+  body = body.replace(/!\[[^\]]*\]\([^)]+\)/g, "");
+  body = body.replace(/\[([^\]]+)\]\([^)]+\)/g, "$1");
+  body = body.replace(/<[A-Za-z][\w.]*[^>]*\/>/g, "");
+  body = body.replace(/<\/?[A-Za-z][\w.]*[^>]*>/g, "");
+  body = body.replace(/^\s*>\s?/gm, "");
+  body = body.replace(/^#{1,6}\s+/gm, "");
+  body = body.replace(/^[-*_]{3,}\s*$/gm, "");
+  body = body.replace(/(\*\*|__|~~)([\s\S]+?)\1/g, "$2");
+  body = body.replace(/(?<![\w*])(\*|_)(?!\s)([^*_\n]+?)(?<!\s)\1(?![\w*])/g, "$2");
+  body = body.replace(/\s+/g, " ").trim();
+  return body;
+}
+
 function normalizeMetadata(m) {
   return {
     title: removeAccents(m.title || ""),
@@ -118,12 +139,15 @@ function readPost(filename) {
     }
   }
 
+  const content = extractContent(src);
+
   return {
     slug,
     metadata,
     ...(detail && { detail }),
     normalizedMetadata: normalizeMetadata(metadata),
     ...(detail && { normalizedDetail: normalizeDetail(detail) }),
+    normalizedContent: removeAccents(content),
   };
 }
 

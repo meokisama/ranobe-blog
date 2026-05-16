@@ -3,10 +3,9 @@
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Input } from "@/components/ui/input";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import debounce from "lodash/debounce";
 import Fuse from "fuse.js";
-import data from "@/data/posts.json";
 import Image from "next/image";
 import Link from "next/link";
 import { format } from "date-fns";
@@ -69,7 +68,7 @@ const options = {
   keys: [
     { name: "normalizedMetadata.title", weight: 1.0 },
     { name: "normalizedMetadata.author", weight: 0.3 },
-    { name: "normalizedMetadata.description", weight: 0.3 },
+    { name: "normalizedMetadata.description", weight: 0.4 },
     { name: "normalizedMetadata.category", weight: 0.3 },
     { name: "normalizedDetail.jp", weight: 0.8 },
     { name: "normalizedDetail.vn", weight: 0.8 },
@@ -79,32 +78,73 @@ const options = {
     { name: "normalizedDetail.illustrator", weight: 0.5 },
     { name: "normalizedDetail.category", weight: 0.2 },
     { name: "normalizedDetail.safety", weight: 0.1 },
+    { name: "normalizedContent", weight: 0.2 },
   ],
   includeScore: true,
   threshold: 0.4,
 };
 
-const fuse = new Fuse(data, options);
+let fusePromise: Promise<Fuse<Item>> | null = null;
+
+function getFuse() {
+  if (!fusePromise) {
+    fusePromise = fetch("/posts.json")
+      .then((r) => {
+        if (!r.ok) throw new Error(`Failed to load posts.json: ${r.status}`);
+        return r.json() as Promise<Item[]>;
+      })
+      .then((items) => new Fuse(items, options))
+      .catch((err) => {
+        fusePromise = null;
+        throw err;
+      });
+  }
+  return fusePromise;
+}
 
 export default function SearchFunction() {
   const [query, setQuery] = useState<string>("");
   const [results, setResults] = useState<Item[]>([]);
+  const [loading, setLoading] = useState<boolean>(true);
+  const [error, setError] = useState<string | null>(null);
+  const fuseRef = useRef<Fuse<Item> | null>(null);
 
-  const debouncedSearchRef = useRef(
-    debounce((query: string) => {
-      if (query.trim() === "") {
-        setResults([]);
-      } else {
-        const normalizedQuery = removeAccents(query);
-        const searchResult = fuse.search(normalizedQuery).map((result) => result.item);
-        setResults(searchResult);
-      }
-    }, 500),
-  );
+  const runSearch = (q: string) => {
+    const f = fuseRef.current;
+    if (!f || q.trim() === "") {
+      setResults([]);
+      return;
+    }
+    setResults(f.search(removeAccents(q)).map((r) => r.item));
+  };
 
-  const handleSearch = (query: string) => {
-    setQuery(query);
-    debouncedSearchRef.current(query);
+  const debouncedSearchRef = useRef(debounce((q: string) => runSearch(q), 300));
+
+  useEffect(() => {
+    let cancelled = false;
+    getFuse()
+      .then((instance) => {
+        if (cancelled) return;
+        fuseRef.current = instance;
+        setLoading(false);
+        if (query.trim()) runSearch(query);
+      })
+      .catch((err) => {
+        console.error(err);
+        if (!cancelled) {
+          setLoading(false);
+          setError("Không tải được dữ liệu tìm kiếm. Thử tải lại trang.");
+        }
+      });
+    return () => {
+      cancelled = true;
+    };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+
+  const handleSearch = (q: string) => {
+    setQuery(q);
+    debouncedSearchRef.current(q);
   };
 
   return (
@@ -144,10 +184,18 @@ export default function SearchFunction() {
       </div>
       <Separator orientation="vertical" className="hidden lg:block" />
       <div className="lg:w-3/5 h-full flex flex-col gap-3 sm:gap-4 overflow-scroll pb-4">
-        {query === "" ? (
+        {error ? (
+          <div className="text-center text-lg lg:text-xl h-full flex flex-col gap-3 items-center justify-center text-red-500">
+            <p>{error}</p>
+          </div>
+        ) : query === "" ? (
           <div className="text-center text-lg lg:text-xl h-full flex flex-col gap-3 items-center justify-center text-gray-500 dark:text-gray-400">
             <Image src="/200_chibi.png" alt="404 image" width={80} height={80} className="opacity-90 h-auto" />
             <p>Kết quả tìm kiếm tại đây...</p>
+          </div>
+        ) : loading ? (
+          <div className="text-center text-lg lg:text-xl h-full flex flex-col gap-3 items-center justify-center text-gray-500 dark:text-gray-400">
+            <p>Đang tải dữ liệu tìm kiếm...</p>
           </div>
         ) : results.length === 0 ? (
           <div className="text-center text-lg lg:text-xl h-full flex flex-col gap-3 items-center justify-center text-gray-500 dark:text-gray-400">
