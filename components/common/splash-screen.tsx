@@ -2,8 +2,7 @@
 import { motion } from "motion/react";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-
-const SPLASH_SEEN_KEY = "splash_seen";
+import { SPLASH_SEEN_KEY } from "@/hooks/use-splash-seen";
 
 export default function SplashScreen() {
   const [shouldUnmount, setShouldUnmount] = useState(false);

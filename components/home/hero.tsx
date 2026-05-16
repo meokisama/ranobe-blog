@@ -4,17 +4,33 @@ import { motion } from "motion/react";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
 import { AUTHORS } from "@/constants";
+import { useSplashSeen } from "@/hooks/use-splash-seen";
 
 export default function Hero() {
+  const { seen, mounted } = useSplashSeen();
+
+  if (!mounted) {
+    return <div className="w-full min-h-screen" />;
+  }
+
+  const titleTransition = seen ? { duration: 0 } : { duration: 1, delay: 7 };
+  const heroSpring = seen
+    ? { duration: 0 }
+    : { type: "spring" as const, damping: 10, mass: 0.75, stiffness: 300, delay: 8 };
+  const makeineSpring = seen
+    ? { duration: 0 }
+    : { type: "spring" as const, damping: 10, mass: 0.75, stiffness: 300, delay: 8.2 };
+  const bannerTransition = seen ? { duration: 0 } : { duration: 1, delay: 7 };
+
   return (
     <div className="w-full min-h-screen relative overflow-hidden backdrop-blur-lg">
       <div className="w-full h-full absolute bg-[length:4vw_4vw] lg:bg-[length:1.5vw_1.5vw] -z-10 custom-caro opacity-40 lg:opacity-80 dark:opacity-10" />
       <div>
         <div className="mr-10 -rotate-12 select-none pointer-events-none">
           <motion.div
-            initial={{ opacity: 0, y: "-100px" }}
+            initial={seen ? false : { opacity: 0, y: "-100px" }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 7 }}
+            transition={titleTransition}
             className="-mb-4 md:-mb-12 lg:-mb-12 xl:-mb-20"
           >
             <h1 className="font-jaro font-normal tracking-tight text-center my-0 text-[19vw] lg:text-[20vw] leading-none dark:bg-[linear-gradient(45deg,_#a875ec_20%,_#ff6b7c_100%)] dark:drop-shadow-[0px_3px_8px_rgba(0,0,0,_0.5)] dark:[text-outline:1px_solid_black] dark:bg-clip-text dark:text-transparent text-white drop-shadow-[0px_3px_8px_rgba(255,139,39,0.3)]">
@@ -22,9 +38,9 @@ export default function Hero() {
             </h1>
           </motion.div>
           <motion.div
-            initial={{ opacity: 0, y: "100px" }}
+            initial={seen ? false : { opacity: 0, y: "100px" }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 7 }}
+            transition={titleTransition}
             className="-mb-4 md:-mb-12 lg:-mb-12 xl:-mb-20"
           >
             <h1 className="font-jaro font-normal tracking-tight text-center my-0 text-[19vw] lg:text-[20vw] leading-none dark:bg-[linear-gradient(45deg,_#a875ec_20%,_#ff6b7c_100%)] dark:drop-shadow-[0px_3px_8px_rgba(0,0,0,_0.5)] dark:[text-outline:1px_solid_black] dark:bg-clip-text dark:text-transparent text-white drop-shadow-[0px_3px_8px_rgba(255,139,39,0.3)]">
@@ -36,15 +52,9 @@ export default function Hero() {
           <div className="w-1/2"></div>
           <div className="w-full px-10 lg:w-1/2 lg:pr-[4vw] font-grotesque lg:rotate-6 lg:-translate-y-[20px]">
             <motion.div
-              initial={{ opacity: 0, y: "-100px" }}
+              initial={seen ? false : { opacity: 0, y: "-100px" }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{
-                type: "spring",
-                damping: 10,
-                mass: 0.75,
-                stiffness: 300,
-                delay: 8,
-              }}
+              transition={heroSpring}
             >
               <Image
                 src="/makeine.png"
@@ -55,15 +65,9 @@ export default function Hero() {
               />
             </motion.div>
             <motion.div
-              initial={{ opacity: 0, y: "-50px" }}
+              initial={seen ? false : { opacity: 0, y: "-50px" }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{
-                type: "spring",
-                damping: 10,
-                mass: 0.75,
-                stiffness: 300,
-                delay: 8,
-              }}
+              transition={heroSpring}
               className="mt-10"
             >
               <p className="lg:text-[1.3vw] text-justify leading-tight">
@@ -91,7 +95,7 @@ export default function Hero() {
         </div>
       </div>
       <div className="w-full lg:absolute bottom-0 z-50 select-none pointer-events-none">
-        <motion.div initial={{ scale: 1.2 }} animate={{ scale: 1 }} transition={{ duration: 1, delay: 7 }}>
+        <motion.div initial={seen ? false : { scale: 1.2 }} animate={{ scale: 1 }} transition={bannerTransition}>
           <Image
             src="/imouza.png"
             alt="imouza banner"
@@ -103,15 +107,9 @@ export default function Hero() {
         </motion.div>
       </div>
       <motion.div
-        initial={{ opacity: 0, y: "-100px" }}
+        initial={seen ? false : { opacity: 0, y: "-100px" }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{
-          type: "spring",
-          damping: 10,
-          mass: 0.75,
-          stiffness: 300,
-          delay: 8.2,
-        }}
+        transition={makeineSpring}
         className="absolute hidden lg:block top-[10%] left-5 select-none pointer-events-none"
       >
         <Image src="/makeine.png" alt="makeine chibi" width={180} height={180} className="h-auto" />

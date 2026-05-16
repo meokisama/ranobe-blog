@@ -82,6 +82,8 @@ const options = {
   ],
   includeScore: true,
   threshold: 0.4,
+  ignoreLocation: true,
+  minMatchCharLength: 2,
 };
 
 let fusePromise: Promise<Fuse<Item>> | null = null;
