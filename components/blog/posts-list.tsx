@@ -57,7 +57,7 @@ const RenderPostList: React.FC<RenderPostListProps> = ({ posts, title, category,
           <div className="p-4 flex flex-col sm:h-full justify-start rounded-xl bg-[#fbfbfb] dark:bg-accent shadow-lg dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] group hover:-translate-y-2 transition ease-linear hover:shadow-xl border dark:border-none">
             <div className="w-full h-[50%] rounded-xl shadow-lg overflow-hidden">
               <Image
-                src={`/posts/${post.metadata.thumbnail}`}
+                src={post.metadata.thumbnail}
                 alt="post thumbnail"
                 width={350}
                 height={240}

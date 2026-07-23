@@ -211,7 +211,7 @@ export default function SearchFunction() {
                 <div>
                   <div className="w-27.5 h-27.5 sm:w-37.5 sm:h-37.5 lg:w-62.5 lg:h-42.5 rounded-lg overflow-hidden">
                     <Image
-                      src={`/posts/${result.metadata.thumbnail}`}
+                      src={result.metadata.thumbnail}
                       alt="search result thumbnail"
                       width={400}
                       height={400}

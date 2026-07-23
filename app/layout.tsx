@@ -3,11 +3,9 @@ import localFont from "next/font/local";
 import { Playfair_Display, Darker_Grotesque } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/common/provider";
-import Footer from "@/components/common/footer";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import ScrollToTop from "@/components/common/scroll-to-top";
-import { FloatingNav } from "@/components/ui/floating-navbar";
-import { BookmarkIcon, HomeIcon, MixIcon, ReaderIcon } from "@radix-ui/react-icons";
+import SiteFrame from "@/components/common/site-frame";
 
 const playfair_display = Playfair_Display({
   subsets: ["vietnamese"],
@@ -62,29 +60,6 @@ export const metadata: Metadata = {
   },
 };
 
-const navItems = [
-  {
-    name: "Trang chủ",
-    link: "/",
-    icon: <HomeIcon className="h-4 w-4 text-neutral-800 dark:text-white" />,
-  },
-  {
-    name: "Đọc Raw",
-    link: "https://hub.ranobe.vn",
-    icon: <ReaderIcon className="h-4 w-4 text-neutral-800 dark:text-white" />,
-  },
-  {
-    name: "Bài viết",
-    link: "/blog",
-    icon: <BookmarkIcon className="h-4 w-4 text-neutral-800 dark:text-white" />,
-  },
-  {
-    name: "Giveaway Booster",
-    link: "/ga",
-    icon: <MixIcon className="h-4 w-4 text-neutral-800 dark:text-white" />,
-  },
-];
-
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -96,9 +71,7 @@ export default function RootLayout({
         <ScrollToTop />
         <Providers>
           <div vaul-drawer-wrapper="" className="bg-background">
-            <FloatingNav navItems={navItems} />
-            {children}
-            <Footer />
+            <SiteFrame>{children}</SiteFrame>
           </div>
         </Providers>
       </body>

@@ -32,13 +32,13 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
       title: post.metadata.title,
       description: post.metadata.description,
       type: "article",
-      images: `/posts/${post.metadata.thumbnail}`,
+      images: post.metadata.thumbnail,
     },
     twitter: {
       card: "summary_large_image",
       title: post.metadata.title,
       description: post.metadata.description,
-      images: `/posts/${post.metadata.thumbnail}`,
+      images: post.metadata.thumbnail,
     },
   };
 }

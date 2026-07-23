@@ -1,14 +1,35 @@
-// Generates data/posts.json — the search index consumed by SearchDrawer.
+// Generates public/posts.json — the search index consumed by SearchFunction.
 // Runs automatically before `next dev` / `next build` (see package.json).
+//
+// Posts are Keystatic-authored MDX: YAML frontmatter (metadata) + a body that
+// may contain a <SeriesDetail .../> block carrying the light-novel detail fields.
 
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
+import matter from "gray-matter";
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.resolve(path.dirname(__filename), "..");
 const POSTS_DIR = path.join(ROOT, "posts");
 const OUT_FILE = path.join(ROOT, "public", "posts.json");
+
+const DETAIL_KEYS = [
+  "jp",
+  "vn",
+  "romaji",
+  "publisher",
+  "author",
+  "illustrator",
+  "release",
+  "category",
+  "volume",
+  "en_trans",
+  "en_trans_url",
+  "vi_trans",
+  "vi_trans_url",
+  "safety",
+];
 
 function removeAccents(str) {
   if (typeof str !== "string") return str;
@@ -29,51 +50,25 @@ function removeAccents(str) {
     .replace(/Đ/g, "D");
 }
 
-// Extract the literal object that follows `export const <name> =` using
-// brace-balancing, respecting strings. Returns the source slice or null.
-function extractObjectLiteral(src, name) {
-  const anchor = new RegExp(`export\\s+const\\s+${name}\\s*=`);
-  const match = anchor.exec(src);
-  if (!match) return null;
-
-  const braceStart = src.indexOf("{", match.index + match[0].length);
-  if (braceStart === -1) return null;
-
-  let depth = 0;
-  let inStr = null;
-  for (let i = braceStart; i < src.length; i++) {
-    const c = src[i];
-    if (inStr) {
-      if (c === "\\") {
-        i++;
-        continue;
-      }
-      if (c === inStr) inStr = null;
-      continue;
-    }
-    if (c === '"' || c === "'" || c === "`") {
-      inStr = c;
-      continue;
-    }
-    if (c === "{") depth++;
-    else if (c === "}") {
-      depth--;
-      if (depth === 0) return src.slice(braceStart, i + 1);
-    }
+// Pull the <SeriesDetail .../> attributes out of the body, if present.
+function extractDetail(body) {
+  const tag = /<SeriesDetail\b([^>]*)\/>/.exec(body);
+  if (!tag) return null;
+  const detail = {};
+  const attrRe = /(\w+)="([^"]*)"/g;
+  let m;
+  while ((m = attrRe.exec(tag[1])) !== null) {
+    detail[m[1]] = m[2].replace(/&quot;/g, '"');
   }
-  return null;
+  // Ensure every known key exists (empty ones were omitted during authoring).
+  for (const k of DETAIL_KEYS) if (!(k in detail)) detail[k] = "";
+  return detail;
 }
 
-function parseObject(literal) {
-  // Posts are authored by the repo owner — trusted input, safe to eval.
-  return new Function(`return (${literal});`)();
-}
-
-// Strip MDX scaffolding to leave just searchable prose.
+// Strip MDX/markdown scaffolding to leave just searchable prose.
 function extractContent(src) {
   let body = src;
-  body = body.replace(/^import\s+[\s\S]*?from\s+['"][^'"]+['"];?\s*$/gm, "");
-  body = body.replace(/^export\s+const\s+\w+\s*=\s*\{[\s\S]*?\n\};?\s*$/gm, "");
+  body = body.replace(/<SeriesDetail\b[^>]*\/>/g, "");
   body = body.replace(/<!--[\s\S]*?-->/g, "");
   body = body.replace(/```[\s\S]*?```/g, "");
   body = body.replace(/`[^`\n]+`/g, "");
@@ -114,38 +109,22 @@ function normalizeDetail(d) {
 }
 
 function readPost(filename) {
-  const src = fs.readFileSync(path.join(POSTS_DIR, filename), "utf8");
+  const raw = fs.readFileSync(path.join(POSTS_DIR, filename), "utf8");
   const slug = filename.replace(/\.mdx$/, "");
 
-  let metadata = { title: "Untitled", publishDate: "1970-01-01" };
-  const metaLiteral = extractObjectLiteral(src, "metadata");
-  if (metaLiteral) {
-    try {
-      metadata = parseObject(metaLiteral);
-    } catch (err) {
-      console.error(`[export-posts] Failed to parse metadata in ${filename}:`, err.message);
-    }
-  } else {
-    console.warn(`[export-posts] No metadata export found in ${filename}`);
+  const { data: metadata, content: body } = matter(raw);
+  if (!metadata || !metadata.title) {
+    console.warn(`[export-posts] Missing/empty frontmatter in ${filename}`);
   }
 
-  let detail = null;
-  const detailLiteral = extractObjectLiteral(src, "detail");
-  if (detailLiteral) {
-    try {
-      detail = parseObject(detailLiteral);
-    } catch (err) {
-      console.error(`[export-posts] Failed to parse detail in ${filename}:`, err.message);
-    }
-  }
-
-  const content = extractContent(src);
+  const detail = extractDetail(body);
+  const content = extractContent(body);
 
   return {
     slug,
     metadata,
     ...(detail && { detail }),
-    normalizedMetadata: normalizeMetadata(metadata),
+    normalizedMetadata: normalizeMetadata(metadata || {}),
     ...(detail && { normalizedDetail: normalizeDetail(detail) }),
     normalizedContent: removeAccents(content),
   };
@@ -157,17 +136,9 @@ function main() {
     process.exit(1);
   }
 
-  const files = fs
-    .readdirSync(POSTS_DIR)
-    .filter((f) => f.endsWith(".mdx") && !f.startsWith("."));
+  const files = fs.readdirSync(POSTS_DIR).filter((f) => f.endsWith(".mdx") && !f.startsWith("."));
 
-  const posts = files
-    .map(readPost)
-    .sort(
-      (a, b) =>
-        new Date(b.metadata.publishDate).getTime() -
-        new Date(a.metadata.publishDate).getTime()
-    );
+  const posts = files.map(readPost).sort((a, b) => new Date(b.metadata.publishDate).getTime() - new Date(a.metadata.publishDate).getTime());
 
   fs.mkdirSync(path.dirname(OUT_FILE), { recursive: true });
   fs.writeFileSync(OUT_FILE, JSON.stringify(posts, null, 2));

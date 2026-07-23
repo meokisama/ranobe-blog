@@ -18,7 +18,26 @@ interface Detail {
   safety: string;
 }
 
-export default function SeriesDetail({ detail }: { detail: Detail }) {
+// Props are flat so Keystatic can author this as an inline MDX component block
+// (`<SeriesDetail jp="..." vn="..." ... />`). The rendered table is unchanged.
+export default function SeriesDetail(props: Partial<Detail>) {
+  const detail: Detail = {
+    jp: "",
+    vn: "",
+    romaji: "",
+    publisher: "",
+    author: "",
+    illustrator: "",
+    release: "",
+    category: "",
+    volume: "",
+    en_trans: "",
+    en_trans_url: "",
+    vi_trans: "",
+    vi_trans_url: "",
+    safety: "",
+    ...props,
+  };
   const details = [
     {
       label: "Tựa tiếng Nhật",
