@@ -6,7 +6,7 @@ import Link from "next/link";
 export default function BoosterAds() {
   return (
     <div className="mt-40 flex w-full flex-row justify-center items-center px-4 relative">
-      <div className="max-w-6xl flex flex-col-reverse w-full overflow-hidden border pt-8 rounded-3xl dark:border-white/[0.2] relative">
+      <div className="max-w-6xl flex flex-col-reverse w-full overflow-hidden border pt-8 rounded-3xl dark:border-white/20 relative">
         <Image
           src="/beams.jpg"
           alt="background image"
@@ -14,7 +14,7 @@ export default function BoosterAds() {
           height={1000}
           className="absolute w-full h-full -z-10 opacity-70 dark:invert dark:opacity-50 select-none pointer-events-none"
         />
-        <div className="absolute -z-9 inset-0 bg-[url(/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] translate-y-[-2px] dark:invert"></div>
+        <div className="absolute -z-9 inset-0 bg-[url(/grid.svg)] bg-top mask-[linear-gradient(180deg,white,rgba(255,255,255,0))] -translate-y-0.5 dark:invert"></div>
         <div className="w-full">
           <Image
             src="/mignon.png"

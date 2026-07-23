@@ -1,32 +1,33 @@
 import fs from "node:fs";
 import path from "node:path";
-import React from "react";
 import dynamic from "next/dynamic";
-import type { Metadata, ResolvingMetadata } from "next";
+import type { Metadata } from "next";
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import { ArrowLeftIcon, ArrowRightIcon, HomeIcon } from "@radix-ui/react-icons";
 import IconBar from "@/components/common/icon-bar";
-import { CATEGORIES, AUTHORS } from "@/constants";
+import PageBackground from "@/components/common/page-background";
+import StrokeTitle from "@/components/common/stroke-title";
+import AuthorAvatar from "@/components/common/author-avatar";
+import { getAuthor, getCategorySlug } from "@/constants";
+import type { PostMetadata } from "@/lib/types";
 import { Promo } from "@/components/home/promo";
 
 type Props = {
   params: Promise<{ slug: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
-export async function generateMetadata({ params }: Props, parent: ResolvingMetadata): Promise<Metadata> {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
   const post = await getPost({ slug });
   return {
     title: post.metadata.title + " - Ranobe",
     description: post.metadata.description,
-    authors: post.metadata.author,
+    authors: { name: post.metadata.author },
     metadataBase: new URL("https://ranobe.vn"),
     openGraph: {
       title: post.metadata.title,
@@ -43,7 +44,7 @@ export async function generateMetadata({ params }: Props, parent: ResolvingMetad
   };
 }
 
-async function getPost({ slug }: { slug: string }) {
+async function getPost({ slug }: { slug: string }): Promise<{ slug: string; metadata: PostMetadata }> {
   try {
     const mdxPath = path.join("posts", `${slug}.mdx`);
     if (!fs.existsSync(mdxPath)) {
@@ -52,10 +53,7 @@ async function getPost({ slug }: { slug: string }) {
 
     const { metadata } = await import(`@/posts/${slug}.mdx`);
 
-    return {
-      slug,
-      metadata,
-    };
+    return { slug, metadata };
   } catch (error) {
     console.error("Error fetching post:", error);
     throw new Error(`Unable to fetch the post for slug: ${slug}`);
@@ -63,21 +61,12 @@ async function getPost({ slug }: { slug: string }) {
 }
 
 export async function generateStaticParams() {
-  const files = fs.readdirSync(path.join("posts"));
-  const params = files.map((filename) => ({
+  const files = fs.readdirSync(path.join("posts")).filter((filename) => filename.endsWith(".mdx") && !filename.startsWith("."));
+
+  return files.map((filename) => ({
     slug: filename.replace(".mdx", ""),
   }));
-
-  return params;
 }
-
-const categoriesMap: { [key: string]: string } = CATEGORIES.reduce(
-  (map, item) => {
-    map[item.metadataCategory] = item.category;
-    return map;
-  },
-  {} as { [key: string]: string },
-);
 
 export default async function Page({ params }: Props) {
   const { slug } = await params;
@@ -86,28 +75,13 @@ export default async function Page({ params }: Props) {
   const MDXContent = dynamic(() => import(`@/posts/${slug}.mdx`));
 
   const formattedDate = format(new Date(post.metadata.publishDate), "dd MMMM, yyyy", { locale: vi });
+  const author = getAuthor(post.metadata.author);
 
   return (
     <div className="relative">
       <IconBar />
-      <div className="absolute z-2 select-none pointer-events-none font-jaro w-full text-center overflow-hidden backdrop-blur-sm">
-        <h1 className="text-[50vw] leading-[40vw] sm:text-[21vw] sm:leading-[17vw] text-background custom-stroke">NAVIRANOBE</h1>
-        <h1 className="text-[50vw] leading-[40vw] sm:text-[26.3vw] sm:leading-[20vw] sm:mt-[-2vw] text-background custom-stroke">THEMEOKI</h1>
-      </div>
-      <Image
-        src="/sneaker.webp"
-        alt="background image"
-        width={1308}
-        height={1000}
-        className="fixed w-full h-auto select-none pointer-events-none z-1 dark:invert dark:hidden"
-      />
-      <Image
-        src="/beams.jpg"
-        alt="background image"
-        width={1308}
-        height={1000}
-        className="fixed w-full h-full select-none pointer-events-none z-1 opacity-50 dark:invert dark:hidden"
-      />
+      <StrokeTitle variant="post" />
+      <PageBackground />
       <div className="max-w-5xl block mx-auto relative z-10">
         <Image
           src="/mamasuki.png"
@@ -146,17 +120,10 @@ export default async function Page({ params }: Props) {
             </div>
             <Separator className="mb-8" />
             <div className="flex flex-row gap-2 justify-start items-center mb-8">
-              <Avatar>
-                <AvatarImage src={`/${AUTHORS.find(({ username, nickname }) => [username, nickname].includes(post.metadata.author))?.avatar}`} />
-                <AvatarFallback>
-                  <span className="font-bold">CN</span>
-                </AvatarFallback>
-              </Avatar>
+              <AuthorAvatar name={post.metadata.author} />
               <div>
-                <p className="text-lg leading-5 lg:text-xl lg:leading-6 font-bold">
-                  {AUTHORS.find(({ username, nickname }) => [username, nickname].includes(post.metadata.author))?.name || "Tác giả không xác định"}
-                </p>
-                <p>@{AUTHORS.find(({ username, nickname }) => [username, nickname].includes(post.metadata.author))?.username || "Unknown"}</p>
+                <p className="text-lg leading-5 lg:text-xl lg:leading-6 font-bold">{author?.name || "Tác giả không xác định"}</p>
+                <p>@{author?.username || "Unknown"}</p>
               </div>
             </div>
             <Separator className="mb-12" />
@@ -164,7 +131,7 @@ export default async function Page({ params }: Props) {
           </article>
         </div>
         <div className="flex flex-row justify-between mt-8 mx-2 lg:mx-0">
-          <Link href={`/blog/category/${categoriesMap[post.metadata.category] || ""}`}>
+          <Link href={`/blog/category/${getCategorySlug(post.metadata.category)}`}>
             <Button className="text-base md:text-lg py-5 cursor-pointer">
               <ArrowLeftIcon className="mr-1" />
               <p className="mb-1">Bài viết chuyên mục</p>

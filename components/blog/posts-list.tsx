@@ -11,23 +11,12 @@ import {
 } from "@/components/ui/pagination";
 import Image from "next/image";
 import Link from "next/link";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import AuthorAvatar from "@/components/common/author-avatar";
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
 import { ArrowRightIcon } from "@radix-ui/react-icons";
 import { Button } from "@/components/ui/button";
-import { AUTHORS } from "@/constants";
-
-type Post = {
-  slug: string;
-  metadata: PostMetadata;
-};
-
-interface PostMetadata {
-  title: string;
-  publishDate: string;
-  [key: string]: any;
-}
+import type { Post } from "@/lib/types";
 
 type RenderPostListProps = {
   posts: Post[];
@@ -66,12 +55,7 @@ const RenderPostList: React.FC<RenderPostListProps> = ({ posts, title, category,
             </div>
             <h2 className="text-xl leading-5 lg:leading-6 lg:text-2xl font-bold mt-6 mb-4 pb-0.5 line-clamp-2">{post.metadata.title}</h2>
             <div className="flex flex-row gap-2 justify-start items-center mb-2">
-              <Avatar>
-                <AvatarImage src={`/${AUTHORS.find(({ username, nickname }) => [username, nickname].includes(post.metadata.author))?.avatar}`} />
-                <AvatarFallback>
-                  <span className="font-bold">CN</span>
-                </AvatarFallback>
-              </Avatar>
+              <AuthorAvatar name={post.metadata.author} />
               <div>
                 <p className="text-lg leading-5 lg:text-xl lg:leading-6 font-bold">{post.metadata.author}</p>
                 <p>{format(new Date(post.metadata.publishDate), "dd MMMM, yyyy", { locale: vi })}</p>
@@ -86,10 +70,10 @@ const RenderPostList: React.FC<RenderPostListProps> = ({ posts, title, category,
 );
 
 type PaginationSectionProps = {
-  totalPosts: any;
-  postsPerPage: any;
-  currentPage: any;
-  setCurrentPage: any;
+  totalPosts: number;
+  postsPerPage: number;
+  currentPage: number;
+  setCurrentPage: (page: number) => void;
 };
 
 function PaginationSection({ totalPosts, postsPerPage, currentPage, setCurrentPage }: PaginationSectionProps) {
@@ -117,9 +101,9 @@ function PaginationSection({ totalPosts, postsPerPage, currentPage, setCurrentPa
 
   // Function to render page numbers with ellipsis
   const renderPages = () => {
-    const renderedPages = activePages.map((page, idx) => (
-      <PaginationItem key={idx}>
-        <PaginationLink onClick={() => setCurrentPage(page)} isActive={currentPage === page ? true : false}>
+    const renderedPages = activePages.map((page) => (
+      <PaginationItem key={page}>
+        <PaginationLink onClick={() => setCurrentPage(page)} isActive={currentPage === page}>
           {page}
         </PaginationLink>
       </PaginationItem>
@@ -158,7 +142,7 @@ function PaginationSection({ totalPosts, postsPerPage, currentPage, setCurrentPa
 }
 
 type PostListProps = {
-  data: any;
+  data: Post[];
   title: string;
   category: string;
   postsPerPage?: number;

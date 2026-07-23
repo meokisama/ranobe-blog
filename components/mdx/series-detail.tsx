@@ -1,27 +1,11 @@
 import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 import Link from "next/link";
-
-interface Detail {
-  jp: string;
-  vn: string;
-  romaji: string;
-  publisher: string;
-  author: string;
-  illustrator: string;
-  release: string;
-  category: string;
-  volume: string;
-  en_trans: string;
-  en_trans_url: string;
-  vi_trans: string;
-  vi_trans_url: string;
-  safety: string;
-}
+import type { SeriesDetail as SeriesDetailData } from "@/lib/types";
 
 // Props are flat so Keystatic can author this as an inline MDX component block
 // (`<SeriesDetail jp="..." vn="..." ... />`). The rendered table is unchanged.
-export default function SeriesDetail(props: Partial<Detail>) {
-  const detail: Detail = {
+export default function SeriesDetail(props: Partial<SeriesDetailData>) {
+  const detail: SeriesDetailData = {
     jp: "",
     vn: "",
     romaji: "",

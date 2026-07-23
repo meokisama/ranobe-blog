@@ -8,6 +8,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
 import matter from "gray-matter";
+import { removeAccents } from "../lib/remove-accents.mjs";
 
 const __filename = fileURLToPath(import.meta.url);
 const ROOT = path.resolve(path.dirname(__filename), "..");
@@ -30,25 +31,6 @@ const DETAIL_KEYS = [
   "vi_trans_url",
   "safety",
 ];
-
-function removeAccents(str) {
-  if (typeof str !== "string") return str;
-  return str
-    .replace(/[àáạảãâầấậẩẫăằắặẳẵ]/g, "a")
-    .replace(/[ÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴ]/g, "A")
-    .replace(/[èéẹẻẽêềếệểễ]/g, "e")
-    .replace(/[ÈÉẸẺẼÊỀẾỆỂỄ]/g, "E")
-    .replace(/[ìíịỉĩ]/g, "i")
-    .replace(/[ÌÍỊỈĨ]/g, "I")
-    .replace(/[òóọỏõôồốộổỗơờớợởỡ]/g, "o")
-    .replace(/[ÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠ]/g, "O")
-    .replace(/[ùúụủũưừứựửữ]/g, "u")
-    .replace(/[ÙÚỤỦŨƯỪỨỰỬỮ]/g, "U")
-    .replace(/[ỳýỵỷỹ]/g, "y")
-    .replace(/[ỲÝỴỶỸ]/g, "Y")
-    .replace(/đ/g, "d")
-    .replace(/Đ/g, "D");
-}
 
 // Pull the <SeriesDetail .../> attributes out of the body, if present.
 function extractDetail(body) {

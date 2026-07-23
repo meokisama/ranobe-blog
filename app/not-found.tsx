@@ -1,9 +1,13 @@
-const Custom404 = () => {
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
+
+export default function NotFound() {
   return (
-    <div className="flex justify-center items-center h-screen w-full px-4 text-xl lg:text-2xl font-bold bg-[#111827] text-white fixed top-0 z-30">
-      <p>Oops! The page you seek has gone on a quest for adventure and may never return. 💀</p>
+    <div className="fixed top-0 z-30 flex h-screen w-full flex-col items-center justify-center gap-4 px-4 text-center bg-background text-foreground">
+      <p className="text-xl lg:text-2xl font-bold">Rất tiếc! Trang bạn tìm đã lên đường phiêu lưu và có lẽ không quay lại nữa. 💀</p>
+      <Link href="/">
+        <Button className="text-lg cursor-pointer">Về trang chủ</Button>
+      </Link>
     </div>
   );
-};
-
-export default Custom404;
+}

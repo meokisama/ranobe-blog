@@ -3,7 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Separator } from "@/components/ui/separator";
 import Link from "next/link";
-import { AUTHORS as authors } from "@/constants";
+import { AUTHORS } from "@/constants";
+import FacebookIcon from "@/components/common/facebook-icon";
 
 export default function AuthorSection() {
   return (
@@ -15,9 +16,9 @@ export default function AuthorSection() {
         <Separator className="mt-8 max-w-[80%] lg:max-w-4xl" />
       </div>
       <div className="flex flex-col md:flex-row w-full items-center md:items-stretch justify-center gap-12 mt-12 px-4">
-        {authors.map((author, index) => (
+        {AUTHORS.map((author) => (
           <div
-            key={index}
+            key={author.username}
             className="max-w-sm rounded-2xl overflow-hidden backdrop-blur-sm dark:bg-accent dark:shadow-[0_0_10px_rgba(0,0,0,0.3)] shadow-xl hover:-translate-y-2 transition ease-linear"
           >
             <div className="h-40">
@@ -44,13 +45,7 @@ export default function AuthorSection() {
               <div className="p-4 my-2">
                 <Link href={author.facebook} target="_blank">
                   <Button size="lg" className="text-lg">
-                    <svg className="w-4 h-4 mr-1 mt-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        fillRule="evenodd"
-                        d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                        clipRule="evenodd"
-                      ></path>
-                    </svg>
+                    <FacebookIcon className="w-4 h-4 mr-1 mt-1" />
                     Facebook
                   </Button>
                 </Link>

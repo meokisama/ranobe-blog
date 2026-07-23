@@ -5,7 +5,7 @@ import Bento from "@/components/home/bento";
 import BoosterAds from "@/components/home/booster-ads";
 import Hero from "@/components/home/hero";
 import NewPosts from "@/components/home/new-posts";
-import Image from "next/image";
+import PageBackground from "@/components/common/page-background";
 import { Promo } from "@/components/home/promo";
 export default function Home() {
   return (
@@ -13,20 +13,7 @@ export default function Home() {
       <SplashScreen />
       <IconBar />
       <div className="relative">
-        <Image
-          src="/sneaker.webp"
-          alt="background image"
-          width={1308}
-          height={1000}
-          className="fixed w-full h-auto z-1 dark:invert dark:hidden select-none pointer-events-none"
-        />
-        <Image
-          src="/beams.jpg"
-          alt="background image"
-          width={1308}
-          height={1000}
-          className="fixed w-full h-full z-1 opacity-40 dark:invert dark:hidden select-none pointer-events-none"
-        />
+        <PageBackground dim />
         <div className="relative z-2">
           <Hero />
           <Bento />

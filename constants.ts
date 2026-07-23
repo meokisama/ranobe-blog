@@ -48,4 +48,19 @@ const AUTHORS = [
   },
 ];
 
+export type Author = (typeof AUTHORS)[number];
+
+// Posts reference an author by either their username or short nickname, so look
+// up by both. Returns undefined when no author matches.
+export function getAuthor(name?: string): Author | undefined {
+  if (!name) return undefined;
+  return AUTHORS.find(({ username, nickname }) => [username, nickname].includes(name));
+}
+
+// Maps a post's display category (metadata) to its URL slug. Empty string when
+// no category matches (falls back to a bare /blog/category link).
+export function getCategorySlug(metadataCategory?: string): string {
+  return CATEGORIES.find((item) => item.metadataCategory === metadataCategory)?.category ?? "";
+}
+
 export { CATEGORIES, AUTHORS };

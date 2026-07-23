@@ -1,6 +1,6 @@
 "use client";
 
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import AuthorAvatar from "@/components/common/author-avatar";
 import { Input } from "@/components/ui/input";
 import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
 import React, { useEffect, useRef, useState } from "react";
@@ -11,58 +11,12 @@ import Link from "next/link";
 import { format } from "date-fns";
 import { vi } from "date-fns/locale";
 import { Separator } from "@/components/ui/separator";
-import { AUTHORS } from "@/constants";
+import { removeAccents } from "@/lib/remove-accents.mjs";
+import type { Post } from "@/lib/types";
 
-interface Metadata {
-  title: string;
-  author: string;
-  thumbnail: string;
-  publishDate: string;
-  description: string;
-  category: string;
-}
-
-interface Detail {
-  jp: string;
-  vn: string;
-  romaji: string;
-  publisher: string;
-  author: string;
-  illustrator: string;
-  release: string;
-  category: string;
-  volume: string;
-  en_trans: string;
-  en_trans_url: string;
-  vi_trans: string;
-  vi_trans_url: string;
-  safety: string;
-}
-
-interface Item {
-  slug: string;
-  metadata: Metadata;
-  detail?: Detail;
-}
-
-// Manually replace to not affect to dakuten in Japanese like ど...
-const removeAccents = (str: string) => {
-  return str
-    .replace(/[àáạảãâầấậẩẫăằắặẳẵ]/g, "a")
-    .replace(/[ÀÁẠẢÃÂẦẤẬẨẪĂẰẮẶẲẴ]/g, "A")
-    .replace(/[èéẹẻẽêềếệểễ]/g, "e")
-    .replace(/[ÈÉẸẺẼÊỀẾỆỂỄ]/g, "E")
-    .replace(/[ìíịỉĩ]/g, "i")
-    .replace(/[ÌÍỊỈĨ]/g, "I")
-    .replace(/[òóọỏõôồốộổỗơờớợởỡ]/g, "o")
-    .replace(/[ÒÓỌỎÕÔỒỐỘỔỖƠỜỚỢỞỠ]/g, "O")
-    .replace(/[ùúụủũưừứựửữ]/g, "u")
-    .replace(/[ÙÚỤỦŨƯỪỨỰỬỮ]/g, "U")
-    .replace(/[ỳýỵỷỹ]/g, "y")
-    .replace(/[ỲÝỴỶỸ]/g, "Y")
-    .replace(/đ/g, "d")
-    .replace(/Đ/g, "D");
-};
+// posts.json entries are Posts augmented with pre-normalized (accent-stripped)
+// fields that Fuse searches against — see scripts/export-posts.mjs.
+type Item = Post;
 
 const options = {
   keys: [
@@ -205,8 +159,8 @@ export default function SearchFunction() {
             <p>Không tìm thấy bài viết phù hợp...</p>
           </div>
         ) : (
-          results.map((result, index) => (
-            <Link key={index} href={`/blog/${result.slug}`} target="_blank">
+          results.map((result) => (
+            <Link key={result.slug} href={`/blog/${result.slug}`} target="_blank">
               <div className="flex flex-row gap-4 items-center justify-center shadow-md dark:shadow-[0_3px_10px_rgba(0,0,0,0.3)] dark:bg-accent ml-2 mr-2 sm:mr-4 p-4 rounded-xl border dark:border-none">
                 <div>
                   <div className="w-27.5 h-27.5 sm:w-37.5 sm:h-37.5 lg:w-62.5 lg:h-42.5 rounded-lg overflow-hidden">
@@ -224,14 +178,7 @@ export default function SearchFunction() {
                     {result.metadata.title}
                   </h3>
                   <div className="flex flex-row gap-2 justify-start items-center mb-1 sm:mb-2">
-                    <Avatar className="w-7.5 lg:w-10 h-auto">
-                      <AvatarImage
-                        src={`/${AUTHORS.find(({ username, nickname }) => [username, nickname].includes(result.metadata.author))?.avatar}`}
-                      />
-                      <AvatarFallback>
-                        <span className="font-bold">CN</span>
-                      </AvatarFallback>
-                    </Avatar>
+                    <AuthorAvatar name={result.metadata.author} className="w-7.5 lg:w-10 h-auto" />
                     <div>
                       <p className="text-base sm:text-lg leading-5 lg:text-xl lg:leading-6 font-semibold">{result.metadata.author}</p>
                       <p className="-mt-1">{format(new Date(result.metadata.publishDate), "dd MMMM, yyyy", { locale: vi })}</p>

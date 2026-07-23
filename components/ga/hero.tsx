@@ -4,6 +4,7 @@ import { motion } from "motion/react";
 import { Signature, Arrow } from "./signature";
 import Link from "next/link";
 import { buttonVariants } from "@/components/ui/button";
+import FacebookIcon from "@/components/common/facebook-icon";
 
 export default function Hero() {
   return (
@@ -16,7 +17,7 @@ export default function Hero() {
           height={1000}
           className="absolute w-full h-full z-1 opacity-70 dark:invert dark:hidden select-none pointer-events-none"
         />
-        <div className="absolute z-2 inset-0 bg-[url(/grid.svg)] bg-top [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))] -translate-y-0.5 dark:invert opacity-70 md:opacity-100"></div>
+        <div className="absolute z-2 inset-0 bg-[url(/grid.svg)] bg-top mask-[linear-gradient(180deg,white,rgba(255,255,255,0))] -translate-y-0.5 dark:invert opacity-70 md:opacity-100"></div>
         <div className="flex flex-row justify-center lg:justify-end items-center translate-x-[-9vw] lg:translate-y-[3vw] relative z-50">
           <div className="relative z-10 rotate-[-30deg]">
             <motion.div
@@ -83,23 +84,11 @@ export default function Hero() {
           </p>
           <div className="flex flex-row justify-center items-center w-[95%] lg:w-[50vw] mx-auto lg:mr-0 lg:ml-auto gap-1 lg:gap-4 mt-4 relative z-20 translate-y-[7vw]">
             <Link href="https://facebook.com/NaviRanobe" target="_blank" className={buttonVariants({ variant: "default" })}>
-              <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  fillRule="evenodd"
-                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
+              <FacebookIcon className="w-4 h-4 mr-1" />
               HtL
             </Link>
             <Link href="https://facebook.com/TheMeoki" target="_blank" className={buttonVariants({ variant: "default" })}>
-              <svg className="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
-                <path
-                  fillRule="evenodd"
-                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"
-                  clipRule="evenodd"
-                ></path>
-              </svg>
+              <FacebookIcon className="w-4 h-4 mr-1" />
               Meoki
             </Link>
           </div>

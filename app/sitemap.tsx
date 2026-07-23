@@ -1,4 +1,4 @@
-import getAllPosts from "@/components/blog/get-all-posts";
+import { getAllPosts } from "@/lib/posts";
 import { MetadataRoute } from "next";
 import { CATEGORIES } from "@/constants";
 
@@ -30,7 +30,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
       priority: 1,
     },
     ...categoryList.map((category) => ({
-      url: `https://ranobe.vn/category/${category}`,
+      url: `https://ranobe.vn/blog/category/${category}`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,

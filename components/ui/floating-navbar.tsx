@@ -9,17 +9,13 @@ import {
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 
-export const FloatingNav = ({
-  navItems,
-  className,
-}: {
-  navItems: {
-    name: string;
-    link: string;
-    icon?: JSX.Element;
-  }[];
-  className?: string;
-}) => {
+type NavItem = {
+  name: string;
+  link: string;
+  icon?: JSX.Element;
+};
+
+export const FloatingNav = ({ navItems, className }: { navItems: NavItem[]; className?: string }) => {
   const { scrollYProgress } = useScroll();
 
   const [visible, setVisible] = useState(false);
@@ -60,9 +56,9 @@ export const FloatingNav = ({
           className
         )}
       >
-        {navItems.map((navItem: any, idx: number) => (
+        {navItems.map((navItem) => (
           <Link
-            key={`link=${idx}`}
+            key={navItem.link}
             href={navItem.link}
             className={cn(
               "relative dark:text-neutral-50 items-center flex text-neutral-800 dark:hover:text-neutral-300 hover:text-neutral-500 border px-2 sm:px-4 py-2 rounded-full dark:border-white/[0.2]"
@@ -82,10 +78,6 @@ export const FloatingNav = ({
             <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-linear-to-r from-transparent via-blue-500 to-transparent  h-px" />
           </Link>
         ))}
-        {/* <button className="border text-lg font-medium relative border-neutral-200 dark:border-white/[0.2] text-black dark:text-white px-4 py-2 rounded-full">
-          <span>Login</span>
-          <span className="absolute inset-x-0 w-1/2 mx-auto -bottom-px bg-linear-to-r from-transparent via-blue-500 to-transparent  h-px" />
-        </button> */}
       </motion.div>
     </AnimatePresence>
   );

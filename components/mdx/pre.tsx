@@ -1,7 +1,6 @@
 import React from "react";
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-const Pre = (props: any) => {
+const Pre = (props: React.HTMLAttributes<HTMLPreElement>) => {
   return <pre {...props} />;
 };
 

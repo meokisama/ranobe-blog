@@ -1,17 +1,12 @@
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
-import getAllPosts from "@/components/blog/get-all-posts";
+import { getAllPosts, groupPostsByCategory } from "@/lib/posts";
 import PostList from "@/components/blog/posts-list";
-import { CATEGORIES } from "@/constants";
 
 export default async function NewPost() {
   const posts = await getAllPosts();
-  const renderList = CATEGORIES.map((item) => ({
-    title: item.title,
-    category: item.category,
-    data: posts.filter((post) => post.metadata.category === item.metadataCategory),
-  }));
+  const renderList = groupPostsByCategory(posts);
 
   return (
     <div className="flex flex-col w-full items-center justify-between my-4 mt-16">
@@ -23,8 +18,8 @@ export default async function NewPost() {
         </p>
         <Separator className="mt-8 max-w-[80%] lg:max-w-4xl" />
       </div>
-      {renderList.map((category, index) => (
-        <div key={index} className="flex flex-col items-center justify-between">
+      {renderList.map((category) => (
+        <div key={category.category} className="flex flex-col items-center justify-between">
           <PostList
             data={category.category === "12-ngay-giang-sinh" ? category.data.slice(0, 6) : category.data.slice(0, 3)}
             title={category.title}

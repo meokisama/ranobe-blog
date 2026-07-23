@@ -1,8 +1,7 @@
 "use client";
 import React, { useRef, useState } from "react";
 
-// biome-ignore lint/suspicious/noExplicitAny: <explanation>
-const Code = (props: any) => {
+const Code = (props: React.HTMLAttributes<HTMLElement>) => {
   const [copied, setCopied] = useState(false);
   const codeRef = useRef<HTMLElement>(null);
 

@@ -1,21 +1,21 @@
 import type { Metadata } from "next";
+import { notFound } from "next/navigation";
 import PostList from "@/components/blog/posts-list";
-import getAllPosts from "@/components/blog/get-all-posts";
+import { getAllPosts, groupPostsByCategory } from "@/lib/posts";
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
 import IconBar from "@/components/common/icon-bar";
+import PageBackground from "@/components/common/page-background";
+import StrokeTitle from "@/components/common/stroke-title";
 import { CATEGORIES } from "@/constants";
 
 type Props = {
   params: Promise<{ category: string }>;
-  searchParams: Promise<{ [key: string]: string | string[] | undefined }>;
 };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { category } = await params;
-  const renderList = CATEGORIES;
-
-  const matchedCategory = renderList.find((item) => item.category === category);
+  const matchedCategory = CATEGORIES.find((item) => item.category === category);
 
   if (matchedCategory) {
     return {
@@ -34,42 +34,16 @@ export default async function Home({ params }: Props) {
   const { category } = await params;
 
   const posts = await getAllPosts();
-  const renderList = CATEGORIES.map((item) => ({
-    title: item.title,
-    category: item.category,
-    data: posts.filter((post) => post.metadata.category === item.metadataCategory),
-  }));
-
-  const matchedCategory = renderList.find((item) => item.category === category);
+  const matchedCategory = groupPostsByCategory(posts).find((item) => item.category === category);
   if (!matchedCategory) {
-    return (
-      <div className="flex flex-col justify-center items-center min-h-screen w-full px-4 text-xl lg:text-2xl font-bold bg-[#111827] text-white absolute z-30">
-        <p>Không tìm thấy bài viết cho chuyên mục: {category}</p>
-      </div>
-    );
+    notFound();
   }
 
   return (
     <div className="flex flex-col w-full items-center justify-between relative">
       <IconBar />
-      <Image
-        src="/sneaker.webp"
-        alt="background image"
-        width={1308}
-        height={1000}
-        className="fixed w-full h-auto z-1 dark:invert dark:hidden select-none pointer-events-none"
-      />
-      <Image
-        src="/beams.jpg"
-        alt="background image"
-        width={1308}
-        height={1000}
-        className="fixed w-full h-full z-1 opacity-50 dark:invert dark:hidden select-none pointer-events-none"
-      />
-      <div className="absolute z-2 font-jaro select-none pointer-events-none w-full text-center overflow-hidden backdrop-blur-sm">
-        <h1 className="text-[40vw] leading-[30vw] sm:text-[21vw] sm:leading-[17vw] text-background custom-stroke">NAVIRANOBE</h1>
-        <h1 className="text-[40vw] leading-[33vw] sm:text-[26.3vw] sm:leading-[20vw] sm:mt-[-2vw] text-background custom-stroke">THEMEOKI</h1>
-      </div>
+      <PageBackground />
+      <StrokeTitle />
       <Image
         src="/imouza_all.png"
         alt="imouza image"
