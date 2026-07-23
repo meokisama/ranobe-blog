@@ -1,11 +1,14 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
-import { Playfair_Display, Darker_Grotesque } from "next/font/google";
+import { Playfair_Display, Darker_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/common/provider";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import ScrollToTop from "@/components/common/scroll-to-top";
 import SiteFrame from "@/components/common/site-frame";
+import { cn } from "@/lib/utils";
+
+const inter = Inter({subsets:['latin'],variable:'--font-sans'});
 
 const playfair_display = Playfair_Display({
   subsets: ["vietnamese"],
@@ -66,7 +69,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi" suppressHydrationWarning>
+    <html lang="vi" suppressHydrationWarning className={cn("font-sans", inter.variable)}>
       <body className={`${playfair_display.variable} ${darker_grotesque.variable} ${jaro.variable}`}>
         <ScrollToTop />
         <Providers>
