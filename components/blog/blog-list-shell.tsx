@@ -1,6 +1,5 @@
 import Image from "next/image";
 import { Separator } from "@/components/ui/separator";
-import IconBar from "@/components/common/icon-bar";
 import PageBackground from "@/components/common/page-background";
 import StrokeTitle from "@/components/common/stroke-title";
 import { cn } from "@/lib/utils";
@@ -14,12 +13,11 @@ type BlogListShellProps = {
 };
 
 // Shared chrome for the blog listing pages (all posts + single category): the
-// IconBar/StrokeTitle/PageBackground trio, the imouza mascot, and the centered
-// heading block. Pages supply their own title, description, and post list.
+// StrokeTitle/PageBackground pair, the imouza mascot, and the centered heading
+// block. Pages supply their own title, description, and post list.
 export default function BlogListShell({ heading, description, contentClassName, children }: BlogListShellProps) {
   return (
     <div className="flex flex-col w-full items-center justify-between relative">
-      <IconBar />
       <PageBackground />
       <StrokeTitle />
       <Image

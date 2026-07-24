@@ -25,8 +25,8 @@ export default function SplashScreen() {
   }, []);
 
   return shouldUnmount ? null : (
-    <div className="h-screen w-full select-none pointer-events-none fixed overflow-hidden z-5000">
-      <div className="fixed h-full w-full flex flex-col justify-center items-start translate-x-[-50vw] lg:translate-x-[-35vw] xl:translate-x-[-20vw] z-6000">
+    <div className="h-screen w-full select-none pointer-events-none fixed inset-0 overflow-hidden z-5000">
+      <div className="fixed inset-0 h-full w-full flex flex-col justify-center items-start translate-x-[-50vw] lg:translate-x-[-35vw] xl:translate-x-[-20vw] z-6000">
         {/* Hana 01 */}
         <motion.div
           initial={{ x: 0, y: 0, rotate: 0 }}
@@ -134,7 +134,7 @@ export default function SplashScreen() {
       <motion.div
         animate={{ opacity: 0 }}
         transition={{ duration: 2, delay: 5 }}
-        className="font-playfair fixed flex flex-col justify-center items-center h-screen w-screen lg:text-xl xl:text-3xl gap-2 xl:gap-4 text-center px-4 text-slate-800 z-5001"
+        className="font-playfair fixed inset-0 flex flex-col justify-center items-center h-screen w-screen lg:text-xl xl:text-3xl gap-2 xl:gap-4 text-center px-4 text-slate-800 z-5001"
       >
         <motion.p
           initial={{ opacity: 0, scale: 1.1 }}

@@ -19,8 +19,8 @@ export default function WelcomeScreen() {
   }, []);
 
   return shouldUnmount ? null : (
-    <div className="h-screen w-screen select-none pointer-events-none fixed overflow-hidden z-5000">
-      <motion.div initial={{ opacity: 1 }} animate={{ opacity: 0 }} transition={{ duration: 2, delay: 4 }} className="fixed z-10 w-screen">
+    <div className="h-screen w-screen select-none pointer-events-none fixed inset-0 overflow-hidden z-5000">
+      <motion.div initial={{ opacity: 1 }} animate={{ opacity: 0 }} transition={{ duration: 2, delay: 4 }} className="fixed inset-0 z-10 w-screen">
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -40,7 +40,7 @@ export default function WelcomeScreen() {
         initial={{ opacity: 1 }}
         animate={{ opacity: 0 }}
         transition={{ duration: 1, delay: 8 }}
-        className="fixed z-10 w-full h-full flex justify-center items-center"
+        className="fixed inset-0 z-10 w-full h-full flex justify-center items-center"
       >
         <motion.div
           initial={{ opacity: 0 }}

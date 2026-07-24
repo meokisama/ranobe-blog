@@ -1,4 +1,3 @@
-import IconBar from "@/components/common/icon-bar";
 import SplashScreen from "@/components/common/splash-screen";
 import AuthorSection from "@/components/home/author";
 import Bento from "@/components/home/bento";
@@ -11,7 +10,6 @@ export default function Home() {
   return (
     <main>
       <SplashScreen />
-      <IconBar />
       <div className="relative">
         <PageBackground dim />
         <div className="relative z-2">

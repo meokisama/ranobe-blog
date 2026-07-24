@@ -7,7 +7,6 @@ import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import Image from "next/image";
 import { ArrowLeft, ArrowRight, Home } from "lucide-react";
-import IconBar from "@/components/common/icon-bar";
 import PageBackground from "@/components/common/page-background";
 import StrokeTitle from "@/components/common/stroke-title";
 import AuthorAvatar from "@/components/common/author-avatar";
@@ -73,7 +72,6 @@ export default async function Page({ params }: Props) {
 
   return (
     <div className="relative">
-      <IconBar />
       <StrokeTitle variant="post" />
       <PageBackground />
       <div className="max-w-5xl block mx-auto relative z-10">
