@@ -12,9 +12,8 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import AuthorAvatar from "@/components/common/author-avatar";
-import { format } from "date-fns";
-import { vi } from "date-fns/locale";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
+import { formatPostDate } from "@/lib/utils";
+import { ArrowRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import type { Post } from "@/lib/types";
 
@@ -35,7 +34,7 @@ const RenderPostList: React.FC<RenderPostListProps> = ({ posts, title, category,
         {categoryButton && (
           <Button variant="outline" className="text-base lg:text-lg flex flex-row justify-center items-center gap-1 py-5 cursor-pointer">
             <p className="hidden sm:block mb-1">Xem chuyên mục</p>
-            <ArrowRightIcon />
+            <ArrowRight className="size-4" />
           </Button>
         )}
       </div>
@@ -58,7 +57,7 @@ const RenderPostList: React.FC<RenderPostListProps> = ({ posts, title, category,
               <AuthorAvatar name={post.metadata.author} />
               <div>
                 <p className="text-lg leading-5 lg:text-xl lg:leading-6 font-bold">{post.metadata.author}</p>
-                <p>{format(new Date(post.metadata.publishDate), "dd MMMM, yyyy", { locale: vi })}</p>
+                <p>{formatPostDate(post.metadata.publishDate)}</p>
               </div>
             </div>
             <p className="text-lg leading-5 lg:text-xl lg:leading-6 line-clamp-3 mt-2">{post.metadata.description}</p>

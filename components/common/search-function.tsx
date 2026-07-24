@@ -2,106 +2,15 @@
 
 import AuthorAvatar from "@/components/common/author-avatar";
 import { Input } from "@/components/ui/input";
-import { MagnifyingGlassIcon } from "@radix-ui/react-icons";
-import React, { useEffect, useRef, useState } from "react";
-import debounce from "lodash/debounce";
-import Fuse from "fuse.js";
+import { Search } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { format } from "date-fns";
-import { vi } from "date-fns/locale";
+import { formatPostDate } from "@/lib/utils";
 import { Separator } from "@/components/ui/separator";
-import { removeAccents } from "@/lib/remove-accents.mjs";
-import type { Post } from "@/lib/types";
-
-// posts.json entries are Posts augmented with pre-normalized (accent-stripped)
-// fields that Fuse searches against — see scripts/export-posts.mjs.
-type Item = Post;
-
-const options = {
-  keys: [
-    { name: "normalizedMetadata.title", weight: 1.0 },
-    { name: "normalizedMetadata.author", weight: 0.3 },
-    { name: "normalizedMetadata.description", weight: 0.4 },
-    { name: "normalizedMetadata.category", weight: 0.3 },
-    { name: "normalizedDetail.jp", weight: 0.8 },
-    { name: "normalizedDetail.vn", weight: 0.8 },
-    { name: "normalizedDetail.romaji", weight: 0.8 },
-    { name: "normalizedDetail.publisher", weight: 0.5 },
-    { name: "normalizedDetail.author", weight: 0.5 },
-    { name: "normalizedDetail.illustrator", weight: 0.5 },
-    { name: "normalizedDetail.category", weight: 0.2 },
-    { name: "normalizedDetail.safety", weight: 0.1 },
-    { name: "normalizedContent", weight: 0.2 },
-  ],
-  includeScore: true,
-  threshold: 0.4,
-  ignoreLocation: true,
-  minMatchCharLength: 2,
-};
-
-let fusePromise: Promise<Fuse<Item>> | null = null;
-
-function getFuse() {
-  if (!fusePromise) {
-    fusePromise = fetch("/posts.json")
-      .then((r) => {
-        if (!r.ok) throw new Error(`Failed to load posts.json: ${r.status}`);
-        return r.json() as Promise<Item[]>;
-      })
-      .then((items) => new Fuse(items, options))
-      .catch((err) => {
-        fusePromise = null;
-        throw err;
-      });
-  }
-  return fusePromise;
-}
+import { usePostSearch } from "@/hooks/use-post-search";
 
 export default function SearchFunction() {
-  const [query, setQuery] = useState<string>("");
-  const [results, setResults] = useState<Item[]>([]);
-  const [loading, setLoading] = useState<boolean>(true);
-  const [error, setError] = useState<string | null>(null);
-  const fuseRef = useRef<Fuse<Item> | null>(null);
-
-  const runSearch = (q: string) => {
-    const f = fuseRef.current;
-    if (!f || q.trim() === "") {
-      setResults([]);
-      return;
-    }
-    setResults(f.search(removeAccents(q)).map((r) => r.item));
-  };
-
-  const debouncedSearchRef = useRef(debounce((q: string) => runSearch(q), 300));
-
-  useEffect(() => {
-    let cancelled = false;
-    getFuse()
-      .then((instance) => {
-        if (cancelled) return;
-        fuseRef.current = instance;
-        setLoading(false);
-        if (query.trim()) runSearch(query);
-      })
-      .catch((err) => {
-        console.error(err);
-        if (!cancelled) {
-          setLoading(false);
-          setError("Không tải được dữ liệu tìm kiếm. Thử tải lại trang.");
-        }
-      });
-    return () => {
-      cancelled = true;
-    };
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, []);
-
-  const handleSearch = (q: string) => {
-    setQuery(q);
-    debouncedSearchRef.current(q);
-  };
+  const { query, results, loading, error, search: handleSearch } = usePostSearch();
 
   return (
     <div className="mx-auto w-full px-2 sm:px-4 lg:px-10 h-[70vh] lg:h-[60vh] flex flex-col lg:flex-row gap-5 xl:gap-10">
@@ -123,7 +32,7 @@ export default function SearchFunction() {
             onChange={(e) => handleSearch(e.target.value)}
             className="rounded-lg pl-8 lg:pl-9 py-4 xl:py-6 lg:text-lg dark:shadow-[0_3px_10px_rgba(0,0,0,0.3)] focus-visible:ring-0 focus-visible:ring-transparent focus-visible:ring-offset-0"
           />
-          <MagnifyingGlassIcon className="absolute left-2.5 top-0 bottom-0 my-auto w-4 h-4 lg:w-5 lg:h-5 text-gray-400 dark:text-gray-600" />
+          <Search className="absolute left-2.5 top-0 bottom-0 my-auto w-4 h-4 lg:w-5 lg:h-5 text-gray-400 dark:text-gray-600" />
         </div>
         <div className="hidden lg:block grow">
           <div className="w-full h-[92%] rounded-xl overflow-hidden flex justify-center items-center">
@@ -181,7 +90,7 @@ export default function SearchFunction() {
                     <AuthorAvatar name={result.metadata.author} className="w-7.5 lg:w-10 h-auto" />
                     <div>
                       <p className="text-base sm:text-lg leading-5 lg:text-xl lg:leading-6 font-semibold">{result.metadata.author}</p>
-                      <p className="-mt-1">{format(new Date(result.metadata.publishDate), "dd MMMM, yyyy", { locale: vi })}</p>
+                      <p className="-mt-1">{formatPostDate(result.metadata.publishDate)}</p>
                     </div>
                   </div>
                   <p className="text-base sm:text-lg leading-5 lg:text-xl lg:leading-6 line-clamp-1 sm:line-clamp-2 mt-1 sm:mt-2">

@@ -1,6 +1,6 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
-import { ArrowRightIcon } from "@radix-ui/react-icons";
+import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export default function BoosterAds() {
@@ -39,7 +39,7 @@ export default function BoosterAds() {
           <div>
             <Link href="/ga" target="_blank">
               <Button className="lg:text-lg py-5">
-                <span className="mb-1">Thông tin chi tiết</span> <ArrowRightIcon className="ml-1" />
+                <span className="mb-1">Thông tin chi tiết</span> <ArrowRight className="ml-1 size-4" />
               </Button>
             </Link>
           </div>

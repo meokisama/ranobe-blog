@@ -1,7 +1,7 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ChevronUpIcon } from "@radix-ui/react-icons";
+import { ChevronUp } from "lucide-react";
 
 function ScrollToTop() {
   const [isVisible, setIsVisible] = useState(false);
@@ -30,7 +30,7 @@ function ScrollToTop() {
       className="fixed w-10 h-9 z-49 bottom-2 right-4 p-0 shadow-lg dark:shadow-[0_3px_10px_rgba(0,0,0,0.6)]"
       variant="outline"
     >
-      <ChevronUpIcon className="w-5 h-5 block mx-auto" />
+      <ChevronUp className="w-5 h-5 block mx-auto" />
     </Button>
   );
 }

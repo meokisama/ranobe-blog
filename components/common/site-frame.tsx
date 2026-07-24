@@ -3,28 +3,28 @@
 import { usePathname } from "next/navigation";
 import { FloatingNav } from "@/components/ui/floating-navbar";
 import Footer from "@/components/common/footer";
-import { BookmarkIcon, HomeIcon, MixIcon, ReaderIcon } from "@radix-ui/react-icons";
+import { Bookmark, Home, Sparkles, BookOpen } from "lucide-react";
 
 const navItems = [
   {
     name: "Trang chủ",
     link: "/",
-    icon: <HomeIcon className="h-4 w-4 text-neutral-800 dark:text-white" />,
+    icon: <Home className="h-4 w-4 text-neutral-800 dark:text-white" />,
   },
   {
     name: "Đọc Raw",
     link: "https://hub.ranobe.vn",
-    icon: <ReaderIcon className="h-4 w-4 text-neutral-800 dark:text-white" />,
+    icon: <BookOpen className="h-4 w-4 text-neutral-800 dark:text-white" />,
   },
   {
     name: "Bài viết",
     link: "/blog",
-    icon: <BookmarkIcon className="h-4 w-4 text-neutral-800 dark:text-white" />,
+    icon: <Bookmark className="h-4 w-4 text-neutral-800 dark:text-white" />,
   },
   {
     name: "Giveaway Booster",
     link: "/ga",
-    icon: <MixIcon className="h-4 w-4 text-neutral-800 dark:text-white" />,
+    icon: <Sparkles className="h-4 w-4 text-neutral-800 dark:text-white" />,
   },
 ];
 

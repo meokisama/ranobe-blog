@@ -13,7 +13,7 @@
 
 ## Introduction
 
-**Ranobe Blog** is a personal Vietnamese light-novel blog: a quiet corner for long-form reviews, essays, and interviews, wrapped in a clean, reading-first design.
+[**Ranobe Blog**](https://ranobe.vn/) is a personal Vietnamese light-novel blog: a quiet corner for long-form reviews, essays, and interviews, wrapped in a clean, reading-first design.
 
 Under the hood it's a **statically generated** Next.js app. Pages are pre-rendered at build time for fast, cheap hosting, while a built-in CMS keeps writing as simple as typing: save a post and a single Git push takes it live.
 
