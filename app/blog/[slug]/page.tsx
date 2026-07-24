@@ -1,6 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
-import dynamic from "next/dynamic";
+import type { ComponentType } from "react";
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
@@ -44,16 +44,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   };
 }
 
-async function getPost({ slug }: { slug: string }): Promise<{ slug: string; metadata: PostMetadata }> {
+async function getPost({ slug }: { slug: string }): Promise<{ slug: string; metadata: PostMetadata; Content: ComponentType }> {
   try {
     const mdxPath = path.join("posts", `${slug}.mdx`);
     if (!fs.existsSync(mdxPath)) {
       throw new Error(`MDX file for slug ${slug} does not exist`);
     }
 
-    const { metadata } = await import(`@/posts/${slug}.mdx`);
+    const { default: Content, metadata } = await import(`@/posts/${slug}.mdx`);
 
-    return { slug, metadata };
+    return { slug, metadata, Content };
   } catch (error) {
     console.error("Error fetching post:", error);
     throw new Error(`Unable to fetch the post for slug: ${slug}`);
@@ -67,7 +67,7 @@ export async function generateStaticParams() {
 export default async function Page({ params }: Props) {
   const { slug } = await params;
   const post = await getPost({ slug });
-  const MDXContent = dynamic(() => import(`@/posts/${slug}.mdx`));
+  const MDXContent = post.Content;
   const formattedDate = formatPostDate(post.metadata.publishDate);
   const author = getAuthor(post.metadata.author);
 

@@ -26,7 +26,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     h5: (props) => <h5 className="text-lg font-normal pb-4" {...props} />,
     h6: (props) => <h6 className="text-base font-light pb-4" {...props} />,
     p: (props) => <p className="text-lg lg:text-xl 2xl:text-[22px] mb-4 leading-6 lg:leading-7 text-justify font-medium" {...props} />,
-    strong: (props) => <strong className="text-red-500" {...props} />,
+    strong: (props) => <strong className="text-indigo-950" {...props} />,
     li: (props) => <li className="pb-1 text-xl lg:text-2xl" {...props} />,
     ul: (props) => <ul className="list-disc text-xl lg:text-2xl pl-6 pb-4" {...props} />,
     ol: (props) => <ol className="list-decimal text-xl lg:text-2xl pl-6 pb-4" {...props} />,
