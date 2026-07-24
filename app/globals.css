@@ -43,20 +43,20 @@
 }
 
 .dark {
-  --background: oklch(0.145 0 0);
-  --foreground: oklch(0.985 0 0);
-  --card: oklch(0.205 0 0);
-  --card-foreground: oklch(0.985 0 0);
-  --popover: oklch(0.205 0 0);
-  --popover-foreground: oklch(0.985 0 0);
+  --background: oklch(0.216 0.012 264);
+  --foreground: oklch(0.97 0.006 264);
+  --card: oklch(0.258 0.016 264);
+  --card-foreground: oklch(0.97 0.006 264);
+  --popover: oklch(0.258 0.016 264);
+  --popover-foreground: oklch(0.97 0.006 264);
   --primary: oklch(0.922 0 0);
-  --primary-foreground: oklch(0.205 0 0);
-  --secondary: oklch(0.269 0 0);
-  --secondary-foreground: oklch(0.985 0 0);
-  --muted: oklch(0.269 0 0);
-  --muted-foreground: oklch(0.708 0 0);
-  --accent: oklch(0.269 0 0);
-  --accent-foreground: oklch(0.985 0 0);
+  --primary-foreground: oklch(0.216 0.012 264);
+  --secondary: oklch(0.31 0.018 264);
+  --secondary-foreground: oklch(0.97 0.006 264);
+  --muted: oklch(0.31 0.018 264);
+  --muted-foreground: oklch(0.72 0.018 264);
+  --accent: oklch(0.31 0.018 264);
+  --accent-foreground: oklch(0.97 0.006 264);
   --destructive: oklch(0.704 0.191 22.216);
   --destructive-foreground: hsl(210 40% 98%);
   --border: oklch(1 0 0 / 10%);
@@ -68,15 +68,15 @@
   --chart-4: oklch(0.371 0 0);
   --chart-5: oklch(0.269 0 0);
   --hero-grid: hsl(353 100% 71%);
-  --sidebar-background: hsl(240 5.9% 10%);
-  --sidebar-foreground: oklch(0.985 0 0);
+  --sidebar-background: oklch(0.258 0.016 264);
+  --sidebar-foreground: oklch(0.97 0.006 264);
   --sidebar-primary: oklch(0.488 0.243 264.376);
   --sidebar-primary-foreground: oklch(0.985 0 0);
-  --sidebar-accent: oklch(0.269 0 0);
-  --sidebar-accent-foreground: oklch(0.985 0 0);
+  --sidebar-accent: oklch(0.31 0.018 264);
+  --sidebar-accent-foreground: oklch(0.97 0.006 264);
   --sidebar-border: oklch(1 0 0 / 10%);
   --sidebar-ring: oklch(0.556 0 0);
-  --sidebar: oklch(0.205 0 0);
+  --sidebar: oklch(0.258 0.016 264);
 }
 
 @theme inline {
@@ -221,6 +221,23 @@
   .custom-stroke {
     -webkit-text-stroke: 1px var(--foreground);
     opacity: 0.2;
+  }
+
+  /* Soft coloured glow used only in dark mode so the page is not pitch black. */
+  .dark-aurora {
+    background:
+      radial-gradient(58% 48% at 12% 0%, oklch(0.62 0.14 20 / 0.16), transparent 72%),
+      radial-gradient(55% 45% at 92% 6%, oklch(0.55 0.12 264 / 0.2), transparent 72%),
+      radial-gradient(70% 55% at 50% 100%, oklch(0.5 0.09 300 / 0.14), transparent 75%);
+  }
+
+  /* Faint grid decoration for dark mode, fading out towards the edges. */
+  .dark-grid {
+    background-image:
+      linear-gradient(var(--hero-grid) 1px, transparent 1px), linear-gradient(to right, var(--hero-grid) 1px, transparent 1px);
+    background-size: 3vw 3vw;
+    -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black, transparent 78%);
+    mask-image: radial-gradient(ellipse 80% 70% at 50% 0%, black, transparent 78%);
   }
 
   .bento-item {
