@@ -4,7 +4,6 @@ import { Playfair_Display, Darker_Grotesque, Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "@/components/common/provider";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import ScrollToTop from "@/components/common/scroll-to-top";
 import SiteFrame from "@/components/common/site-frame";
 import { cn } from "@/lib/utils";
 
@@ -71,7 +70,6 @@ export default function RootLayout({
   return (
     <html lang="vi" suppressHydrationWarning className={cn("font-sans", inter.variable)}>
       <body className={`${playfair_display.variable} ${darker_grotesque.variable} ${jaro.variable}`}>
-        <ScrollToTop />
         <Providers>
           <div vaul-drawer-wrapper="" className="bg-background">
             <SiteFrame>{children}</SiteFrame>
