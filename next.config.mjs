@@ -4,12 +4,11 @@ import createMDX from "@next/mdx";
 const nextConfig = {
   pageExtensions: ["js", "jsx", "md", "mdx", "ts", "tsx"],
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "res.cloudinary.com",
-      },
-    ],
+    qualities: [60, 75, 90],
+    remotePatterns: [{ protocol: "https", hostname: "res.cloudinary.com" }],
+  },
+  async redirects() {
+    return [{ source: "/ga", destination: "/", permanent: false }];
   },
 };
 
