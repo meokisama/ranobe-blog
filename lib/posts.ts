@@ -1,60 +1,106 @@
 import fs from "node:fs";
 import path from "node:path";
-import { CATEGORIES } from "@/constants";
-import type { Post, PostMetadata } from "@/lib/types";
+import matter from "gray-matter";
+import { CATEGORIES, getCategoryByName } from "@/lib/site";
 
-const FALLBACK_METADATA: PostMetadata = {
-  title: "Untitled",
-  author: "",
-  thumbnail: "",
-  publishDate: "1970-01-01",
-  description: "",
-  category: "",
-};
-
-// Lists the slugs of every published post (`.mdx` files under posts/, ignoring
-// dotfiles). Shared by getAllPosts and the [slug] route's generateStaticParams.
-export function getPostSlugs(): string[] {
-  const dir = path.join(process.cwd(), "posts");
-  return fs
-    .readdirSync(dir)
-    .filter((filename) => filename.endsWith(".mdx") && !filename.startsWith("."))
-    .map((filename) => filename.replace(".mdx", ""));
+export interface SeriesDetail {
+  jp: string;
+  vn: string;
+  romaji: string;
+  publisher: string;
+  author: string;
+  illustrator: string;
+  release: string;
+  category: string;
+  volume: string;
+  en_trans: string;
+  en_trans_url: string;
+  vi_trans: string;
+  vi_trans_url: string;
+  safety: string;
 }
 
-// Reads every post's frontmatter (and optional SeriesDetail) at build time by
-// importing the compiled MDX modules, then sorts newest-first.
-export async function getAllPosts(): Promise<Post[]> {
-  const posts = getPostSlugs().map((slug) => {
-    try {
-      const { metadata, detail } = require(`@/posts/${slug}.mdx`);
-      return {
-        slug,
-        metadata: metadata ?? FALLBACK_METADATA,
-        ...(detail && { detail }),
-      };
-    } catch (error) {
-      console.error(`Error loading metadata for post ${slug}:`, error);
-      return { slug, metadata: FALLBACK_METADATA };
-    }
+export interface Post {
+  slug: string;
+  /** Full title as authored, e.g. "[Giáng sinh 2024] Ai đã sát hại anh hùng?" */
+  fullTitle: string;
+  /** Title without the leading [bracket] tag. */
+  title: string;
+  /** The leading [bracket] tag, if any. */
+  kicker: string;
+  author: string;
+  thumbnail: string;
+  date: string;
+  description: string;
+  category: string;
+  categorySlug: string;
+  readingMinutes: number;
+  jp: string;
+  romaji: string;
+}
+
+const POSTS_DIR = path.join(process.cwd(), "posts");
+
+export function splitTitle(full: string): { kicker: string; title: string } {
+  const m = /^\[(.+?)\]\s*(.+)$/.exec(full);
+  return m ? { kicker: m[1], title: m[2] } : { kicker: "", title: full };
+}
+
+function attr(body: string, name: string): string {
+  const tag = /<SeriesDetail\b([^>]*)\/>/.exec(body);
+  if (!tag) return "";
+  const m = new RegExp(`\\b${name}="([^"]*)"`).exec(tag[1]);
+  return m ? m[1].replace(/&quot;/g, '"') : "";
+}
+
+export function getPostSlugs(): string[] {
+  return fs
+    .readdirSync(POSTS_DIR)
+    .filter((f) => f.endsWith(".mdx") && !f.startsWith("."))
+    .map((f) => f.replace(/\.mdx$/, ""));
+}
+
+let cache: Post[] | null = null;
+
+/** Every post's metadata, newest first. Read straight from frontmatter. */
+export function getAllPosts(): Post[] {
+  if (cache && process.env.NODE_ENV === "production") return cache;
+
+  const posts = getPostSlugs().map((slug): Post => {
+    const raw = fs.readFileSync(path.join(POSTS_DIR, `${slug}.mdx`), "utf8");
+    const { data, content } = matter(raw);
+    const fullTitle = String(data.title ?? "Untitled");
+    const words = content
+      .replace(/<[^>]+>/g, " ")
+      .split(/\s+/)
+      .filter(Boolean).length;
+
+    return {
+      slug,
+      fullTitle,
+      ...splitTitle(fullTitle),
+      author: String(data.author ?? ""),
+      thumbnail: String(data.thumbnail ?? ""),
+      date: String(data.publishDate ?? "1970-01-01"),
+      description: String(data.description ?? ""),
+      category: String(data.category ?? ""),
+      categorySlug: getCategoryByName(data.category)?.slug ?? "",
+      readingMinutes: Math.max(1, Math.round(words / 230)),
+      jp: attr(content, "jp"),
+      romaji: attr(content, "romaji"),
+    };
   });
 
-  posts.sort((a, b) => new Date(b.metadata.publishDate).getTime() - new Date(a.metadata.publishDate).getTime());
-
+  posts.sort((a, b) => +new Date(b.date) - +new Date(a.date) || a.slug.localeCompare(b.slug));
+  cache = posts;
   return posts;
 }
 
-export type CategoryGroup = {
-  title: string;
-  category: string;
-  data: Post[];
-};
+export function getPost(slug: string): Post | undefined {
+  return getAllPosts().find((p) => p.slug === slug);
+}
 
-// Buckets posts under each configured category (matched by its display name).
-export function groupPostsByCategory(posts: Post[]): CategoryGroup[] {
-  return CATEGORIES.map((item) => ({
-    title: item.title,
-    category: item.category,
-    data: posts.filter((post) => post.metadata.category === item.metadataCategory),
-  }));
+export function getCategoryCounts(): Record<string, number> {
+  const posts = getAllPosts();
+  return Object.fromEntries(CATEGORIES.map((c) => [c.slug, posts.filter((p) => p.categorySlug === c.slug).length]));
 }
