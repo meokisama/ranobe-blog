@@ -1,40 +1,48 @@
-import type { Metadata } from "next";
-import localFont from "next/font/local";
-import { Playfair_Display, Darker_Grotesque, Inter } from "next/font/google";
-import "./globals.css";
-import { Providers } from "@/components/common/provider";
+import type { Metadata, Viewport } from "next";
+import { Fraunces, Literata, Be_Vietnam_Pro, JetBrains_Mono, Shippori_Mincho } from "next/font/google";
 import { GoogleAnalytics } from "@next/third-parties/google";
-import SiteFrame from "@/components/common/site-frame";
-import { cn } from "@/lib/utils";
+import { ThemeProvider } from "next-themes";
+import { SITE } from "@/lib/site";
+import "./globals.css";
 
-const inter = Inter({subsets:['latin'],variable:'--font-sans'});
-
-const playfair_display = Playfair_Display({
-  subsets: ["vietnamese"],
-  variable: "--font-playfair-display",
+const fraunces = Fraunces({
+  subsets: ["latin", "vietnamese"],
+  style: ["normal", "italic"],
+  axes: ["opsz", "SOFT", "WONK"],
+  variable: "--font-fraunces",
   display: "swap",
 });
 
-const darker_grotesque = Darker_Grotesque({
-  subsets: ["vietnamese"],
-  variable: "--font-darker-grotesque",
+const literata = Literata({
+  subsets: ["latin", "vietnamese"],
+  style: ["normal", "italic"],
+  variable: "--font-literata",
   display: "swap",
 });
 
-const jaro = localFont({
-  weight: "400",
-  src: "./Jaro.ttf",
-  variable: "--font-jaro",
+const beVietnam = Be_Vietnam_Pro({
+  subsets: ["latin", "vietnamese"],
+  weight: ["300", "400", "500", "600"],
+  variable: "--font-be-vietnam",
   display: "swap",
 });
 
-const title = "Ranobe - Review Light Novel. Phân tích Light Novel.";
-const description =
-  "Review Light Novel. Phân tích Light Novel. Chia sẻ tài nguyên Light Novel. Blog cho những người đam mê văn học Nhật Bản hiện đại.";
+const jetbrains = JetBrains_Mono({
+  subsets: ["latin", "vietnamese"],
+  variable: "--font-jetbrains",
+  display: "swap",
+});
+
+const shippori = Shippori_Mincho({
+  weight: ["500", "700"],
+  variable: "--font-shippori",
+  display: "swap",
+  preload: false,
+});
 
 export const metadata: Metadata = {
-  title: title,
-  description: description,
+  title: { default: SITE.title, template: "%s — Ranobe" },
+  description: SITE.description,
   creator: "Meoki",
   publisher: "Meoki",
   keywords: [
@@ -48,35 +56,32 @@ export const metadata: Metadata = {
     "tiểu thuyết",
     "light novel blog",
   ],
-  metadataBase: new URL("https://ranobe.vn"),
-  openGraph: {
-    title: title,
-    description: description,
-    siteName: title,
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: title,
-    description: description,
-  },
+  metadataBase: new URL(SITE.url),
+  openGraph: { title: SITE.title, description: SITE.description, siteName: SITE.name, type: "website", locale: "vi_VN" },
+  twitter: { card: "summary_large_image", title: SITE.title, description: SITE.description },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  themeColor: [
+    { media: "(prefers-color-scheme: dark)", color: "#0b0a0d" },
+    { media: "(prefers-color-scheme: light)", color: "#f1ebde" },
+  ],
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  const gaId = process.env.NEXT_PUBLIC_GA4;
   return (
-    <html lang="vi" suppressHydrationWarning className={cn("font-sans", inter.variable)}>
-      <body className={`${playfair_display.variable} ${darker_grotesque.variable} ${jaro.variable}`}>
-        <Providers>
-          <div vaul-drawer-wrapper="" className="bg-background">
-            <SiteFrame>{children}</SiteFrame>
-          </div>
-        </Providers>
+    <html
+      lang="vi"
+      suppressHydrationWarning
+      className={`${fraunces.variable} ${literata.variable} ${beVietnam.variable} ${jetbrains.variable} ${shippori.variable}`}
+    >
+      <body>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem={false} disableTransitionOnChange>
+          {children}
+        </ThemeProvider>
       </body>
-      <GoogleAnalytics gaId={process.env.NEXT_PUBLIC_GA4 as string} />
+      {gaId ? <GoogleAnalytics gaId={gaId} /> : null}
     </html>
   );
 }
