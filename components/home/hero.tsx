@@ -1,101 +1,140 @@
 "use client";
-import Image from "next/image";
-import { motion } from "motion/react";
+
+import { useRef, useState } from "react";
+import dynamic from "next/dynamic";
 import Link from "next/link";
-import { buttonVariants } from "@/components/ui/button";
-import { AUTHORS } from "@/constants";
-import { useSplashSeen } from "@/hooks/use-splash-seen";
-import FacebookIcon from "@/components/common/facebook-icon";
+import { AnimatePresence, motion, useScroll, useTransform } from "motion/react";
+import { ArrowDown, ArrowUpRight } from "lucide-react";
+import { SplitWords } from "@/components/ui/reveal";
+import type { HeroItem } from "@/components/home/hero-scene";
+import { useSplashRevealed } from "@/lib/splash";
 
-export default function Hero() {
-  const { seen, mounted } = useSplashSeen();
+const HeroScene = dynamic(() => import("@/components/home/hero-scene"), { ssr: false });
 
-  if (!mounted) {
-    return <div className="w-full min-h-screen" />;
-  }
+const EASE = [0.16, 1, 0.3, 1] as const;
 
-  const titleTransition = seen ? { duration: 0 } : { duration: 1, delay: 7 };
-  const heroSpring = seen ? { duration: 0 } : { type: "spring" as const, damping: 10, mass: 0.75, stiffness: 300, delay: 8 };
-  const makeineSpring = seen ? { duration: 0 } : { type: "spring" as const, damping: 10, mass: 0.75, stiffness: 300, delay: 8.2 };
-  const bannerTransition = seen ? { duration: 0 } : { duration: 1, delay: 7 };
+export default function Hero({ items, total }: { items: (HeroItem & { category: string })[]; total: number }) {
+  const ref = useRef<HTMLElement>(null);
+  const [hovered, setHovered] = useState<number | null>(null);
+  const revealed = useSplashRevealed();
+  const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
+  const sceneY = useTransform(scrollYProgress, [0, 1], ["0%", "22%"]);
+  const sceneOpacity = useTransform(scrollYProgress, [0, 0.85], [1, 0]);
+  const sceneScale = useTransform(scrollYProgress, [0, 1], [1, 0.9]);
+  const uiOpacity = useTransform(scrollYProgress, [0, 0.4], [1, 0]);
+
+  const current = hovered !== null ? items[hovered] : null;
 
   return (
-    <div className="w-full min-h-screen relative overflow-hidden backdrop-blur-lg">
-      <div className="w-full h-full absolute bg-size-[4vw_4vw] lg:bg-size-[1.5vw_1.5vw] -z-10 custom-caro opacity-40 lg:opacity-80 dark:opacity-10" />
-      <div>
-        <div className="mr-10 -rotate-12 select-none pointer-events-none">
-          <motion.div
-            initial={seen ? false : { opacity: 0, y: "-100px" }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={titleTransition}
-            className="-mb-4 md:-mb-12 lg:-mb-12 xl:-mb-20"
-          >
-            <h1 className="font-jaro font-normal tracking-tight text-center my-0 text-[19vw] lg:text-[20vw] leading-none dark:bg-[linear-gradient(45deg,#a875ec_20%,#ff6b7c_100%)] dark:drop-shadow-[0px_3px_8px_rgba(0,0,0,0.5)] dark:[text-outline:1px_solid_black] dark:bg-clip-text dark:text-transparent text-white drop-shadow-[0px_3px_8px_rgba(255,139,39,0.3)]">
-              THEMEOKI
-            </h1>
-          </motion.div>
-          <motion.div
-            initial={seen ? false : { opacity: 0, y: "100px" }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={titleTransition}
-            className="-mb-4 md:-mb-12 lg:-mb-12 xl:-mb-20"
-          >
-            <h1 className="font-jaro font-normal tracking-tight text-center my-0 text-[19vw] lg:text-[20vw] leading-none dark:bg-[linear-gradient(45deg,#a875ec_20%,#ff6b7c_100%)] dark:drop-shadow-[0px_3px_8px_rgba(0,0,0,0.5)] dark:[text-outline:1px_solid_black] dark:bg-clip-text dark:text-transparent text-white drop-shadow-[0px_3px_8px_rgba(255,139,39,0.3)]">
-              NAVIRANOBE
-            </h1>
-          </motion.div>
-        </div>
-        <div className="w-full flex flex-col-reverse lg:flex-row lg:gap-[35vw] -mt-16 lg:-mt-4">
-          <div className="w-1/2"></div>
-          <div className="w-full px-10 lg:w-1/2 lg:pr-[4vw] font-grotesque lg:rotate-6 lg:-translate-y-5">
-            <motion.div initial={seen ? false : { opacity: 0, y: "-100px" }} animate={{ opacity: 1, y: 0 }} transition={heroSpring}>
-              <Image
-                src="/makeine.png"
-                alt="makeine chibi"
-                width={150}
-                height={150}
-                className="h-auto w-25 sm:w-37.5 scale-x-[-1] lg:hidden block ml-auto"
-              />
-            </motion.div>
-            <motion.div initial={seen ? false : { opacity: 0, y: "-50px" }} animate={{ opacity: 1, y: 0 }} transition={heroSpring} className="mt-10">
-              <p className="lg:text-[1.3vw] text-justify leading-tight">
-                Có bao giờ bạn tự nghĩ những cuốn light novel ngoài kia có thể ẩn chứa những bí mật kín đáo hơn những gì mắt thấy? Đã bao giờ bạn tự
-                hỏi liệu mình đã thật sự thấu hiểu hết những thông điệp tinh tế mà tác giả khéo léo ẩn giấu giữa những dòng chữ? Có lẽ, light novel
-                không chỉ là những câu chuyện bình dị, mà còn là những bí mật chờ đợi bạn khám phá. Và đây là một blog sẽ đi cùng bạn trong hành trình
-                đó
-              </p>
-              <div className="flex flex-row justify-center lg:float-right gap-1 lg:gap-4 mt-4">
-                {AUTHORS.map(({ facebook, nickname }) => (
-                  <Link href={facebook} target="_blank" className={buttonVariants({ variant: "default" })} key={facebook}>
-                    <FacebookIcon className="w-4 h-4 mr-1" />
-                    {nickname}
-                  </Link>
-                ))}
-              </div>
+    <section ref={ref} className="relative h-[100svh] min-h-[620px] overflow-hidden">
+      <h1 className="sr-only">Ranobe — Review &amp; phân tích Light Novel</h1>
+
+      {/* Soft glow behind the ring */}
+      <div
+        aria-hidden
+        className="pointer-events-none absolute left-1/2 top-1/2 h-[70vmin] w-[110vmin] -translate-x-1/2 -translate-y-1/2 rounded-[50%] bg-accent/[0.13] blur-[120px] dark:bg-accent/[0.16]"
+      />
+
+      <motion.div style={{ y: sceneY, opacity: sceneOpacity, scale: sceneScale }} className="absolute inset-0">
+        {revealed && <HeroScene items={items} onHover={setHovered} />}
+      </motion.div>
+
+      {/* Vignette into the page colour */}
+      <div aria-hidden className="pointer-events-none absolute inset-x-0 bottom-0 h-72 bg-gradient-to-t from-bg via-bg/70 to-transparent" />
+
+      <motion.div style={{ opacity: uiOpacity }} className="pointer-events-none absolute inset-0">
+        {/* Top meta row */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 1.2, duration: 1.2 }}
+          className="gutter label absolute inset-x-0 top-20 flex justify-between text-muted md:top-24"
+        >
+          <span>
+            <span className="text-accent">●</span>&nbsp; Tạp chí light novel
+          </span>
+          <span className="hidden sm:block">Est. 2022 — Việt Nam</span>
+          <span>N° {String(total).padStart(3, "0")} bài viết</span>
+        </motion.div>
+
+        {/* Vertical Japanese margins */}
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.5, duration: 1.4, ease: EASE }}
+          className="vertical-rl absolute left-[clamp(1rem,4vw,3.5rem)] top-1/2 hidden -translate-y-1/2 font-jp text-[0.8rem] tracking-[0.5em] text-muted lg:block"
+        >
+          ライトノベルを読む<span className="text-accent">、</span>語る<span className="text-accent">、</span>愛する
+        </motion.p>
+        <motion.p
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 1.6, duration: 1.4, ease: EASE }}
+          className="vertical-rl label absolute right-[clamp(1rem,4vw,3.5rem)] top-1/2 hidden -translate-y-1/2 text-muted lg:block"
+        >
+          Kéo để xoay — Nhấn để đọc
+        </motion.p>
+
+        {/* Bottom row */}
+        <div className="gutter absolute inset-x-0 bottom-7 grid items-end gap-6 md:bottom-10 md:grid-cols-12">
+          <div className="md:col-span-6 lg:col-span-4">
+            <p className="display text-[clamp(1.6rem,2.6vw,2.5rem)] leading-[1.05] tracking-[-0.02em]">
+              <SplitWords text="Review, phân tích và những chuyện bên lề của" onView={false} delay={0.9} />{" "}
+              <em className="text-accent">
+                <SplitWords text="light novel." onView={false} delay={1.3} />
+              </em>
+            </p>
+            <motion.div
+              initial={{ opacity: 0, y: 12 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 1.7, duration: 1, ease: EASE }}
+              className="pointer-events-auto mt-6 flex items-center gap-3"
+            >
+              <Link
+                href="/blog"
+                className="group flex h-12 items-center gap-2 rounded-full bg-ink pl-6 pr-5 text-[0.9rem] font-medium text-bg transition-colors duration-300 hover:bg-accent hover:text-white"
+              >
+                Vào thư viện
+                <ArrowUpRight className="size-4 transition-transform duration-300 group-hover:rotate-45" />
+              </Link>
+              <a
+                href="#moi-nhat"
+                className="group flex h-12 items-center gap-2 rounded-full border border-line px-5 text-[0.9rem] backdrop-blur-sm transition-colors hover:border-ink"
+              >
+                Bài mới
+                <ArrowDown className="size-4 transition-transform duration-300 group-hover:translate-y-0.5" />
+              </a>
             </motion.div>
           </div>
+
+          <div className="hidden min-h-[5.5rem] md:col-span-5 md:col-start-8 md:block lg:col-span-4 lg:col-start-9">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={current?.slug ?? "idle"}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -8 }}
+                transition={{ duration: 0.3, ease: EASE }}
+                className="border-t border-line pt-4 text-right"
+              >
+                {current ? (
+                  <>
+                    <p className="label text-accent">{current.category}</p>
+                    <p className="mt-2.5 font-display text-xl leading-tight">{current.title}</p>
+                  </>
+                ) : (
+                  <>
+                    <p className="label text-muted">Vòng quay bìa sách</p>
+                    <p className="mt-2.5 text-sm leading-relaxed text-muted">
+                      {items.length} bài viết mới nhất đang trôi quanh đây. Rê chuột vào một tấm bìa để xem, nhấn để đọc.
+                    </p>
+                  </>
+                )}
+              </motion.div>
+            </AnimatePresence>
+          </div>
         </div>
-      </div>
-      <div className="w-full lg:absolute bottom-0 z-50 select-none pointer-events-none">
-        <motion.div initial={seen ? false : { scale: 1.2 }} animate={{ scale: 1 }} transition={bannerTransition}>
-          <Image
-            src="/imouza.png"
-            alt="imouza banner"
-            width={1500}
-            height={1500}
-            priority
-            className="w-[70vw] sm:w-125 lg:w-[40vw] h-auto block my-0 mx-auto"
-          />
-        </motion.div>
-      </div>
-      <motion.div
-        initial={seen ? false : { opacity: 0, y: "-100px" }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={makeineSpring}
-        className="absolute hidden lg:block top-[10%] left-5 select-none pointer-events-none"
-      >
-        <Image src="/makeine.png" alt="makeine chibi" width={180} height={180} className="h-auto" />
       </motion.div>
-    </div>
+    </section>
   );
 }
