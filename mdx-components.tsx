@@ -1,51 +1,62 @@
+import { isValidElement } from "react";
 import type { MDXComponents } from "mdx/types";
-import YouTube from "@/components/mdx/youtube";
-import Code from "@/components/mdx/code";
-import InlineCode from "@/components/mdx/inline-code";
-import Pre from "@/components/mdx/pre";
-import SeriesDetail from "@/components/mdx/series-detail";
 import Image from "next/image";
+import SeriesDetail from "@/components/post/series-detail";
+
+function YouTube({ id }: { id: string }) {
+  return (
+    <figure>
+      <div className="relative aspect-video overflow-hidden rounded-sm bg-surface">
+        <iframe
+          className="absolute inset-0 size-full"
+          src={`https://www.youtube-nocookie.com/embed/${id}`}
+          title="YouTube video"
+          loading="lazy"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowFullScreen
+        />
+      </div>
+    </figure>
+  );
+}
+
+function Figure({ src, alt }: { src?: string; alt?: string }) {
+  if (!src) return null;
+  return (
+    <figure>
+      <Image
+        src={src}
+        alt={alt ?? ""}
+        width={1200}
+        height={800}
+        sizes="(min-width: 1024px) 928px, 100vw"
+        className="mx-auto h-auto max-h-[88svh] w-auto max-w-full rounded-sm bg-surface"
+      />
+      {alt && (
+        <figcaption className="mt-3 flex items-center justify-center gap-3 font-sans text-[0.8rem] text-muted">
+          <span className="h-px w-6 bg-accent" />
+          {alt}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
     ...components,
     YouTube,
     SeriesDetail,
-    pre: Pre,
-    code: (props) => {
-      const { className, children } = props;
-      if (className) {
-        return <Code {...props} />;
-      }
-      return <InlineCode>{children}</InlineCode>;
+    img: (props) => <Figure src={props.src as string} alt={props.alt} />,
+    // Markdown wraps a lone image in a paragraph; unwrap it so the <figure>
+    // can break out of the text column.
+    p: ({ children, ...props }) => {
+      if (isValidElement(children) && (children.props as { src?: string }).src) return <>{children}</>;
+      return <p {...props}>{children}</p>;
     },
-    h1: (props) => <h1 className="text-5xl font-black pb-4" {...props} />,
-    h2: (props) => <h2 className="text-4xl font-bold pb-4" {...props} />,
-    h3: (props) => <h3 className="text-3xl font-semibold pb-4 " {...props} />,
-    h4: (props) => <h4 className="text-2xl font-medium pb-4" {...props} />,
-    h5: (props) => <h5 className="text-lg font-normal pb-4" {...props} />,
-    h6: (props) => <h6 className="text-base font-light pb-4" {...props} />,
-    p: (props) => <p className="text-lg lg:text-xl 2xl:text-[22px] mb-4 leading-6 lg:leading-7 text-justify font-medium" {...props} />,
-    strong: (props) => <strong className="text-indigo-950 dark:text-amber-400" {...props} />,
-    li: (props) => <li className="pb-1 text-xl lg:text-2xl" {...props} />,
-    ul: (props) => <ul className="list-disc text-xl lg:text-2xl pl-6 pb-4" {...props} />,
-    ol: (props) => <ol className="list-decimal text-xl lg:text-2xl pl-6 pb-4" {...props} />,
-    hr: (props) => <hr className="my-4" {...props} />,
-    blockquote: (props) => (
-      <blockquote
-        className="p-4 my-4 border-s-4 border-gray-300 bg-gray-100 dark:border-gray-500 dark:bg-background text-xl italic font-semibold leading-relaxed text-gray-900 dark:text-foreground"
-        {...props}
-      />
-    ),
-    a: (props) => <a className="hover:underline font-semibold" {...props} />,
-    img: (props) => (
-      <Image
-        src={props.src as string}
-        alt={props.alt as string}
-        width={900}
-        height={900}
-        className="rounded-lg lg:rounded-2xl shadow-postimg h-auto w-100 sm:w-225 block mx-auto my-10"
-      />
-    ),
+    a: ({ href = "", ...props }) => {
+      const external = /^https?:\/\//.test(href);
+      return <a href={href} {...(external ? { target: "_blank", rel: "noreferrer" } : {})} {...props} />;
+    },
   };
 }
