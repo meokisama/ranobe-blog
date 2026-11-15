@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 300" width="1280" height="300" role="img" aria-label="Colour tokens: Kami (paper) and Yoru (night)">
+  <defs>
+    <clipPath id="frame"><rect width="1280" height="300" rx="14"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)" font-family="'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="11" letter-spacing="1.4">
+    <!-- Kami -->
+    <rect width="640" height="300" fill="#f1ebde"/>
+    <text x="48" y="92" font-family="'Shippori Mincho','Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif" font-size="56" letter-spacing="0" fill="#16120e">紙</text>
+    <text x="120" y="70" font-family="Fraunces,'Iowan Old Style','Palatino Linotype',Georgia,serif" font-style="italic" font-size="30" letter-spacing="-1" fill="#16120e">Kami</text>
+    <text x="120" y="92" fill="#71695c">PAPER — LIGHT THEME</text>
+    <path d="M48 124H592" stroke="#16120e" stroke-opacity=".16"/>
+    <g>
+      <rect x="48" y="150" width="80" height="80" rx="6" fill="#f1ebde" stroke="#16120e" stroke-opacity=".16"/>
+      <rect x="141" y="150" width="80" height="80" rx="6" fill="#f8f4ea" stroke="#16120e" stroke-opacity=".16"/>
+      <rect x="234" y="150" width="80" height="80" rx="6" fill="#16120e"/>
+      <rect x="327" y="150" width="80" height="80" rx="6" fill="#71695c"/>
+      <rect x="420" y="150" width="80" height="80" rx="6" fill="#d6361b"/>
+      <rect x="513" y="150" width="80" height="80" rx="6" fill="#9a6a14"/>
+    </g>
+    <g fill="#16120e">
+      <text x="48" y="252">BG</text><text x="141" y="252">SURFACE</text><text x="234" y="252">INK</text><text x="327" y="252">MUTED</text><text x="420" y="252">ACCENT</text><text x="513" y="252">GOLD</text>
+    </g>
+    <g fill="#71695c">
+      <text x="48" y="270">#F1EBDE</text><text x="141" y="270">#F8F4EA</text><text x="234" y="270">#16120E</text><text x="327" y="270">#71695C</text><text x="420" y="270">#D6361B</text><text x="513" y="270">#9A6A14</text>
+    </g>
+
+    <!-- Yoru -->
+    <rect x="640" width="640" height="300" fill="#0b0a0d"/>
+    <text x="688" y="92" font-family="'Shippori Mincho','Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif" font-size="56" letter-spacing="0" fill="#efe8db">夜</text>
+    <text x="760" y="70" font-family="Fraunces,'Iowan Old Style','Palatino Linotype',Georgia,serif" font-style="italic" font-size="30" letter-spacing="-1" fill="#efe8db">Yoru</text>
+    <text x="760" y="92" fill="#958e82">NIGHT — DARK THEME</text>
+    <path d="M688 124H1232" stroke="#efe8db" stroke-opacity=".15"/>
+    <g>
+      <rect x="688" y="150" width="80" height="80" rx="6" fill="#0b0a0d" stroke="#efe8db" stroke-opacity=".15"/>
+      <rect x="781" y="150" width="80" height="80" rx="6" fill="#141318" stroke="#efe8db" stroke-opacity=".15"/>
+      <rect x="874" y="150" width="80" height="80" rx="6" fill="#efe8db"/>
+      <rect x="967" y="150" width="80" height="80" rx="6" fill="#958e82"/>
+      <rect x="1060" y="150" width="80" height="80" rx="6" fill="#ff4a2b"/>
+      <rect x="1153" y="150" width="80" height="80" rx="6" fill="#e6b35c"/>
+    </g>
+    <g fill="#efe8db">
+      <text x="688" y="252">BG</text><text x="781" y="252">SURFACE</text><text x="874" y="252">INK</text><text x="967" y="252">MUTED</text><text x="1060" y="252">ACCENT</text><text x="1153" y="252">GOLD</text>
+    </g>
+    <g fill="#958e82">
+      <text x="688" y="270">#0B0A0D</text><text x="781" y="270">#141318</text><text x="874" y="270">#EFE8DB</text><text x="967" y="270">#958E82</text><text x="1060" y="270">#FF4A2B</text><text x="1153" y="270">#E6B35C</text>
+    </g>
+  </g>
+</svg>

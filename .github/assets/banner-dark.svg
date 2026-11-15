@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 480" width="1280" height="480" role="img" aria-label="Ranobe — Light novel reviews &amp; essays">
+  <defs>
+    <filter id="grain" x="0" y="0" width="100%" height="100%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n"/>
+      <feColorMatrix in="n" type="matrix" values="0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0 0.5  0 0 0 0.3 0"/>
+    </filter>
+    <radialGradient id="glow" cx="50%" cy="50%" r="50%">
+      <stop offset="0" stop-color="#ff4a2b" stop-opacity=".2"/>
+      <stop offset="1" stop-color="#ff4a2b" stop-opacity="0"/>
+    </radialGradient>
+    <clipPath id="frame"><rect width="1280" height="480" rx="14"/></clipPath>
+    <path id="petal" d="M0 -11C6 -8 8 0 0 11C-8 0 -6 -8 0 -11Z"/>
+  </defs>
+
+  <g clip-path="url(#frame)">
+    <rect width="1280" height="480" fill="#0b0a0d"/>
+    <ellipse cx="640" cy="250" rx="520" ry="210" fill="url(#glow)"/>
+
+    <!-- Giant kanji watermark: 紙 (paper) -->
+    <text x="1030" y="400" font-family="'Shippori Mincho','Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif" font-size="380" fill="#efe8db" fill-opacity=".05">夜</text>
+
+    <!-- Hairline frame -->
+    <rect x="28" y="28" width="1224" height="424" rx="6" fill="none" stroke="#efe8db" stroke-opacity=".16"/>
+    <path d="M28 84H1252M28 396H1252" stroke="#efe8db" stroke-opacity=".16"/>
+
+    <!-- Top meta row -->
+    <g font-family="'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" letter-spacing="1.7" fill="#958e82">
+      <circle cx="64" cy="57" r="4" fill="#ff4a2b"/>
+      <text x="78" y="61">LIGHT NOVEL MAGAZINE</text>
+      <text x="640" y="61" text-anchor="middle">EST. 2022 — VIETNAM</text>
+      <text x="1216" y="61" text-anchor="end">VOL. 2.0</text>
+    </g>
+
+    <!-- Vertical Japanese margins -->
+    <g font-family="'Shippori Mincho','Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif" font-size="21" fill="#efe8db" fill-opacity=".72" text-anchor="middle">
+      <text x="92"><tspan x="92" y="150">ラ</tspan><tspan x="92" y="182">イ</tspan><tspan x="92" y="214">ト</tspan><tspan x="92" y="246">ノ</tspan><tspan x="92" y="278">ベ</tspan><tspan x="92" y="310">ル</tspan></text>
+      <text x="1188"><tspan x="1188" y="166">書</tspan><tspan x="1188" y="198">評</tspan><tspan x="1188" y="230">と</tspan><tspan x="1188" y="262">批</tspan><tspan x="1188" y="294">評</tspan></text>
+    </g>
+    <path d="M92 326V366M1188 310V366" stroke="#ff4a2b" stroke-width="1.5"/>
+
+    <!-- Sakura petals -->
+    <g fill="#ff4a2b">
+      <use href="#petal" transform="translate(232 148) rotate(28) scale(1.1)" fill-opacity=".5"/>
+      <use href="#petal" transform="translate(318 318) rotate(-40) scale(.8)" fill-opacity=".32"/>
+      <use href="#petal" transform="translate(408 122) rotate(72) scale(.6)" fill-opacity=".28"/>
+      <use href="#petal" transform="translate(904 136) rotate(-18) scale(.9)" fill-opacity=".42"/>
+      <use href="#petal" transform="translate(1010 300) rotate(55) scale(1.25)" fill-opacity=".3"/>
+      <use href="#petal" transform="translate(866 352) rotate(110) scale(.55)" fill-opacity=".36"/>
+      <use href="#petal" transform="translate(196 262) rotate(140) scale(.5)" fill-opacity=".25"/>
+    </g>
+
+    <!-- Hanko seal -->
+    <g transform="translate(616 108) scale(.75)">
+      <rect width="64" height="64" rx="12" fill="#ff4a2b"/>
+      <rect x="6" y="6" width="52" height="52" rx="7" fill="none" stroke="#fff" stroke-opacity=".55" stroke-width="1.5"/>
+      <g fill="none" stroke="#fff" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M21 19h22"/>
+        <path d="M16 30h32c0 12-7 19-19 21"/>
+      </g>
+    </g>
+
+    <!-- Wordmark -->
+    <text x="640" y="318" text-anchor="middle" font-family="Fraunces,'Iowan Old Style','Palatino Linotype',Georgia,'Times New Roman',serif" font-style="italic" font-size="176" letter-spacing="-7" fill="#efe8db">Ranobe</text>
+
+    <!-- Tagline -->
+    <g font-family="'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace" font-size="12" letter-spacing="1.7" fill="#958e82">
+      <text x="64" y="429">LIGHT NOVEL REVIEWS &amp; ESSAYS</text>
+      <text x="640" y="429" text-anchor="middle" fill="#e6b35c">一 · 二 · 三 · 四</text>
+      <text x="1216" y="429" text-anchor="end">RANOBE.VN</text>
+    </g>
+
+    <rect width="1280" height="480" filter="url(#grain)" opacity=".5"/>
+  </g>
+</svg>
