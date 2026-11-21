@@ -68,7 +68,7 @@ export default function Header() {
             scrolled && !open ? "border-b border-line bg-bg/75 backdrop-blur-xl" : "border-b border-transparent",
           )}
         >
-          <Link href="/" onClick={() => setOpen(false)} className="group flex items-center gap-2.5" aria-label="Ranobe — trang chủ">
+          <Link href="/" onClick={() => setOpen(false)} className="group flex items-center gap-2.5" aria-label="Ranobe, trang chủ">
             <Seal className="size-8 transition-transform duration-700 ease-out-expo group-hover:-rotate-12" />
             <Wordmark />
           </Link>

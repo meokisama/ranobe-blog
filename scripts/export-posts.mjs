@@ -1,5 +1,4 @@
-// Generates public/posts.json — the full-text search index used by the search
-// palette. Runs automatically before `next dev` / `next build`.
+// Generates public/posts.json, the search palette's full-text index. Runs before `next dev` and `next build`.
 
 import fs from "node:fs";
 import path from "node:path";

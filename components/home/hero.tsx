@@ -27,7 +27,7 @@ export default function Hero({ items, total }: { items: (HeroItem & { category: 
 
   return (
     <section ref={ref} className="relative h-[100svh] min-h-[620px] overflow-hidden">
-      <h1 className="sr-only">Ranobe — Review &amp; phân tích Light Novel</h1>
+      <h1 className="sr-only">Ranobe: Review &amp; phân tích Light Novel</h1>
 
       {/* Soft glow behind the ring */}
       <div
@@ -53,7 +53,7 @@ export default function Hero({ items, total }: { items: (HeroItem & { category: 
           <span>
             <span className="text-accent">●</span>&nbsp; Tạp chí light novel
           </span>
-          <span className="hidden sm:block">Est. 2022 — Việt Nam</span>
+          <span className="hidden sm:block">Est. 2022 · Việt Nam</span>
           <span>N° {String(total).padStart(3, "0")} bài viết</span>
         </motion.div>
 
@@ -72,7 +72,7 @@ export default function Hero({ items, total }: { items: (HeroItem & { category: 
           transition={{ delay: 1.6, duration: 1.4, ease: EASE }}
           className="vertical-rl label absolute right-[clamp(1rem,4vw,3.5rem)] top-1/2 hidden -translate-y-1/2 text-muted lg:block"
         >
-          Kéo để xoay — Nhấn để đọc
+          Kéo để xoay · Nhấn để đọc
         </motion.p>
 
         {/* Bottom row */}

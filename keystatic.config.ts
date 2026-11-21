@@ -35,7 +35,7 @@ export default config({
         }),
         thumbnail: fields.image({
           label: "Thumbnail",
-          description: "Ảnh đại diện bài viết — kéo/thả để upload, tự lưu vào public/posts.",
+          description: "Ảnh đại diện bài viết: kéo/thả để upload, tự lưu vào public/posts.",
           directory: "public/posts",
           publicPath: "/posts/",
           validation: { isRequired: true },

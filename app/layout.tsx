@@ -41,7 +41,7 @@ const shippori = Shippori_Mincho({
 });
 
 export const metadata: Metadata = {
-  title: { default: SITE.title, template: "%s — Ranobe" },
+  title: { default: SITE.title, template: "%s | Ranobe" },
   description: SITE.description,
   creator: "Meoki",
   publisher: "Meoki",

@@ -42,7 +42,6 @@ export default function Latest({ posts }: { posts: Post[] }) {
       <SectionHead index="01" jp="新着" title="Vừa lên kệ" href="/blog" cta="Tất cả bài viết" />
 
       <div className="mt-10 grid gap-x-10 gap-y-14 lg:grid-cols-12">
-        {/* Lead story */}
         <Reveal className="lg:col-span-7">
           <Link ref={ref} href={`/blog/${lead.slug}`} className="group block">
             <div className="relative aspect-[16/10] overflow-hidden rounded-sm bg-surface">

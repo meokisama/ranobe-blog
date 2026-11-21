@@ -95,7 +95,6 @@ export default async function PostPage({ params }: Props) {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <ReadingProgress />
 
-      {/* Masthead */}
       <header className="gutter pt-28 md:pt-40">
         <div className="page-enter label flex flex-wrap items-center gap-x-4 gap-y-2 text-muted">
           <Link href="/blog" className="group flex items-center gap-2 transition-colors hover:text-ink">
@@ -142,7 +141,6 @@ export default async function PostPage({ params }: Props) {
         <PostCover src={post.thumbnail} alt={post.title} jp={post.jp} />
       </div>
 
-      {/* Body */}
       <div className="gutter article mt-14 md:mt-24">
         <Content />
       </div>
@@ -150,7 +148,9 @@ export default async function PostPage({ params }: Props) {
       {/* Sign-off */}
       <div className="gutter mt-16 md:mt-24">
         <div className="mx-auto max-w-[42rem]">
-          <p className="text-center font-jp text-accent">— 完 —</p>
+          <p className="flex items-center justify-center gap-1.5 font-jp text-accent">
+            <span aria-hidden className="h-px w-4 bg-accent" />完<span aria-hidden className="h-px w-4 bg-accent" />
+          </p>
           {author && (
             <a
               href={author.facebook}
@@ -170,7 +170,6 @@ export default async function PostPage({ params }: Props) {
         </div>
       </div>
 
-      {/* Neighbours */}
       <nav className="mt-20 grid border-y border-line md:mt-32 md:grid-cols-2 md:divide-x md:divide-line" aria-label="Bài viết liền kề">
         {older ? <NeighbourCard post={older} direction="prev" /> : <div />}
         {newer ? (
@@ -182,7 +181,6 @@ export default async function PostPage({ params }: Props) {
         )}
       </nav>
 
-      {/* Related */}
       {related.length > 0 && (
         <section className="gutter pt-20 md:pt-28">
           <div className="flex items-end justify-between border-b border-line pb-5">

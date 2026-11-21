@@ -3,13 +3,13 @@ import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Seal } from "@/components/site/logo";
 
-export const metadata: Metadata = { title: "404 — Trang này đã thất lạc" };
+export const metadata: Metadata = { title: "404: Trang này đã thất lạc" };
 
 export default function NotFound() {
   return (
     <main className="gutter relative flex min-h-[100svh] flex-col justify-between overflow-hidden py-8">
       <div className="grain" aria-hidden />
-      <Link href="/" className="flex items-center gap-2.5" aria-label="Ranobe — trang chủ">
+      <Link href="/" className="flex items-center gap-2.5" aria-label="Ranobe, trang chủ">
         <Seal />
         <span className="display text-[1.45rem] italic">Ranobe</span>
       </Link>

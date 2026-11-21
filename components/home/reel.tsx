@@ -55,7 +55,6 @@ export default function Reel({ index, caption, title, accent, description, href,
   return (
     <section ref={section} className="relative mt-24 md:mt-36" style={{ height: `calc(100svh + ${distance}px)` }}>
       <div className="sticky top-0 flex h-[100svh] flex-col justify-center overflow-hidden">
-        {/* Backdrop glyph */}
         <p
           aria-hidden
           className={cn(
@@ -135,7 +134,6 @@ export default function Reel({ index, caption, title, accent, description, href,
             </div>
           ))}
 
-          {/* Closing card */}
           <Link
             href={href}
             className="group flex h-[clamp(300px,52svh,520px)] w-[clamp(240px,28vw,400px)] shrink-0 flex-col justify-between rounded-sm border border-line p-6 transition-colors duration-500 hover:border-accent hover:bg-accent hover:text-white md:p-8"
@@ -153,7 +151,6 @@ export default function Reel({ index, caption, title, accent, description, href,
           </Link>
         </motion.div>
 
-        {/* Progress */}
         <div className="gutter mt-7 md:mt-10">
           <div className="relative h-px bg-line">
             <motion.div style={{ scaleX: progress }} className="absolute inset-0 origin-left bg-accent" />

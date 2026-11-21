@@ -1,7 +1,7 @@
 export const SITE = {
   name: "Ranobe",
   url: "https://ranobe.vn",
-  title: "Ranobe — Review & phân tích Light Novel",
+  title: "Ranobe: Review & phân tích Light Novel",
   description:
     "Review Light Novel. Phân tích Light Novel. Chia sẻ tài nguyên Light Novel. Blog cho những người đam mê văn học Nhật Bản hiện đại.",
 };

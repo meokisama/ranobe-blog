@@ -19,7 +19,7 @@ export function ChapterList({ posts }: { posts: Post[] }) {
                 href={`/blog/category/${cat.slug}`}
                 className="group relative grid grid-cols-12 items-center gap-x-4 gap-y-3 overflow-hidden py-7 md:py-10"
               >
-                {/* Ink wipe on hover */}
+                {/* Accent fill that wipes up on hover */}
                 <span
                   aria-hidden
                   className="absolute inset-0 origin-bottom scale-y-0 bg-accent transition-transform duration-700 ease-out-expo group-hover:scale-y-100"

@@ -7,7 +7,7 @@
     <rect width="640" height="300" fill="#f1ebde"/>
     <text x="48" y="92" font-family="'Shippori Mincho','Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif" font-size="56" letter-spacing="0" fill="#16120e">紙</text>
     <text x="120" y="70" font-family="Fraunces,'Iowan Old Style','Palatino Linotype',Georgia,serif" font-style="italic" font-size="30" letter-spacing="-1" fill="#16120e">Kami</text>
-    <text x="120" y="92" fill="#71695c">PAPER — LIGHT THEME</text>
+    <text x="120" y="92" fill="#71695c">PAPER · LIGHT THEME</text>
     <path d="M48 124H592" stroke="#16120e" stroke-opacity=".16"/>
     <g>
       <rect x="48" y="150" width="80" height="80" rx="6" fill="#f1ebde" stroke="#16120e" stroke-opacity=".16"/>
@@ -28,7 +28,7 @@
     <rect x="640" width="640" height="300" fill="#0b0a0d"/>
     <text x="688" y="92" font-family="'Shippori Mincho','Yu Mincho','Hiragino Mincho ProN','Noto Serif JP',serif" font-size="56" letter-spacing="0" fill="#efe8db">夜</text>
     <text x="760" y="70" font-family="Fraunces,'Iowan Old Style','Palatino Linotype',Georgia,serif" font-style="italic" font-size="30" letter-spacing="-1" fill="#efe8db">Yoru</text>
-    <text x="760" y="92" fill="#958e82">NIGHT — DARK THEME</text>
+    <text x="760" y="92" fill="#958e82">NIGHT · DARK THEME</text>
     <path d="M688 124H1232" stroke="#efe8db" stroke-opacity=".15"/>
     <g>
       <rect x="688" y="150" width="80" height="80" rx="6" fill="#0b0a0d" stroke="#efe8db" stroke-opacity=".15"/>

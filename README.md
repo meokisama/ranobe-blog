@@ -3,7 +3,7 @@
 <a href="https://ranobe.vn">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset=".github/assets/banner-dark.svg">
-    <img src=".github/assets/banner-light.svg" alt="Ranobe — Light novel reviews & essays" width="100%">
+    <img src=".github/assets/banner-light.svg" alt="Ranobe: Light novel reviews & essays" width="100%">
   </picture>
 </a>
 

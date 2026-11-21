@@ -7,9 +7,6 @@ import { SPLASH_SEEN_KEY, markSplashRevealed } from "@/lib/splash";
 
 const playfair = Playfair_Display({ subsets: ["vietnamese"], display: "swap" });
 
-// The original splash screen, restored as it was: two lines fade in on white,
-// a flock of sakura petals blows across, and the white fades to the page.
-// Only the bookkeeping around it changed (see the effect below).
 export default function SplashScreen() {
   const [shouldUnmount, setShouldUnmount] = useState(false);
   const seen = useRef<boolean | null>(null);
@@ -29,8 +26,7 @@ export default function SplashScreen() {
 
     document.body.style.position = "fixed";
     document.body.style.width = "100vw";
-    // Let the hero's 3D scene start just before the white begins to fade, so
-    // it isn't rendering behind the splash while the petals animate.
+    // Start the hero's 3D scene just before the white fades, so it doesn't render behind the splash.
     const revealId = setTimeout(markSplashRevealed, 6400);
     const timeoutId = setTimeout(() => {
       document.body.style.position = "";
@@ -55,7 +51,6 @@ export default function SplashScreen() {
         }}
       />
       <div className="fixed inset-0 h-full w-full flex flex-col justify-center items-start translate-x-[-50vw] lg:translate-x-[-35vw] xl:translate-x-[-20vw] z-6000">
-        {/* Hana 01 */}
         <motion.div
           initial={{ x: 0, y: 0, rotate: 0 }}
           animate={{ x: "150vw", y: "-300px", rotate: 180 }}
@@ -73,7 +68,6 @@ export default function SplashScreen() {
           <Image src="/hana_01.png" alt="sakura flower petal" width={150} height={150} className="w-18.75 lg:w-27.5 xl:w-37.5 h-auto" />
         </motion.div>
 
-        {/* Hana 02 */}
         <motion.div
           initial={{ x: 0, y: "100px", rotate: 0 }}
           animate={{ x: "150vw", y: "0", rotate: 180 }}
@@ -115,7 +109,6 @@ export default function SplashScreen() {
           <Image src="/hana_02.png" alt="sakura flower petal" width={100} height={100} className="w-12.5 lg:w-18.75 xl:w-25 h-auto" />
         </motion.div>
 
-        {/* Hana 03 */}
         <motion.div
           initial={{ x: 0, y: 0, rotate: 30 }}
           animate={{ x: "150vw", y: "-200px", rotate: 180 }}
@@ -141,7 +134,6 @@ export default function SplashScreen() {
           <Image src="/hana_03.png" alt="sakura flower petal" width={120} height={120} className="w-15 lg:w-22.5 xl:w-30 h-auto" />
         </motion.div>
 
-        {/* Hana 04 */}
         <motion.div
           initial={{ x: 0, y: "400px", rotate: 0 }}
           animate={{ x: "150vw", y: "100px", rotate: 180 }}

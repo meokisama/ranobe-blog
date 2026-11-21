@@ -188,12 +188,11 @@ button {
   }
 }
 
-/* The splash curtain is skipped for visitors who already saw it this session. */
+/* The splash is hidden for visitors who already saw it this session. */
 [data-splash="seen"] .splash {
   display: none;
 }
 
-/* Page enter */
 .page-enter {
   animation: page-enter 0.9s var(--ease-out-expo) both;
 }

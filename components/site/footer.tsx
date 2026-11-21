@@ -13,7 +13,7 @@ export default function Footer() {
             Đọc cho kĩ, khen cho thật, <em className="text-accent">chê cho đáng.</em>
           </p>
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted">
-            Ranobe là một trang blog nhỏ viết về light novel — review, phân tích và những câu chuyện bên lề của văn học đại chúng Nhật Bản.
+            Ranobe là một trang blog nhỏ viết về light novel: review, phân tích và những câu chuyện bên lề của văn học đại chúng Nhật Bản.
           </p>
         </div>
 
@@ -59,7 +59,7 @@ export default function Footer() {
       </div>
 
       <div className="gutter label absolute inset-x-0 bottom-0 flex flex-wrap items-center justify-between gap-3 pb-5 text-muted">
-        <span>© 2022 — {new Date().getFullYear()} Ranobe</span>
+        <span>© 2022-{new Date().getFullYear()} Ranobe</span>
         <span className="font-jp text-[0.8rem] normal-case tracking-[0.3em]">ライトノベルを、語ろう。</span>
         <span>Dựng bởi Meoki</span>
       </div>

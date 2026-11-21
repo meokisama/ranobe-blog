@@ -69,7 +69,7 @@ const cardFragment = /* glsl */ `
 
     vec3 color = texture2D(uMap, uv).rgb;
 
-    // The far side of the ring sinks into the page colour.
+    // The far side of the ring fades to the page colour.
     float fog = smoothstep(uNear, uFar, vDepth);
     float back = gl_FrontFacing ? 0.0 : 1.0;
     float luma = dot(color, vec3(0.299, 0.587, 0.114));
@@ -135,8 +135,7 @@ function makeCardGeometry() {
   return geo;
 }
 
-/** The wordmark, drawn with the page's display font into a texture so that it
- *  can sit *inside* the ring — covers pass both behind and in front of it. */
+/** The wordmark drawn into a texture, so it can sit inside the ring: covers pass behind and in front of it. */
 function useWordmarkTexture(color: string) {
   const [texture, setTexture] = useState<THREE.CanvasTexture | null>(null);
 

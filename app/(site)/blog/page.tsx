@@ -17,7 +17,7 @@ export default function BlogPage() {
         jp="書庫"
         title="Tất cả bài viết"
         count={posts.length}
-        description="Mọi thứ từng được viết trên Ranobe, xếp theo thời gian — từ review từng tập truyện tới những bài phân tích dài hơi."
+        description="Mọi thứ từng được viết trên Ranobe, xếp theo thời gian, từ review từng tập truyện tới những bài phân tích dài hơi."
       />
       <Archive posts={posts} counts={getCategoryCounts()} />
     </>
